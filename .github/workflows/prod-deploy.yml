@@ -3,7 +3,7 @@ name: Production CI/CD
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   deploy:
     runs-on: ubuntu-18.04
