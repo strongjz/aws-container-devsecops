@@ -1,0 +1,46 @@
+name: Production CI/CD
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.82.0'
+          # extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Commit build to prod branch
+        run: |
+          ls -la ./docs/* && git status
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git fetch
+          mv docs docs-tmp
+
+          echo 'docs-tmp ...'
+          ls -la ./docs-tmp/* && git status
+
+          git checkout -f prod
+          rm -rf docs/
+          mv docs-tmp docs
+
+          echo 'docs ...'
+          ls -la ./docs/* && git status
+
+          git add docs/
+          git commit -m "generated docs based on commit to main branch"
+          git push
+

@@ -1,0 +1,9 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "AWS Container DevSecOps"
+
+contentdir    = "content"
+layoutdir     = "layouts"
+publishdir    = "docs"
+
+theme = "hugo-theme-learn"

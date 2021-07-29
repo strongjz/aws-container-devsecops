@@ -1,0 +1,6 @@
+.idea/*
+*.DS_Store*
+.idea/*
+.idea/
+public/
+docs-local
