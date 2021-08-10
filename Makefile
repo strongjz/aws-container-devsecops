@@ -4,7 +4,7 @@ DOCKER_IMAGE = dojo-hugo
 DOCKER_IMAGE_ID = $(shell docker images -q $(DOCKER_IMAGE):latest)
 DOCKER_RUN   = $(DOCKER) run --rm --interactive --tty --volume $(PWD):/src
 DOCKER_RUN_IN_GITHUB_ACTIONS = $(DOCKER) run --rm --volume $(PWD):/src
-HUGO_LOCAL_OUTPUT_DIR = 'docs-local/'
+HUGO_LOCAL_OUTPUT_DIR = 'docs/'
 
 .PHONY: all build build-preview serve docker-all
 

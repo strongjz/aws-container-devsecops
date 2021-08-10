@@ -1,1 +1,22 @@
-[{"uri":"/","title":"Introduction","tags":[],"description":"","content":"Introduction "},{"uri":"/categories/","title":"Categories","tags":[],"description":"","content":""},{"uri":"/tags/","title":"Tags","tags":[],"description":"","content":""}]
+[
+{
+	"uri": "//localhost:1313/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Introduction "
+},
+{
+	"uri": "//localhost:1313/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
