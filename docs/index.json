@@ -1,10 +1,45 @@
 [
 {
 	"uri": "//localhost:1313/",
-	"title": "Introduction",
+	"title": "AWS DevSecOps Container Pipeline",
 	"tags": [],
 	"description": "",
-	"content": "Introduction "
+	"content": "AWS DevSecOps Container Pipeline  Setup Development Build Pipeline Run  "
+},
+{
+	"uri": "//localhost:1313/setup/",
+	"title": "Workshop Setup",
+	"tags": [],
+	"description": "",
+	"content": "Workshop Setup "
+},
+{
+	"uri": "//localhost:1313/development/",
+	"title": "Development Environment",
+	"tags": [],
+	"description": "",
+	"content": "Development Environment "
+},
+{
+	"uri": "//localhost:1313/build/",
+	"title": "Container Builds",
+	"tags": [],
+	"description": "",
+	"content": "Container Builds "
+},
+{
+	"uri": "//localhost:1313/pipeline/",
+	"title": "Container Pipeline",
+	"tags": [],
+	"description": "",
+	"content": "Container Pipeline "
+},
+{
+	"uri": "//localhost:1313/run/",
+	"title": "Securely Running Containers",
+	"tags": [],
+	"description": "",
+	"content": "Securely Running Containers "
 },
 {
 	"uri": "//localhost:1313/categories/",
