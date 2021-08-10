@@ -22,24 +22,13 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Commit build to prod branch
+      - name: Commit build to main branch
         run: |
           ls -la ./docs/* && git status
           git config user.name github-actions
           git config user.email github-actions@github.com
           git fetch
-          mv docs docs-tmp
-
-          echo 'docs-tmp ...'
-          ls -la ./docs-tmp/* && git status
-
-          git checkout -f prod
-          rm -rf docs/
-          mv docs-tmp docs
-
-          echo 'docs ...'
-          ls -la ./docs/* && git status
-
+          git checkout -f main
           git add docs/
           git commit -m "generated docs based on commit to main branch"
           git push
