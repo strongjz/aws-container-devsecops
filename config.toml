@@ -1,9 +1,15 @@
-baseURL = "http://example.org/"
+baseURL = "/"
 languageCode = "en-us"
 title = "AWS Container DevSecOps"
-
 contentdir    = "content"
 layoutdir     = "layouts"
 publishdir    = "docs"
-
 theme = "hugo-theme-learn"
+
+[params]
+  editURL = "https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/"
+  description = "AWS Container DevSecOps Workshop"
+  author = "James Strong"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
