@@ -10,6 +10,7 @@ theme = "hugo-theme-learn"
   editURL = "https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/"
   description = "AWS Container DevSecOps Workshop"
   author = "James Strong"
+  themeVariant = "green"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]

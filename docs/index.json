@@ -4,21 +4,49 @@
 	"title": "AWS DevSecOps Container Pipeline",
 	"tags": [],
 	"description": "",
-	"content": "AWS DevSecOps Container Pipeline  Setup Development Build Pipeline Run  "
+	"content": "AWS DevSecOps Container Pipeline Welcome to AWS DevSecOps Container Pipeline workshop. In this workshop Engineers will learn how to secure their container pipeline using AWS and other Cloud Native tools.\nWe will be working through the following topics.\n Workshop Setup   Development Environment   Container Builds   Container Pipeline   Securely Running Containers   Conclusion   This will be part Lecture and part hands on.\nLet\u0026rsquo;s get started!\nhttps://www.youtube.com/watch?v=rnUoGTJpEko\n"
 },
 {
 	"uri": "//localhost:1313/setup/",
 	"title": "Workshop Setup",
 	"tags": [],
 	"description": "",
-	"content": "Workshop Setup "
+	"content": "In this section we are going to setup your development environment on AWS Cloud9, install all the required tools and clone the repository with all our directions etc.\n AWS Cloud9   IAM   Tools Install   Clone Workshop repo   "
+},
+{
+	"uri": "//localhost:1313/setup/cloud9/",
+	"title": "AWS Cloud9",
+	"tags": [],
+	"description": "",
+	"content": " A list of supported browsers for AWS Cloud9 is found here.\n   Launch Cloud9 in your closest region\nCreate a Cloud9 Environment: https://us-west-2.console.aws.amazon.com/cloud9/home?region=us-west-2\nYou\u0026rsquo;ll be prompt to log into your AWS Account in order to provision a Cloud9 Workspace\n  Configure the Cloud9 instance  Review the setup before submitting for creation  Wait for the Cloud9 instance to boot  Increase disk size for your CLoud9 Instace  Increase the disk size of your instances, this will cause your instance to reboot\npip3 install --user --upgrade boto3 export instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id) python -c \u0026#34;import boto3 import os from botocore.exceptions import ClientError ec2 = boto3.client(\u0026#39;ec2\u0026#39;) volume_info = ec2.describe_volumes( Filters=[ { \u0026#39;Name\u0026#39;: \u0026#39;attachment.instance-id\u0026#39;, \u0026#39;Values\u0026#39;: [ os.getenv(\u0026#39;instance_id\u0026#39;) ] } ] ) volume_id = volume_info[\u0026#39;Volumes\u0026#39;][0][\u0026#39;VolumeId\u0026#39;] try: resize = ec2.modify_volume( VolumeId=volume_id, Size=30 ) print(resize) except ClientError as e: if e.response[\u0026#39;Error\u0026#39;][\u0026#39;Code\u0026#39;] == \u0026#39;InvalidParameterValue\u0026#39;: print(\u0026#39;ERROR MESSAGE: {}\u0026#39;.format(e))\u0026#34; if [ $? -eq 0 ]; then sudo reboot fi "
+},
+{
+	"uri": "//localhost:1313/setup/iam/",
+	"title": "IAM",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/setup/tools/",
+	"title": "Tools Install",
+	"tags": [],
+	"description": "",
+	"content": "Docker kind Terraform eksctl pgp git aws cli\n"
+},
+{
+	"uri": "//localhost:1313/setup/clone/",
+	"title": "Clone Workshop repo",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "//localhost:1313/development/",
 	"title": "Development Environment",
 	"tags": [],
 	"description": "",
-	"content": "Development Environment Commit Signing Style Guide Linting OWASP Dependency Checks 3 Musketeers Pre Commit Hooks\n"
+	"content": "  Commit Signing Style Guide Linting OWASP Dependency Checks 3 Musketeers Pre Commit Hooks\n"
 },
 {
 	"uri": "//localhost:1313/build/",
@@ -32,21 +60,21 @@
 	"title": "Container Pipeline",
 	"tags": [],
 	"description": "",
-	"content": "Container Pipeline Automating your build pipelines Visibility Troubleshooting Defect Remediation Build small autonomous pieces\nCI/CD Maintain a code repository Automate the build Keep the build fast Make the build self-testing Commit early, commit often Every commit gets built Everyone can see the results of the build Automate the deployment\nSecure Pipelines Signed Images Verify Trusted Images Kickoff Security Assessment\n"
+	"content": "  Automating your build pipelines Visibility Troubleshooting Defect Remediation Build small autonomous pieces\nCI/CD Maintain a code repository Automate the build Keep the build fast Make the build self-testing Commit early, commit often Every commit gets built Everyone can see the results of the build Automate the deployment\nSecure Pipelines Signed Images Verify Trusted Images Kickoff Security Assessment\n"
 },
 {
 	"uri": "//localhost:1313/run/",
 	"title": "Securely Running Containers",
 	"tags": [],
 	"description": "",
-	"content": "Securely Running Containers Minimal OS Bottle Rocket Ubuntu Core\nCI/CD - Images should be scanned for CVE’s\nRun time - tools should be deployed that monitor running containers that miss behave\nContinuous scan images in registry for vulnerabilities in the registries, images can run in production but not get updated and deployed\nCreate separate environments for development, test, production and other scenarios, each with specific controls to provide RBAC for container deployment and management activities.\nShared Kernel – Do not mix containerized and non-containerized workloads on the same host instance. (e.g.: if a host is running a web server container, it should not also run a web server as a regularly installed component directly within the host OS). This will also make it easy to apply optimized countermeasures for container protection.\nhttps://github.com/aquasecurity/kube-bench\nNetwork Policies\nPer Namespace if using Kubernetes network policies\nApplications should have their own define with the deployment\nAdmins should have examples so application developers can understand how it impacts their applications\n"
+	"content": "  Minimal OS Bottle Rocket Ubuntu Core\nCI/CD - Images should be scanned for CVE’s\nRun time - tools should be deployed that monitor running containers that miss behave\nContinuous scan images in registry for vulnerabilities in the registries, images can run in production but not get updated and deployed\nCreate separate environments for development, test, production and other scenarios, each with specific controls to provide RBAC for container deployment and management activities.\nShared Kernel – Do not mix containerized and non-containerized workloads on the same host instance. (e.g.: if a host is running a web server container, it should not also run a web server as a regularly installed component directly within the host OS). This will also make it easy to apply optimized countermeasures for container protection.\nhttps://github.com/aquasecurity/kube-bench\nNetwork Policies\nPer Namespace if using Kubernetes network policies\nApplications should have their own define with the deployment\nAdmins should have examples so application developers can understand how it impacts their applications\n"
 },
 {
 	"uri": "//localhost:1313/conclusion/",
 	"title": "Conclusion",
 	"tags": [],
 	"description": "",
-	"content": "CI/CD\nMaintain a code repository Automate the build Keep the build fast Make the build self-testing Commit early, commit often Every commit to the mainline gets built Everyone can see the results of the build Automate the deployment\nSecurity\nImmutable artifacts Static Code Analysis CVE Scanning Least Privileged Network Isolation Run Time protection Signed Commits Signed Images\n"
+	"content": "  CI/CD\nMaintain a code repository Automate the build Keep the build fast Make the build self-testing Commit early, commit often Every commit to the mainline gets built Everyone can see the results of the build Automate the deployment\nSecurity\nImmutable artifacts Static Code Analysis CVE Scanning Least Privileged Network Isolation Run Time protection Signed Commits Signed Images\n"
 },
 {
 	"uri": "//localhost:1313/categories/",

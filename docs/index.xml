@@ -6,5 +6,45 @@
     <description>Recent content in AWS DevSecOps Container Pipeline on AWS Container DevSecOps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS Cloud9</title>
+      <link>//localhost:1313/setup/cloud9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/setup/cloud9/</guid>
+      <description>A list of supported browsers for AWS Cloud9 is found here.
+   Launch Cloud9 in your closest region
+Create a Cloud9 Environment: https://us-west-2.console.aws.amazon.com/cloud9/home?region=us-west-2
+You&amp;rsquo;ll be prompt to log into your AWS Account in order to provision a Cloud9 Workspace
+  Configure the Cloud9 instance  Review the setup before submitting for creation  Wait for the Cloud9 instance to boot  Increase disk size for your CLoud9 Instace  Increase the disk size of your instances, this will cause your instance to reboot</description>
+    </item>
+    
+    <item>
+      <title>IAM</title>
+      <link>//localhost:1313/setup/iam/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/setup/iam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tools Install</title>
+      <link>//localhost:1313/setup/tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/setup/tools/</guid>
+      <description>Docker kind Terraform eksctl pgp git aws cli</description>
+    </item>
+    
+    <item>
+      <title>Clone Workshop repo</title>
+      <link>//localhost:1313/setup/clone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/setup/clone/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

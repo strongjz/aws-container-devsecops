@@ -3,6 +3,8 @@ title: Conclusion
 weight: 60
 ---
 
+{{% children  %}}
+
 CI/CD
 
 Maintain a code repository

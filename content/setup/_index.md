@@ -3,4 +3,8 @@ title: Workshop Setup
 weight: 10
 ---
 
-# Workshop Setup
+In this section we are going to setup your development environment on AWS Cloud9, install all the required tools and 
+clone the repository with all our directions etc. 
+
+{{% children  %}}
+
