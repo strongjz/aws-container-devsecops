@@ -14,6 +14,8 @@
   </url><url>
     <loc>//localhost:1313/run/</loc>
   </url><url>
+    <loc>//localhost:1313/conclusion/</loc>
+  </url><url>
     <loc>//localhost:1313/categories/</loc>
   </url><url>
     <loc>//localhost:1313/tags/</loc>

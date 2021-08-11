@@ -12,20 +12,20 @@
     <title>Securely Running Containers :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1628620296" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1628620296" rel="stylesheet">
-    <link href="/css/hybrid.css?1628620296" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1628620296" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1628620296" rel="stylesheet">
-    <link href="/css/auto-complete.css?1628620296" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1628620296" rel="stylesheet">
-    <link href="/css/theme.css?1628620296" rel="stylesheet">
-    <link href="/css/tabs.css?1628620296" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1628620296" rel="stylesheet">
+    <link href="/css/nucleus.css?1628622159" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1628622159" rel="stylesheet">
+    <link href="/css/hybrid.css?1628622159" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1628622159" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1628622159" rel="stylesheet">
+    <link href="/css/auto-complete.css?1628622159" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1628622159" rel="stylesheet">
+    <link href="/css/theme.css?1628622159" rel="stylesheet">
+    <link href="/css/tabs.css?1628622159" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1628622159" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1628620296"></script>
+    <script src="/js/jquery-3.3.1.min.js?1628622159"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -70,14 +70,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1628620296"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1628620296"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1628622159"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1628622159"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1628620296"></script>
+<script type="text/javascript" src="/js/search.js?1628622159"></script>
 
     
   </div>
@@ -216,6 +216,30 @@
  
 
           
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/conclusion/" title="Conclusion" class="dd-item
+        
+        
+        
+        ">
+      <a href="/conclusion/">
+          Conclusion
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
         
     </ul>
 
@@ -307,6 +331,19 @@
 
 
 	<h1 id="securely-running-containers">Securely Running Containers</h1>
+<p>Minimal OS
+Bottle Rocket
+Ubuntu Core</p>
+<p>CI/CD - Images should be scanned for CVE’s</p>
+<p>Run time - tools should be deployed that monitor running containers that miss behave</p>
+<p>Continuous scan images in registry for vulnerabilities in the registries, images can run in production but not get updated and deployed</p>
+<p>Create separate environments for development, test, production and other scenarios, each with specific controls to provide RBAC for container deployment and management activities.</p>
+<p>Shared Kernel – Do not mix containerized and non-containerized workloads on the same host instance. (e.g.: if a host is running a web server container, it should not also run a web server as a regularly installed component directly within the host OS). This will also make it easy to apply optimized countermeasures for container protection.</p>
+<p><a href="https://github.com/aquasecurity/kube-bench">https://github.com/aquasecurity/kube-bench</a></p>
+<p>Network Policies</p>
+<p>Per Namespace if using Kubernetes network policies</p>
+<p>Applications should have their own define with the deployment</p>
+<p>Admins should have examples so application developers can understand how it impacts their applications</p>
 
 
 
@@ -426,6 +463,25 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
 
@@ -438,7 +494,7 @@
 			<a class="nav nav-prev" href="/pipeline/" title="Container Pipeline"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/setup/" title="Workshop Setup" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/conclusion/" title="Conclusion" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -448,19 +504,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1628620296"></script>
-    <script src="/js/perfect-scrollbar.min.js?1628620296"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1628620296"></script>
-    <script src="/js/jquery.sticky.js?1628620296"></script>
-    <script src="/js/featherlight.min.js?1628620296"></script>
-    <script src="/js/highlight.pack.js?1628620296"></script>
+    <script src="/js/clipboard.min.js?1628622159"></script>
+    <script src="/js/perfect-scrollbar.min.js?1628622159"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1628622159"></script>
+    <script src="/js/jquery.sticky.js?1628622159"></script>
+    <script src="/js/featherlight.min.js?1628622159"></script>
+    <script src="/js/highlight.pack.js?1628622159"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1628620296"></script>
-    <script src="/js/learn.js?1628620296"></script>
-    <script src="/js/hugo-learn.js?1628620296"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1628622159"></script>
+    <script src="/js/learn.js?1628622159"></script>
+    <script src="/js/hugo-learn.js?1628622159"></script>
     
         
-            <script src="/mermaid/mermaid.js?1628620296"></script>
+            <script src="/mermaid/mermaid.js?1628622159"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

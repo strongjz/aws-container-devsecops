@@ -18,28 +18,35 @@
 	"title": "Development Environment",
 	"tags": [],
 	"description": "",
-	"content": "Development Environment "
+	"content": "Development Environment Commit Signing Style Guide Linting OWASP Dependency Checks 3 Musketeers Pre Commit Hooks\n"
 },
 {
 	"uri": "//localhost:1313/build/",
 	"title": "Container Builds",
 	"tags": [],
 	"description": "",
-	"content": "Container Builds "
+	"content": "Container Builds Minimal OS One Process per Container Run with local user Write logs to stdout \u0026amp; stderr Leverage environment variables Separating environmental concerns Mount configuration files\nSecure Containers\nDISABLE ROOT Least Privilege Run time Protections Pipeline builds Network policies DISABLE ROOT\nVersioning Invest in Strategy Containers follow build Versions of Software Metadata\nLatest Tag Avoid using :latest tags Unable to control Unknown updates Versions the way to go Container digest\nBase Container Reduce Build Times Scratch Container\n"
 },
 {
 	"uri": "//localhost:1313/pipeline/",
 	"title": "Container Pipeline",
 	"tags": [],
 	"description": "",
-	"content": "Container Pipeline "
+	"content": "Container Pipeline Automating your build pipelines Visibility Troubleshooting Defect Remediation Build small autonomous pieces\nCI/CD Maintain a code repository Automate the build Keep the build fast Make the build self-testing Commit early, commit often Every commit gets built Everyone can see the results of the build Automate the deployment\nSecure Pipelines Signed Images Verify Trusted Images Kickoff Security Assessment\n"
 },
 {
 	"uri": "//localhost:1313/run/",
 	"title": "Securely Running Containers",
 	"tags": [],
 	"description": "",
-	"content": "Securely Running Containers "
+	"content": "Securely Running Containers Minimal OS Bottle Rocket Ubuntu Core\nCI/CD - Images should be scanned for CVE’s\nRun time - tools should be deployed that monitor running containers that miss behave\nContinuous scan images in registry for vulnerabilities in the registries, images can run in production but not get updated and deployed\nCreate separate environments for development, test, production and other scenarios, each with specific controls to provide RBAC for container deployment and management activities.\nShared Kernel – Do not mix containerized and non-containerized workloads on the same host instance. (e.g.: if a host is running a web server container, it should not also run a web server as a regularly installed component directly within the host OS). This will also make it easy to apply optimized countermeasures for container protection.\nhttps://github.com/aquasecurity/kube-bench\nNetwork Policies\nPer Namespace if using Kubernetes network policies\nApplications should have their own define with the deployment\nAdmins should have examples so application developers can understand how it impacts their applications\n"
+},
+{
+	"uri": "//localhost:1313/conclusion/",
+	"title": "Conclusion",
+	"tags": [],
+	"description": "",
+	"content": "CI/CD\nMaintain a code repository Automate the build Keep the build fast Make the build self-testing Commit early, commit often Every commit to the mainline gets built Everyone can see the results of the build Automate the deployment\nSecurity\nImmutable artifacts Static Code Analysis CVE Scanning Least Privileged Network Isolation Run Time protection Signed Commits Signed Images\n"
 },
 {
 	"uri": "//localhost:1313/categories/",
