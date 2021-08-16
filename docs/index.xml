@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AWS DevSecOps Container Pipeline on AWS Container DevSecOps</title>
-    <link>https://strongjz.github.io/aws-container-devsecops/</link>
+    <link>http://localhost:1313/aws-container-devsecops/</link>
     <description>Recent content in AWS DevSecOps Container Pipeline on AWS Container DevSecOps</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://strongjz.github.io/aws-container-devsecops/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="http://localhost:1313/aws-container-devsecops/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS Cloud9</title>
-      <link>https://strongjz.github.io/aws-container-devsecops/setup/cloud9/</link>
+      <link>http://localhost:1313/aws-container-devsecops/setup/cloud9/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://strongjz.github.io/aws-container-devsecops/setup/cloud9/</guid>
+      <guid>http://localhost:1313/aws-container-devsecops/setup/cloud9/</guid>
       <description>A list of supported browsers for AWS Cloud9 is found here.
    Launch Cloud9 in your closest region
 Create a Cloud9 Environment: https://us-west-2.console.aws.amazon.com/cloud9/home?region=us-west-2
@@ -21,10 +21,10 @@ You&amp;rsquo;ll be prompt to log into your AWS Account in order to provision a 
     
     <item>
       <title>Cloud 9 Settings Configuration</title>
-      <link>https://strongjz.github.io/aws-container-devsecops/setup/iam/</link>
+      <link>http://localhost:1313/aws-container-devsecops/setup/iam/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://strongjz.github.io/aws-container-devsecops/setup/iam/</guid>
+      <guid>http://localhost:1313/aws-container-devsecops/setup/iam/</guid>
       <description>Create IAM Role   Log into your AWS Account you are using for this workshop.
   Follow this link to create an IAM role with Administrator access.
   Confirm that AWS service and EC2 are selected, then click Next: Permissions to view permissions.   Confirm that AdministratorAccess is checked, then click Next: Tags to assign tags.   Take the defaults, and click Next: Review to review.</description>
@@ -32,10 +32,10 @@ You&amp;rsquo;ll be prompt to log into your AWS Account in order to provision a 
     
     <item>
       <title>Workshop tools</title>
-      <link>https://strongjz.github.io/aws-container-devsecops/setup/tools/</link>
+      <link>http://localhost:1313/aws-container-devsecops/setup/tools/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://strongjz.github.io/aws-container-devsecops/setup/tools/</guid>
+      <guid>http://localhost:1313/aws-container-devsecops/setup/tools/</guid>
       <description>In order for us to continue with the exercises, there are several tools that our needed to be installed on our Cloud9 instance.
 You can download the entire repo with git
 git clone https://github.com/strongjz/aws-container-devsecops
