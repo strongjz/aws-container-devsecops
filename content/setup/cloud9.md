@@ -14,19 +14,19 @@ A list of supported browsers for AWS Cloud9 is found [here]( https://docs.aws.am
 
    You'll be prompt to log into your AWS Account in order to provision a Cloud9 Workspace
 
-![cloud9create](images/setup/cloud9_step0_create.png)
+![cloud9create](/images/setup/cloud9_step0_create.png)
 
 2. Configure the Cloud9 instance
 
-![cloud9create](images/setup/cloud9_step1_name.png)
+![cloud9create](/images/setup/cloud9_step1_name.png)
 
 3. Review the setup before submitting for creation
 
-![cloud9create](images/setup/cloud9_step2_configure.png)
+![cloud9create](/images/setup/cloud9_step2_configure.png)
 
 4. Wait for the Cloud9 instance to boot
 
-![cloud9create](images/setup/cloud9_step3_review.png)
+![cloud9create](/images/setup/cloud9_step3_review.png)
 
 5. Increase disk size for your Cloud9 Instance 
 
@@ -68,4 +68,4 @@ fi
 
 This will force a reboot of your Cloud9 instance 
 
-![cloud9create](images/setup/cloud9_reboot.png)
+![cloud9create](/images/setup/cloud9_reboot.png)
