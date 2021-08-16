@@ -11,22 +11,22 @@
     <title>Workshop tools :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1629137058" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1629137058" rel="stylesheet">
-    <link href="/css/hybrid.css?1629137058" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1629137058" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1629137058" rel="stylesheet">
-    <link href="/css/auto-complete.css?1629137058" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1629137058" rel="stylesheet">
-    <link href="/css/theme.css?1629137058" rel="stylesheet">
-    <link href="/css/tabs.css?1629137058" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1629137058" rel="stylesheet">
+    <link href="/css/nucleus.css?1629141676" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1629141676" rel="stylesheet">
+    <link href="/css/hybrid.css?1629141676" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1629141676" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1629141676" rel="stylesheet">
+    <link href="/css/auto-complete.css?1629141676" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1629141676" rel="stylesheet">
+    <link href="/css/theme.css?1629141676" rel="stylesheet">
+    <link href="/css/tabs.css?1629141676" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1629141676" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1629137058" rel="stylesheet">
+    <link href="/css/theme-green.css?1629141676" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1629137058"></script>
+    <script src="/js/jquery-3.3.1.min.js?1629141676"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -71,14 +71,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1629137058"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1629137058"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1629141676"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1629141676"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1629137058"></script>
+<script type="text/javascript" src="/js/search.js?1629141676"></script>
 
     
   </div>
@@ -409,14 +409,50 @@
         
 
 
-<p>git clone <a href="https://github.com/strongjz/aws-container-devsecops">https://github.com/strongjz/aws-container-devsecops</a></p>
-<p>Docker
-kind
-Terraform
-eksctl
-pgp
-git
-aws cli</p>
+<p>In order for us to continue with the exercises, there are several tools that our needed to be installed on our Cloud9 instance.</p>
+<p>You can download the entire repo with git</p>
+<p><code>git clone https://github.com/strongjz/aws-container-devsecops</code></p>
+<p>Or Download the script here.</p>
+
+<section class="attachments ">
+	<label>
+		<i class="fas fa-paperclip" aria-hidden="true"></i>
+		Scripts
+	</label>
+	
+		
+	
+	<div class="attachments-files">
+	
+		
+		
+			
+				<li>
+					<a href="/setup/clone.files/tools-install.sh" >
+						tools-install.sh
+					</a>
+					(1 kb)
+				</li>
+			
+		
+	
+	</div>
+	
+</section>
+
+
+<p>The script will install</p>
+<ul>
+<li>docker</li>
+<li>kind</li>
+<li>terraform</li>
+<li>eksctl</li>
+<li>kubectl</li>
+<li>helm</li>
+</ul>
+<p>Navigate to where you downloaded the install script.</p>
+<p><code>cd aws-container-devsecops/content/setup/clone.files/</code></p>
+<p><code>sudo ./tools-install.sh</code></p>
 
 
 <footer class="footline">
@@ -623,19 +659,19 @@ aws cli</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1629137058"></script>
-    <script src="/js/perfect-scrollbar.min.js?1629137058"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1629137058"></script>
-    <script src="/js/jquery.sticky.js?1629137058"></script>
-    <script src="/js/featherlight.min.js?1629137058"></script>
-    <script src="/js/highlight.pack.js?1629137058"></script>
+    <script src="/js/clipboard.min.js?1629141676"></script>
+    <script src="/js/perfect-scrollbar.min.js?1629141676"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1629141676"></script>
+    <script src="/js/jquery.sticky.js?1629141676"></script>
+    <script src="/js/featherlight.min.js?1629141676"></script>
+    <script src="/js/highlight.pack.js?1629141676"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1629137058"></script>
-    <script src="/js/learn.js?1629137058"></script>
-    <script src="/js/hugo-learn.js?1629137058"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1629141676"></script>
+    <script src="/js/learn.js?1629141676"></script>
+    <script src="/js/hugo-learn.js?1629141676"></script>
     
         
-            <script src="/mermaid/mermaid.js?1629137058"></script>
+            <script src="/mermaid/mermaid.js?1629141676"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -32,7 +32,7 @@
 	"title": "Workshop tools",
 	"tags": [],
 	"description": "",
-	"content": "git clone https://github.com/strongjz/aws-container-devsecops\nDocker kind Terraform eksctl pgp git aws cli\n"
+	"content": "In order for us to continue with the exercises, there are several tools that our needed to be installed on our Cloud9 instance.\nYou can download the entire repo with git\ngit clone https://github.com/strongjz/aws-container-devsecops\nOr Download the script here.\n  Scripts   tools-install.sh  (1 kb)    The script will install\n docker kind terraform eksctl kubectl helm  Navigate to where you downloaded the install script.\ncd aws-container-devsecops/content/setup/clone.files/\nsudo ./tools-install.sh\n"
 },
 {
 	"uri": "//localhost:1313/development/",
