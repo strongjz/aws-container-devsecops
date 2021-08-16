@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://strongjz.github.io/aws-container-devsecops/</loc>
+  </url><url>
+    <loc>https://strongjz.github.io/aws-container-devsecops/setup/</loc>
+  </url><url>
+    <loc>https://strongjz.github.io/aws-container-devsecops/setup/cloud9/</loc>
+  </url><url>
+    <loc>https://strongjz.github.io/aws-container-devsecops/setup/iam/</loc>
+  </url><url>
+    <loc>https://strongjz.github.io/aws-container-devsecops/setup/tools/</loc>
+  </url><url>
+    <loc>https://strongjz.github.io/aws-container-devsecops/development/</loc>
+  </url><url>
+    <loc>https://strongjz.github.io/aws-container-devsecops/build/</loc>
+  </url><url>
+    <loc>https://strongjz.github.io/aws-container-devsecops/pipeline/</loc>
+  </url><url>
+    <loc>https://strongjz.github.io/aws-container-devsecops/run/</loc>
+  </url><url>
+    <loc>https://strongjz.github.io/aws-container-devsecops/conclusion/</loc>
+  </url><url>
+    <loc>https://strongjz.github.io/aws-container-devsecops/categories/</loc>
+  </url><url>
+    <loc>https://strongjz.github.io/aws-container-devsecops/tags/</loc>
+  </url>
+</urlset>
