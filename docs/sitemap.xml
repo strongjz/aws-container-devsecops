@@ -10,8 +10,6 @@
   </url><url>
     <loc>//localhost:1313/setup/iam/</loc>
   </url><url>
-    <loc>//localhost:1313/setup/tools/</loc>
-  </url><url>
     <loc>//localhost:1313/setup/clone/</loc>
   </url><url>
     <loc>//localhost:1313/development/</loc>

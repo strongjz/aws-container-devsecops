@@ -66,6 +66,6 @@ if [ $? -eq 0 ]; then
 fi
 ```
 
-![cloud9create](/images/setup/cloud9_reboot.png)
+This will force a reboot of your Cloud9 instance 
 
-6. IAM resources for Cloud
+![cloud9create](/images/setup/cloud9_reboot.png)

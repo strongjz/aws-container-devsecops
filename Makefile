@@ -36,16 +36,16 @@ clean: ## Remove the docs-local/ folder from your system
 # Hugo specific
 #-------------------------------------------------------------------------------
 
-hugo-build:                ## (via hugo) Build site with production settings
+build:                ## (via hugo) Build site with production settings
 	hugo -d $(HUGO_LOCAL_OUTPUT_DIR)
 
-hugo-build-preview:        ## (via hugo) Build site with drafts and future posts enabled
+build-preview:        ## (via hugo) Build site with drafts and future posts enabled
 	hugo -D -F -d $(HUGO_LOCAL_OUTPUT_DIR)
 
-hugo-non-production-build: ## (via hugo) Build the non-production site, which adds noindex headers to prevent indexing
+non-production-build: ## (via hugo) Build the non-production site, which adds noindex headers to prevent indexing
 	hugo --enableGitInfo
 
-hugo-serve:                ## (via hugo) Boot the development server
+serve:                ## (via hugo) Boot the development server
 	hugo -D server --watch --bind 0.0.0.0 -d $(HUGO_LOCAL_OUTPUT_DIR)
 
 

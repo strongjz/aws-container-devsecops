@@ -20,30 +20,24 @@ You&amp;rsquo;ll be prompt to log into your AWS Account in order to provision a 
     </item>
     
     <item>
-      <title>IAM</title>
+      <title>Cloud 9 Settings Configuration</title>
       <link>//localhost:1313/setup/iam/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/setup/iam/</guid>
-      <description></description>
+      <description>Create IAM Role   Log into your AWS Account you are using for this workshop.
+  Follow this link to create an IAM role with Administrator access.
+  Confirm that AWS service and EC2 are selected, then click Next: Permissions to view permissions.   Confirm that AdministratorAccess is checked, then click Next: Tags to assign tags.   Take the defaults, and click Next: Review to review.</description>
     </item>
     
     <item>
-      <title>Tools Install</title>
-      <link>//localhost:1313/setup/tools/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/setup/tools/</guid>
-      <description>Docker kind Terraform eksctl pgp git aws cli</description>
-    </item>
-    
-    <item>
-      <title>Clone Workshop repo</title>
+      <title>Workshop tools</title>
       <link>//localhost:1313/setup/clone/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/setup/clone/</guid>
-      <description></description>
+      <description>git clone https://github.com/strongjz/aws-container-devsecops
+Docker kind Terraform eksctl pgp git aws cli</description>
     </item>
     
   </channel>

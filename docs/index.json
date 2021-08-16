@@ -11,35 +11,28 @@
 	"title": "Workshop Setup",
 	"tags": [],
 	"description": "",
-	"content": "In this section we are going to set up your development environment on AWS Cloud9, install all the required tools and clone the repository with all our directions etc.\n AWS Cloud9   IAM   Tools Install   Clone Workshop repo   "
+	"content": "In this section we are going to set up your development environment on AWS Cloud9, install all the required tools and clone the repository with all our directions etc.\n AWS Cloud9   Cloud 9 Settings Configuration   Workshop tools   "
 },
 {
 	"uri": "//localhost:1313/setup/cloud9/",
 	"title": "AWS Cloud9",
 	"tags": [],
 	"description": "",
-	"content": " A list of supported browsers for AWS Cloud9 is found here.\n   Launch Cloud9 in your closest region\nCreate a Cloud9 Environment: https://us-west-2.console.aws.amazon.com/cloud9/home?region=us-west-2\nYou\u0026rsquo;ll be prompt to log into your AWS Account in order to provision a Cloud9 Workspace\n  Configure the Cloud9 instance  Review the setup before submitting for creation  Wait for the Cloud9 instance to boot  Increase disk size for your Cloud9 Instance  Increase the disk size of your instances, this will cause your instance to reboot\nWith the docker images and all the other information it would be helpful to have a larger working space.\npip3 install --user --upgrade boto3 export instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id) python -c \u0026#34;import boto3 import os from botocore.exceptions import ClientError ec2 = boto3.client(\u0026#39;ec2\u0026#39;) volume_info = ec2.describe_volumes( Filters=[ { \u0026#39;Name\u0026#39;: \u0026#39;attachment.instance-id\u0026#39;, \u0026#39;Values\u0026#39;: [ os.getenv(\u0026#39;instance_id\u0026#39;) ] } ] ) volume_id = volume_info[\u0026#39;Volumes\u0026#39;][0][\u0026#39;VolumeId\u0026#39;] try: resize = ec2.modify_volume( VolumeId=volume_id, Size=30 ) print(resize) except ClientError as e: if e.response[\u0026#39;Error\u0026#39;][\u0026#39;Code\u0026#39;] == \u0026#39;InvalidParameterValue\u0026#39;: print(\u0026#39;ERROR MESSAGE: {}\u0026#39;.format(e))\u0026#34; if [ $? -eq 0 ]; then sudo reboot fi IAM resources for Cloud  "
+	"content": " A list of supported browsers for AWS Cloud9 is found here.\n   Launch Cloud9 in your closest region\nCreate a Cloud9 Environment: https://us-west-2.console.aws.amazon.com/cloud9/home?region=us-west-2\nYou\u0026rsquo;ll be prompt to log into your AWS Account in order to provision a Cloud9 Workspace\n  Configure the Cloud9 instance  Review the setup before submitting for creation  Wait for the Cloud9 instance to boot  Increase disk size for your Cloud9 Instance  Increase the disk size of your instances, this will cause your instance to reboot\nWith the docker images and all the other information it would be helpful to have a larger working space.\npip3 install --user --upgrade boto3 export instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id) python -c \u0026#34;import boto3 import os from botocore.exceptions import ClientError ec2 = boto3.client(\u0026#39;ec2\u0026#39;) volume_info = ec2.describe_volumes( Filters=[ { \u0026#39;Name\u0026#39;: \u0026#39;attachment.instance-id\u0026#39;, \u0026#39;Values\u0026#39;: [ os.getenv(\u0026#39;instance_id\u0026#39;) ] } ] ) volume_id = volume_info[\u0026#39;Volumes\u0026#39;][0][\u0026#39;VolumeId\u0026#39;] try: resize = ec2.modify_volume( VolumeId=volume_id, Size=30 ) print(resize) except ClientError as e: if e.response[\u0026#39;Error\u0026#39;][\u0026#39;Code\u0026#39;] == \u0026#39;InvalidParameterValue\u0026#39;: print(\u0026#39;ERROR MESSAGE: {}\u0026#39;.format(e))\u0026#34; if [ $? -eq 0 ]; then sudo reboot fi This will force a reboot of your Cloud9 instance\n"
 },
 {
 	"uri": "//localhost:1313/setup/iam/",
-	"title": "IAM",
+	"title": "Cloud 9 Settings Configuration",
 	"tags": [],
 	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/setup/tools/",
-	"title": "Tools Install",
-	"tags": [],
-	"description": "",
-	"content": "Docker kind Terraform eksctl pgp git aws cli\n"
+	"content": "Create IAM Role   Log into your AWS Account you are using for this workshop.\n  Follow this link to create an IAM role with Administrator access.\n  Confirm that AWS service and EC2 are selected, then click Next: Permissions to view permissions.   Confirm that AdministratorAccess is checked, then click Next: Tags to assign tags.   Take the defaults, and click Next: Review to review.   Enter devsecop-workshop-admin for the Name, and click Create role.   Attach IAM Role to your Cloud9 instance  Click the grey circle button (in top right corner) and select Manage EC2 Instance  Select the instance, then choose Actions / Security / Modify IAM Role  Choose devsecop-workshop-admin from the IAM Role dropdown, and select Save   Update Cloud9 IAM Settings Return to your Cloud9 workspace and click the gear icon (in top right corner)\n Open Project Settings Select AWS SETTINGS Turn off AWS managed temporary credentials  Let\u0026rsquo;s make sure we have the right settings with the AWS CLI.\nTo ensure temporary credentials aren’t already in place we will also remove any existing credentials file:\nrm -vf ${HOME}/.aws/credentials\nUse the GetCallerIdentity CLI command to validate that the Cloud9 IDE is using the correct IAM role.\naws sts get-caller-identity --query Arn | grep devsecops-workshop-admin -q \u0026amp;\u0026amp; echo \u0026quot;IAM role valid\u0026quot; || echo \u0026quot;IAM role NOT valid\u0026quot;\nChange EC2 Instance Settings  Open Project Settings Select EC2 Instance Change Stop my environment to a day.  "
 },
 {
 	"uri": "//localhost:1313/setup/clone/",
-	"title": "Clone Workshop repo",
+	"title": "Workshop tools",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "git clone https://github.com/strongjz/aws-container-devsecops\nDocker kind Terraform eksctl pgp git aws cli\n"
 },
 {
 	"uri": "//localhost:1313/development/",
