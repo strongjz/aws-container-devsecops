@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://strongjz.github.io/aws-container-devsecops"
 languageCode = "en-us"
 title = "AWS Container DevSecOps"
 contentdir    = "content"
@@ -7,7 +7,7 @@ publishdir    = "docs"
 theme = "hugo-theme-learn"
 
 [params]
-  editURL = "https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/"
+  editURL = "https://github.com/strongjz/aws-container-devsecops"
   description = "AWS Container DevSecOps Workshop"
   author = "James Strong"
   themeVariant = "green"
