@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-#yum update -y
-#yum group install "Development Tools"
-#yum install -y yum-utils
+yum update -y
+yum group install "Development Tools"
+yum install -y yum-utils jq gettext bash-completion moreutils
 
 function verify_command() {
     if command -v $1 &> /dev/null

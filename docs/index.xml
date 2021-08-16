@@ -32,16 +32,16 @@ You&amp;rsquo;ll be prompt to log into your AWS Account in order to provision a 
     
     <item>
       <title>Workshop tools</title>
-      <link>//localhost:1313/setup/clone/</link>
+      <link>//localhost:1313/setup/tools/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/setup/clone/</guid>
+      <guid>//localhost:1313/setup/tools/</guid>
       <description>In order for us to continue with the exercises, there are several tools that our needed to be installed on our Cloud9 instance.
 You can download the entire repo with git
 git clone https://github.com/strongjz/aws-container-devsecops
 Or Download the script here.
   Scripts   tools-install.sh  (1 kb)    The script will install
- docker kind terraform eksctl kubectl helm  Navigate to where you downloaded the install script.</description>
+ docker kind terraform eksctl kubectl helm  Navigate to where you downloaded the installation script.</description>
     </item>
     
   </channel>
