@@ -110,6 +110,7 @@ fG5zzmP/Hg13SFsxLZc+5EKrxHJ1z+bNQQ5ARxYBANbOuPnxLtPL4eY4TqIY0k1X
 
 # Add to git config and verify 
 
+1. Get the key id for the one we just created. 
 ```bash
 $ gpg --list-secret-keys --keyid-format LONG
 
@@ -117,10 +118,24 @@ sec   ed25519/8246A1EC900B5E30 2021-08-17 [SC]
       3E0424931246D33A86890BC78246A1EC900B5E30
 uid                 [ultimate] James Strong (testing for workshop) <strong.james.e@gmail.com>
 ssb   cv25519/0BAFF11345FB8338 2021-08-17 [E]
+```
+2. Update git config to use the key. 
 
+```bash
 $ git config --global user.signingkey 3E0424931246D33A86890BC78246A1EC900B5E30
 $ git config --global commit.gpgsign true
 ```
+
+3. Test a Commit.
+```bash
+± |main S:2 U:28 ?:11 ✗| → git add -A
+± |main S:42 ✗| → git commit -m "signing "
+[main b2a6fb5] signing
+```
+
+In the commit history you can see a "Verified" tag on your commits now
+
+![sign_add_key](/images/development/sign_verify.png)
 
 
 {{% notice warning %}}
