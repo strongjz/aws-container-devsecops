@@ -11,22 +11,22 @@
     <title>Code Signing :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1629229931" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1629229931" rel="stylesheet">
-    <link href="/css/hybrid.css?1629229931" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1629229931" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1629229931" rel="stylesheet">
-    <link href="/css/auto-complete.css?1629229931" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1629229931" rel="stylesheet">
-    <link href="/css/theme.css?1629229931" rel="stylesheet">
-    <link href="/css/tabs.css?1629229931" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1629229931" rel="stylesheet">
+    <link href="/css/nucleus.css?1629230344" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1629230344" rel="stylesheet">
+    <link href="/css/hybrid.css?1629230344" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1629230344" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1629230344" rel="stylesheet">
+    <link href="/css/auto-complete.css?1629230344" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1629230344" rel="stylesheet">
+    <link href="/css/theme.css?1629230344" rel="stylesheet">
+    <link href="/css/tabs.css?1629230344" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1629230344" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1629229931" rel="stylesheet">
+    <link href="/css/theme-green.css?1629230344" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1629229931"></script>
+    <script src="/js/jquery-3.3.1.min.js?1629230344"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -71,14 +71,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1629229931"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1629229931"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1629230344"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1629230344"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1629229931"></script>
+<script type="text/javascript" src="/js/search.js?1629230344"></script>
 
     
   </div>
@@ -666,7 +666,28 @@ $ git config --global commit.gpgsign true
 <div class="notices warning" ><p>Make sure to store this GPG private key in a secure location</p>
 </div>
 
-<p>Sources:</p>
+<p>To export the key use this.</p>
+<ol>
+<li>Identify your private key: <code>gpg --list-secret-keys strong.james.e@gmail.com</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sec   ed25519 2021-08-17 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span>
+      3E0424931246D33A86890BC78246A1EC900B5E30
+uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> James Strong <span style="color:#f92672">(</span>testing <span style="color:#66d9ef">for</span> workshop<span style="color:#f92672">)</span> &lt;strong.james.e@gmail.com&gt;
+ssb   cv25519 2021-08-17 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span>
+</code></pre></div><ol start="2">
+<li>Run this command to export your key: <code>gpg --export-secret-keys 3E0424931246D33A86890BC78246A1EC900B5E30 &gt; private.key</code></li>
+</ol>
+<p>If you have a passphrase on the key you&rsquo;ll have to enter it to export it.</p>
+<ol start="3">
+<li>
+<p>Copy the key file to another secure location.</p>
+</li>
+<li>
+<p>To import on a new machine, run</p>
+</li>
+</ol>
+<pre><code>gpg --import private.key
+</code></pre><p>Sources:</p>
 <p>Using Keybase: <a href="https://github.com/pstadler/keybase-gpg-github">https://github.com/pstadler/keybase-gpg-github</a></p>
 <p>Plain GPG: <a href="https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/generating-a-new-gpg-key">https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/generating-a-new-gpg-key</a></p>
 
@@ -955,19 +976,19 @@ $ git config --global commit.gpgsign true
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1629229931"></script>
-    <script src="/js/perfect-scrollbar.min.js?1629229931"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1629229931"></script>
-    <script src="/js/jquery.sticky.js?1629229931"></script>
-    <script src="/js/featherlight.min.js?1629229931"></script>
-    <script src="/js/highlight.pack.js?1629229931"></script>
+    <script src="/js/clipboard.min.js?1629230344"></script>
+    <script src="/js/perfect-scrollbar.min.js?1629230344"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1629230344"></script>
+    <script src="/js/jquery.sticky.js?1629230344"></script>
+    <script src="/js/featherlight.min.js?1629230344"></script>
+    <script src="/js/highlight.pack.js?1629230344"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1629229931"></script>
-    <script src="/js/learn.js?1629229931"></script>
-    <script src="/js/hugo-learn.js?1629229931"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1629230344"></script>
+    <script src="/js/learn.js?1629230344"></script>
+    <script src="/js/hugo-learn.js?1629230344"></script>
     
         
-            <script src="/mermaid/mermaid.js?1629229931"></script>
+            <script src="/mermaid/mermaid.js?1629230344"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

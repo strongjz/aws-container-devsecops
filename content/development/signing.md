@@ -142,6 +142,29 @@ In the commit history you can see a "Verified" tag on your commits now
 Make sure to store this GPG private key in a secure location
 {{% /notice  %}}
 
+To export the key use this. 
+
+1. Identify your private key: ```gpg --list-secret-keys strong.james.e@gmail.com```
+
+```bash
+sec   ed25519 2021-08-17 [SC]
+      3E0424931246D33A86890BC78246A1EC900B5E30
+uid           [ultimate] James Strong (testing for workshop) <strong.james.e@gmail.com>
+ssb   cv25519 2021-08-17 [E]
+```
+
+2. Run this command to export your key: ```gpg --export-secret-keys 3E0424931246D33A86890BC78246A1EC900B5E30 > private.key```
+
+If you have a passphrase on the key you'll have to enter it to export it. 
+
+3. Copy the key file to another secure location. 
+
+4. To import on a new machine, run
+
+```
+gpg --import private.key
+```
+
 Sources: 
 
 Using Keybase: https://github.com/pstadler/keybase-gpg-github
