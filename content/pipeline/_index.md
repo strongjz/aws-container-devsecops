@@ -26,3 +26,15 @@ Secure Pipelines
 Signed Images
 Verify Trusted Images
 Kickoff Security Assessment
+
+
+CI/CD - AWS Codepipeline/Build
+Stages for Code pipeline
+
+Build - Build golang example applications, in a docker container and stores it in the AWS ECR
+
+Invoke - Runs the Go Report Static Code analysis
+
+Test - runs any tests in the golang example applications
+
+Deploy - deploys the application via Code build, aws eks cli and kubectl
