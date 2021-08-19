@@ -8,25 +8,25 @@
 <meta name="author" content="James Strong">
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>Owasp :: AWS Container DevSecOps</title>
+    <title>Open Web Application Security Project :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1629230344" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1629230344" rel="stylesheet">
-    <link href="/css/hybrid.css?1629230344" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1629230344" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1629230344" rel="stylesheet">
-    <link href="/css/auto-complete.css?1629230344" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1629230344" rel="stylesheet">
-    <link href="/css/theme.css?1629230344" rel="stylesheet">
-    <link href="/css/tabs.css?1629230344" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1629230344" rel="stylesheet">
+    <link href="/css/nucleus.css?1629385109" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1629385109" rel="stylesheet">
+    <link href="/css/hybrid.css?1629385109" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1629385109" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1629385109" rel="stylesheet">
+    <link href="/css/auto-complete.css?1629385109" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1629385109" rel="stylesheet">
+    <link href="/css/theme.css?1629385109" rel="stylesheet">
+    <link href="/css/tabs.css?1629385109" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1629385109" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1629230344" rel="stylesheet">
+    <link href="/css/theme-green.css?1629385109" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1629230344"></script>
+    <script src="/js/jquery-3.3.1.min.js?1629385109"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -71,14 +71,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1629230344"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1629230344"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1629385109"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1629385109"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1629230344"></script>
+<script type="text/javascript" src="/js/search.js?1629385109"></script>
 
     
   </div>
@@ -271,9 +271,9 @@
  
   
     
-      <li data-nav-id="/development/owasp/" title="Owasp" class="dd-item active">
+      <li data-nav-id="/development/owasp/" title="Open Web Application Security Project" class="dd-item active">
         <a href="/development/owasp/">
-        Owasp
+        Open Web Application Security Project
         
         </a>
     </li>
@@ -488,7 +488,7 @@
             
           
           
-            <a href='/'>AWS DevSecOps Container Pipeline</a> > <a href='/development/'>Development Environment</a> > Owasp
+            <a href='/'>AWS DevSecOps Container Pipeline</a> > <a href='/development/'>Development Environment</a> > Open Web Application Security Project
           
         
           
@@ -501,7 +501,13 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#owasp-top-10">OWASP Top 10</a></li>
+    <li><a href="#handy-cheatsheets">Handy Cheatsheets</a></li>
+    <li><a href="#secure-coding-practices">Secure Coding Practices</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -517,13 +523,181 @@
           
             <h1>
               
-              Owasp
+              Open Web Application Security Project
             </h1>
           
 
         
 
 
+<p>The OWASP Top 10 is a standard awareness document for developers and web application security. It represents a broad consensus about the most critical security risks to web applications.</p>
+<h2 id="owasp-top-10">OWASP Top 10</h2>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	A1:2017-Injection
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker’s hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization.</p>
+
+    </div>
+</div>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	A2:2017-Broken Authentication
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Application functions related to authentication and session management are often implemented incorrectly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users’ identities temporarily or permanently.</p>
+
+    </div>
+</div>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	A3:2017-Sensitive Data Exposure
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser.</p>
+
+    </div>
+</div>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	A4:2017-XML External Entities (XXE)
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks.</p>
+
+    </div>
+</div>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	A5:2017-Broken Access Control
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Restrictions on what authenticated users are allowed to do are often not properly enforced. Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access other users’ accounts, view sensitive files, modify other users’ data, change access rights, etc.</p>
+
+    </div>
+</div>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	A6:2017-Security Misconfiguration
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Security misconfiguration is the most commonly seen issue. This is commonly a result of insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, and verbose error messages containing sensitive information. Not only must all operating systems, frameworks, libraries, and applications be securely configured, but they must be patched/upgraded in a timely fashion.</p>
+
+    </div>
+</div>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	A7:2017-Cross-Site Scripting XSS
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>XSS flaws occur whenever an application includes untrusted data in a new web page without proper validation or escaping, or updates an existing web page with user-supplied data using a browser API that can create HTML or JavaScript. XSS allows attackers to execute scripts in the victim’s browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites.</p>
+
+    </div>
+</div>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	A8:2017-Insecure Deserialization
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Insecure deserialization often leads to remote code execution. Even if deserialization flaws do not result in remote code execution, they can be used to perform attacks, including replay attacks, injection attacks, and privilege escalation attacks.</p>
+
+    </div>
+</div>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	A9:2017-Using Components with Known Vulnerabilities
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts.</p>
+
+    </div>
+</div>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	A10:2017-Insufficient Logging &amp; Monitoring
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems, and tamper, extract, or destroy data. Most breach studies show time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring.</p>
+
+    </div>
+</div>
+<h2 id="handy-cheatsheets">Handy Cheatsheets</h2>
+<p><img src="/images/development/owasp_cheatsheet.png" alt=""></p>
+<p><a href="https://cheatsheetseries.owasp.org/index.html">https://cheatsheetseries.owasp.org/index.html</a></p>
+<h2 id="secure-coding-practices">Secure Coding Practices</h2>
+<p><img src="/images/development/owasp_go_scp.png" alt=""></p>
+<p><a href="https://github.com/OWASP/Go-SCP/blob/master/dist/go-webapp-scp.pdf">https://github.com/OWASP/Go-SCP/blob/master/dist/go-webapp-scp.pdf</a></p>
 
 
 <footer class="footline">
@@ -813,19 +987,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1629230344"></script>
-    <script src="/js/perfect-scrollbar.min.js?1629230344"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1629230344"></script>
-    <script src="/js/jquery.sticky.js?1629230344"></script>
-    <script src="/js/featherlight.min.js?1629230344"></script>
-    <script src="/js/highlight.pack.js?1629230344"></script>
+    <script src="/js/clipboard.min.js?1629385109"></script>
+    <script src="/js/perfect-scrollbar.min.js?1629385109"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1629385109"></script>
+    <script src="/js/jquery.sticky.js?1629385109"></script>
+    <script src="/js/featherlight.min.js?1629385109"></script>
+    <script src="/js/highlight.pack.js?1629385109"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1629230344"></script>
-    <script src="/js/learn.js?1629230344"></script>
-    <script src="/js/hugo-learn.js?1629230344"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1629385109"></script>
+    <script src="/js/learn.js?1629385109"></script>
+    <script src="/js/hugo-learn.js?1629385109"></script>
     
         
-            <script src="/mermaid/mermaid.js?1629230344"></script>
+            <script src="/mermaid/mermaid.js?1629385109"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

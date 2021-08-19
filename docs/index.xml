@@ -65,12 +65,13 @@ Or Download the script here.
     </item>
     
     <item>
-      <title>Owasp</title>
+      <title>Open Web Application Security Project</title>
       <link>//localhost:1313/development/owasp/</link>
-      <pubDate>Tue, 17 Aug 2021 15:08:03 -0400</pubDate>
+      <pubDate>Tue, 17 Aug 2021 15:07:57 -0400</pubDate>
       
       <guid>//localhost:1313/development/owasp/</guid>
-      <description></description>
+      <description>The OWASP Top 10 is a standard awareness document for developers and web application security. It represents a broad consensus about the most critical security risks to web applications.
+OWASP Top 10   A1:2017-Injection   Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker’s hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization.</description>
     </item>
     
     <item>
