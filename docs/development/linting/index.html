@@ -11,22 +11,22 @@
     <title>Linting :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1629385109" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1629385109" rel="stylesheet">
-    <link href="/css/hybrid.css?1629385109" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1629385109" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1629385109" rel="stylesheet">
-    <link href="/css/auto-complete.css?1629385109" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1629385109" rel="stylesheet">
-    <link href="/css/theme.css?1629385109" rel="stylesheet">
-    <link href="/css/tabs.css?1629385109" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1629385109" rel="stylesheet">
+    <link href="/css/nucleus.css?1629813398" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1629813398" rel="stylesheet">
+    <link href="/css/hybrid.css?1629813398" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1629813398" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1629813398" rel="stylesheet">
+    <link href="/css/auto-complete.css?1629813398" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1629813398" rel="stylesheet">
+    <link href="/css/theme.css?1629813398" rel="stylesheet">
+    <link href="/css/tabs.css?1629813398" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1629813398" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1629385109" rel="stylesheet">
+    <link href="/css/theme-green.css?1629813398" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1629385109"></script>
+    <script src="/js/jquery-3.3.1.min.js?1629813398"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -71,14 +71,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1629385109"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1629385109"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1629813398"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1629813398"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1629385109"></script>
+<script type="text/javascript" src="/js/search.js?1629813398"></script>
 
     
   </div>
@@ -524,7 +524,49 @@
         
 
 
+<p>Linting is the process of analyzing code for syntax issues; it can aid in finding bugs and performance issues, offers simplifications, and enforces style rules.</p>
+<p>Other notable uses for Linting:</p>
+<ul>
+<li>formatting discrepancy, go fmt.</li>
+<li>non-adherence to coding standards and conventions, shellchecker for example</li>
+<li>diagnosing possible logical errors in your applications. go vet</li>
+<li>Interpreted languages like Python, Ruby, and JavaScript benefit from linting, as these languages don’t have a compiling phase to display errors before execution.</li>
+</ul>
+<p>Here is great collection of Linters for many languages</p>
+<p><a href="https://github.com/collections/clean-code-linters">https://github.com/collections/clean-code-linters</a></p>
+<p>My go to everyday linters</p>
+<p><a href="https://github.com/koalaman/shellcheck">https://github.com/koalaman/shellcheck</a></p>
+<p><img src="/images/development/shellcheck.png" alt=""></p>
+<p>Some languages like go have them builtin</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> 2021-08-24 09:47:02 ⌚  strongjz-macbook in ~/Documents/code/go/src/github.com/strongjz/go_example_app
+± |master ✓| → go vet
+go: downloading github.com/gin-gonic/gin v1.6.2
+go: downloading github.com/gin-contrib/sse v0.1.0
+go: downloading github.com/ugorji/go v1.1.7
+go: downloading github.com/golang/protobuf v1.3.3
+go: downloading golang.org/x/sys v0.0.0-20200116001909-b77594299b42
+go: downloading github.com/go-playground/validator/v10 v10.2.0
+go: downloading github.com/ugorji/go/codec v1.1.7
+go: downloading github.com/leodido/go-urn v1.2.0
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go doc cmd/vet
+Vet examines Go source code and reports suspicious constructs, such as
+Printf calls whose arguments <span style="color:#66d9ef">do</span> not align with the format string. Vet uses
+heuristics that <span style="color:#66d9ef">do</span> not guarantee all reports are genuine problems, but it
+can find errors not caught by the compilers.
 
+It can be invoked three ways:
+
+By package, from the go tool:
+
+    go vet package/path/name
+
+vets the package whose path is provided.
+
+By files:
+
+    go tool vet source/directory/*.go
+  :
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -813,19 +855,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1629385109"></script>
-    <script src="/js/perfect-scrollbar.min.js?1629385109"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1629385109"></script>
-    <script src="/js/jquery.sticky.js?1629385109"></script>
-    <script src="/js/featherlight.min.js?1629385109"></script>
-    <script src="/js/highlight.pack.js?1629385109"></script>
+    <script src="/js/clipboard.min.js?1629813398"></script>
+    <script src="/js/perfect-scrollbar.min.js?1629813398"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1629813398"></script>
+    <script src="/js/jquery.sticky.js?1629813398"></script>
+    <script src="/js/featherlight.min.js?1629813398"></script>
+    <script src="/js/highlight.pack.js?1629813398"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1629385109"></script>
-    <script src="/js/learn.js?1629385109"></script>
-    <script src="/js/hugo-learn.js?1629385109"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1629813398"></script>
+    <script src="/js/learn.js?1629813398"></script>
+    <script src="/js/hugo-learn.js?1629813398"></script>
     
         
-            <script src="/mermaid/mermaid.js?1629385109"></script>
+            <script src="/mermaid/mermaid.js?1629813398"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

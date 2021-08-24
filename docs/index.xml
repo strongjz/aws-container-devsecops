@@ -61,7 +61,9 @@ Or Download the script here.
       <pubDate>Tue, 17 Aug 2021 15:07:57 -0400</pubDate>
       
       <guid>//localhost:1313/development/linting/</guid>
-      <description></description>
+      <description>Linting is the process of analyzing code for syntax issues; it can aid in finding bugs and performance issues, offers simplifications, and enforces style rules.
+Other notable uses for Linting:
+ formatting discrepancy, go fmt. non-adherence to coding standards and conventions, shellchecker for example diagnosing possible logical errors in your applications. go vet Interpreted languages like Python, Ruby, and JavaScript benefit from linting, as these languages don’t have a compiling phase to display errors before execution.</description>
     </item>
     
     <item>

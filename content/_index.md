@@ -19,4 +19,4 @@ Let's get started!
 
 For an intro on Kubernetes please see 
 
-https://www.youtube.com/watch?v=rnUoGTJpEko
+{{< youtube rnUoGTJpEko >}}
