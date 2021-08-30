@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 yum update -y
-yum group install "Development Tools"
-yum install -y yum-utils jq gettext bash-completion moreutils
+yum group install "Development Tools" -y
+yum install -y yum-utils jq gettext bash-completion moreutils make
 
 function verify_command() {
     if command -v $1 &> /dev/null
@@ -61,7 +61,13 @@ install_helm(){
     #/usr/local/bin/helm --help
 }
 
-installs=(docker kind terraform eksctl kubectl helm)
+#Docker-compose
+install_docker_compose(){
+  curl --silent "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  chmod +x /usr/local/bin/docker-compose
+}
+
+installs=(docker docker_compose kind terraform eksctl kubectl helm)
 
 for i in "${installs[@]}"; do
     echo "INSTALLING $i"
