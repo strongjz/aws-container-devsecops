@@ -28,18 +28,18 @@ A list of supported browsers for AWS Cloud9 is found [here]( https://docs.aws.am
 
 ![cloud9_step3_review](/images/setup/cloud9_step3_review.png)
 
-5. Increase disk size for your Cloud9 Instance 
+5. Increase disk size for your Cloud9 Instance
 
 Increase the disk size of your instances, this will cause your instance to reboot
 
-With the docker images and all the other information it would be helpful to have a larger working space. 
+With the docker images and all the other information it would be helpful to have a larger working space.
 
 ```bash
 pip3 install --user --upgrade boto3
 export instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
 python -c "import boto3
 import os
-from botocore.exceptions import ClientError 
+from botocore.exceptions import ClientError
 ec2 = boto3.client('ec2')
 volume_info = ec2.describe_volumes(
     Filters=[
@@ -53,8 +53,8 @@ volume_info = ec2.describe_volumes(
 )
 volume_id = volume_info['Volumes'][0]['VolumeId']
 try:
-    resize = ec2.modify_volume(    
-            VolumeId=volume_id,    
+    resize = ec2.modify_volume(
+            VolumeId=volume_id,
             Size=30
     )
     print(resize)
@@ -66,6 +66,6 @@ if [ $? -eq 0 ]; then
 fi
 ```
 
-This will force a reboot of your Cloud9 instance 
+This will force a reboot of your Cloud9 instance
 
 ![cloud9_reboot](/images/setup/cloud9_reboot.png)

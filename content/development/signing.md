@@ -4,16 +4,16 @@ date: 2021-08-17T15:07:49-04:00
 weight: 21
 ---
 
-Needed: 
+Needed:
 * GPG Key
-* Keybase - optional 
+* Keybase - optional
 * Github Account
 
-# Generating a GPG Key  
+# Generating a GPG Key
 1. Generate a with gpg ```gpg --full-generate-key```
 3. Select what key you want to use, ECC (sign and encrypt) *default*
 4. Select what elliptic curve you want, Curve 25519 *default*
-5. Fill out your name and your email address. Make sure this matches the one in your GitHub account. 
+5. Fill out your name and your email address. Make sure this matches the one in your GitHub account.
 6. Add a comment if you want to remind you what the key is for.
 7. You may be prompted for a passphrase to add to the key for extra security
 
@@ -78,9 +78,9 @@ sub   cv25519 2021-08-17 [E]
 ```
 {{% /expand%}}
 
-# Added it to Github Account 
+# Added it to Github Account
 
-1. Export public key 
+1. Export public key
 ```bash
 gpg --list-keys
 gpg --armor --export 3E0424931246D33A86890BC78246A1EC900B5E30
@@ -100,17 +100,17 @@ fG5zzmP/Hg13SFsxLZc+5EKrxHJ1z+bNQQ5ARxYBANbOuPnxLtPL4eY4TqIY0k1X
 -----END PGP PUBLIC KEY BLOCK-----
 
 ```
-2. Open https://github.com/settings/keys 
+2. Open https://github.com/settings/keys
 
 ![sign_add_key](/images/development/sign_account_add.png)
 
-4. Copy and Paste the Public Key into your GitHub account 
+4. Copy and Paste the Public Key into your GitHub account
 
 ![sign_add_key](/images/development/sign_add_new_key.png)
 
-# Add to git config and verify 
+# Add to git config and verify
 
-1. Get the key id for the one we just created. 
+1. Get the key id for the one we just created.
 ```bash
 $ gpg --list-secret-keys --keyid-format LONG
 
@@ -119,7 +119,7 @@ sec   ed25519/8246A1EC900B5E30 2021-08-17 [SC]
 uid                 [ultimate] James Strong (testing for workshop) <strong.james.e@gmail.com>
 ssb   cv25519/0BAFF11345FB8338 2021-08-17 [E]
 ```
-2. Update git config to use the key. 
+2. Update git config to use the key.
 
 ```bash
 $ git config --global user.signingkey 3E0424931246D33A86890BC78246A1EC900B5E30
@@ -142,7 +142,7 @@ In the commit history you can see a "Verified" tag on your commits now
 Make sure to store this GPG private key in a secure location
 {{% /notice  %}}
 
-To export the key use this. 
+To export the key use this.
 
 1. Identify your private key: ```gpg --list-secret-keys strong.james.e@gmail.com```
 
@@ -155,9 +155,9 @@ ssb   cv25519 2021-08-17 [E]
 
 2. Run this command to export your key: ```gpg --export-secret-keys 3E0424931246D33A86890BC78246A1EC900B5E30 > private.key```
 
-If you have a passphrase on the key you'll have to enter it to export it. 
+If you have a passphrase on the key you'll have to enter it to export it.
 
-3. Copy the key file to another secure location. 
+3. Copy the key file to another secure location.
 
 4. To import on a new machine, run
 
@@ -165,7 +165,7 @@ If you have a passphrase on the key you'll have to enter it to export it.
 gpg --import private.key
 ```
 
-Sources: 
+Sources:
 
 Using Keybase: https://github.com/pstadler/keybase-gpg-github
 

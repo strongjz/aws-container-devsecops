@@ -8,24 +8,24 @@ Linting is the process of analyzing code for syntax issues; it can aid in findin
 
 Other notable uses for Linting:
 
-- formatting discrepancy, go fmt. 
+- formatting discrepancy, go fmt.
 - non-adherence to coding standards and conventions, shellchecker for example
 - diagnosing possible logical errors in your applications. go vet
 - Interpreted languages like Python, Ruby, and JavaScript benefit from linting, as these languages don’t have a compiling phase to display errors before execution.
 
 
-Here is great collection of Linters for many languages 
+Here is great collection of Linters for many languages
 
 https://github.com/collections/clean-code-linters
 
 
-My go to everyday linters 
+My go to everyday linters
 
 https://github.com/koalaman/shellcheck
 
 ![](/images/development/shellcheck.png)
 
-Some languages like go have them builtin 
+Some languages like go have them builtin
 
 ```bash
  2021-08-24 09:47:02 ⌚  strongjz-macbook in ~/Documents/code/go/src/github.com/strongjz/go_example_app

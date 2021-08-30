@@ -11,7 +11,7 @@ Dans **Hugo**, les pages sont le cœur de votre site. Une fois configurées, les
 Organisez votre site comme n'importe quel autre [projet Hugo](https://gohugo.io/content/organization/). Typiquement, vous allez avoir un dossier *content* avec vos pages.
 
     content
-    ├── niveau-un 
+    ├── niveau-un
     │   ├── niveau-deux
     │   │   ├── niveau-trois
     │   │   │   ├── niveau-quatre
@@ -104,7 +104,7 @@ post = ""
 chapter = false
 # Cache la page du menu
 hidden = false
-# Nom de la personne qui a modifié la page. Quand configuré, sera affiché dans le pied de page. 
+# Nom de la personne qui a modifié la page. Quand configuré, sera affiché dans le pied de page.
 LastModifierDisplayName = ""
 # Email de la personne qui a modifié la page. Quand configuré, sera affiché dans le pied de page.
 LastModifierEmail = ""

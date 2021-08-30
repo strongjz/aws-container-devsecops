@@ -67,7 +67,7 @@ hugo new basics/first-content.md
 hugo new basics/second-content/_index.md
 ```
 
-N'hésitez pas à éditer ces fichiers en ajoutant des exemple de contenu et en remplaçant le paramètre `title` au début du fichier. 
+N'hésitez pas à éditer ces fichiers en ajoutant des exemple de contenu et en remplaçant le paramètre `title` au début du fichier.
 
 ## Lancer le site localement
 

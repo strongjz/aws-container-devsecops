@@ -8,22 +8,22 @@ tags: ["documentation", "tutorial"]
 
 Le *thème Learn* supporte une des taxonomy par défaut de GoHugo : les tags.
 
-## Configuration 
+## Configuration
 
-Il suffit d'ajouter un tableau de tags sur la page  : 
+Il suffit d'ajouter un tableau de tags sur la page  :
 
 ```markdown
 ---
 date: 2018-11-29T08:41:44+01:00
 title: Tutoriel pour le thème
 weight: 15
-tags: ["tutoriel", "theme"] 
+tags: ["tutoriel", "theme"]
 ---
 ```
 
 ## Comportement
 
-Les tags sont affichés en haut de la page, dans l'ordre dans lequel ils ont été saisis. 
+Les tags sont affichés en haut de la page, dans l'ordre dans lequel ils ont été saisis.
 
 Chaque tag est un lien vers une page *Taxonomy*, qui affiche tous les article avec ce tag.
 

@@ -74,7 +74,7 @@ The mermaid configuration parameters can also be set on a specific page. In this
 
 > Example:
 >
-> Mermaid is globally disabled. By default it won't be loaded by any page.  
+> Mermaid is globally disabled. By default it won't be loaded by any page.
 > On page "Architecture" you need a class diagram. You can set the mermaid parameters locally to only load mermaid on this page (not on the others).
 
 You also can disable mermaid for specific pages while globally enabled.

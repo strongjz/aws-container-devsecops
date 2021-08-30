@@ -68,7 +68,7 @@ Les paramètres de configuration du mermaid peuvent également être définis su
 
 > Exemple:
 >
-> Mermaid est globalement handicapé. Par défaut, elle ne sera chargée par aucune page.  
+> Mermaid est globalement handicapé. Par défaut, elle ne sera chargée par aucune page.
 > À la page "Architecture", vous avez besoin d'un diagramme de classe. Vous pouvez régler les paramètres de mermaid localement pour ne charger que la sirène sur cette page (pas sur les autres).
 
 Vous pouvez également désactiver mermaid pour des pages spécifiques tout en l'activant globalement.

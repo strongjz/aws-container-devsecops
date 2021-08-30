@@ -14,7 +14,7 @@ Leverage environment variables
 Separating environmental concerns
 Mount configuration files
 
-Secure Containers 
+Secure Containers
 
 DISABLE ROOT
 Least Privilege

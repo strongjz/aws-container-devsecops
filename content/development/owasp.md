@@ -38,13 +38,13 @@ The OWASP Top 10 is a standard awareness document for developers and web applica
 {{% /expand%}}
 
 
-## Handy Cheatsheets 
+## Handy Cheatsheets
 
 ![](/images/development/owasp_cheatsheet.png)
 
 https://cheatsheetseries.owasp.org/index.html
 
-## Secure Coding Practices 
+## Secure Coding Practices
 
 ![](/images/development/owasp_go_scp.png)
 

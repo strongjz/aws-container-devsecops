@@ -77,7 +77,7 @@ s'affiche comme
 s'affiche comme
 
 {{% attachments style="blue" /%}}
-    
+
     {{%/*attachments style="green" /*/%}}
 
 s'affiche comme

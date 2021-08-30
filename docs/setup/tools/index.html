@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.87.0" />
@@ -8,25 +8,26 @@
 <meta name="author" content="James Strong">
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+
     <title>Workshop tools :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1629810055" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1629810055" rel="stylesheet">
-    <link href="/css/hybrid.css?1629810055" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1629810055" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1629810055" rel="stylesheet">
-    <link href="/css/auto-complete.css?1629810055" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1629810055" rel="stylesheet">
-    <link href="/css/theme.css?1629810055" rel="stylesheet">
-    <link href="/css/tabs.css?1629810055" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1629810055" rel="stylesheet">
+    <link href="/css/nucleus.css?1630332923" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1630332923" rel="stylesheet">
+    <link href="/css/hybrid.css?1630332923" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1630332923" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1630332923" rel="stylesheet">
+    <link href="/css/auto-complete.css?1630332923" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1630332923" rel="stylesheet">
+    <link href="/css/theme.css?1630332923" rel="stylesheet">
+    <link href="/css/tabs.css?1630332923" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1630332923" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1629810055" rel="stylesheet">
+    <link href="/css/theme-green.css?1630332923" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1629810055"></script>
+    <script src="/js/jquery-3.3.1.min.js?1630332923"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -35,6 +36,7 @@
       
     </style>
     
+
   </head>
   <body class="" data-url="/setup/tools/">
     <nav id="sidebar" class="">
@@ -71,14 +73,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1629810055"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1629810055"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1630332923"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1630332923"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/localhost:1313\/";
+        var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1629810055"></script>
+<script type="text/javascript" src="/js/search.js?1630332923"></script>
 
     
   </div>
@@ -511,6 +513,7 @@
             
         <div id="head-tags">
         
+
         </div>
         
         <div id="body-inner">
@@ -555,7 +558,6 @@
 	
 </section>
 
-
 <p>The script will install</p>
 <ul>
 <li>docker</li>
@@ -580,7 +582,7 @@
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:~/environment $ git clone https://github.com/strongjz/aws-container-devsecops         
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:~/environment $ git clone https://github.com/strongjz/aws-container-devsecops
 Cloning into <span style="color:#e6db74">&#39;aws-container-devsecops&#39;</span>...
 remote: Enumerating objects: 595, <span style="color:#66d9ef">done</span>.
 remote: Counting objects: 100% <span style="color:#f92672">(</span>595/595<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
@@ -613,26 +615,26 @@ Cleaning repos: amzn2-core amzn2extra-docker amzn2extra-epel amzn2extra-lamp-mar
 <span style="color:#ae81ff">16</span> sqlite files removed
 <span style="color:#ae81ff">0</span> metadata files removed
 Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
-amzn2-core                                                                                                         | 3.7 kB  00:00:00     
-amzn2extra-docker                                                                                                  | 3.0 kB  00:00:00     
-amzn2extra-epel                                                                                                    | 3.0 kB  00:00:00     
-amzn2extra-lamp-mariadb10.2-php7.2                                                                                 | 3.0 kB  00:00:00     
-epel/x86_64/metalink                                                                                               |  <span style="color:#ae81ff">15</span> kB  00:00:00     
-epel                                                                                                               | 4.7 kB  00:00:00     
-hashicorp                                                                                                          | 1.4 kB  00:00:00     
-<span style="color:#f92672">(</span>1/13<span style="color:#f92672">)</span>: amzn2-core/2/x86_64/group_gz                                                                               | 2.5 kB  00:00:00     
-<span style="color:#f92672">(</span>2/13<span style="color:#f92672">)</span>: amzn2-core/2/x86_64/updateinfo                                                                             | <span style="color:#ae81ff">405</span> kB  00:00:00     
-<span style="color:#f92672">(</span>3/13<span style="color:#f92672">)</span>: amzn2extra-epel/2/x86_64/primary_db                                                                        | 1.8 kB  00:00:00     
-<span style="color:#f92672">(</span>4/13<span style="color:#f92672">)</span>: amzn2extra-lamp-mariadb10.2-php7.2/2/x86_64/updateinfo                                                     |   <span style="color:#ae81ff">76</span> B  00:00:00     
-<span style="color:#f92672">(</span>5/13<span style="color:#f92672">)</span>: amzn2extra-lamp-mariadb10.2-php7.2/2/x86_64/primary_db                                                     | <span style="color:#ae81ff">506</span> kB  00:00:00     
-<span style="color:#f92672">(</span>6/13<span style="color:#f92672">)</span>: amzn2extra-epel/2/x86_64/updateinfo                                                                        |   <span style="color:#ae81ff">76</span> B  00:00:00     
-<span style="color:#f92672">(</span>7/13<span style="color:#f92672">)</span>: amzn2extra-docker/2/x86_64/primary_db                                                                      |  <span style="color:#ae81ff">79</span> kB  00:00:00     
-<span style="color:#f92672">(</span>8/13<span style="color:#f92672">)</span>: amzn2extra-docker/2/x86_64/updateinfo                                                                      |   <span style="color:#ae81ff">76</span> B  00:00:00     
-<span style="color:#f92672">(</span>9/13<span style="color:#f92672">)</span>: epel/x86_64/group_gz                                                                                       |  <span style="color:#ae81ff">96</span> kB  00:00:00     
-<span style="color:#f92672">(</span>10/13<span style="color:#f92672">)</span>: epel/x86_64/updateinfo                                                                                    | 1.0 MB  00:00:00     
-<span style="color:#f92672">(</span>11/13<span style="color:#f92672">)</span>: epel/x86_64/primary_db                                                                                    | 6.9 MB  00:00:00     
-<span style="color:#f92672">(</span>12/13<span style="color:#f92672">)</span>: hashicorp/2/x86_64/primary                                                                                |  <span style="color:#ae81ff">55</span> kB  00:00:00     
-<span style="color:#f92672">(</span>13/13<span style="color:#f92672">)</span>: amzn2-core/2/x86_64/primary_db                                                                            |  <span style="color:#ae81ff">56</span> MB  00:00:00     
+amzn2-core                                                                                                         | 3.7 kB  00:00:00
+amzn2extra-docker                                                                                                  | 3.0 kB  00:00:00
+amzn2extra-epel                                                                                                    | 3.0 kB  00:00:00
+amzn2extra-lamp-mariadb10.2-php7.2                                                                                 | 3.0 kB  00:00:00
+epel/x86_64/metalink                                                                                               |  <span style="color:#ae81ff">15</span> kB  00:00:00
+epel                                                                                                               | 4.7 kB  00:00:00
+hashicorp                                                                                                          | 1.4 kB  00:00:00
+<span style="color:#f92672">(</span>1/13<span style="color:#f92672">)</span>: amzn2-core/2/x86_64/group_gz                                                                               | 2.5 kB  00:00:00
+<span style="color:#f92672">(</span>2/13<span style="color:#f92672">)</span>: amzn2-core/2/x86_64/updateinfo                                                                             | <span style="color:#ae81ff">405</span> kB  00:00:00
+<span style="color:#f92672">(</span>3/13<span style="color:#f92672">)</span>: amzn2extra-epel/2/x86_64/primary_db                                                                        | 1.8 kB  00:00:00
+<span style="color:#f92672">(</span>4/13<span style="color:#f92672">)</span>: amzn2extra-lamp-mariadb10.2-php7.2/2/x86_64/updateinfo                                                     |   <span style="color:#ae81ff">76</span> B  00:00:00
+<span style="color:#f92672">(</span>5/13<span style="color:#f92672">)</span>: amzn2extra-lamp-mariadb10.2-php7.2/2/x86_64/primary_db                                                     | <span style="color:#ae81ff">506</span> kB  00:00:00
+<span style="color:#f92672">(</span>6/13<span style="color:#f92672">)</span>: amzn2extra-epel/2/x86_64/updateinfo                                                                        |   <span style="color:#ae81ff">76</span> B  00:00:00
+<span style="color:#f92672">(</span>7/13<span style="color:#f92672">)</span>: amzn2extra-docker/2/x86_64/primary_db                                                                      |  <span style="color:#ae81ff">79</span> kB  00:00:00
+<span style="color:#f92672">(</span>8/13<span style="color:#f92672">)</span>: amzn2extra-docker/2/x86_64/updateinfo                                                                      |   <span style="color:#ae81ff">76</span> B  00:00:00
+<span style="color:#f92672">(</span>9/13<span style="color:#f92672">)</span>: epel/x86_64/group_gz                                                                                       |  <span style="color:#ae81ff">96</span> kB  00:00:00
+<span style="color:#f92672">(</span>10/13<span style="color:#f92672">)</span>: epel/x86_64/updateinfo                                                                                    | 1.0 MB  00:00:00
+<span style="color:#f92672">(</span>11/13<span style="color:#f92672">)</span>: epel/x86_64/primary_db                                                                                    | 6.9 MB  00:00:00
+<span style="color:#f92672">(</span>12/13<span style="color:#f92672">)</span>: hashicorp/2/x86_64/primary                                                                                |  <span style="color:#ae81ff">55</span> kB  00:00:00
+<span style="color:#f92672">(</span>13/13<span style="color:#f92672">)</span>: amzn2-core/2/x86_64/primary_db                                                                            |  <span style="color:#ae81ff">56</span> MB  00:00:00
 hashicorp                                                                                                                         384/384
 <span style="color:#ae81ff">242</span> packages excluded due to repository priority protections
 Resolving Dependencies
@@ -655,7 +657,7 @@ Install  <span style="color:#ae81ff">1</span> Package
 Total download size: <span style="color:#ae81ff">32</span> M
 Installed size: <span style="color:#ae81ff">136</span> M
 Downloading packages:
-docker-20.10.4-1.amzn2.x86_64.rpm                                                                                  |  <span style="color:#ae81ff">32</span> MB  00:00:00     
+docker-20.10.4-1.amzn2.x86_64.rpm                                                                                  |  <span style="color:#ae81ff">32</span> MB  00:00:00
 Running transaction check
 Running transaction test
 Transaction test succeeded
@@ -822,7 +824,7 @@ Install  <span style="color:#ae81ff">1</span> Package
 Total download size: <span style="color:#ae81ff">25</span> M
 Installed size: <span style="color:#ae81ff">75</span> M
 Downloading packages:
-terraform-1.0.4-1.x86_64.rpm                                                                                       |  <span style="color:#ae81ff">25</span> MB  00:00:00     
+terraform-1.0.4-1.x86_64.rpm                                                                                       |  <span style="color:#ae81ff">25</span> MB  00:00:00
 Running transaction check
 Running transaction test
 Transaction test succeeded
@@ -843,6 +845,7 @@ INSTALLING helm
 </code></pre></div>
     </div>
 </div>
+
 
 
 <footer class="footline">
@@ -1129,19 +1132,19 @@ INSTALLING helm
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1629810055"></script>
-    <script src="/js/perfect-scrollbar.min.js?1629810055"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1629810055"></script>
-    <script src="/js/jquery.sticky.js?1629810055"></script>
-    <script src="/js/featherlight.min.js?1629810055"></script>
-    <script src="/js/highlight.pack.js?1629810055"></script>
+    <script src="/js/clipboard.min.js?1630332923"></script>
+    <script src="/js/perfect-scrollbar.min.js?1630332923"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1630332923"></script>
+    <script src="/js/jquery.sticky.js?1630332923"></script>
+    <script src="/js/featherlight.min.js?1630332923"></script>
+    <script src="/js/highlight.pack.js?1630332923"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1629810055"></script>
-    <script src="/js/learn.js?1629810055"></script>
-    <script src="/js/hugo-learn.js?1629810055"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1630332923"></script>
+    <script src="/js/learn.js?1630332923"></script>
+    <script src="/js/hugo-learn.js?1630332923"></script>
     
         
-            <script src="/mermaid/mermaid.js?1629810055"></script>
+            <script src="/mermaid/mermaid.js?1630332923"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

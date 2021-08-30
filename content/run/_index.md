@@ -14,7 +14,7 @@ CI/CD - Images should be scanned for CVE’s
 
 Run time - tools should be deployed that monitor running containers that miss behave
 
-Continuous scan images in registry for vulnerabilities in the registries, images can run in production but not get updated and deployed 
+Continuous scan images in registry for vulnerabilities in the registries, images can run in production but not get updated and deployed
 
 
 Create separate environments for development, test, production and other scenarios, each with specific controls to provide RBAC for container deployment and management activities.
@@ -29,19 +29,4 @@ Per Namespace if using Kubernetes network policies
 
 Applications should have their own define with the deployment
 
-Admins should have examples so application developers can understand how it impacts their applications 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Admins should have examples so application developers can understand how it impacts their applications

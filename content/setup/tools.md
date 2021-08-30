@@ -3,27 +3,27 @@ title: Workshop tools
 weight: 13
 ---
 
-In order for us to continue with the exercises, there are several tools that our needed to be installed on our Cloud9 instance. 
+In order for us to continue with the exercises, there are several tools that our needed to be installed on our Cloud9 instance.
 
-You can download the entire repo with git 
+You can download the entire repo with git
 
 `git clone https://github.com/strongjz/aws-container-devsecops`
 
-Or Download the script here. 
+Or Download the script here.
 
 {{%attachments title="Scripts" pattern="tools-install.sh"/%}}
 
-The script will install 
+The script will install
 
-* docker 
-* kind 
-* terraform 
-* eksctl 
-* kubectl 
+* docker
+* kind
+* terraform
+* eksctl
+* kubectl
 * helm
 
 
-Navigate to where you downloaded the installation script. 
+Navigate to where you downloaded the installation script.
 
 `cd aws-container-devsecops/content/setup/clone.files/`
 
@@ -31,7 +31,7 @@ Navigate to where you downloaded the installation script.
 
 {{%expand "Expand here is what it looks like in its entirety" %}}
 ```bash
-:~/environment $ git clone https://github.com/strongjz/aws-container-devsecops         
+:~/environment $ git clone https://github.com/strongjz/aws-container-devsecops
 Cloning into 'aws-container-devsecops'...
 remote: Enumerating objects: 595, done.
 remote: Counting objects: 100% (595/595), done.
@@ -64,26 +64,26 @@ Cleaning repos: amzn2-core amzn2extra-docker amzn2extra-epel amzn2extra-lamp-mar
 16 sqlite files removed
 0 metadata files removed
 Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
-amzn2-core                                                                                                         | 3.7 kB  00:00:00     
-amzn2extra-docker                                                                                                  | 3.0 kB  00:00:00     
-amzn2extra-epel                                                                                                    | 3.0 kB  00:00:00     
-amzn2extra-lamp-mariadb10.2-php7.2                                                                                 | 3.0 kB  00:00:00     
-epel/x86_64/metalink                                                                                               |  15 kB  00:00:00     
-epel                                                                                                               | 4.7 kB  00:00:00     
-hashicorp                                                                                                          | 1.4 kB  00:00:00     
-(1/13): amzn2-core/2/x86_64/group_gz                                                                               | 2.5 kB  00:00:00     
-(2/13): amzn2-core/2/x86_64/updateinfo                                                                             | 405 kB  00:00:00     
-(3/13): amzn2extra-epel/2/x86_64/primary_db                                                                        | 1.8 kB  00:00:00     
-(4/13): amzn2extra-lamp-mariadb10.2-php7.2/2/x86_64/updateinfo                                                     |   76 B  00:00:00     
-(5/13): amzn2extra-lamp-mariadb10.2-php7.2/2/x86_64/primary_db                                                     | 506 kB  00:00:00     
-(6/13): amzn2extra-epel/2/x86_64/updateinfo                                                                        |   76 B  00:00:00     
-(7/13): amzn2extra-docker/2/x86_64/primary_db                                                                      |  79 kB  00:00:00     
-(8/13): amzn2extra-docker/2/x86_64/updateinfo                                                                      |   76 B  00:00:00     
-(9/13): epel/x86_64/group_gz                                                                                       |  96 kB  00:00:00     
-(10/13): epel/x86_64/updateinfo                                                                                    | 1.0 MB  00:00:00     
-(11/13): epel/x86_64/primary_db                                                                                    | 6.9 MB  00:00:00     
-(12/13): hashicorp/2/x86_64/primary                                                                                |  55 kB  00:00:00     
-(13/13): amzn2-core/2/x86_64/primary_db                                                                            |  56 MB  00:00:00     
+amzn2-core                                                                                                         | 3.7 kB  00:00:00
+amzn2extra-docker                                                                                                  | 3.0 kB  00:00:00
+amzn2extra-epel                                                                                                    | 3.0 kB  00:00:00
+amzn2extra-lamp-mariadb10.2-php7.2                                                                                 | 3.0 kB  00:00:00
+epel/x86_64/metalink                                                                                               |  15 kB  00:00:00
+epel                                                                                                               | 4.7 kB  00:00:00
+hashicorp                                                                                                          | 1.4 kB  00:00:00
+(1/13): amzn2-core/2/x86_64/group_gz                                                                               | 2.5 kB  00:00:00
+(2/13): amzn2-core/2/x86_64/updateinfo                                                                             | 405 kB  00:00:00
+(3/13): amzn2extra-epel/2/x86_64/primary_db                                                                        | 1.8 kB  00:00:00
+(4/13): amzn2extra-lamp-mariadb10.2-php7.2/2/x86_64/updateinfo                                                     |   76 B  00:00:00
+(5/13): amzn2extra-lamp-mariadb10.2-php7.2/2/x86_64/primary_db                                                     | 506 kB  00:00:00
+(6/13): amzn2extra-epel/2/x86_64/updateinfo                                                                        |   76 B  00:00:00
+(7/13): amzn2extra-docker/2/x86_64/primary_db                                                                      |  79 kB  00:00:00
+(8/13): amzn2extra-docker/2/x86_64/updateinfo                                                                      |   76 B  00:00:00
+(9/13): epel/x86_64/group_gz                                                                                       |  96 kB  00:00:00
+(10/13): epel/x86_64/updateinfo                                                                                    | 1.0 MB  00:00:00
+(11/13): epel/x86_64/primary_db                                                                                    | 6.9 MB  00:00:00
+(12/13): hashicorp/2/x86_64/primary                                                                                |  55 kB  00:00:00
+(13/13): amzn2-core/2/x86_64/primary_db                                                                            |  56 MB  00:00:00
 hashicorp                                                                                                                         384/384
 242 packages excluded due to repository priority protections
 Resolving Dependencies
@@ -106,7 +106,7 @@ Install  1 Package
 Total download size: 32 M
 Installed size: 136 M
 Downloading packages:
-docker-20.10.4-1.amzn2.x86_64.rpm                                                                                  |  32 MB  00:00:00     
+docker-20.10.4-1.amzn2.x86_64.rpm                                                                                  |  32 MB  00:00:00
 Running transaction check
 Running transaction test
 Transaction test succeeded
@@ -273,7 +273,7 @@ Install  1 Package
 Total download size: 25 M
 Installed size: 75 M
 Downloading packages:
-terraform-1.0.4-1.x86_64.rpm                                                                                       |  25 MB  00:00:00     
+terraform-1.0.4-1.x86_64.rpm                                                                                       |  25 MB  00:00:00
 Running transaction check
 Running transaction test
 Transaction test succeeded

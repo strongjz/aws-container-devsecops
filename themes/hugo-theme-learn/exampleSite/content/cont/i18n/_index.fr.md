@@ -59,13 +59,13 @@ Utilisez le paramètre du Front Matter [slug](https://gohugo.io/content-manageme
 
 Les *Translations strings* sont utilisées comme valeurs par défaut dans le thème (Bouton *Modifier la page*, Element de subsitution *Recherche*, etc.). Les traductions sont disponibles en français et en anglais mais vous pouvez utiliser n'importe quelle autre langue et surcharger avec vos propres valeurs.
 
-Pour surcharger ces valeurs, créer un nouveau fichier dans votre dossier i18n local `i18n/<idlanguage>.toml` et inspirez vous du thème `themes/hugo-theme-learn/i18n/en.toml` 
+Pour surcharger ces valeurs, créer un nouveau fichier dans votre dossier i18n local `i18n/<idlanguage>.toml` et inspirez vous du thème `themes/hugo-theme-learn/i18n/en.toml`
 
-D'ailleurs, ces traductions pour servir à tout le monde, donc svp prenez le temps de [proposer une Pull Request](https://github.com/matcornic/hugo-theme-learn/pulls) ! 
+D'ailleurs, ces traductions pour servir à tout le monde, donc svp prenez le temps de [proposer une Pull Request](https://github.com/matcornic/hugo-theme-learn/pulls) !
 
 ## Désactiver le changement de langue
 
-Vous pouvez changer de langue directement dans le navigateur. C'est une super fonctionnalité, mais vous avez peut-être besoin de la désactiver. 
+Vous pouvez changer de langue directement dans le navigateur. C'est une super fonctionnalité, mais vous avez peut-être besoin de la désactiver.
 
 Pour ce faire, ajouter le paramètre `disableLanguageSwitchingButton=true` dans votre `config.toml`
 

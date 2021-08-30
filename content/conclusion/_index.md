@@ -16,7 +16,7 @@ Every commit to the mainline gets built
 Everyone can see the results of the build
 Automate the deployment
 
-Security 
+Security
 
 Immutable artifacts
 Static Code Analysis
