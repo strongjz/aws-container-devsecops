@@ -60,3 +60,18 @@ By files:
     go tool vet source/directory/*.go
   :
   ```
+
+For Dockerfiles we can use tools like [hadolint](https://github.com/hadolint/hadolint)
+
+```bash
+:~/environment $ docker run --rm -i hadolint/hadolint:v2.7.0 < ./content/development/development.files/Dockerfile
+-:1 DL3006 warning: Always tag the version of an image explicitly
+-:2 DL3015 info: Avoid additional packages by specifying `--no-install-recommends`
+-:2 DL3009 info: Delete the apt-get lists after installing something
+-:2 SC2154 warning: node_verion is referenced but not assigned (did you mean 'node_version'?).
+-:4 DL3045 warning: `COPY` to a relative destination without `WORKDIR` set.
+-:5 DL3003 warning: Use WORKDIR to switch to a directory
+-:5 DL3016 warning: Pin versions in npm. Instead of `npm install <package>` use `npm install <package>@<version>`
+-:8 DL3011 error: Valid UNIX ports range from 0 to 65535
+```
+

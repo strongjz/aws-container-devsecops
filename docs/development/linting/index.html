@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.87.0" />
@@ -12,22 +12,22 @@
     <title>Linting :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1630332923" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1630332923" rel="stylesheet">
-    <link href="/css/hybrid.css?1630332923" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1630332923" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1630332923" rel="stylesheet">
-    <link href="/css/auto-complete.css?1630332923" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1630332923" rel="stylesheet">
-    <link href="/css/theme.css?1630332923" rel="stylesheet">
-    <link href="/css/tabs.css?1630332923" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1630332923" rel="stylesheet">
+    <link href="/css/nucleus.css?1630333520" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1630333520" rel="stylesheet">
+    <link href="/css/hybrid.css?1630333520" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1630333520" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1630333520" rel="stylesheet">
+    <link href="/css/auto-complete.css?1630333520" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1630333520" rel="stylesheet">
+    <link href="/css/theme.css?1630333520" rel="stylesheet">
+    <link href="/css/tabs.css?1630333520" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1630333520" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1630332923" rel="stylesheet">
+    <link href="/css/theme-green.css?1630333520" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1630332923"></script>
+    <script src="/js/jquery-3.3.1.min.js?1630333520"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,14 +73,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1630332923"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1630332923"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1630333520"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1630333520"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/";
+        var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1630332923"></script>
+<script type="text/javascript" src="/js/search.js?1630333520"></script>
 
     
   </div>
@@ -569,6 +569,16 @@ By files:
 
     go tool vet source/directory/*.go
   :
+</code></pre></div><p>For Dockerfiles we can use tools like <a href="https://github.com/hadolint/hadolint">hadolint</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:~/environment $ docker run --rm -i hadolint/hadolint:v2.7.0 &lt; ./content/development/development.files/Dockerfile
+-:1 DL3006 warning: Always tag the version of an image explicitly
+-:2 DL3015 info: Avoid additional packages by specifying <span style="color:#e6db74">`</span>--no-install-recommends<span style="color:#e6db74">`</span>
+-:2 DL3009 info: Delete the apt-get lists after installing something
+-:2 SC2154 warning: node_verion is referenced but not assigned <span style="color:#f92672">(</span>did you mean <span style="color:#e6db74">&#39;node_version&#39;</span>?<span style="color:#f92672">)</span>.
+-:4 DL3045 warning: <span style="color:#e6db74">`</span>COPY<span style="color:#e6db74">`</span> to a relative destination without <span style="color:#e6db74">`</span>WORKDIR<span style="color:#e6db74">`</span> set.
+-:5 DL3003 warning: Use WORKDIR to switch to a directory
+-:5 DL3016 warning: Pin versions in npm. Instead of <span style="color:#e6db74">`</span>npm install &lt;package&gt;<span style="color:#e6db74">`</span> use <span style="color:#e6db74">`</span>npm install &lt;package&gt;@&lt;version&gt;<span style="color:#e6db74">`</span>
+-:8 DL3011 error: Valid UNIX ports range from <span style="color:#ae81ff">0</span> to <span style="color:#ae81ff">65535</span>
 </code></pre></div>
 
 <footer class="footline">
@@ -858,19 +868,19 @@ By files:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1630332923"></script>
-    <script src="/js/perfect-scrollbar.min.js?1630332923"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1630332923"></script>
-    <script src="/js/jquery.sticky.js?1630332923"></script>
-    <script src="/js/featherlight.min.js?1630332923"></script>
-    <script src="/js/highlight.pack.js?1630332923"></script>
+    <script src="/js/clipboard.min.js?1630333520"></script>
+    <script src="/js/perfect-scrollbar.min.js?1630333520"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1630333520"></script>
+    <script src="/js/jquery.sticky.js?1630333520"></script>
+    <script src="/js/featherlight.min.js?1630333520"></script>
+    <script src="/js/highlight.pack.js?1630333520"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1630332923"></script>
-    <script src="/js/learn.js?1630332923"></script>
-    <script src="/js/hugo-learn.js?1630332923"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1630333520"></script>
+    <script src="/js/learn.js?1630333520"></script>
+    <script src="/js/hugo-learn.js?1630333520"></script>
     
         
-            <script src="/mermaid/mermaid.js?1630332923"></script>
+            <script src="/mermaid/mermaid.js?1630333520"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
