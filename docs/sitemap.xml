@@ -39,6 +39,8 @@
   </url><url>
     <loc>//localhost:1313/conclusion/</loc>
   </url><url>
+    <loc>//localhost:1313/run/run.files/falco-demo/nodejs-bad-rest-api/readme/</loc>
+  </url><url>
     <loc>//localhost:1313/categories/</loc>
   </url><url>
     <loc>//localhost:1313/tags/</loc>

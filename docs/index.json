@@ -74,7 +74,7 @@
 	"title": "3 Musketeers",
 	"tags": [],
 	"description": "",
-	"content": "Make, Docker, and Docker Compose.\n"
+	"content": "Tools used in the 3 Musketeers pattern:\n Make Docker Docker Compose  From https://3musketeers.io/\nConsistency - Run the same commands no matter where you are: Linux, MacOS, Windows, CI/CD tools that supports Docker like GitHub Actions, Travis CI, CircleCI, and GitLab CI.\nControl - Take control of languages, versions, and tools you need, and version source control your pipelines with your preferred VCS like GitHub and GitLab.\nConfidence - Test your code and pipelines locally before your CI/CD tool runs it. Feel confident that if it works locally, it will work in your CI/CD server.\n  3M Example   Dockerfile  (0 kb)   Makefile  (0 kb)   docker-compose.yml  (0 kb)    :~/environment $ cd ~/environment/aws-container-devsecops/content/development/3-musketeers.files/ :~/environment $ make echo docker-compose run --rm alpine echo \u0026#39;Hello, World!\u0026#39; [+] Running 1/1 ⠿ Network 3-musketeersfiles_default Created 0.4s [+] Running 2/2 ⠿ alpine Pulled 4.7s ⠿ a0d0a0d46f8b Pull complete 2.9s Hello, World! :~/environment $ "
 },
 {
 	"uri": "//localhost:1313/build/",
@@ -95,7 +95,7 @@
 	"title": "Securely Running Containers",
 	"tags": [],
 	"description": "",
-	"content": "  Minimal OS Bottle Rocket Ubuntu Core\nCI/CD - Images should be scanned for CVE’s\nRun time - tools should be deployed that monitor running containers that miss behave\nContinuous scan images in registry for vulnerabilities in the registries, images can run in production but not get updated and deployed\nCreate separate environments for development, test, production and other scenarios, each with specific controls to provide RBAC for container deployment and management activities.\nShared Kernel – Do not mix containerized and non-containerized workloads on the same host instance. (e.g.: if a host is running a web server container, it should not also run a web server as a regularly installed component directly within the host OS). This will also make it easy to apply optimized countermeasures for container protection.\nhttps://github.com/aquasecurity/kube-bench\nNetwork Policies\nPer Namespace if using Kubernetes network policies\nApplications should have their own define with the deployment\nAdmins should have examples so application developers can understand how it impacts their applications\n"
+	"content": "     Minimal OS Bottle Rocket Ubuntu Core\nCI/CD - Images should be scanned for CVE’s\nRun time - tools should be deployed that monitor running containers that miss behave\nContinuous scan images in registry for vulnerabilities in the registries, images can run in production but not get updated and deployed\nCreate separate environments for development, test, production and other scenarios, each with specific controls to provide RBAC for container deployment and management activities.\nShared Kernel – Do not mix containerized and non-containerized workloads on the same host instance. (e.g.: if a host is running a web server container, it should not also run a web server as a regularly installed component directly within the host OS). This will also make it easy to apply optimized countermeasures for container protection.\nhttps://github.com/aquasecurity/kube-bench\nNetwork Policies\nPer Namespace if using Kubernetes network policies\nApplications should have their own define with the deployment\nAdmins should have examples so application developers can understand how it impacts their applications\n"
 },
 {
 	"uri": "//localhost:1313/conclusion/",
@@ -103,6 +103,13 @@
 	"tags": [],
 	"description": "",
 	"content": "  CI/CD\nMaintain a code repository Automate the build Keep the build fast Make the build self-testing Commit early, commit often Every commit to the mainline gets built Everyone can see the results of the build Automate the deployment\nSecurity\nImmutable artifacts Static Code Analysis CVE Scanning Least Privileged Network Isolation Run Time protection Signed Commits Signed Images\n"
+},
+{
+	"uri": "//localhost:1313/run/run.files/falco-demo/nodejs-bad-rest-api/readme/",
+	"title": "",
+	"tags": [],
+	"description": "",
+	"content": "Demo of falco with bash exec via poorly designed REST API. Introduction This example shows how a server could have a poorly designed API that allowed a client to execute arbitrary programs on the server, and how that behavior can be detected using Sysdig Falco.\nserver.js in this directory defines the server. The poorly designed API is this route handler:\nrouter.get(\u0026#39;/exec/:cmd\u0026#39;, function(req, res) { var output = child_process.execSync(req.params.cmd); res.send(output); }); app.use(\u0026#39;/api\u0026#39;, router); It blindly takes the url portion after /api/exec/\u0026lt;cmd\u0026gt; and tries to execute it. A horrible design choice(!), but allows us to easily show Sysdig falco\u0026rsquo;s capabilities.\nDemo architecture Start everything using docker-compose From this directory, run the following:\n$ docker-compose -f demo.yml up This starts the following containers:\n express_server: simple express server exposing a REST API under the endpoint /api/exec/\u0026lt;cmd\u0026gt;. falco: will detect when you execute a shell via the express server.  Access urls under /api/exec/\u0026lt;cmd\u0026gt; to run arbitrary commands. Run the following commands to execute arbitrary commands like \u0026lsquo;ls\u0026rsquo;, \u0026lsquo;pwd\u0026rsquo;, etc:\n$ curl http://localhost:8181/api/exec/ls demo.yml node_modules package.json README.md server.js $ curl http://localhost:8181/api/exec/pwd .../examples/nodejs-bad-rest-api Try to run bash via /api/exec/bash, falco sends alert. If you try to run bash via /api/exec/bash, falco will generate an alert:\nfalco | 22:26:53.536628076: Warning Shell spawned in a container other than entrypoint (user=root container_id=6f339b8aeb0a container_name=express_server shell=bash parent=sh cmdline=bash ) "
 },
 {
 	"uri": "//localhost:1313/categories/",

@@ -12,22 +12,22 @@
     <title>3 Musketeers :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1630334200" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1630334200" rel="stylesheet">
-    <link href="/css/hybrid.css?1630334200" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1630334200" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1630334200" rel="stylesheet">
-    <link href="/css/auto-complete.css?1630334200" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1630334200" rel="stylesheet">
-    <link href="/css/theme.css?1630334200" rel="stylesheet">
-    <link href="/css/tabs.css?1630334200" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1630334200" rel="stylesheet">
+    <link href="/css/nucleus.css?1630414503" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1630414503" rel="stylesheet">
+    <link href="/css/hybrid.css?1630414503" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1630414503" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1630414503" rel="stylesheet">
+    <link href="/css/auto-complete.css?1630414503" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1630414503" rel="stylesheet">
+    <link href="/css/theme.css?1630414503" rel="stylesheet">
+    <link href="/css/tabs.css?1630414503" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1630414503" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1630334200" rel="stylesheet">
+    <link href="/css/theme-green.css?1630414503" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1630334200"></script>
+    <script src="/js/jquery-3.3.1.min.js?1630414503"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,14 +73,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1630334200"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1630334200"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1630414503"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1630414503"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1630334200"></script>
+<script type="text/javascript" src="/js/search.js?1630414503"></script>
 
     
   </div>
@@ -402,6 +402,37 @@
       </a>
       
       
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/run/run.files/falco-demo/nodejs-bad-rest-api/readme/" title="" class="dd-item ">
+        <a href="/run/run.files/falco-demo/nodejs-bad-rest-api/readme/">
+        
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
     </li>
   
  
@@ -528,8 +559,73 @@
 
 
 <p><img src="/images/development/3-musketeers.jpg" alt="3-musketeers"></p>
-<p>Make, Docker, and Docker Compose.</p>
+<p>Tools used in the 3 Musketeers pattern:</p>
+<ul>
+<li>Make</li>
+<li>Docker</li>
+<li>Docker Compose</li>
+</ul>
+<p>From <a href="https://3musketeers.io/">https://3musketeers.io/</a></p>
+<p><strong>Consistency</strong>  - Run the same commands no matter where you are: Linux, MacOS, Windows, CI/CD tools that supports Docker like GitHub Actions, Travis CI, CircleCI, and GitLab CI.</p>
+<p><strong>Control</strong> - Take control of languages, versions, and tools you need, and version source control your pipelines with your preferred VCS like GitHub and GitLab.</p>
+<p><strong>Confidence</strong> - Test your code and pipelines locally before your CI/CD tool runs it. Feel confident that if it works locally, it will work in your CI/CD server.</p>
 
+<section class="attachments ">
+	<label>
+		<i class="fas fa-paperclip" aria-hidden="true"></i>
+		3M Example
+	</label>
+	
+		
+	
+	<div class="attachments-files">
+	
+		
+		
+			<li>
+				<a href="/development/3-musketeers.files/Dockerfile" >
+					Dockerfile
+				</a>
+				(0 kb)
+			</li>
+		
+	
+		
+		
+			<li>
+				<a href="/development/3-musketeers.files/Makefile" >
+					Makefile
+				</a>
+				(0 kb)
+			</li>
+		
+	
+		
+		
+			<li>
+				<a href="/development/3-musketeers.files/docker-compose.yml" >
+					docker-compose.yml
+				</a>
+				(0 kb)
+			</li>
+		
+	
+	</div>
+	
+</section>
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:~/environment $ cd ~/environment/aws-container-devsecops/content/development/3-musketeers.files/
+
+:~/environment $ make echo
+docker-compose run --rm alpine echo <span style="color:#e6db74">&#39;Hello, World!&#39;</span>
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Running 1/1
+ ⠿ Network 3-musketeersfiles_default  Created                                                                                                                                                                                                                                                                      0.4s
+<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Running 2/2
+ ⠿ alpine Pulled                                                                                                                                                                                                                                                                                                   4.7s
+   ⠿ a0d0a0d46f8b Pull complete                                                                                                                                                                                                                                                                                    2.9s
+Hello, World!
+:~/environment $
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -777,6 +873,22 @@
                     
 
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -818,19 +930,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1630334200"></script>
-    <script src="/js/perfect-scrollbar.min.js?1630334200"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1630334200"></script>
-    <script src="/js/jquery.sticky.js?1630334200"></script>
-    <script src="/js/featherlight.min.js?1630334200"></script>
-    <script src="/js/highlight.pack.js?1630334200"></script>
+    <script src="/js/clipboard.min.js?1630414503"></script>
+    <script src="/js/perfect-scrollbar.min.js?1630414503"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1630414503"></script>
+    <script src="/js/jquery.sticky.js?1630414503"></script>
+    <script src="/js/featherlight.min.js?1630414503"></script>
+    <script src="/js/highlight.pack.js?1630414503"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1630334200"></script>
-    <script src="/js/learn.js?1630334200"></script>
-    <script src="/js/hugo-learn.js?1630334200"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1630414503"></script>
+    <script src="/js/learn.js?1630414503"></script>
+    <script src="/js/hugo-learn.js?1630414503"></script>
     
         
-            <script src="/mermaid/mermaid.js?1630334200"></script>
+            <script src="/mermaid/mermaid.js?1630414503"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
