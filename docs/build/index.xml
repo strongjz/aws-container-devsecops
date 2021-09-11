@@ -2,29 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Container Builds on AWS Container DevSecOps</title>
-    <link>/build/</link>
+    <link>//localhost:1313/build/</link>
     <description>Recent content in Container Builds on AWS Container DevSecOps</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="/build/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="//localhost:1313/build/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Secure Containers</title>
-      <link>/build/container/</link>
+      <link>//localhost:1313/build/container/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/build/container/</guid>
-      <description>Baseline  DISABLE ROOT Least Privilege Run time Protections Network policies DISABLE ROOT  Helpers Versioning
- Invest in Strategy Containers follow build Versions of Software Metadata  No really do this Latest Tag
- Avoid using :latest tags Unable to control Unknown updates Versions the way to go Container digest  Reduce, reuse Base Container
- Reduce Build Times Scratch Container golden images  </description>
+      <guid>//localhost:1313/build/container/</guid>
+      <description>Baseline  DISABLE ROOT  Mount the container&amp;rsquo;s root filesystem as read-only set k8s Security context set Linux Capabilities Disable privilege escalation    securityContext: allowPrivilegeEscalation: false  Least Privilege by defining user  apiVersion: v1 kind: Pod metadata: name: pod-security spec: securityContext: runAsUser: 10000 runAsGroup: 30000 fsGroup: 20000  Run time Protections  SELinux, AppArmor, Auditd, Falco   Network policies Container Capabilities  capabilities: add: [&amp;#34;NET_ADMIN&amp;#34;, &amp;#34;SYS_TIME&amp;#34;]  DISABLE ROOT  Helpers Versioning</description>
     </item>
     
     <item>
       <title>Secure Containers Exercise</title>
-      <link>/build/exercise/</link>
+      <link>//localhost:1313/build/exercise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/build/exercise/</guid>
-      <description></description>
+      <guid>//localhost:1313/build/exercise/</guid>
+      <description>Navigate to DevSecops repo
+cd ~/environment/devsecopspipeline ~/environment/devsecopspipeline (master) $ export DB_PASSWORD=temppassword AWSReservedSSO_AdministratorAccess_9c06ffa3ce9d7954:~/environment/devsecopspipeline (master) $ make compose_up docker-compose up Recreating devsecopspipeline_db_1 ... done Recreating devsecopspipeline_go-example_1 ... done Attaching to devsecopspipeline_db_1, devsecopspipeline_go-example_1 db_1 | The files belonging to this database system will be owned by user &amp;#34;postgres&amp;#34;. db_1 | This user must also own the server process. db_1 | db_1 | The database cluster will be initialized with locale &amp;#34;en_US.utf8&amp;#34;. db_1 | The default database encoding has accordingly been set to &amp;#34;UTF8&amp;#34;.</description>
     </item>
     
   </channel>

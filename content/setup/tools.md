@@ -5,7 +5,9 @@ weight: 13
 
 In order for us to continue with the exercises, there are several tools that our needed to be installed on our Cloud9 instance.
 
-You can download the entire repo with git
+Download these two repos with git
+
+`git clone https://github.com/strongjz/devsecopspipeline`
 
 `git clone https://github.com/strongjz/aws-container-devsecops`
 
@@ -293,3 +295,30 @@ Dload  Upload   Total   Spent    Left  Speed
 INSTALLING helm
 ```
 {{% /expand%}}
+
+
+Now since EKS takes about 20 mins to create a cluster we need to start that now so it's ready when we need it. 
+
+```bash
+~/environment/devsecopspipeline (master) $ make cluster
+eksctl create cluster -f eks-config.yml
+2021-09-11 21:58:05 [ℹ]  eksctl version 0.61.0
+2021-09-11 21:58:05 [ℹ]  using region us-west-2
+2021-09-11 21:58:05 [ℹ]  setting availability zones to [us-west-2d us-west-2c us-west-2a]
+2021-09-11 21:58:05 [ℹ]  subnets for us-west-2d - public:192.168.0.0/19 private:192.168.96.0/19
+2021-09-11 21:58:05 [ℹ]  subnets for us-west-2c - public:192.168.32.0/19 private:192.168.128.0/19
+2021-09-11 21:58:05 [ℹ]  subnets for us-west-2a - public:192.168.64.0/19 private:192.168.160.0/19
+2021-09-11 21:58:05 [ℹ]  nodegroup "node-group-1" will use "ami-0bb07d9c8d6ca41e8" [AmazonLinux2/1.21]
+2021-09-11 21:58:05 [ℹ]  using Kubernetes version 1.21
+2021-09-11 21:58:05 [ℹ]  creating EKS cluster "devsecops" in "us-west-2" region with un-managed nodes
+2021-09-11 21:58:05 [ℹ]  1 nodegroup (node-group-1) was included (based on the include/exclude rules)
+2021-09-11 21:58:05 [ℹ]  will create a CloudFormation stack for cluster itself and 1 nodegroup stack(s)
+2021-09-11 21:58:05 [ℹ]  will create a CloudFormation stack for cluster itself and 0 managed nodegroup stack(s)
+2021-09-11 21:58:05 [ℹ]  if you encounter any issues, check CloudFormation console or try 'eksctl utils describe-stacks --region=us-west-2 --cluster=devsecops'
+2021-09-11 21:58:05 [ℹ]  CloudWatch logging will not be enabled for cluster "devsecops" in "us-west-2"
+2021-09-11 21:58:05 [ℹ]  you can enable it with 'eksctl utils update-cluster-logging --enable-types={SPECIFY-YOUR-LOG-TYPES-HERE (e.g. all)} --region=us-west-2 --cluster=devsecops'
+2021-09-11 21:58:05 [ℹ]  Kubernetes API endpoint access will use default of {publicAccess=true, privateAccess=false} for cluster "devsecops" in "us-west-2"
+2021-09-11 21:58:05 [ℹ]  2 sequential tasks: { create cluster control plane "devsecops", 3 sequential sub-tasks: { wait for control plane to become ready, 1 task: { create addons }, create nodegroup "node-group-1" } }
+2021-09-11 21:58:05 [ℹ]  building cluster stack "eksctl-devsecops-cluster"
+2021-09-11 21:58:06 [ℹ]  deploying stack "eksctl-devsecops-cluster"
+```

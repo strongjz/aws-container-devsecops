@@ -2,59 +2,59 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>//localhost:1313/</loc>
     <lastmod>2021-08-17T15:08:20-04:00</lastmod>
   </url><url>
-    <loc>/intro/</loc>
+    <loc>//localhost:1313/intro/</loc>
   </url><url>
-    <loc>/intro/contino/</loc>
+    <loc>//localhost:1313/intro/contino/</loc>
   </url><url>
-    <loc>/setup/</loc>
+    <loc>//localhost:1313/setup/</loc>
   </url><url>
-    <loc>/setup/cloud9/</loc>
+    <loc>//localhost:1313/setup/cloud9/</loc>
   </url><url>
-    <loc>/setup/iam/</loc>
+    <loc>//localhost:1313/setup/iam/</loc>
   </url><url>
-    <loc>/setup/tools/</loc>
+    <loc>//localhost:1313/setup/tools/</loc>
   </url><url>
-    <loc>/development/</loc>
+    <loc>//localhost:1313/development/</loc>
     <lastmod>2021-08-17T15:08:20-04:00</lastmod>
   </url><url>
-    <loc>/development/signing/</loc>
+    <loc>//localhost:1313/development/signing/</loc>
     <lastmod>2021-08-17T15:07:49-04:00</lastmod>
   </url><url>
-    <loc>/development/linting/</loc>
+    <loc>//localhost:1313/development/linting/</loc>
     <lastmod>2021-08-17T15:07:57-04:00</lastmod>
   </url><url>
-    <loc>/development/owasp/</loc>
+    <loc>//localhost:1313/development/owasp/</loc>
     <lastmod>2021-08-17T15:07:57-04:00</lastmod>
   </url><url>
-    <loc>/development/pre-commit/</loc>
+    <loc>//localhost:1313/development/pre-commit/</loc>
     <lastmod>2021-08-17T15:08:20-04:00</lastmod>
   </url><url>
-    <loc>/development/3-musketeers/</loc>
+    <loc>//localhost:1313/development/3-musketeers/</loc>
     <lastmod>2021-08-17T15:08:14-04:00</lastmod>
   </url><url>
-    <loc>/build/</loc>
+    <loc>//localhost:1313/build/</loc>
   </url><url>
-    <loc>/build/container/</loc>
+    <loc>//localhost:1313/build/container/</loc>
   </url><url>
-    <loc>/build/exercise/</loc>
+    <loc>//localhost:1313/build/exercise/</loc>
   </url><url>
-    <loc>/pipeline/</loc>
+    <loc>//localhost:1313/pipeline/</loc>
   </url><url>
-    <loc>/pipeline/exercise/</loc>
+    <loc>//localhost:1313/pipeline/exercise/</loc>
   </url><url>
-    <loc>/run/</loc>
+    <loc>//localhost:1313/run/</loc>
   </url><url>
-    <loc>/run/run.files/exercise/</loc>
+    <loc>//localhost:1313/run/run.files/exercise/</loc>
   </url><url>
-    <loc>/conclusion/</loc>
+    <loc>//localhost:1313/conclusion/</loc>
   </url><url>
-    <loc>/run/run.files/falco-demo/nodejs-bad-rest-api/readme/</loc>
+    <loc>//localhost:1313/run/run.files/falco-demo/nodejs-bad-rest-api/readme/</loc>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>//localhost:1313/categories/</loc>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>//localhost:1313/tags/</loc>
   </url>
 </urlset>

@@ -5,12 +5,14 @@ weight: 40
 
 {{% children  %}}
 
+CI/CD - Images should be scanned for CVE’s
 
 Automating your build pipelines
 Visibility
 Troubleshooting
 Defect Remediation
 Build small autonomous pieces
+Black Duck Hub and JFrog Xray
 
 CI/CD
 Maintain a code repository

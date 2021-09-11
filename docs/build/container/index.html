@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.87.0" />
@@ -12,22 +12,22 @@
     <title>Secure Containers :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1631394658" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1631394658" rel="stylesheet">
-    <link href="/css/hybrid.css?1631394658" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1631394658" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1631394658" rel="stylesheet">
-    <link href="/css/auto-complete.css?1631394658" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1631394658" rel="stylesheet">
-    <link href="/css/theme.css?1631394658" rel="stylesheet">
-    <link href="/css/tabs.css?1631394658" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1631394658" rel="stylesheet">
+    <link href="/css/nucleus.css?1631399178" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1631399178" rel="stylesheet">
+    <link href="/css/hybrid.css?1631399178" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1631399178" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1631399178" rel="stylesheet">
+    <link href="/css/auto-complete.css?1631399178" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1631399178" rel="stylesheet">
+    <link href="/css/theme.css?1631399178" rel="stylesheet">
+    <link href="/css/tabs.css?1631399178" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1631399178" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1631394658" rel="stylesheet">
+    <link href="/css/theme-green.css?1631399178" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1631394658"></script>
+    <script src="/js/jquery-3.3.1.min.js?1631399178"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1631394658"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1631394658"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1631399178"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1631399178"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/";
+        var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1631394658"></script>
+<script type="text/javascript" src="/js/search.js?1631399178"></script>
 
     
   </div>
@@ -729,34 +729,75 @@
 
 <h2 id="baseline">Baseline</h2>
 <ul>
-<li>DISABLE ROOT</li>
-<li>Least Privilege</li>
-<li>Run time Protections</li>
+<li>DISABLE ROOT
+<ul>
+<li>Mount the container&rsquo;s root filesystem as read-only</li>
+<li>set <a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.22/#securitycontext-v1-core">k8s Security context</a></li>
+<li>set <a href="https://man7.org/linux/man-pages/man7/capabilities.7.html">Linux Capabilities</a></li>
+<li>Disable privilege escalation</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">securityContext</span>:
+      <span style="color:#f92672">allowPrivilegeEscalation</span>: <span style="color:#66d9ef">false</span>
+</code></pre></div><ul>
+<li>Least Privilege by defining user</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">pod-security</span>
+<span style="color:#f92672">spec</span>:
+  <span style="color:#f92672">securityContext</span>:
+    <span style="color:#f92672">runAsUser</span>: <span style="color:#ae81ff">10000</span>
+    <span style="color:#f92672">runAsGroup</span>: <span style="color:#ae81ff">30000</span>
+    <span style="color:#f92672">fsGroup</span>: <span style="color:#ae81ff">20000</span>
+</code></pre></div><ul>
+<li>Run time Protections
+<ul>
+<li>SELinux, AppArmor, Auditd, Falco</li>
+</ul>
+</li>
 <li>Network policies</li>
+<li>Container Capabilities</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">     <span style="color:#f92672">capabilities</span>:
+        <span style="color:#f92672">add</span>: [<span style="color:#e6db74">&#34;NET_ADMIN&#34;</span>, <span style="color:#e6db74">&#34;SYS_TIME&#34;</span>]
+</code></pre></div><ul>
 <li>DISABLE ROOT</li>
 </ul>
 <h2 id="helpers">Helpers</h2>
 <p>Versioning</p>
 <ul>
 <li>Invest in Strategy</li>
-<li>Containers follow build Versions of Software</li>
+<li>Containers follow build Versions of Software
+<ul>
+<li><a href="https://semver.org/">Semantic Versioning</a></li>
+</ul>
+</li>
 <li>Metadata</li>
 </ul>
-<h2 id="no-really-do-this">No really do this</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ae81ff">LABEL &lt;key&gt;=&lt;value&gt; &lt;key&gt;=&lt;value&gt; &lt;key&gt;=&lt;value&gt; ...</span>
+<span style="color:#ae81ff">LABEL &#34;com.example.vendor&#34;=&#34;ACME Incorporated&#34;</span>
+<span style="color:#ae81ff">LABEL com.example.label-with-value=&#34;foo&#34;</span>
+<span style="color:#ae81ff">LABEL version=&#34;1.0&#34;</span>
+<span style="color:#ae81ff">LABEL description=&#34;This text illustrates \</span>
+<span style="color:#ae81ff">that label-values can span multiple lines.&#34;</span>
+</code></pre></div><h2 id="no-really-do-this">No really do this</h2>
 <p>Latest Tag</p>
 <ul>
 <li>Avoid using :latest tags</li>
 <li>Unable to control</li>
 <li>Unknown updates</li>
 <li>Versions the way to go</li>
-<li>Container digest</li>
+<li>Container digest most secure</li>
 </ul>
 <h2 id="reduce-reuse">Reduce, reuse</h2>
 <p>Base Container</p>
 <ul>
 <li>Reduce Build Times</li>
 <li>Scratch Container</li>
-<li>golden images</li>
+<li>Golden images</li>
 </ul>
 
 
@@ -1156,19 +1197,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1631394658"></script>
-    <script src="/js/perfect-scrollbar.min.js?1631394658"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1631394658"></script>
-    <script src="/js/jquery.sticky.js?1631394658"></script>
-    <script src="/js/featherlight.min.js?1631394658"></script>
-    <script src="/js/highlight.pack.js?1631394658"></script>
+    <script src="/js/clipboard.min.js?1631399178"></script>
+    <script src="/js/perfect-scrollbar.min.js?1631399178"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1631399178"></script>
+    <script src="/js/jquery.sticky.js?1631399178"></script>
+    <script src="/js/featherlight.min.js?1631399178"></script>
+    <script src="/js/highlight.pack.js?1631399178"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1631394658"></script>
-    <script src="/js/learn.js?1631394658"></script>
-    <script src="/js/hugo-learn.js?1631394658"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1631399178"></script>
+    <script src="/js/learn.js?1631399178"></script>
+    <script src="/js/hugo-learn.js?1631399178"></script>
     
         
-            <script src="/mermaid/mermaid.js?1631394658"></script>
+            <script src="/mermaid/mermaid.js?1631399178"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

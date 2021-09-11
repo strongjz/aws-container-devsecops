@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.87.0" />
@@ -12,22 +12,22 @@
     <title>Secure Containers Exercise :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1631394658" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1631394658" rel="stylesheet">
-    <link href="/css/hybrid.css?1631394658" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1631394658" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1631394658" rel="stylesheet">
-    <link href="/css/auto-complete.css?1631394658" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1631394658" rel="stylesheet">
-    <link href="/css/theme.css?1631394658" rel="stylesheet">
-    <link href="/css/tabs.css?1631394658" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1631394658" rel="stylesheet">
+    <link href="/css/nucleus.css?1631399178" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1631399178" rel="stylesheet">
+    <link href="/css/hybrid.css?1631399178" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1631399178" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1631399178" rel="stylesheet">
+    <link href="/css/auto-complete.css?1631399178" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1631399178" rel="stylesheet">
+    <link href="/css/theme.css?1631399178" rel="stylesheet">
+    <link href="/css/tabs.css?1631399178" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1631399178" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1631394658" rel="stylesheet">
+    <link href="/css/theme-green.css?1631399178" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1631394658"></script>
+    <script src="/js/jquery-3.3.1.min.js?1631399178"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1631394658"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1631394658"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1631399178"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1631399178"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/";
+        var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1631394658"></script>
+<script type="text/javascript" src="/js/search.js?1631399178"></script>
 
     
   </div>
@@ -720,7 +720,90 @@
         
 
 
-
+<p>Navigate to DevSecops repo</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/environment/devsecopspipeline
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ export DB_PASSWORD<span style="color:#f92672">=</span>temppassword
+AWSReservedSSO_AdministratorAccess_9c06ffa3ce9d7954:~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ make compose_up
+docker-compose up
+Recreating devsecopspipeline_db_1 ... <span style="color:#66d9ef">done</span>
+Recreating devsecopspipeline_go-example_1 ... <span style="color:#66d9ef">done</span>
+Attaching to devsecopspipeline_db_1, devsecopspipeline_go-example_1
+db_1          | The files belonging to this database system will be owned by user <span style="color:#e6db74">&#34;postgres&#34;</span>.
+db_1          | This user must also own the server process.
+db_1          | 
+db_1          | The database cluster will be initialized with locale <span style="color:#e6db74">&#34;en_US.utf8&#34;</span>.
+db_1          | The default database encoding has accordingly been set to <span style="color:#e6db74">&#34;UTF8&#34;</span>.
+db_1          | The default text search configuration will be set to <span style="color:#e6db74">&#34;english&#34;</span>.
+db_1          | 
+db_1          | Data page checksums are disabled.
+db_1          | 
+db_1          | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db_1          | creating subdirectories ... ok
+db_1          | selecting dynamic shared memory implementation ... posix
+db_1          | selecting default max_connections ... <span style="color:#ae81ff">100</span>
+db_1          | selecting default shared_buffers ... 128MB
+db_1          | selecting default time zone ... Etc/UTC
+db_1          | creating configuration files ... ok
+db_1          | running bootstrap script ... ok
+db_1          | performing post-bootstrap initialization ... ok
+db_1          | syncing data to disk ... ok
+db_1          | 
+db_1          | initdb: warning: enabling <span style="color:#e6db74">&#34;trust&#34;</span> authentication <span style="color:#66d9ef">for</span> local connections
+db_1          | You can change this by editing pg_hba.conf or using the option -A, or
+db_1          | --auth-local and --auth-host, the next time you run initdb.
+db_1          | 
+db_1          | Success. You can now start the database server using:
+db_1          | 
+db_1          |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db_1          | 
+db_1          | waiting <span style="color:#66d9ef">for</span> server to start....2021-09-11 22:16:05.430 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  starting PostgreSQL 12.2 <span style="color:#f92672">(</span>Debian 12.2-2.pgdg100+1<span style="color:#f92672">)</span> on x86_64-pc-linux-gnu, compiled by gcc <span style="color:#f92672">(</span>Debian 8.3.0-6<span style="color:#f92672">)</span> 8.3.0, 64-bit
+db_1          | 2021-09-11 22:16:05.432 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  listening on Unix socket <span style="color:#e6db74">&#34;/var/run/postgresql/.s.PGSQL.5432&#34;</span>
+db_1          | 2021-09-11 22:16:05.455 UTC <span style="color:#f92672">[</span>48<span style="color:#f92672">]</span> LOG:  database system was shut down at 2021-09-11 22:16:05 UTC
+db_1          | 2021-09-11 22:16:05.460 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  database system is ready to accept connections
+go-example_1  | Starting App
+go-example_1  | Starting App Engine
+go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Running in <span style="color:#e6db74">&#34;debug&#34;</span> mode. Switch to <span style="color:#e6db74">&#34;release&#34;</span> mode in production.
+go-example_1  |  - using env:   export GIN_MODE<span style="color:#f92672">=</span>release
+go-example_1  |  - using code:  gin.SetMode<span style="color:#f92672">(</span>gin.ReleaseMode<span style="color:#f92672">)</span>
+go-example_1  | 
+go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /                         --&gt; github.com/strongjz/go_example_app/app.rootHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /ping                     --&gt; github.com/strongjz/go_example_app/app.pingHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /data                     --&gt; github.com/strongjz/go_example_app/app.dataHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /secret                   --&gt; github.com/strongjz/go_example_app/app.secretHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /host                     --&gt; github.com/strongjz/go_example_app/app.hostHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /external                 --&gt; github.com/strongjz/go_example_app/app.externalHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Environment variable PORT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8080&#34;</span>
+go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Listening and serving HTTP on :8080
+go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Creating an Engine instance with the Logger and Recovery middleware already attached.
+go-example_1  | 
+go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Running in <span style="color:#e6db74">&#34;debug&#34;</span> mode. Switch to <span style="color:#e6db74">&#34;release&#34;</span> mode in production.
+go-example_1  |  - using env:   export GIN_MODE<span style="color:#f92672">=</span>release
+go-example_1  |  - using code:  gin.SetMode<span style="color:#f92672">(</span>gin.ReleaseMode<span style="color:#f92672">)</span>
+go-example_1  | 
+go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /admin                    --&gt; main.main.func1.1 <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Listening and serving HTTP on :8090
+db_1          |  <span style="color:#66d9ef">done</span>
+db_1          | server started
+db_1          | 
+db_1          | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db_1          | 
+db_1          | 2021-09-11 22:16:05.517 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  received fast shutdown request
+db_1          | waiting <span style="color:#66d9ef">for</span> server to shut down....2021-09-11 22:16:05.519 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  aborting any active transactions
+db_1          | 2021-09-11 22:16:05.520 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  background worker <span style="color:#e6db74">&#34;logical replication launcher&#34;</span> <span style="color:#f92672">(</span>PID 54<span style="color:#f92672">)</span> exited with exit code <span style="color:#ae81ff">1</span>
+db_1          | 2021-09-11 22:16:05.523 UTC <span style="color:#f92672">[</span>49<span style="color:#f92672">]</span> LOG:  shutting down
+db_1          | 2021-09-11 22:16:05.536 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  database system is shut down
+db_1          |  <span style="color:#66d9ef">done</span>
+db_1          | server stopped
+db_1          | 
+db_1          | PostgreSQL init process complete; ready <span style="color:#66d9ef">for</span> start up.
+db_1          | 
+db_1          | 2021-09-11 22:16:05.630 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  starting PostgreSQL 12.2 <span style="color:#f92672">(</span>Debian 12.2-2.pgdg100+1<span style="color:#f92672">)</span> on x86_64-pc-linux-gnu, compiled by gcc <span style="color:#f92672">(</span>Debian 8.3.0-6<span style="color:#f92672">)</span> 8.3.0, 64-bit
+db_1          | 2021-09-11 22:16:05.630 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  listening on IPv4 address <span style="color:#e6db74">&#34;0.0.0.0&#34;</span>, port <span style="color:#ae81ff">5432</span>
+db_1          | 2021-09-11 22:16:05.630 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  listening on IPv6 address <span style="color:#e6db74">&#34;::&#34;</span>, port <span style="color:#ae81ff">5432</span>
+db_1          | 2021-09-11 22:16:05.634 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  listening on Unix socket <span style="color:#e6db74">&#34;/var/run/postgresql/.s.PGSQL.5432&#34;</span>
+db_1          | 2021-09-11 22:16:05.649 UTC <span style="color:#f92672">[</span>56<span style="color:#f92672">]</span> LOG:  database system was shut down at 2021-09-11 22:16:05 UTC
+db_1          | 2021-09-11 22:16:05.653 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  database system is ready to accept connections
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -1121,19 +1204,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1631394658"></script>
-    <script src="/js/perfect-scrollbar.min.js?1631394658"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1631394658"></script>
-    <script src="/js/jquery.sticky.js?1631394658"></script>
-    <script src="/js/featherlight.min.js?1631394658"></script>
-    <script src="/js/highlight.pack.js?1631394658"></script>
+    <script src="/js/clipboard.min.js?1631399178"></script>
+    <script src="/js/perfect-scrollbar.min.js?1631399178"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1631399178"></script>
+    <script src="/js/jquery.sticky.js?1631399178"></script>
+    <script src="/js/featherlight.min.js?1631399178"></script>
+    <script src="/js/highlight.pack.js?1631399178"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1631394658"></script>
-    <script src="/js/learn.js?1631394658"></script>
-    <script src="/js/hugo-learn.js?1631394658"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1631399178"></script>
+    <script src="/js/learn.js?1631399178"></script>
+    <script src="/js/hugo-learn.js?1631399178"></script>
     
         
-            <script src="/mermaid/mermaid.js?1631394658"></script>
+            <script src="/mermaid/mermaid.js?1631399178"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
