@@ -179,4 +179,72 @@ Once it is up we can test the applications running locally
 {"message":"Database Connected"}
 ```
 
+Let's create a user for the application and rebuild our image
+
+Add these lines to the dockerfile to create a new user 
+```bash 
+# Create appuser.
+ENV USER=appuser
+ENV UID=10001
+# See https://stackoverflow.com/a/55757473/12429735RUN
+RUN adduser \    
+--disabled-password \    
+--gecos "" \    
+--home "/nonexistent" \    
+--shell "/sbin/nologin" \    
+--no-create-home \    
+--uid "${UID}" \    
+"${USER}"
+```
+
+Inside the scratch container add these lines. 
+```bash
+# Import the user and group files from the builder.
+COPY --from=builder /etc/passwd /etc/passwd
+COPY --from=builder /etc/group /etc/group
+
+# Use an unprivileged user.
+USER appuser:appuser
+```
+
+The Dockerfile should look like this now
+```dockerfile
+FROM golang:1.13-alpine AS builder
+
+RUN apk update && apk add --no-cache git
+# Create appuser.
+ENV USER=appuser
+ENV UID=10001
+# See https://stackoverflow.com/a/55757473/12429735RUN
+RUN adduser \    
+--disabled-password \    
+--gecos "" \    
+--home "/nonexistent" \    
+--shell "/sbin/nologin" \    
+--no-create-home \    
+--uid "${UID}" \    
+"${USER}"
+WORKDIR /go/src/app
+COPY . .
+
+RUN GIT_TERMINAL_PROMPT=1 go get -d -v
+RUN CGO_ENABLED=0 go build -o /go/bin/app
+
+FROM golang:1.13-alpine
+
+COPY --from=builder /go/bin/app /go/bin/app
+# Import the user and group files from the builder.
+COPY --from=builder /etc/passwd /etc/passwd
+COPY --from=builder /etc/group /etc/group
+
+# Use an unprivileged user.
+USER appuser:appuser
+
+EXPOSE 8080
+EXPOSE 8090
+
+CMD ["/go/bin/app"]
+```
+
+
 
