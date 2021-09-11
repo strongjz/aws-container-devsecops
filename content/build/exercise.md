@@ -7,12 +7,86 @@ Navigate to DevSecops repo
 
 ```bash
 cd ~/environment/devsecopspipeline
+~/environment/devsecopspipeline/: export DB_PASSWORD=temppassword
 ```
 
+## Run locally
+```bash
+~/environment/devsecopspipeline (master) $ make run
+env GIT_TERMINAL_PROMPT=1 go get -d -v .
+github.com/strongjz/go_example_app (download)
+created GOPATH=/home/ec2-user/go; see 'go help gopath'
+github.com/gin-gonic/gin (download)
+github.com/gin-contrib/sse (download)
+github.com/go-playground/validator (download)
+github.com/go-playground/universal-translator (download)
+github.com/go-playground/locales (download)
+github.com/leodido/go-urn (download)
+get "golang.org/x/crypto/sha3": found meta tag get.metaImport{Prefix:"golang.org/x/crypto", VCS:"git", RepoRoot:"https://go.googlesource.com/crypto"} at //golang.org/x/crypto/sha3?go-get=1
+get "golang.org/x/crypto/sha3": verifying non-authoritative meta tag
+golang.org/x/crypto (download)
+get "golang.org/x/text/language": found meta tag get.metaImport{Prefix:"golang.org/x/text", VCS:"git", RepoRoot:"https://go.googlesource.com/text"} at //golang.org/x/text/language?go-get=1
+get "golang.org/x/text/language": verifying non-authoritative meta tag
+golang.org/x/text (download)
+github.com/ugorji/go (download)
+get "google.golang.org/protobuf/proto": found meta tag get.metaImport{Prefix:"google.golang.org/protobuf", VCS:"git", RepoRoot:"https://go.googlesource.com/protobuf"} at //google.golang.org/protobuf/proto?go-get=1
+get "google.golang.org/protobuf/proto": verifying non-authoritative meta tag
+google.golang.org/protobuf (download)
+get "gopkg.in/yaml.v2": found meta tag get.metaImport{Prefix:"gopkg.in/yaml.v2", VCS:"git", RepoRoot:"https://gopkg.in/yaml.v2"} at //gopkg.in/yaml.v2?go-get=1
+gopkg.in/yaml.v2 (download)
+github.com/mattn/go-isatty (download)
+get "golang.org/x/sys/unix": found meta tag get.metaImport{Prefix:"golang.org/x/sys", VCS:"git", RepoRoot:"https://go.googlesource.com/sys"} at //golang.org/x/sys/unix?go-get=1
+get "golang.org/x/sys/unix": verifying non-authoritative meta tag
+golang.org/x/sys (download)
+github.com/lib/pq (download)
+go run main.go
+Starting App
+Starting App Engine
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+- using env:   export GIN_MODE=release
+- using code:  gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/strongjz/go_example_app/app.rootHandler (3 handlers)
+[GIN-debug] GET    /ping                     --> github.com/strongjz/go_example_app/app.pingHandler (3 handlers)
+[GIN-debug] GET    /data                     --> github.com/strongjz/go_example_app/app.dataHandler (3 handlers)
+[GIN-debug] GET    /secret                   --> github.com/strongjz/go_example_app/app.secretHandler (3 handlers)
+[GIN-debug] GET    /host                     --> github.com/strongjz/go_example_app/app.hostHandler (3 handlers)
+[GIN-debug] GET    /external                 --> github.com/strongjz/go_example_app/app.externalHandler (3 handlers)
+[GIN-debug] Environment variable PORT="8080"
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN-debug] [ERROR] listen tcp :8080: bind: address already in use
+~/environment/devsecopspipeline (master) $ make run
+env GIT_TERMINAL_PROMPT=1 go get -d -v .
+go run main.go
+Starting App
+Starting App Engine
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+- using env:   export GIN_MODE=release
+- using code:  gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /                         --> github.com/strongjz/go_example_app/app.rootHandler (3 handlers)
+[GIN-debug] GET    /ping                     --> github.com/strongjz/go_example_app/app.pingHandler (3 handlers)
+[GIN-debug] GET    /data                     --> github.com/strongjz/go_example_app/app.dataHandler (3 handlers)
+[GIN-debug] GET    /secret                   --> github.com/strongjz/go_example_app/app.secretHandler (3 handlers)
+[GIN-debug] GET    /host                     --> github.com/strongjz/go_example_app/app.hostHandler (3 handlers)
+[GIN-debug] GET    /external                 --> github.com/strongjz/go_example_app/app.externalHandler (3 handlers)
+[GIN-debug] Environment variable PORT="8080"
+[GIN-debug] Listening and serving HTTP on :8080
+```
+
+Test 
+```bash
+~/environment/devsecopspipeline (master) $ curl localhost:8080/
+{"message":"Default Page"}
+~/environment/devsecopspipeline (master) $ curl localhost:8080/data
+{"message":"DB is not connected"}
+```
+
+## Running in Docker Compose 
 
 ```bash
 ~/environment/devsecopspipeline (master) $ export DB_PASSWORD=temppassword
-AWSReservedSSO_AdministratorAccess_9c06ffa3ce9d7954:~/environment/devsecopspipeline (master) $ make compose_up
+~/environment/devsecopspipeline (master) $ make compose_up
 docker-compose up
 Recreating devsecopspipeline_db_1 ... done
 Recreating devsecopspipeline_go-example_1 ... done
@@ -93,3 +167,16 @@ db_1          | 2021-09-11 22:16:05.634 UTC [1] LOG:  listening on Unix socket "
 db_1          | 2021-09-11 22:16:05.649 UTC [56] LOG:  database system was shut down at 2021-09-11 22:16:05 UTC
 db_1          | 2021-09-11 22:16:05.653 UTC [1] LOG:  database system is ready to accept connections
 ```
+
+Once it is up we can test the applications running locally 
+
+```bash
+~/environment/devsecopspipeline (master) $ curl localhost:8080/
+{"message":"Default Page"}
+~/environment/devsecopspipeline (master) $ curl localhost:8080/ping
+{"message":"Pong Version `0.1.20`"}
+~/environment/devsecopspipeline (master) $ curl localhost:8080/data
+{"message":"Database Connected"}
+```
+
+

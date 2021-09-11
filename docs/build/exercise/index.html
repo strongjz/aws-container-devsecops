@@ -12,22 +12,22 @@
     <title>Secure Containers Exercise :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1631399178" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1631399178" rel="stylesheet">
-    <link href="/css/hybrid.css?1631399178" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1631399178" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1631399178" rel="stylesheet">
-    <link href="/css/auto-complete.css?1631399178" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1631399178" rel="stylesheet">
-    <link href="/css/theme.css?1631399178" rel="stylesheet">
-    <link href="/css/tabs.css?1631399178" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1631399178" rel="stylesheet">
+    <link href="/css/nucleus.css?1631401278" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1631401278" rel="stylesheet">
+    <link href="/css/hybrid.css?1631401278" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1631401278" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1631401278" rel="stylesheet">
+    <link href="/css/auto-complete.css?1631401278" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1631401278" rel="stylesheet">
+    <link href="/css/theme.css?1631401278" rel="stylesheet">
+    <link href="/css/tabs.css?1631401278" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1631401278" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1631399178" rel="stylesheet">
+    <link href="/css/theme-green.css?1631401278" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1631399178"></script>
+    <script src="/js/jquery-3.3.1.min.js?1631401278"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1631399178"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1631399178"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1631401278"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1631401278"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1631399178"></script>
+<script type="text/javascript" src="/js/search.js?1631401278"></script>
 
     
   </div>
@@ -696,7 +696,12 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#run-locally">Run locally</a></li>
+    <li><a href="#running-in-docker-compose">Running in Docker Compose</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -722,8 +727,76 @@
 
 <p>Navigate to DevSecops repo</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/environment/devsecopspipeline
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ export DB_PASSWORD<span style="color:#f92672">=</span>temppassword
-AWSReservedSSO_AdministratorAccess_9c06ffa3ce9d7954:~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ make compose_up
+~/environment/devsecopspipeline/: export DB_PASSWORD<span style="color:#f92672">=</span>temppassword
+</code></pre></div><h2 id="run-locally">Run locally</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ make run
+env GIT_TERMINAL_PROMPT<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> go get -d -v .
+github.com/strongjz/go_example_app <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+created GOPATH<span style="color:#f92672">=</span>/home/ec2-user/go; see <span style="color:#e6db74">&#39;go help gopath&#39;</span>
+github.com/gin-gonic/gin <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+github.com/gin-contrib/sse <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+github.com/go-playground/validator <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+github.com/go-playground/universal-translator <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+github.com/go-playground/locales <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+github.com/leodido/go-urn <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+get <span style="color:#e6db74">&#34;golang.org/x/crypto/sha3&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;golang.org/x/crypto&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/crypto&#34;</span><span style="color:#f92672">}</span> at //golang.org/x/crypto/sha3?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+get <span style="color:#e6db74">&#34;golang.org/x/crypto/sha3&#34;</span>: verifying non-authoritative meta tag
+golang.org/x/crypto <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+get <span style="color:#e6db74">&#34;golang.org/x/text/language&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;golang.org/x/text&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/text&#34;</span><span style="color:#f92672">}</span> at //golang.org/x/text/language?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+get <span style="color:#e6db74">&#34;golang.org/x/text/language&#34;</span>: verifying non-authoritative meta tag
+golang.org/x/text <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+github.com/ugorji/go <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+get <span style="color:#e6db74">&#34;google.golang.org/protobuf/proto&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;google.golang.org/protobuf&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/protobuf&#34;</span><span style="color:#f92672">}</span> at //google.golang.org/protobuf/proto?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+get <span style="color:#e6db74">&#34;google.golang.org/protobuf/proto&#34;</span>: verifying non-authoritative meta tag
+google.golang.org/protobuf <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+get <span style="color:#e6db74">&#34;gopkg.in/yaml.v2&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;gopkg.in/yaml.v2&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://gopkg.in/yaml.v2&#34;</span><span style="color:#f92672">}</span> at //gopkg.in/yaml.v2?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+gopkg.in/yaml.v2 <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+github.com/mattn/go-isatty <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+get <span style="color:#e6db74">&#34;golang.org/x/sys/unix&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;golang.org/x/sys&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/sys&#34;</span><span style="color:#f92672">}</span> at //golang.org/x/sys/unix?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+get <span style="color:#e6db74">&#34;golang.org/x/sys/unix&#34;</span>: verifying non-authoritative meta tag
+golang.org/x/sys <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+github.com/lib/pq <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+go run main.go
+Starting App
+Starting App Engine
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Running in <span style="color:#e6db74">&#34;debug&#34;</span> mode. Switch to <span style="color:#e6db74">&#34;release&#34;</span> mode in production.
+- using env:   export GIN_MODE<span style="color:#f92672">=</span>release
+- using code:  gin.SetMode<span style="color:#f92672">(</span>gin.ReleaseMode<span style="color:#f92672">)</span>
+
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /                         --&gt; github.com/strongjz/go_example_app/app.rootHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /ping                     --&gt; github.com/strongjz/go_example_app/app.pingHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /data                     --&gt; github.com/strongjz/go_example_app/app.dataHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /secret                   --&gt; github.com/strongjz/go_example_app/app.secretHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /host                     --&gt; github.com/strongjz/go_example_app/app.hostHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /external                 --&gt; github.com/strongjz/go_example_app/app.externalHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Environment variable PORT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8080&#34;</span>
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Listening and serving HTTP on :8080
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> listen tcp :8080: bind: address already in use
+~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ make run
+env GIT_TERMINAL_PROMPT<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> go get -d -v .
+go run main.go
+Starting App
+Starting App Engine
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Running in <span style="color:#e6db74">&#34;debug&#34;</span> mode. Switch to <span style="color:#e6db74">&#34;release&#34;</span> mode in production.
+- using env:   export GIN_MODE<span style="color:#f92672">=</span>release
+- using code:  gin.SetMode<span style="color:#f92672">(</span>gin.ReleaseMode<span style="color:#f92672">)</span>
+
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /                         --&gt; github.com/strongjz/go_example_app/app.rootHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /ping                     --&gt; github.com/strongjz/go_example_app/app.pingHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /data                     --&gt; github.com/strongjz/go_example_app/app.dataHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /secret                   --&gt; github.com/strongjz/go_example_app/app.secretHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /host                     --&gt; github.com/strongjz/go_example_app/app.hostHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /external                 --&gt; github.com/strongjz/go_example_app/app.externalHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Environment variable PORT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8080&#34;</span>
+<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Listening and serving HTTP on :8080
+</code></pre></div><p>Test</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/
+<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Default Page&#34;</span><span style="color:#f92672">}</span>
+~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/data
+<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;DB is not connected&#34;</span><span style="color:#f92672">}</span>
+</code></pre></div><h2 id="running-in-docker-compose">Running in Docker Compose</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ export DB_PASSWORD<span style="color:#f92672">=</span>temppassword
+~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ make compose_up
 docker-compose up
 Recreating devsecopspipeline_db_1 ... <span style="color:#66d9ef">done</span>
 Recreating devsecopspipeline_go-example_1 ... <span style="color:#66d9ef">done</span>
@@ -803,6 +876,13 @@ db_1          | 2021-09-11 22:16:05.630 UTC <span style="color:#f92672">[</span>
 db_1          | 2021-09-11 22:16:05.634 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  listening on Unix socket <span style="color:#e6db74">&#34;/var/run/postgresql/.s.PGSQL.5432&#34;</span>
 db_1          | 2021-09-11 22:16:05.649 UTC <span style="color:#f92672">[</span>56<span style="color:#f92672">]</span> LOG:  database system was shut down at 2021-09-11 22:16:05 UTC
 db_1          | 2021-09-11 22:16:05.653 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  database system is ready to accept connections
+</code></pre></div><p>Once it is up we can test the applications running locally</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/
+<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Default Page&#34;</span><span style="color:#f92672">}</span>
+~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/ping
+<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Pong Version `0.1.20`&#34;</span><span style="color:#f92672">}</span>
+~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/data
+<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Database Connected&#34;</span><span style="color:#f92672">}</span>
 </code></pre></div>
 
 <footer class="footline">
@@ -1204,19 +1284,19 @@ db_1          | 2021-09-11 22:16:05.653 UTC <span style="color:#f92672">[</span>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1631399178"></script>
-    <script src="/js/perfect-scrollbar.min.js?1631399178"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1631399178"></script>
-    <script src="/js/jquery.sticky.js?1631399178"></script>
-    <script src="/js/featherlight.min.js?1631399178"></script>
-    <script src="/js/highlight.pack.js?1631399178"></script>
+    <script src="/js/clipboard.min.js?1631401278"></script>
+    <script src="/js/perfect-scrollbar.min.js?1631401278"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1631401278"></script>
+    <script src="/js/jquery.sticky.js?1631401278"></script>
+    <script src="/js/featherlight.min.js?1631401278"></script>
+    <script src="/js/highlight.pack.js?1631401278"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1631399178"></script>
-    <script src="/js/learn.js?1631399178"></script>
-    <script src="/js/hugo-learn.js?1631399178"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1631401278"></script>
+    <script src="/js/learn.js?1631401278"></script>
+    <script src="/js/hugo-learn.js?1631401278"></script>
     
         
-            <script src="/mermaid/mermaid.js?1631399178"></script>
+            <script src="/mermaid/mermaid.js?1631401278"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

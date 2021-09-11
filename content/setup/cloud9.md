@@ -36,6 +36,7 @@ With the docker images and all the other information it would be helpful to have
 
 ```bash
 pip3 install --user --upgrade boto3
+export AWS_DEFAULT_REGION=$(curl --silent http://169.254.169.254/latest/dynamic/instance-identity/document | jq -r .region)
 export instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
 python -c "import boto3
 import os
@@ -55,7 +56,7 @@ volume_id = volume_info['Volumes'][0]['VolumeId']
 try:
     resize = ec2.modify_volume(
             VolumeId=volume_id,
-            Size=30
+            Size=100
     )
     print(resize)
 except ClientError as e:

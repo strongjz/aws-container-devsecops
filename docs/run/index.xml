@@ -12,7 +12,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/run/run.files/exercise/</guid>
-      <description></description>
+      <description>make helm_update helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp;
+helm repo update &amp;ldquo;stable&amp;rdquo; has been added to your repositories Hang tight while we grab the latest from your chart repositories&amp;hellip; &amp;hellip;Successfully got an update from the &amp;ldquo;stable&amp;rdquo; chart repository Update Complete. ⎈Happy Helming!⎈
+~/environment/devsecopspipeline (master) $ make prom helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp;
+helm repo update &amp;ldquo;stable&amp;rdquo; already exists with the same configuration, skipping Hang tight while we grab the latest from your chart repositories&amp;hellip; &amp;hellip;Successfully got an update from the &amp;ldquo;stable&amp;rdquo; chart repository Update Complete.</description>
     </item>
     
     <item>

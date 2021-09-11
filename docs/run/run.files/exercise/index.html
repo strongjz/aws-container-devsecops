@@ -12,22 +12,22 @@
     <title>Running Containers Exercise :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1631399178" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1631399178" rel="stylesheet">
-    <link href="/css/hybrid.css?1631399178" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1631399178" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1631399178" rel="stylesheet">
-    <link href="/css/auto-complete.css?1631399178" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1631399178" rel="stylesheet">
-    <link href="/css/theme.css?1631399178" rel="stylesheet">
-    <link href="/css/tabs.css?1631399178" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1631399178" rel="stylesheet">
+    <link href="/css/nucleus.css?1631401278" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1631401278" rel="stylesheet">
+    <link href="/css/hybrid.css?1631401278" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1631401278" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1631401278" rel="stylesheet">
+    <link href="/css/auto-complete.css?1631401278" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1631401278" rel="stylesheet">
+    <link href="/css/theme.css?1631401278" rel="stylesheet">
+    <link href="/css/tabs.css?1631401278" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1631401278" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1631399178" rel="stylesheet">
+    <link href="/css/theme-green.css?1631401278" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1631399178"></script>
+    <script src="/js/jquery-3.3.1.min.js?1631401278"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1631399178"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1631399178"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1631401278"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1631401278"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1631399178"></script>
+<script type="text/javascript" src="/js/search.js?1631401278"></script>
 
     
   </div>
@@ -696,7 +696,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -720,6 +728,91 @@
         
 
 
+<p>make helm_update
+helm repo add stable <a href="https://charts.helm.sh/stable">https://charts.helm.sh/stable</a> &amp;&amp;<br>
+helm repo update
+&ldquo;stable&rdquo; has been added to your repositories
+Hang tight while we grab the latest from your chart repositories&hellip;
+&hellip;Successfully got an update from the &ldquo;stable&rdquo; chart repository
+Update Complete. ⎈Happy Helming!⎈</p>
+<p>~/environment/devsecopspipeline (master) $ make prom
+helm repo add stable <a href="https://charts.helm.sh/stable">https://charts.helm.sh/stable</a> &amp;&amp;<br>
+helm repo update
+&ldquo;stable&rdquo; already exists with the same configuration, skipping
+Hang tight while we grab the latest from your chart repositories&hellip;
+&hellip;Successfully got an update from the &ldquo;stable&rdquo; chart repository
+Update Complete. ⎈Happy Helming!⎈
+kubectl apply -f namespace_prometheus.yml &amp;&amp;<br>
+helm install prometheus stable/prometheus<br>
+&ndash;namespace prometheus<br>
+&ndash;set alertmanager.persistentVolume.storageClass=&ldquo;gp2&rdquo;,server.persistentVolume.storageClass=&ldquo;gp2&rdquo;
+namespace/prometheus created
+WARNING: This chart is deprecated
+W0911 22:48:05.645050   16010 warnings.go:70] rbac.authorization.k8s.io/v1beta1 ClusterRole is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRole
+W0911 22:48:05.656705   16010 warnings.go:70] rbac.authorization.k8s.io/v1beta1 ClusterRole is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRole
+W0911 22:48:05.667391   16010 warnings.go:70] rbac.authorization.k8s.io/v1beta1 ClusterRole is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRole
+W0911 22:48:05.679784   16010 warnings.go:70] rbac.authorization.k8s.io/v1beta1 ClusterRole is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRole
+W0911 22:48:05.691168   16010 warnings.go:70] rbac.authorization.k8s.io/v1beta1 ClusterRoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRoleBinding
+W0911 22:48:05.703088   16010 warnings.go:70] rbac.authorization.k8s.io/v1beta1 ClusterRoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRoleBinding
+W0911 22:48:05.716013   16010 warnings.go:70] rbac.authorization.k8s.io/v1beta1 ClusterRoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRoleBinding
+W0911 22:48:05.733060   16010 warnings.go:70] rbac.authorization.k8s.io/v1beta1 ClusterRoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRoleBinding
+W0911 22:48:05.962690   16010 warnings.go:70] rbac.authorization.k8s.io/v1beta1 ClusterRole is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRole
+W0911 22:48:05.965226   16010 warnings.go:70] rbac.authorization.k8s.io/v1beta1 ClusterRole is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRole
+W0911 22:48:05.968345   16010 warnings.go:70] rbac.authorization.k8s.io/v1beta1 ClusterRole is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRole
+W0911 22:48:05.968824   16010 warnings.go:70] rbac.authorization.k8s.io/v1beta1 ClusterRole is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRole
+W0911 22:48:05.978633   16010 warnings.go:70] rbac.authorization.k8s.io/v1beta1 ClusterRoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRoleBinding
+W0911 22:48:05.979460   16010 warnings.go:70] rbac.authorization.k8s.io/v1beta1 ClusterRoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRoleBinding
+W0911 22:48:05.979460   16010 warnings.go:70] rbac.authorization.k8s.io/v1beta1 ClusterRoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRoleBinding
+W0911 22:48:05.980533   16010 warnings.go:70] rbac.authorization.k8s.io/v1beta1 ClusterRoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRoleBinding
+NAME: prometheus
+LAST DEPLOYED: Sat Sep 11 22:48:05 2021
+NAMESPACE: prometheus
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+DEPRECATED and moved to <a href="https://github.com/prometheus-community/helm-charts">https://github.com/prometheus-community/helm-charts</a>The Prometheus server can be accessed via port 80 on the following DNS name from within your cluster:
+prometheus-server.prometheus.svc.cluster.local</p>
+<p>Get the Prometheus server URL by running these commands in the same shell:
+export POD_NAME=$(kubectl get pods &ndash;namespace prometheus -l &ldquo;app=prometheus,component=server&rdquo; -o jsonpath=&quot;{.items[0].metadata.name}&quot;)
+kubectl &ndash;namespace prometheus port-forward $POD_NAME 9090</p>
+<p>The Prometheus alertmanager can be accessed via port 80 on the following DNS name from within your cluster:
+prometheus-alertmanager.prometheus.svc.cluster.local</p>
+<p>Get the Alertmanager URL by running these commands in the same shell:
+export POD_NAME=$(kubectl get pods &ndash;namespace prometheus -l &ldquo;app=prometheus,component=alertmanager&rdquo; -o jsonpath=&quot;{.items[0].metadata.name}&quot;)
+kubectl &ndash;namespace prometheus port-forward $POD_NAME 9093
+#################################################################################</p>
+<h6 id="warning-pod-security-policy-has-been-moved-to-a-global-property">WARNING: Pod Security Policy has been moved to a global property. </h6>
+<h6 id="use-valuespodsecuritypolicyenabled-with-pod-based">use .Values.podSecurityPolicy.enabled with pod-based     </h6>
+<h6 id="annotations">annotations                                              </h6>
+<h6 id="eg-valuesnodeexporterpodsecuritypolicyannotations">(e.g. .Values.nodeExporter.podSecurityPolicy.annotations)</h6>
+<p>#################################################################################</p>
+<p>The Prometheus PushGateway can be accessed via port 9091 on the following DNS name from within your cluster:
+prometheus-pushgateway.prometheus.svc.cluster.local</p>
+<p>Get the PushGateway URL by running these commands in the same shell:
+export POD_NAME=$(kubectl get pods &ndash;namespace prometheus -l &ldquo;app=prometheus,component=pushgateway&rdquo; -o jsonpath=&quot;{.items[0].metadata.name}&quot;)
+kubectl &ndash;namespace prometheus port-forward $POD_NAME 9091</p>
+<p>For more information on running Prometheus, visit:
+<a href="https://prometheus.io/">https://prometheus.io/</a></p>
+<p>$ make deploy-fluent-bit
+aws iam create-policy &ndash;policy-name EKS-CloudWatchLogs-&ldquo;devsecops&rdquo; &ndash;policy-document file://./fluent-bit/aws/iam_role_policy.json
+{
+&ldquo;Policy&rdquo;: {
+&ldquo;PolicyName&rdquo;: &ldquo;EKS-CloudWatchLogs-devsecops&rdquo;,
+&ldquo;PermissionsBoundaryUsageCount&rdquo;: 0,
+&ldquo;CreateDate&rdquo;: &ldquo;2021-09-11T22:48:53Z&rdquo;,
+&ldquo;AttachmentCount&rdquo;: 0,
+&ldquo;IsAttachable&rdquo;: true,
+&ldquo;PolicyId&rdquo;: &ldquo;ANPAUKKITVMH4UNGDATVQ&rdquo;,
+&ldquo;DefaultVersionId&rdquo;: &ldquo;v1&rdquo;,
+&ldquo;Path&rdquo;: &ldquo;/&rdquo;,
+&ldquo;Arn&rdquo;: &ldquo;arn:aws:iam::297041898255:policy/EKS-CloudWatchLogs-devsecops&rdquo;,
+&ldquo;UpdateDate&rdquo;: &ldquo;2021-09-11T22:48:53Z&rdquo;
+}
+}
+aws iam attach-role-policy &ndash;role-name ng-1 &ndash;policy-arn <code>aws iam list-policies | jq -r '.[][] | select(.PolicyName == &quot;EKS-CloudWatchLogs-devsecops&quot;) | .Arn'</code></p>
+<p>An error occurred (NoSuchEntity) when calling the AttachRolePolicy operation: The role with name ng-1 cannot be found.
+make: *** [deploy-fluent-bit] Error 255</p>
 
 
 <footer class="footline">
@@ -1118,19 +1211,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1631399178"></script>
-    <script src="/js/perfect-scrollbar.min.js?1631399178"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1631399178"></script>
-    <script src="/js/jquery.sticky.js?1631399178"></script>
-    <script src="/js/featherlight.min.js?1631399178"></script>
-    <script src="/js/highlight.pack.js?1631399178"></script>
+    <script src="/js/clipboard.min.js?1631401278"></script>
+    <script src="/js/perfect-scrollbar.min.js?1631401278"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1631401278"></script>
+    <script src="/js/jquery.sticky.js?1631401278"></script>
+    <script src="/js/featherlight.min.js?1631401278"></script>
+    <script src="/js/highlight.pack.js?1631401278"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1631399178"></script>
-    <script src="/js/learn.js?1631399178"></script>
-    <script src="/js/hugo-learn.js?1631399178"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1631401278"></script>
+    <script src="/js/learn.js?1631401278"></script>
+    <script src="/js/hugo-learn.js?1631401278"></script>
     
         
-            <script src="/mermaid/mermaid.js?1631399178"></script>
+            <script src="/mermaid/mermaid.js?1631401278"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
