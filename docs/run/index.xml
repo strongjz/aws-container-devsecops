@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Running Containers on AWS Container DevSecOps</title>
-    <link>//localhost:1313/run/</link>
+    <link>/run/</link>
     <description>Recent content in Running Containers on AWS Container DevSecOps</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="//localhost:1313/run/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="/run/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Running Containers Exercise</title>
-      <link>//localhost:1313/run/run.files/exercise/</link>
+      <link>/run/run.files/exercise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/run/run.files/exercise/</guid>
+      <guid>/run/run.files/exercise/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>//localhost:1313/run/run.files/falco-demo/nodejs-bad-rest-api/readme/</link>
+      <link>/run/run.files/falco-demo/nodejs-bad-rest-api/readme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/run/run.files/falco-demo/nodejs-bad-rest-api/readme/</guid>
+      <guid>/run/run.files/falco-demo/nodejs-bad-rest-api/readme/</guid>
       <description>Demo of falco with bash exec via poorly designed REST API. Introduction This example shows how a server could have a poorly designed API that allowed a client to execute arbitrary programs on the server, and how that behavior can be detected using Sysdig Falco.
 server.js in this directory defines the server. The poorly designed API is this route handler:
 router.get(&amp;#39;/exec/:cmd&amp;#39;, function(req, res) { var output = child_process.execSync(req.params.cmd); res.send(output); }); app.</description>
