@@ -17,6 +17,4 @@ This will be part Lecture and part hands on.
 Let's get started!
 
 
-For an intro on Kubernetes please see
 
-{{< youtube rnUoGTJpEko >}}

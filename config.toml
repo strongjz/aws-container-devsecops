@@ -14,3 +14,24 @@ theme = "hugo-theme-learn"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-github'></i> AWS Container DevsecOps Github repo"
+identifier = "ds"
+url = "https://github.com/strongjz/aws-container-devsecops"
+weight = 10
+[[menu.shortcuts]]
+name = "<i class='fab fa-clouds'></i> Advanced Networking with Kubernetes on AWS"
+identifier = "course"
+url = "https://acloud.guru/overview/advanced-networking-with-kubernetes-for-aws"
+weight = 11
+[[menu.shortcuts]]
+name = "<i class='fas fa-book'></i> Networking and Kubernetes: A Layered Appoarch"
+identifier = "book"
+url = "https://learning.oreilly.com/library/view/networking-and-kubernetes/9781492081647/"
+weight = 12
+
+
+
+
+

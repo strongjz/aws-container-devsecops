@@ -21,13 +21,11 @@ endif
 
 help:  ## Show this help
 	@echo "\nIf you have docker installed, use the following targets (make docker-serve is probably what you want for local development): \n"
-	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//' | grep "^docker-"
+	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'"
 	@echo "\nIf you have hugo installed, use the following targets: \n"
-	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//' | grep "^hugo-"
+	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'"
 	@echo "\nOther targets: \n"
-	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//' | grep -v "^docker-" | grep -v "^hugo-" | grep -v "^_"
-	@echo "\n"
-	@echo "Don't forget to checkout contributions.md for more info on how to contribute to this repo."
+	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//' "^_"
 	@echo "\n"
 
 clean: ## Remove the docs-local/ folder from your system

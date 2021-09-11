@@ -13,7 +13,7 @@ Tools used in the 3 Musketeers pattern:
 
 From https://3musketeers.io/
 
-**Consistency**  - Run the same commands no matter where you are: Linux, MacOS, Windows, CI/CD tools that supports Docker like GitHub Actions, Travis CI, CircleCI, and GitLab CI.
+**Consistency**  - Run the same commands no matter where you are: Linux, macOS, Windows, CI/CD tools that supports Docker like GitHub Actions, Travis CI, CircleCI, and GitLab CI.
 
 **Control** - Take control of languages, versions, and tools you need, and version source control your pipelines with your preferred VCS like GitHub and GitLab.
 
