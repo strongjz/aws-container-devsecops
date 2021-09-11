@@ -112,6 +112,45 @@ Confidence - Test your code and pipelines locally before your CI/CD tool runs it
     </item>
     
     <item>
+      <title>Secure Containers</title>
+      <link>//localhost:1313/build/container/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/build/container/</guid>
+      <description>Baseline  DISABLE ROOT Least Privilege Run time Protections Network policies DISABLE ROOT  Helpers Versioning
+ Invest in Strategy Containers follow build Versions of Software Metadata  No really do this Latest Tag
+ Avoid using :latest tags Unable to control Unknown updates Versions the way to go Container digest  Reduce, reuse Base Container
+ Reduce Build Times Scratch Container golden images  </description>
+    </item>
+    
+    <item>
+      <title>Secure Containers Exercise</title>
+      <link>//localhost:1313/build/exercise/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/build/exercise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Container Pipeline Exercise</title>
+      <link>//localhost:1313/pipeline/exercise/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/pipeline/exercise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Running Containers Exercise</title>
+      <link>//localhost:1313/run/run.files/exercise/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/run/run.files/exercise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title></title>
       <link>//localhost:1313/run/run.files/falco-demo/nodejs-bad-rest-api/readme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

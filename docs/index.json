@@ -4,14 +4,14 @@
 	"title": "AWS DevSecOps Container Pipeline",
 	"tags": [],
 	"description": "",
-	"content": "AWS DevSecOps Container Pipeline Welcome to AWS DevSecOps Container Pipeline workshop. In this workshop Engineers will learn how to secure their container pipeline using AWS and other Cloud Native tools.\nWe will be working through the following topics.\n Introduction   Workshop Setup   Development Environment   Container Builds   Container Pipeline   Securely Running Containers   Conclusion   This will be part Lecture and part hands on.\nLet\u0026rsquo;s get started!\n"
+	"content": "AWS DevSecOps Container Pipeline Welcome to AWS DevSecOps Container Pipeline workshop. In this workshop Engineers will learn how to secure their container pipeline using AWS and other Cloud Native tools.\nWe will be working through the following topics.\n Introduction   Workshop Setup   Development Environment   Container Builds   Container Pipeline   Securely Running Containers   Conclusion   This will be part Lecture and part hands on.\n"
 },
 {
 	"uri": "//localhost:1313/intro/",
 	"title": "Introduction",
 	"tags": [],
 	"description": "",
-	"content": " AWS Ambassador O\u0026rsquo;Reilly Author - Networking and Kubernetes: A Layer Approach A Cloud Guru Instructor- Advanced Networking with Kubernetes on AWS Kubernetes Ingress NGINX Maintainer Cloud Native Director @ Contino  For an intro on Kubernetes please see   "
+	"content": " AWS Ambassador O\u0026rsquo;Reilly Author - Networking and Kubernetes: A Layer Approach A Cloud Guru Instructor- Advanced Networking with Kubernetes on AWS Kubernetes Ingress NGINX Maintainer Kube Philly Organizer Cloud Native Director @ Contino  For an intro on Kubernetes please see   "
 },
 {
 	"uri": "//localhost:1313/intro/contino/",
@@ -95,28 +95,56 @@
 	"title": "Container Builds",
 	"tags": [],
 	"description": "",
-	"content": "Container Builds Minimal OS One Process per Container Run with local user Write logs to stdout \u0026amp; stderr Leverage environment variables Separating environmental concerns Mount configuration files\nSecure Containers\nDISABLE ROOT Least Privilege Run time Protections Pipeline builds Network policies DISABLE ROOT\nVersioning Invest in Strategy Containers follow build Versions of Software Metadata\nLatest Tag Avoid using :latest tags Unable to control Unknown updates Versions the way to go Container digest\nBase Container Reduce Build Times Scratch Container\n"
+	"content": " Minimal OS  Federa CoreOS CoreOS’s Container Linux Rancher OS Ubuntu Core OS AWS BottleRocket VMware Photon OS   One process per container Run with local user Write logs to stdout \u0026amp; stderr Leverage environment variables Separating environmental concerns Mount configuration files  "
+},
+{
+	"uri": "//localhost:1313/build/container/",
+	"title": "Secure Containers",
+	"tags": [],
+	"description": "",
+	"content": "Baseline  DISABLE ROOT Least Privilege Run time Protections Network policies DISABLE ROOT  Helpers Versioning\n Invest in Strategy Containers follow build Versions of Software Metadata  No really do this Latest Tag\n Avoid using :latest tags Unable to control Unknown updates Versions the way to go Container digest  Reduce, reuse Base Container\n Reduce Build Times Scratch Container golden images  "
+},
+{
+	"uri": "//localhost:1313/build/exercise/",
+	"title": "Secure Containers Exercise",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "//localhost:1313/pipeline/",
 	"title": "Container Pipeline",
 	"tags": [],
 	"description": "",
-	"content": "  Automating your build pipelines Visibility Troubleshooting Defect Remediation Build small autonomous pieces\nCI/CD Maintain a code repository Automate the build Keep the build fast Make the build self-testing Commit early, commit often Every commit gets built Everyone can see the results of the build Automate the deployment\nSecure Pipelines Signed Images Verify Trusted Images Kickoff Security Assessment\nCI/CD - AWS Codepipeline/Build Stages for Code pipeline\nBuild - Build golang example applications, in a docker container and stores it in the AWS ECR\nInvoke - Runs the Go Report Static Code analysis\nTest - runs any tests in the golang example applications\nDeploy - deploys the application via Code build, aws eks cli and kubectl\n"
+	"content": "  Container Pipeline Exercise   Automating your build pipelines Visibility Troubleshooting Defect Remediation Build small autonomous pieces\nCI/CD Maintain a code repository Automate the build Keep the build fast Make the build self-testing Commit early, commit often Every commit gets built Everyone can see the results of the build Automate the deployment\nSecure Pipelines Signed Images Verify Trusted Images Kickoff Security Assessment\nCI/CD - AWS Codepipeline/Build Stages for Code pipeline\nBuild - Build golang example applications, in a docker container and stores it in the AWS ECR\nInvoke - Runs the Go Report Static Code analysis\nTest - runs any tests in the golang example applications\nDeploy - deploys the application via Code build, aws eks cli and kubectl\n"
+},
+{
+	"uri": "//localhost:1313/pipeline/exercise/",
+	"title": "Container Pipeline Exercise",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "//localhost:1313/run/",
-	"title": "Securely Running Containers",
+	"title": "Running Containers",
 	"tags": [],
 	"description": "",
-	"content": "     Minimal OS Bottle Rocket Ubuntu Core\nCI/CD - Images should be scanned for CVE’s\nRun time - tools should be deployed that monitor running containers that miss behave\nContinuous scan images in registry for vulnerabilities in the registries, images can run in production but not get updated and deployed\nCreate separate environments for development, test, production and other scenarios, each with specific controls to provide RBAC for container deployment and management activities.\nShared Kernel – Do not mix containerized and non-containerized workloads on the same host instance. (e.g.: if a host is running a web server container, it should not also run a web server as a regularly installed component directly within the host OS). This will also make it easy to apply optimized countermeasures for container protection.\nhttps://github.com/aquasecurity/kube-bench\nNetwork Policies\nPer Namespace if using Kubernetes network policies\nApplications should have their own define with the deployment\nAdmins should have examples so application developers can understand how it impacts their applications\n"
+	"content": "     Minimal OS Bottle Rocket Ubuntu Core\nCI/CD - Images should be scanned for CVE’s\nRun time - tools should be deployed that monitor running containers that misbehave\nContinuous scan images in registry for vulnerabilities in the registries, images can run in production but not get updated and deployed\nCreate separate environments for development, test, production and other scenarios, each with specific controls to provide RBAC for container deployment and management activities.\nShared Kernel – Do not mix containerized and non-containerized workloads on the same host instance. (e.g.: if a host is running a web server container, it should not also run a web server as a regularly installed component directly within the host OS). This will also make it easy to apply optimized countermeasures for container protection.\nhttps://github.com/aquasecurity/kube-bench\nNetwork Policies\nPer Namespace if using Kubernetes network policies\nApplications should have their own define with the deployment\nAdmins should have examples so application developers can understand how it impacts their applications\n"
+},
+{
+	"uri": "//localhost:1313/run/run.files/exercise/",
+	"title": "Running Containers Exercise",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "//localhost:1313/conclusion/",
 	"title": "Conclusion",
 	"tags": [],
 	"description": "",
-	"content": "  CI/CD\nMaintain a code repository Automate the build Keep the build fast Make the build self-testing Commit early, commit often Every commit to the mainline gets built Everyone can see the results of the build Automate the deployment\nSecurity\nImmutable artifacts Static Code Analysis CVE Scanning Least Privileged Network Isolation Run Time protection Signed Commits Signed Images\n"
+	"content": "  CI/CD\n Maintain a code repository Automate the build Keep the build fast Make the build self-testing Commit early, commit often Every commit to the mainline gets built Everyone can see the results of the build Automate the deployment  Security\n Immutable artifacts Static Code Analysis CVE Scanning Least Privileged Network Isolation Run Time protection Signed Commits Signed Images  "
 },
 {
 	"uri": "//localhost:1313/run/run.files/falco-demo/nodejs-bad-rest-api/readme/",

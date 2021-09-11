@@ -1,5 +1,5 @@
 ---
-title: Securely Running Containers
+title: Running Containers
 weight: 50
 ---
 
@@ -12,7 +12,7 @@ Ubuntu Core
 
 CI/CD - Images should be scanned for CVE’s
 
-Run time - tools should be deployed that monitor running containers that miss behave
+Run time - tools should be deployed that monitor running containers that misbehave
 
 Continuous scan images in registry for vulnerabilities in the registries, images can run in production but not get updated and deployed
 

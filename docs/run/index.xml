@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Securely Running Containers on AWS Container DevSecOps</title>
+    <title>Running Containers on AWS Container DevSecOps</title>
     <link>//localhost:1313/run/</link>
-    <description>Recent content in Securely Running Containers on AWS Container DevSecOps</description>
+    <description>Recent content in Running Containers on AWS Container DevSecOps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="//localhost:1313/run/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running Containers Exercise</title>
+      <link>//localhost:1313/run/run.files/exercise/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/run/run.files/exercise/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title></title>
       <link>//localhost:1313/run/run.files/falco-demo/nodejs-bad-rest-api/readme/</link>

@@ -12,9 +12,6 @@ We will be working through the following topics.
 
 {{% children  %}}
 
+![](/images/aws-devsecops-pipeline.png)
+
 This will be part Lecture and part hands on.
-
-Let's get started!
-
-
-
