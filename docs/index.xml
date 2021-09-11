@@ -140,7 +140,15 @@ cd ~/environment/devsecopspipeline ~/environment/devsecopspipeline/: export DB_P
       <description>aws s3 mb s3://devsecops-james-strong &amp;ndash;region us-west-2 make_bucket: devsecops-james-strong
 go Terraform file
 terraform/config.tf
-terraform { backend &amp;ldquo;s3&amp;rdquo; { bucket = &amp;ldquo;devsecops-james-strong&amp;rdquo; key = &amp;ldquo;devsecops-james-strong/terraform_state&amp;rdquo; region = &amp;ldquo;us-west-2&amp;rdquo; } }</description>
+terraform { backend &amp;ldquo;s3&amp;rdquo; { bucket = &amp;ldquo;devsecops-james-strong&amp;rdquo; key = &amp;ldquo;devsecops-james-strong/terraform_state&amp;rdquo; region = &amp;ldquo;us-west-2&amp;rdquo; } }
+make tf_clean tf_init cd terraform/ &amp;amp;&amp;amp;
+rm -rf .terraform
+rm -rf plan.out cd terraform/ &amp;amp;&amp;amp;
+terraform init
+Initializing the backend&amp;hellip;
+Successfully configured the backend &amp;ldquo;s3&amp;rdquo;! Terraform will automatically use this backend unless the backend configuration changes.
+Initializing provider plugins&amp;hellip;
+ Finding hashicorp/aws versions matching &amp;ldquo;~&amp;gt; 3.</description>
     </item>
     
     <item>
