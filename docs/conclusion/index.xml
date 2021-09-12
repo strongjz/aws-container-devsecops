@@ -6,5 +6,25 @@
     <description>Recent content in Conclusion on AWS Container DevSecOps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="//localhost:1313/conclusion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cleanup</title>
+      <link>//localhost:1313/conclusion/clean/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/conclusion/clean/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>//localhost:1313/conclusion/workshops/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/conclusion/workshops/</guid>
+      <description>https://containersonaws.com/
+https://www.eksworkshop.com/010_introduction/
+https://containersfromthecouch.com/</description>
+    </item>
+    
   </channel>
 </rss>

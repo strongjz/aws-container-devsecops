@@ -12,8 +12,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/pipeline/exercise/</guid>
-      <description>aws s3 mb s3://devsecops-james-strong &amp;ndash;region us-west-2 make_bucket: devsecops-james-strong
-go Terraform file
+      <description>Create the state file s3 bucket
+aws s3 mb s3://devsecops-james-strong --region us-west-2 make_bucket: devsecops-james-strong Go Terraform file
 terraform/config.tf
 terraform { backend &amp;ldquo;s3&amp;rdquo; { bucket = &amp;ldquo;devsecops-james-strong&amp;rdquo; key = &amp;ldquo;devsecops-james-strong/terraform_state&amp;rdquo; region = &amp;ldquo;us-west-2&amp;rdquo; } }
 make tf_clean tf_init cd terraform/ &amp;amp;&amp;amp;
@@ -21,9 +21,7 @@ rm -rf .terraform
 rm -rf plan.out cd terraform/ &amp;amp;&amp;amp;
 terraform init
 Initializing the backend&amp;hellip;
-Successfully configured the backend &amp;ldquo;s3&amp;rdquo;! Terraform will automatically use this backend unless the backend configuration changes.
-Initializing provider plugins&amp;hellip;
- Finding hashicorp/aws versions matching &amp;ldquo;~&amp;gt; 3.</description>
+Successfully configured the backend &amp;ldquo;s3&amp;rdquo;! Terraform will automatically use this backend unless the backend configuration changes.</description>
     </item>
     
   </channel>

@@ -12,22 +12,22 @@
     <title>Secure Containers Exercise :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1631403811" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1631403811" rel="stylesheet">
-    <link href="/css/hybrid.css?1631403811" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1631403811" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1631403811" rel="stylesheet">
-    <link href="/css/auto-complete.css?1631403811" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1631403811" rel="stylesheet">
-    <link href="/css/theme.css?1631403811" rel="stylesheet">
-    <link href="/css/tabs.css?1631403811" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1631403811" rel="stylesheet">
+    <link href="/css/nucleus.css?1631470302" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1631470302" rel="stylesheet">
+    <link href="/css/hybrid.css?1631470302" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1631470302" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1631470302" rel="stylesheet">
+    <link href="/css/auto-complete.css?1631470302" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1631470302" rel="stylesheet">
+    <link href="/css/theme.css?1631470302" rel="stylesheet">
+    <link href="/css/tabs.css?1631470302" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1631470302" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1631403811" rel="stylesheet">
+    <link href="/css/theme-green.css?1631470302" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1631403811"></script>
+    <script src="/js/jquery-3.3.1.min.js?1631470302"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1631403811"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1631403811"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1631470302"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1631470302"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1631403811"></script>
+<script type="text/javascript" src="/js/search.js?1631470302"></script>
 
     
   </div>
@@ -108,6 +108,27 @@
           
 
         
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/intro/presenter/" title="Presenter" class="dd-item ">
+        <a href="/intro/presenter/">
+        Presenter
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -600,6 +621,82 @@
       </a>
       
       
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/conclusion/clean/" title="" class="dd-item ">
+        <a href="/conclusion/clean/">
+        
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/conclusion/workshops/" title="" class="dd-item ">
+        <a href="/conclusion/workshops/">
+        
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/survey/" title="Survey" class="dd-item
+        
+        
+        
+        ">
+      <a href="/survey/">
+          Survey
+          
+      </a>
+      
+      
     </li>
   
  
@@ -883,7 +980,64 @@ db_1          | 2021-09-11 22:16:05.653 UTC <span style="color:#f92672">[</span>
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Pong Version `0.1.20`&#34;</span><span style="color:#f92672">}</span>
 ~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/data
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Database Connected&#34;</span><span style="color:#f92672">}</span>
-</code></pre></div>
+</code></pre></div><p>Let&rsquo;s create a user for the application and rebuild our image</p>
+<p>Add these lines to the dockerfile to create a new user</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Create appuser.</span>
+ENV USER<span style="color:#f92672">=</span>appuser
+ENV UID<span style="color:#f92672">=</span><span style="color:#ae81ff">10001</span>
+<span style="color:#75715e"># See https://stackoverflow.com/a/55757473/12429735RUN</span>
+RUN adduser <span style="color:#ae81ff">\ </span>   
+--disabled-password <span style="color:#ae81ff">\ </span>   
+--gecos <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\ </span>   
+--home <span style="color:#e6db74">&#34;/nonexistent&#34;</span> <span style="color:#ae81ff">\ </span>   
+--shell <span style="color:#e6db74">&#34;/sbin/nologin&#34;</span> <span style="color:#ae81ff">\ </span>   
+--no-create-home <span style="color:#ae81ff">\ </span>   
+--uid <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>UID<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\ </span>   
+<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>USER<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><p>Inside the scratch container add these lines.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Import the user and group files from the builder.</span>
+COPY --from<span style="color:#f92672">=</span>builder /etc/passwd /etc/passwd
+COPY --from<span style="color:#f92672">=</span>builder /etc/group /etc/group
+
+<span style="color:#75715e"># Use an unprivileged user.</span>
+USER appuser:appuser
+</code></pre></div><p>The Dockerfile should look like this now</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:1.13-alpine AS builder</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apk update <span style="color:#f92672">&amp;&amp;</span> apk add --no-cache git<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Create appuser.</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> USER<span style="color:#f92672">=</span>appuser
+<span style="color:#66d9ef">ENV</span> UID<span style="color:#f92672">=</span><span style="color:#ae81ff">10001</span>
+<span style="color:#75715e"># See https://stackoverflow.com/a/55757473/12429735RUN</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> adduser <span style="color:#ae81ff">\ </span>   <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>--disabled-password <span style="color:#ae81ff">\ </span>   <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>--gecos <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\ </span>   <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>--home <span style="color:#e6db74">&#34;/nonexistent&#34;</span> <span style="color:#ae81ff">\ </span>   <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>--shell <span style="color:#e6db74">&#34;/sbin/nologin&#34;</span> <span style="color:#ae81ff">\ </span>   <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>--no-create-home <span style="color:#ae81ff">\ </span>   <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>--uid <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>UID<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\ </span>   <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>USER<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /go/src/app</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> GIT_TERMINAL_PROMPT<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> go get -d -v<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> CGO_ENABLED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> go build -o /go/bin/app<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:1.13-alpine</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>builder /go/bin/app /go/bin/app<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Import the user and group files from the builder.</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>builder /etc/passwd /etc/passwd<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>builder /etc/group /etc/group<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Use an unprivileged user.</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">USER</span><span style="color:#e6db74"> appuser:appuser</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 8080</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 8090</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;/go/bin/app&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div>
 
 <footer class="footline">
 	
@@ -947,54 +1101,6 @@ db_1          | 2021-09-11 22:16:05.653 UTC <span style="color:#f92672">[</span>
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -1075,6 +1181,22 @@ db_1          | 2021-09-11 22:16:05.653 UTC <span style="color:#f92672">[</span>
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -1107,30 +1229,10 @@ db_1          | 2021-09-11 22:16:05.653 UTC <span style="color:#f92672">[</span>
             
         
                     
-            
-        
-                    
                         
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1148,6 +1250,21 @@ db_1          | 2021-09-11 22:16:05.653 UTC <span style="color:#f92672">[</span>
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1168,6 +1285,20 @@ db_1          | 2021-09-11 22:16:05.653 UTC <span style="color:#f92672">[</span>
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
                         
                         
                     
@@ -1178,6 +1309,93 @@ db_1          | 2021-09-11 22:16:05.653 UTC <span style="color:#f92672">[</span>
                     
                     
 
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1284,19 +1502,19 @@ db_1          | 2021-09-11 22:16:05.653 UTC <span style="color:#f92672">[</span>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1631403811"></script>
-    <script src="/js/perfect-scrollbar.min.js?1631403811"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1631403811"></script>
-    <script src="/js/jquery.sticky.js?1631403811"></script>
-    <script src="/js/featherlight.min.js?1631403811"></script>
-    <script src="/js/highlight.pack.js?1631403811"></script>
+    <script src="/js/clipboard.min.js?1631470302"></script>
+    <script src="/js/perfect-scrollbar.min.js?1631470302"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1631470302"></script>
+    <script src="/js/jquery.sticky.js?1631470302"></script>
+    <script src="/js/featherlight.min.js?1631470302"></script>
+    <script src="/js/highlight.pack.js?1631470302"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1631403811"></script>
-    <script src="/js/learn.js?1631403811"></script>
-    <script src="/js/hugo-learn.js?1631403811"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1631470302"></script>
+    <script src="/js/learn.js?1631470302"></script>
+    <script src="/js/hugo-learn.js?1631470302"></script>
     
         
-            <script src="/mermaid/mermaid.js?1631403811"></script>
+            <script src="/mermaid/mermaid.js?1631470302"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

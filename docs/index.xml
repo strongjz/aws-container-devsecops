@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Aug 2021 15:08:20 -0400</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Presenter</title>
+      <link>//localhost:1313/intro/presenter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/intro/presenter/</guid>
+      <description> AWS Ambassador O&amp;rsquo;Reilly Author - Networking and Kubernetes: A Layer Approach A Cloud Guru Instructor- Advanced Networking with Kubernetes on AWS Kubernetes Ingress NGINX Maintainer Kube Philly Organizer Cloud Native Director @ Contino  </description>
+    </item>
+    
+    <item>
       <title>Contino</title>
       <link>//localhost:1313/intro/contino/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -137,8 +146,8 @@ cd ~/environment/devsecopspipeline ~/environment/devsecopspipeline/: export DB_P
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/pipeline/exercise/</guid>
-      <description>aws s3 mb s3://devsecops-james-strong &amp;ndash;region us-west-2 make_bucket: devsecops-james-strong
-go Terraform file
+      <description>Create the state file s3 bucket
+aws s3 mb s3://devsecops-james-strong --region us-west-2 make_bucket: devsecops-james-strong Go Terraform file
 terraform/config.tf
 terraform { backend &amp;ldquo;s3&amp;rdquo; { bucket = &amp;ldquo;devsecops-james-strong&amp;rdquo; key = &amp;ldquo;devsecops-james-strong/terraform_state&amp;rdquo; region = &amp;ldquo;us-west-2&amp;rdquo; } }
 make tf_clean tf_init cd terraform/ &amp;amp;&amp;amp;
@@ -146,9 +155,7 @@ rm -rf .terraform
 rm -rf plan.out cd terraform/ &amp;amp;&amp;amp;
 terraform init
 Initializing the backend&amp;hellip;
-Successfully configured the backend &amp;ldquo;s3&amp;rdquo;! Terraform will automatically use this backend unless the backend configuration changes.
-Initializing provider plugins&amp;hellip;
- Finding hashicorp/aws versions matching &amp;ldquo;~&amp;gt; 3.</description>
+Successfully configured the backend &amp;ldquo;s3&amp;rdquo;! Terraform will automatically use this backend unless the backend configuration changes.</description>
     </item>
     
     <item>
@@ -164,6 +171,26 @@ helm repo update &amp;ldquo;stable&amp;rdquo; already exists with the same confi
     </item>
     
     <item>
+      <title>Cleanup</title>
+      <link>//localhost:1313/conclusion/clean/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/conclusion/clean/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>//localhost:1313/conclusion/workshops/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/conclusion/workshops/</guid>
+      <description>https://containersonaws.com/
+https://www.eksworkshop.com/010_introduction/
+https://containersfromthecouch.com/</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>//localhost:1313/run/run.files/falco-demo/nodejs-bad-rest-api/readme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -172,6 +199,15 @@ helm repo update &amp;ldquo;stable&amp;rdquo; already exists with the same confi
       <description>Demo of falco with bash exec via poorly designed REST API. Introduction This example shows how a server could have a poorly designed API that allowed a client to execute arbitrary programs on the server, and how that behavior can be detected using Sysdig Falco.
 server.js in this directory defines the server. The poorly designed API is this route handler:
 router.get(&amp;#39;/exec/:cmd&amp;#39;, function(req, res) { var output = child_process.execSync(req.params.cmd); res.send(output); }); app.</description>
+    </item>
+    
+    <item>
+      <title>Credits</title>
+      <link>//localhost:1313/authors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/authors/</guid>
+      <description>&amp;lt;div&amp;gt; &amp;lt;img src=&amp;quot;https://avatars.githubusercontent.com/u/2372917?v=4&amp;quot; class=&amp;quot;inline&amp;quot; width=&amp;quot;32&amp;quot; height=&amp;quot;32&amp;quot; style=&amp;quot;height: 32px;height: 32px;margin-bottom:.25em; vertical-align:middle; &amp;quot;&amp;gt; &amp;lt;label&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/strongjz&amp;quot;&amp;gt;@strongjz&amp;lt;/a&amp;gt;&amp;lt;/label&amp;gt; &amp;lt;span class=&amp;quot;contributions&amp;quot;&amp;gt;51 commits&amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt;  </description>
     </item>
     
   </channel>

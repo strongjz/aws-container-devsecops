@@ -3,14 +3,21 @@ title: Introduction
 weight: 6
 ---
 
-- [AWS Ambassador](https://aws.amazon.com/partners/ambassadors/) 
-- [O'Reilly Author - Networking and Kubernetes: A Layer Approach](https://learning.oreilly.com/library/view/networking-and-kubernetes/9781492081647/)
-- [A Cloud Guru Instructor- Advanced Networking with Kubernetes on AWS](https://acloud.guru/overview/advanced-networking-with-kubernetes-for-aws)
-- [Kubernetes Ingress NGINX Maintainer](https://github.com/kubernetes/ingress-nginx/blob/main/OWNERS_ALIASES#L17)
-- [Kube Philly Organizer](https://www.meetup.com/Kubernetes-Philly)
-- Cloud Native Director @ [Contino](https://contino.io)
+### Learning Objectives
 
-![James](/images/intro/james.png)
+- How to setup secure development environments 
+- Building secure containers 
+- Ensure secure best practices when running containers in production 
+
+### Workshop structure
+
+- Workshop setup - Provision Cloud9 instance
+- Tooling install - install all the tools needed to work through this workshop and provision an eks cluster
+- Exercises 
+  - Development - Setup a secure Development environment with 3M and code commit signing
+  - Build - Secure container building in this one
+  - Pipeline - Scan code and containers for vulnerabilities and ensure secure practices are being followed
+  - Run - Setup secure container running environment on Kubernetes 
 
 
 For an intro on Kubernetes please see

@@ -7,6 +7,8 @@
   </url><url>
     <loc>//localhost:1313/intro/</loc>
   </url><url>
+    <loc>//localhost:1313/intro/presenter/</loc>
+  </url><url>
     <loc>//localhost:1313/intro/contino/</loc>
   </url><url>
     <loc>//localhost:1313/setup/</loc>
@@ -51,9 +53,17 @@
   </url><url>
     <loc>//localhost:1313/conclusion/</loc>
   </url><url>
+    <loc>//localhost:1313/conclusion/clean/</loc>
+  </url><url>
+    <loc>//localhost:1313/survey/</loc>
+  </url><url>
+    <loc>//localhost:1313/conclusion/workshops/</loc>
+  </url><url>
     <loc>//localhost:1313/run/run.files/falco-demo/nodejs-bad-rest-api/readme/</loc>
   </url><url>
     <loc>//localhost:1313/categories/</loc>
+  </url><url>
+    <loc>//localhost:1313/authors/</loc>
   </url><url>
     <loc>//localhost:1313/tags/</loc>
   </url>
