@@ -12,16 +12,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/pipeline/exercise/</guid>
-      <description>Create the state file s3 bucket
-aws s3 mb s3://devsecops-james-strong --region us-west-2 make_bucket: devsecops-james-strong Go Terraform file
-terraform/config.tf
-terraform { backend &amp;ldquo;s3&amp;rdquo; { bucket = &amp;ldquo;devsecops-james-strong&amp;rdquo; key = &amp;ldquo;devsecops-james-strong/terraform_state&amp;rdquo; region = &amp;ldquo;us-west-2&amp;rdquo; } }
-make tf_clean tf_init cd terraform/ &amp;amp;&amp;amp;
-rm -rf .terraform
-rm -rf plan.out cd terraform/ &amp;amp;&amp;amp;
-terraform init
-Initializing the backend&amp;hellip;
-Successfully configured the backend &amp;ldquo;s3&amp;rdquo;! Terraform will automatically use this backend unless the backend configuration changes.</description>
+      <description>First Create the state file s3 bucket aws s3 mb s3://devsecops-james-strong --region us-west-2 make_bucket: devsecops-james-strong Inside our Terraform Directory in the devsecops repo
+Update the devsecopspipeline/terraform/config.tf with the bucket name to store terraform state
+terraform { backend &amp;#34;s3&amp;#34; { bucket = &amp;#34;devsecops-james-strong&amp;#34; key = &amp;#34;devsecops-james-strong/terraform_state&amp;#34; region = &amp;#34;us-west-2&amp;#34; } } Initialize the Terraform cd devsecopspipeline/ make tf_clean tf_init cd terraform/ &amp;amp;&amp;amp; \ rm -rf .terraform \ rm -rf plan.out cd terraform/ &amp;amp;&amp;amp; \ terraform init Initializing the backend.</description>
     </item>
     
   </channel>

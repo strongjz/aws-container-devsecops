@@ -3,40 +3,34 @@ title: Container Pipeline
 weight: 40
 ---
 
-{{% children  %}}
+## Running Rules for CI/CD
 
-CI/CD - Images should be scanned for CVE’s
+- Maintain a code repository
+- Automate the build
+- Keep the build fast
+- Make the build self-testing
+- Commit early, commit often
+- Every commit to the mainline gets built
+- Everyone can see the results of the build
+- Automate the deployment
 
-Automating your build pipelines
-Visibility
-Troubleshooting
-Defect Remediation
-Build small autonomous pieces
-Black Duck Hub and JFrog Xray
+## Things to Secure the Container Pipeline
 
-CI/CD
-Maintain a code repository
-Automate the build
-Keep the build fast
-Make the build self-testing
-Commit early, commit often
-Every commit gets built
-Everyone can see the results of the build
-Automate the deployment
-
-Secure Pipelines
-Signed Images
-Verify Trusted Images
-Kickoff Security Assessment
+- Secure Pipelines
+- Image scanning
+- Signed Images
+- Verify Trusted Images
+- Kickoff Security Assessment
 
 
-CI/CD - AWS Codepipeline/Build
-Stages for Code pipeline
+## AWS CI/CD 
 
-Build - Build golang example applications, in a docker container and stores it in the AWS ECR
+We are going to deploy a pipeline with AWS Services
 
-Invoke - Runs the Go Report Static Code analysis
+**Build** - Build our golang example applications, in a docker container and stores it in the AWS ECR
 
-Test - runs any tests in the golang example applications
+**Invoke** - Runs the Go Report Static Code analysis
 
-Deploy - deploys the application via Code build, aws eks cli and kubectl
+**Test** - runs any tests in the golang example applications
+
+**Deploy** - deploys the application via Code build, aws eks cli and kubectl

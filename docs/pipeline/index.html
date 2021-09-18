@@ -12,22 +12,22 @@
     <title>Container Pipeline :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1631470446" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1631470446" rel="stylesheet">
-    <link href="/css/hybrid.css?1631470446" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1631470446" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1631470446" rel="stylesheet">
-    <link href="/css/auto-complete.css?1631470446" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1631470446" rel="stylesheet">
-    <link href="/css/theme.css?1631470446" rel="stylesheet">
-    <link href="/css/tabs.css?1631470446" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1631470446" rel="stylesheet">
+    <link href="/css/nucleus.css?1631987698" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1631987698" rel="stylesheet">
+    <link href="/css/hybrid.css?1631987698" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1631987698" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1631987698" rel="stylesheet">
+    <link href="/css/auto-complete.css?1631987698" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1631987698" rel="stylesheet">
+    <link href="/css/theme.css?1631987698" rel="stylesheet">
+    <link href="/css/tabs.css?1631987698" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1631987698" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1631470446" rel="stylesheet">
+    <link href="/css/theme-green.css?1631987698" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1631470446"></script>
+    <script src="/js/jquery-3.3.1.min.js?1631987698"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1631470446"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1631470446"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1631987698"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1631987698"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1631470446"></script>
+<script type="text/javascript" src="/js/search.js?1631987698"></script>
 
     
   </div>
@@ -787,7 +787,13 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#running-rules-for-cicd">Running Rules for CI/CD</a></li>
+    <li><a href="#things-to-secure-the-container-pipeline">Things to Secure the Container Pipeline</a></li>
+    <li><a href="#aws-cicd">AWS CI/CD</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -812,70 +818,31 @@
 
 
 
-	
-
-
-
-
-
-
-<ul class="children children-li">
-	
-
-	
-		
-	
-
-	
-
-	
-		
-	
-		
-			
-				
-<li>
-<a href="/pipeline/exercise/" >Container Pipeline Exercise</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-
-	
+	<h2 id="running-rules-for-cicd">Running Rules for CI/CD</h2>
+<ul>
+<li>Maintain a code repository</li>
+<li>Automate the build</li>
+<li>Keep the build fast</li>
+<li>Make the build self-testing</li>
+<li>Commit early, commit often</li>
+<li>Every commit to the mainline gets built</li>
+<li>Everyone can see the results of the build</li>
+<li>Automate the deployment</li>
 </ul>
-
-
-
-<p>CI/CD - Images should be scanned for CVE’s</p>
-<p>Automating your build pipelines
-Visibility
-Troubleshooting
-Defect Remediation
-Build small autonomous pieces
-Black Duck Hub and JFrog Xray</p>
-<p>CI/CD
-Maintain a code repository
-Automate the build
-Keep the build fast
-Make the build self-testing
-Commit early, commit often
-Every commit gets built
-Everyone can see the results of the build
-Automate the deployment</p>
-<p>Secure Pipelines
-Signed Images
-Verify Trusted Images
-Kickoff Security Assessment</p>
-<p>CI/CD - AWS Codepipeline/Build
-Stages for Code pipeline</p>
-<p>Build - Build golang example applications, in a docker container and stores it in the AWS ECR</p>
-<p>Invoke - Runs the Go Report Static Code analysis</p>
-<p>Test - runs any tests in the golang example applications</p>
-<p>Deploy - deploys the application via Code build, aws eks cli and kubectl</p>
+<h2 id="things-to-secure-the-container-pipeline">Things to Secure the Container Pipeline</h2>
+<ul>
+<li>Secure Pipelines</li>
+<li>Image scanning</li>
+<li>Signed Images</li>
+<li>Verify Trusted Images</li>
+<li>Kickoff Security Assessment</li>
+</ul>
+<h2 id="aws-cicd">AWS CI/CD</h2>
+<p>We are going to deploy a pipeline with AWS Services</p>
+<p><strong>Build</strong> - Build our golang example applications, in a docker container and stores it in the AWS ECR</p>
+<p><strong>Invoke</strong> - Runs the Go Report Static Code analysis</p>
+<p><strong>Test</strong> - runs any tests in the golang example applications</p>
+<p><strong>Deploy</strong> - deploys the application via Code build, aws eks cli and kubectl</p>
 
 
 
@@ -1340,19 +1307,19 @@ Stages for Code pipeline</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1631470446"></script>
-    <script src="/js/perfect-scrollbar.min.js?1631470446"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1631470446"></script>
-    <script src="/js/jquery.sticky.js?1631470446"></script>
-    <script src="/js/featherlight.min.js?1631470446"></script>
-    <script src="/js/highlight.pack.js?1631470446"></script>
+    <script src="/js/clipboard.min.js?1631987698"></script>
+    <script src="/js/perfect-scrollbar.min.js?1631987698"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1631987698"></script>
+    <script src="/js/jquery.sticky.js?1631987698"></script>
+    <script src="/js/featherlight.min.js?1631987698"></script>
+    <script src="/js/highlight.pack.js?1631987698"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1631470446"></script>
-    <script src="/js/learn.js?1631470446"></script>
-    <script src="/js/hugo-learn.js?1631470446"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1631987698"></script>
+    <script src="/js/learn.js?1631987698"></script>
+    <script src="/js/hugo-learn.js?1631987698"></script>
     
         
-            <script src="/mermaid/mermaid.js?1631470446"></script>
+            <script src="/mermaid/mermaid.js?1631987698"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

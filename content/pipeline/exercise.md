@@ -4,33 +4,39 @@ weight: 49
 ---
 
 
-Create the state file s3 bucket 
+## First Create the state file s3 bucket 
 
 ```bash
 aws s3 mb s3://devsecops-james-strong --region us-west-2
 make_bucket: devsecops-james-strong
 ```
 
-Go Terraform file 
+Inside our Terraform Directory in the devsecops repo  
 
-terraform/config.tf
+Update the `devsecopspipeline/terraform/config.tf` with the bucket name to store terraform state 
 
+
+
+```hcl 
 terraform {
-backend "s3" {
-bucket = "devsecops-james-strong"
-key    = "devsecops-james-strong/terraform_state"
-region = "us-west-2"
+    backend "s3" {
+        bucket = "devsecops-james-strong"
+        key    = "devsecops-james-strong/terraform_state"
+        region = "us-west-2"
+    }
 }
-}
+```
 
+## Initialize the Terraform 
 
+```bash
+cd devsecopspipeline/
 make tf_clean tf_init
 cd terraform/ && \
 rm -rf .terraform \
 rm -rf plan.out
 cd terraform/ && \
 terraform init
-
 Initializing the backend...
 
 Successfully configured the backend "s3"! Terraform will automatically
@@ -55,13 +61,18 @@ should now work.
 If you ever set or change modules or backend configuration for Terraform,
 rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
+```
 
-
+## Terraform Plan  
 Terraform Plan 
 ```bash
  make tf_plan
 cd terraform/ && \
 terraform plan -out=plan.out
+```
+
+{{%expand "Expand here is what it looks like in its entirety" %}}
+```
 aws_iam_policy.allow-eks-asg: Refreshing state... [id=arn:aws:iam::123456789012:policy/eks-devsecops-allow-eks-asg]
 aws_s3_bucket.codepipeline_bucket: Refreshing state... [id=houston-devsecops-code]
 aws_ecr_repository.golang_example: Refreshing state... [id=golang_example-houston]
@@ -297,8 +308,9 @@ No changes. Your infrastructure matches the configuration.
 Your configuration already matches the changes detected above. If you'd like to update the Terraform state to match, create and apply a refresh-only plan:
   terraform apply -refresh-only
 ```
+{{% /expand%}}
 
-Terraform Apply
+## Terraform Apply
 ```bash
 ~/environment/devsecopspipeline (master) $ make tf_apply
 cd terraform/ && \
@@ -306,7 +318,10 @@ terraform apply -auto-approve
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
 + create
+```
 
+{{%expand "Expand here is what it looks like in its entirety" %}}
+```bash
 Terraform will perform the following actions:
 
 # aws_cloudwatch_log_group.codebuild will be created
@@ -1014,14 +1029,19 @@ aws_codebuild_project.devsecops-austin-codebuild-DEPLOY: Creation complete after
 
 Apply complete! Resources: 19 added, 0 changed, 0 destroyed.
 ```
+{{% /expand%}}
 
-You may need to start docker 
+## 
 
+{{% notice info %}}
+You may need to start docker
+{{% /notice %}}
 ```bash 
 sudo service docker start                                                                                                                                
 Redirecting to /bin/systemctl start docker.service
 ```
 
+## AWS ECR 
 
 Let's push our docker image to ECR that was created from Terraform 
 
@@ -1102,35 +1122,7 @@ The push refers to repository [123456789012.dkr.ecr.us-west-2.amazonaws.com/gola
 0.1.20: digest: sha256:256531371d0ca8da6d1aa13ad63579f887a1c5e8e2de25136bface4e3e13ccd4 size: 1576
 ```
 
-Let's reduce our image size even more 
-
-Update your Dockerfile 
-
-`FROM golang:1.13-alpine`
-to 
-
-`FROM scratch`
-
-you should get an error 
-
-
-```bash
-tag invalid: The image tag '0.1.20' already exists in the 'golang_example-houston' repository and cannot be overwritten because the repository is immutable.
-make: *** [docker_push] Error 1
-```
-
-Update the version.txt to the number you think is appropriate
-
-Then rebuild 
-
-Inspect the image size differences 
-```bash
-docker images 
-123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-houston   0.1.21        e199bbd29e43   3 minutes ago    16.1MB
-123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-houston   0.1.20        20b885db4549   12 minutes ago   376MB
-```
-
-ECR scans our images for vulnerabilities 
+### ECR scans our images for vulnerabilities 
 
 ```bash
  make ecr_scan_findings
@@ -1251,6 +1243,35 @@ aws ecr describe-image-scan-findings --repository-name golang_example-houston --
 }
 ```
 
+![](/images/pipeline/ecr-scan.png)
+
+### Let's reduce our image size
+
+Update your Dockerfile
+
+`FROM golang:1.13-alpine`
+to
+
+`FROM scratch`
+
+you should get an error
+
+```bash
+tag invalid: The image tag '0.1.20' already exists in the 'golang_example-houston' repository and cannot be overwritten because the repository is immutable.
+make: *** [docker_push] Error 1
+```
+
+Update the version.txt to the number you think is appropriate
+
+Then rebuild
+
+Inspect the image size differences
+```bash
+docker images 
+123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-houston   0.1.21        e199bbd29e43   3 minutes ago    16.1MB
+123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-houston   0.1.20        20b885db4549   12 minutes ago   376MB
+```
+
 Now scratch container only has the go binary in it 
 
 ```bash
@@ -1268,4 +1289,8 @@ aws ecr describe-image-scan-findings --repository-name golang_example-houston --
         "imageDigest": "sha256:97169aa383bf476466e9af45079aed95e8bfdb09cbf94ca05a11ede20631c323"
     }, 
     "imageScanFindings": null
-}```
+}
+```
+
+
+git remote add aws https://git-codecommit.us-west-2.amazonaws.com/v1/repos/houston-devsecops-repo
