@@ -3,8 +3,6 @@ title: Conclusion
 weight: 60
 ---
 
-{{% children  %}}
-
 CI/CD
 
 - Maintain a code repository - AWS CodeCommit
@@ -28,8 +26,10 @@ Security
 - Signed Images - Docker Notary and SigStore cosign
 
 
-https://d0.awsstatic.com/whitepapers/DevOps/practicing-continuous-integration-continuous-delivery-on-AWS.pdf
+Additional AWS Resources 
 
-https://aws.amazon.com/macie/
+[Practicing CI/CD on AWS Whitepaper](https://d0.awsstatic.com/whitepapers/DevOps/practicing-continuous-integration-continuous-delivery-on-AWS.pdf)
 
-https://aws.amazon.com/security-hub/
+[AWS Macie - ML Security](https://aws.amazon.com/macie/)
+
+[AWS Security Hub](https://aws.amazon.com/security-hub/)

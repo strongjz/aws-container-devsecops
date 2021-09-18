@@ -1292,5 +1292,60 @@ aws ecr describe-image-scan-findings --repository-name golang_example-houston --
 }
 ```
 
+## AWS CodePipeline
 
+Now that we have a CodePipeline setup thanks to terraform let's push our code there and watch the pipeline run 
+
+We need to give our Codepipeline Role access to the cluster 
+```bash
+make cluster_iam
+eksctl create iamidentitymapping --cluster devsecops --arn arn:aws:iam::123456789012:role/devsecops-houston-codebuild   --username admin \
+--group system:masters
+2021-09-18 20:33:43 [ℹ]  eksctl version 0.67.0
+2021-09-18 20:33:43 [ℹ]  using region us-west-2
+2021-09-18 20:33:43 [ℹ]  adding identity "arn:aws:iam::123456789012:role/devsecops-houston-codebuild" to auth ConfigMap
+```
+
+We clone the repo from github but now let's push it to AWS CodeCommit
+
+If you don't remember the name we can use the aws cli to find it for use 
+
+```bash
+ aws codecommit   list-repositories
+{
+    "repositories": [
+        {
+            "repositoryName": "houston-devsecops-repo", 
+            "repositoryId": "568b8724-36c5-44fe-9848-42e2db43a861"
+        }
+}
+```
+
+Now we can push the repo to AWS Code commit by adding a new remote 
+
+```bash
 git remote add aws https://git-codecommit.us-west-2.amazonaws.com/v1/repos/houston-devsecops-repo
+git push aws 
+```
+
+[Navigate to the CodePipeline console to build in progress](https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines?region=us-west-2)
+
+![](/images/pipeline/code-pipeline-progress.png)
+
+Once our deploymnet finishes we can test the cluster in AWS 
+
+```bash
+kubectl get svc clusterip-service
+NAME                TYPE           CLUSTER-IP       EXTERNAL-IP                                                              PORT(S)        AGE
+clusterip-service   LoadBalancer   10.100.254.156   a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com   80:30430/TCP   87m
+```
+
+```bash
+~/environment/devsecopspipeline (main) $curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/
+{"message":"Default Page"}
+~/environment/devsecopspipeline (main) $ curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/data
+{"message":"Database Connected"}
+~/environment/devsecopspipeline (main) $ curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/host
+{"message":"NODE: ip-192-168-62-23.us-west-2.compute.internal, POD IP:192.168.51.0"}
+~/environment/devsecopspipeline (main) $ 
+```

@@ -12,22 +12,22 @@
     <title>Container Pipeline Exercise :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1631987698" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1631987698" rel="stylesheet">
-    <link href="/css/hybrid.css?1631987698" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1631987698" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1631987698" rel="stylesheet">
-    <link href="/css/auto-complete.css?1631987698" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1631987698" rel="stylesheet">
-    <link href="/css/theme.css?1631987698" rel="stylesheet">
-    <link href="/css/tabs.css?1631987698" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1631987698" rel="stylesheet">
+    <link href="/css/nucleus.css?1632003396" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1632003396" rel="stylesheet">
+    <link href="/css/hybrid.css?1632003396" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1632003396" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1632003396" rel="stylesheet">
+    <link href="/css/auto-complete.css?1632003396" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1632003396" rel="stylesheet">
+    <link href="/css/theme.css?1632003396" rel="stylesheet">
+    <link href="/css/tabs.css?1632003396" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1632003396" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1631987698" rel="stylesheet">
+    <link href="/css/theme-green.css?1632003396" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1631987698"></script>
+    <script src="/js/jquery-3.3.1.min.js?1632003396"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1631987698"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1631987698"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1632003396"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1632003396"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1631987698"></script>
+<script type="text/javascript" src="/js/search.js?1632003396"></script>
 
     
   </div>
@@ -506,6 +506,27 @@
  
   
     
+      <li data-nav-id="/pipeline/intro_exercise/" title="Container Pipeline Exercise Overview" class="dd-item ">
+        <a href="/pipeline/intro_exercise/">
+        Container Pipeline Exercise Overview
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/pipeline/exercise/" title="Container Pipeline Exercise" class="dd-item active">
         <a href="/pipeline/exercise/">
         Container Pipeline Exercise
@@ -561,8 +582,8 @@
  
   
     
-      <li data-nav-id="/run/run.files/exercise/" title="Running Containers Exercise" class="dd-item ">
-        <a href="/run/run.files/exercise/">
+      <li data-nav-id="/run/exercise/" title="Running Containers Exercise" class="dd-item ">
+        <a href="/run/exercise/">
         Running Containers Exercise
         
         </a>
@@ -658,9 +679,9 @@
  
   
     
-      <li data-nav-id="/conclusion/workshops/" title="" class="dd-item ">
+      <li data-nav-id="/conclusion/workshops/" title="Additional workshops" class="dd-item ">
         <a href="/conclusion/workshops/">
-        
+        Additional workshops
         
         </a>
     </li>
@@ -806,6 +827,7 @@
         <li><a href="#lets-reduce-our-image-size">Let&rsquo;s reduce our image size</a></li>
       </ul>
     </li>
+    <li><a href="#aws-codepipeline">AWS CodePipeline</a></li>
   </ul>
 </nav>
     </div>
@@ -2090,8 +2112,42 @@ aws ecr describe-image-scan-findings --repository-name golang_example-houston --
     <span style="color:#f92672">}</span>, 
     <span style="color:#e6db74">&#34;imageScanFindings&#34;</span>: null
 <span style="color:#f92672">}</span>
-</code></pre></div><p>git remote add aws <a href="https://git-codecommit.us-west-2.amazonaws.com/v1/repos/houston-devsecops-repo">https://git-codecommit.us-west-2.amazonaws.com/v1/repos/houston-devsecops-repo</a></p>
-
+</code></pre></div><h2 id="aws-codepipeline">AWS CodePipeline</h2>
+<p>Now that we have a CodePipeline setup thanks to terraform let&rsquo;s push our code there and watch the pipeline run</p>
+<p>We need to give our Codepipeline Role access to the cluster</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make cluster_iam
+eksctl create iamidentitymapping --cluster devsecops --arn arn:aws:iam::123456789012:role/devsecops-houston-codebuild   --username admin <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--group system:masters
+2021-09-18 20:33:43 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  eksctl version 0.67.0
+2021-09-18 20:33:43 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  using region us-west-2
+2021-09-18 20:33:43 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  adding identity <span style="color:#e6db74">&#34;arn:aws:iam::123456789012:role/devsecops-houston-codebuild&#34;</span> to auth ConfigMap
+</code></pre></div><p>We clone the repo from github but now let&rsquo;s push it to AWS CodeCommit</p>
+<p>If you don&rsquo;t remember the name we can use the aws cli to find it for use</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> aws codecommit   list-repositories
+<span style="color:#f92672">{</span>
+    <span style="color:#e6db74">&#34;repositories&#34;</span>: <span style="color:#f92672">[</span>
+        <span style="color:#f92672">{</span>
+            <span style="color:#e6db74">&#34;repositoryName&#34;</span>: <span style="color:#e6db74">&#34;houston-devsecops-repo&#34;</span>, 
+            <span style="color:#e6db74">&#34;repositoryId&#34;</span>: <span style="color:#e6db74">&#34;568b8724-36c5-44fe-9848-42e2db43a861&#34;</span>
+        <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Now we can push the repo to AWS Code commit by adding a new remote</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add aws https://git-codecommit.us-west-2.amazonaws.com/v1/repos/houston-devsecops-repo
+git push aws 
+</code></pre></div><p><a href="https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines?region=us-west-2">Navigate to the CodePipeline console to build in progress</a></p>
+<p><img src="/images/pipeline/code-pipeline-progress.png" alt=""></p>
+<p>Once our deploymnet finishes we can test the cluster in AWS</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get svc clusterip-service
+NAME                TYPE           CLUSTER-IP       EXTERNAL-IP                                                              PORT<span style="color:#f92672">(</span>S<span style="color:#f92672">)</span>        AGE
+clusterip-service   LoadBalancer   10.100.254.156   a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com   80:30430/TCP   87m
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>main<span style="color:#f92672">)</span> $curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/
+<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Default Page&#34;</span><span style="color:#f92672">}</span>
+~/environment/devsecopspipeline <span style="color:#f92672">(</span>main<span style="color:#f92672">)</span> $ curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/data
+<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Database Connected&#34;</span><span style="color:#f92672">}</span>
+~/environment/devsecopspipeline <span style="color:#f92672">(</span>main<span style="color:#f92672">)</span> $ curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/host
+<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;NODE: ip-192-168-62-23.us-west-2.compute.internal, POD IP:192.168.51.0&#34;</span><span style="color:#f92672">}</span>
+~/environment/devsecopspipeline <span style="color:#f92672">(</span>main<span style="color:#f92672">)</span> $ 
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -2401,6 +2457,25 @@ aws ecr describe-image-scan-findings --repository-name golang_example-houston --
             
                 
                     
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -2540,7 +2615,7 @@ aws ecr describe-image-scan-findings --repository-name golang_example-houston --
 	 
 	 
 		
-			<a class="nav nav-prev" href="/pipeline/" title="Container Pipeline"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/pipeline/intro_exercise/" title="Container Pipeline Exercise Overview"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/run/" title="Running Containers" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -2553,19 +2628,19 @@ aws ecr describe-image-scan-findings --repository-name golang_example-houston --
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1631987698"></script>
-    <script src="/js/perfect-scrollbar.min.js?1631987698"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1631987698"></script>
-    <script src="/js/jquery.sticky.js?1631987698"></script>
-    <script src="/js/featherlight.min.js?1631987698"></script>
-    <script src="/js/highlight.pack.js?1631987698"></script>
+    <script src="/js/clipboard.min.js?1632003396"></script>
+    <script src="/js/perfect-scrollbar.min.js?1632003396"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1632003396"></script>
+    <script src="/js/jquery.sticky.js?1632003396"></script>
+    <script src="/js/featherlight.min.js?1632003396"></script>
+    <script src="/js/highlight.pack.js?1632003396"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1631987698"></script>
-    <script src="/js/learn.js?1631987698"></script>
-    <script src="/js/hugo-learn.js?1631987698"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1632003396"></script>
+    <script src="/js/learn.js?1632003396"></script>
+    <script src="/js/hugo-learn.js?1632003396"></script>
     
         
-            <script src="/mermaid/mermaid.js?1631987698"></script>
+            <script src="/mermaid/mermaid.js?1632003396"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

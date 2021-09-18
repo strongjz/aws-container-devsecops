@@ -45,21 +45,21 @@
   </url><url>
     <loc>//localhost:1313/pipeline/</loc>
   </url><url>
+    <loc>//localhost:1313/pipeline/intro_exercise/</loc>
+  </url><url>
     <loc>//localhost:1313/pipeline/exercise/</loc>
   </url><url>
     <loc>//localhost:1313/run/</loc>
   </url><url>
-    <loc>//localhost:1313/run/run.files/exercise/</loc>
+    <loc>//localhost:1313/run/exercise/</loc>
   </url><url>
     <loc>//localhost:1313/conclusion/</loc>
   </url><url>
     <loc>//localhost:1313/conclusion/clean/</loc>
   </url><url>
-    <loc>//localhost:1313/survey/</loc>
-  </url><url>
     <loc>//localhost:1313/conclusion/workshops/</loc>
   </url><url>
-    <loc>//localhost:1313/run/run.files/falco-demo/nodejs-bad-rest-api/readme/</loc>
+    <loc>//localhost:1313/survey/</loc>
   </url><url>
     <loc>//localhost:1313/categories/</loc>
   </url><url>

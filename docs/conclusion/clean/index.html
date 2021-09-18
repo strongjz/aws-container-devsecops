@@ -12,22 +12,22 @@
     <title>Cleanup :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1631987698" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1631987698" rel="stylesheet">
-    <link href="/css/hybrid.css?1631987698" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1631987698" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1631987698" rel="stylesheet">
-    <link href="/css/auto-complete.css?1631987698" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1631987698" rel="stylesheet">
-    <link href="/css/theme.css?1631987698" rel="stylesheet">
-    <link href="/css/tabs.css?1631987698" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1631987698" rel="stylesheet">
+    <link href="/css/nucleus.css?1632003541" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1632003541" rel="stylesheet">
+    <link href="/css/hybrid.css?1632003541" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1632003541" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1632003541" rel="stylesheet">
+    <link href="/css/auto-complete.css?1632003541" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1632003541" rel="stylesheet">
+    <link href="/css/theme.css?1632003541" rel="stylesheet">
+    <link href="/css/tabs.css?1632003541" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1632003541" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1631987698" rel="stylesheet">
+    <link href="/css/theme-green.css?1632003541" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1631987698"></script>
+    <script src="/js/jquery-3.3.1.min.js?1632003541"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1631987698"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1631987698"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1632003541"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1632003541"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1631987698"></script>
+<script type="text/javascript" src="/js/search.js?1632003541"></script>
 
     
   </div>
@@ -506,6 +506,27 @@
  
   
     
+      <li data-nav-id="/pipeline/intro_exercise/" title="Container Pipeline Exercise Overview" class="dd-item ">
+        <a href="/pipeline/intro_exercise/">
+        Container Pipeline Exercise Overview
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/pipeline/exercise/" title="Container Pipeline Exercise" class="dd-item ">
         <a href="/pipeline/exercise/">
         Container Pipeline Exercise
@@ -561,30 +582,9 @@
  
   
     
-      <li data-nav-id="/run/run.files/exercise/" title="Running Containers Exercise" class="dd-item ">
-        <a href="/run/run.files/exercise/">
+      <li data-nav-id="/run/exercise/" title="Running Containers Exercise" class="dd-item ">
+        <a href="/run/exercise/">
         Running Containers Exercise
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/run/run.files/falco-demo/nodejs-bad-rest-api/readme/" title="" class="dd-item ">
-        <a href="/run/run.files/falco-demo/nodejs-bad-rest-api/readme/">
-        
         
         </a>
     </li>
@@ -658,9 +658,9 @@
  
   
     
-      <li data-nav-id="/conclusion/workshops/" title="" class="dd-item ">
+      <li data-nav-id="/conclusion/workshops/" title="Additional workshops" class="dd-item ">
         <a href="/conclusion/workshops/">
-        
+        Additional workshops
         
         </a>
     </li>
@@ -793,7 +793,14 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#aws-code-resources">AWS Code resources</a></li>
+    <li><a href="#cluster">Cluster</a></li>
+    <li><a href="#load-balancers">Load Balancers</a></li>
+    <li><a href="#pvc-and-ebs-volumes">PVC and EBS volumes</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -817,7 +824,21 @@
         
 
 
-
+<h2 id="aws-code-resources">AWS Code resources</h2>
+<p>Delete the Codebuild, Code commit and pipeline</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make tf_delete
+</code></pre></div><h2 id="cluster">Cluster</h2>
+<p>Delete the EKS Cluster</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make clean_cluster
+</code></pre></div><p>Make sure to delete any other resources created</p>
+<h2 id="load-balancers">Load Balancers</h2>
+<p>Verify there are no Load balancers running, ALB or otherwise</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws elbv2 describe-load-balancers --query <span style="color:#e6db74">&#34;LoadBalancers[].LoadBalancerArn&#34;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws elb describe-load-balancers --query <span style="color:#e6db74">&#34;LoadBalancerDescriptions[].DNSName&#34;</span>
+</code></pre></div><h2 id="pvc-and-ebs-volumes">PVC and EBS volumes</h2>
+<p>Verify there are no left over EBS volumes from the PVC&rsquo;s for test application</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> aws ec2 describe-volumes --filters Name<span style="color:#f92672">=</span>tag:kubernetes.io/created-for/pv/name,Values<span style="color:#f92672">=</span>*     --query <span style="color:#e6db74">&#34;Volumes[].{ID:VolumeId}&#34;</span>
+</code></pre></div>
 
 <footer class="footline">
 	
@@ -1137,22 +1158,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -1168,6 +1173,22 @@
                     
             
         
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
                         
             
@@ -1269,7 +1290,7 @@
 			<a class="nav nav-prev" href="/conclusion/" title="Conclusion"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/conclusion/workshops/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/conclusion/workshops/" title="Additional workshops" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1279,19 +1300,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1631987698"></script>
-    <script src="/js/perfect-scrollbar.min.js?1631987698"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1631987698"></script>
-    <script src="/js/jquery.sticky.js?1631987698"></script>
-    <script src="/js/featherlight.min.js?1631987698"></script>
-    <script src="/js/highlight.pack.js?1631987698"></script>
+    <script src="/js/clipboard.min.js?1632003541"></script>
+    <script src="/js/perfect-scrollbar.min.js?1632003541"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1632003541"></script>
+    <script src="/js/jquery.sticky.js?1632003541"></script>
+    <script src="/js/featherlight.min.js?1632003541"></script>
+    <script src="/js/highlight.pack.js?1632003541"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1631987698"></script>
-    <script src="/js/learn.js?1631987698"></script>
-    <script src="/js/hugo-learn.js?1631987698"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1632003541"></script>
+    <script src="/js/learn.js?1632003541"></script>
+    <script src="/js/hugo-learn.js?1632003541"></script>
     
         
-            <script src="/mermaid/mermaid.js?1631987698"></script>
+            <script src="/mermaid/mermaid.js?1632003541"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

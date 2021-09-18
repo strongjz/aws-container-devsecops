@@ -1,3 +1,7 @@
+---
+title: Additional workshops
+weight: 62
+---
 
 
 https://containersonaws.com/

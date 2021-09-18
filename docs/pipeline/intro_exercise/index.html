@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/container-green.png" type="image/x-icon" />
 
-    <title>Introduction :: AWS Container DevSecOps</title>
+    <title>Container Pipeline Exercise Overview :: AWS Container DevSecOps</title>
 
     
     <link href="/css/nucleus.css?1632003396" rel="stylesheet">
@@ -38,7 +38,7 @@
     
 
   </head>
-  <body class="" data-url="/intro/">
+  <body class="" data-url="/pipeline/intro_exercise/">
     <nav id="sidebar" class="">
 
 
@@ -92,8 +92,8 @@
   
     
     <li data-nav-id="/intro/" title="Introduction" class="dd-item
-        parent
-        active
+        
+        
         
         ">
       <a href="/intro/">
@@ -480,7 +480,7 @@
   
     
     <li data-nav-id="/pipeline/" title="Container Pipeline" class="dd-item
-        
+        parent
         
         
         ">
@@ -506,7 +506,7 @@
  
   
     
-      <li data-nav-id="/pipeline/intro_exercise/" title="Container Pipeline Exercise Overview" class="dd-item ">
+      <li data-nav-id="/pipeline/intro_exercise/" title="Container Pipeline Exercise Overview" class="dd-item active">
         <a href="/pipeline/intro_exercise/">
         Container Pipeline Exercise Overview
         
@@ -770,7 +770,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/strongjz/aws-container-devsecopsintro/_index.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/strongjz/aws-container-devsecopspipeline/intro_exercise.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -797,7 +797,13 @@
             
           
           
-            <a href='/'>AWS DevSecOps Container Pipeline</a> > Introduction
+            
+            
+          
+          
+            <a href='/'>AWS DevSecOps Container Pipeline</a> > <a href='/pipeline/'>Container Pipeline</a> > Container Pipeline Exercise Overview
+          
+        
           
         
           
@@ -810,12 +816,7 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#learning-objectives">Learning Objectives</a></li>
-        <li><a href="#workshop-structure">Workshop structure</a></li>
-      </ul>
-    </li>
+    <li><a href="#aws-cicd">AWS CI/CD</a></li>
   </ul>
 </nav>
     </div>
@@ -834,45 +835,22 @@
           
             <h1>
               
-              Introduction
+              Container Pipeline Exercise Overview
             </h1>
           
 
         
 
 
-
-	<h3 id="learning-objectives">Learning Objectives</h3>
-<ul>
-<li>How to setup secure development environments</li>
-<li>Building secure containers</li>
-<li>Ensure secure best practices when running containers in production</li>
-</ul>
-<h3 id="workshop-structure">Workshop structure</h3>
-<ul>
-<li>Workshop setup - Provision Cloud9 instance</li>
-<li>Tooling install - install all the tools needed to work through this workshop and provision an eks cluster</li>
-<li>Exercises
-<ul>
-<li>Development - Setup a secure Development environment with 3M and code commit signing</li>
-<li>Build - Secure container building in this one</li>
-<li>Pipeline - Scan code and containers for vulnerabilities and ensure secure practices are being followed</li>
-<li>Run - Setup secure container running environment on Kubernetes</li>
-</ul>
-</li>
-</ul>
-<p>For an intro on Kubernetes please see
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/rnUoGTJpEko" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="CloudNative Lou: Introduction to Kubernetes"></iframe>
-</div>
-</p>
+<h2 id="aws-cicd">AWS CI/CD</h2>
+<p>We are going to deploy a pipeline with AWS Services</p>
+<p><strong>Build</strong> - Build our golang example applications, in a docker container and stores it in the AWS ECR</p>
+<p><strong>Invoke</strong> - Runs the Go Report Static Code analysis</p>
+<p><strong>Deploy</strong> - deploys the application via Code build, aws eks cli and kubectl</p>
+<p><img src="/images/pipeline/aws-codepipeline.svg" alt=""></p>
 
 
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -907,20 +885,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -931,57 +895,6 @@
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1079,38 +992,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1159,6 +1040,54 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1195,6 +1124,59 @@
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1331,10 +1313,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/" title="AWS DevSecOps Container Pipeline"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/pipeline/" title="Container Pipeline"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/intro/presenter/" title="Presenter" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/pipeline/exercise/" title="Container Pipeline Exercise" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

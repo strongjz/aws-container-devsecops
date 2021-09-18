@@ -1,9 +1,10 @@
 ---
 title: Running Containers Exercise
 weight: 59
+draft: true
 ---
 
-
+```bash
 make helm_update
 helm repo add stable https://charts.helm.sh/stable && \
 helm repo update
@@ -11,7 +12,9 @@ helm repo update
 Hang tight while we grab the latest from your chart repositories...
 ...Successfully got an update from the "stable" chart repository
 Update Complete. ⎈Happy Helming!⎈
+```
 
+```bash
 ~/environment/devsecopspipeline (master) $ make prom
 helm repo add stable https://charts.helm.sh/stable && \
 helm repo update
@@ -82,8 +85,9 @@ kubectl --namespace prometheus port-forward $POD_NAME 9091
 
 For more information on running Prometheus, visit:
 https://prometheus.io/
+```
 
-
+```bash
 $ make deploy-fluent-bit
 aws iam create-policy --policy-name EKS-CloudWatchLogs-"devsecops" --policy-document file://./fluent-bit/aws/iam_role_policy.json
 {
@@ -101,7 +105,4 @@ aws iam create-policy --policy-name EKS-CloudWatchLogs-"devsecops" --policy-docu
 }
 }
 aws iam attach-role-policy --role-name ng-1 --policy-arn `aws iam list-policies | jq -r '.[][] | select(.PolicyName == "EKS-CloudWatchLogs-devsecops") | .Arn'`
-
-An error occurred (NoSuchEntity) when calling the AttachRolePolicy operation: The role with name ng-1 cannot be found.
-make: *** [deploy-fluent-bit] Error 255
-
+```

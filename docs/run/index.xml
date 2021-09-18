@@ -8,25 +8,11 @@
     <language>en-us</language><atom:link href="//localhost:1313/run/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Running Containers Exercise</title>
-      <link>//localhost:1313/run/run.files/exercise/</link>
+      <link>//localhost:1313/run/exercise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/run/run.files/exercise/</guid>
-      <description>make helm_update helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp;
-helm repo update &amp;ldquo;stable&amp;rdquo; has been added to your repositories Hang tight while we grab the latest from your chart repositories&amp;hellip; &amp;hellip;Successfully got an update from the &amp;ldquo;stable&amp;rdquo; chart repository Update Complete. ⎈Happy Helming!⎈
-~/environment/devsecopspipeline (master) $ make prom helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp;
-helm repo update &amp;ldquo;stable&amp;rdquo; already exists with the same configuration, skipping Hang tight while we grab the latest from your chart repositories&amp;hellip; &amp;hellip;Successfully got an update from the &amp;ldquo;stable&amp;rdquo; chart repository Update Complete.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>//localhost:1313/run/run.files/falco-demo/nodejs-bad-rest-api/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/run/run.files/falco-demo/nodejs-bad-rest-api/readme/</guid>
-      <description>Demo of falco with bash exec via poorly designed REST API. Introduction This example shows how a server could have a poorly designed API that allowed a client to execute arbitrary programs on the server, and how that behavior can be detected using Sysdig Falco.
-server.js in this directory defines the server. The poorly designed API is this route handler:
-router.get(&amp;#39;/exec/:cmd&amp;#39;, function(req, res) { var output = child_process.execSync(req.params.cmd); res.send(output); }); app.</description>
+      <guid>//localhost:1313/run/exercise/</guid>
+      <description>make helm_update helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp; \ helm repo update &amp;#34;stable&amp;#34; has been added to your repositories Hang tight while we grab the latest from your chart repositories... ...Successfully got an update from the &amp;#34;stable&amp;#34; chart repository Update Complete. ⎈Happy Helming!⎈ ~/environment/devsecopspipeline (master) $ make prom helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp; \ helm repo update &amp;#34;stable&amp;#34; already exists with the same configuration, skipping Hang tight while we grab the latest from your chart repositories.</description>
     </item>
     
   </channel>

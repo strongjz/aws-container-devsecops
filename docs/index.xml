@@ -141,6 +141,18 @@ cd ~/environment/devsecopspipeline ~/environment/devsecopspipeline/: export DB_P
     </item>
     
     <item>
+      <title>Container Pipeline Exercise Overview</title>
+      <link>//localhost:1313/pipeline/intro_exercise/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/pipeline/intro_exercise/</guid>
+      <description>AWS CI/CD We are going to deploy a pipeline with AWS Services
+Build - Build our golang example applications, in a docker container and stores it in the AWS ECR
+Invoke - Runs the Go Report Static Code analysis
+Deploy - deploys the application via Code build, aws eks cli and kubectl</description>
+    </item>
+    
+    <item>
       <title>Container Pipeline Exercise</title>
       <link>//localhost:1313/pipeline/exercise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -153,14 +165,11 @@ terraform { backend &amp;#34;s3&amp;#34; { bucket = &amp;#34;devsecops-james-str
     
     <item>
       <title>Running Containers Exercise</title>
-      <link>//localhost:1313/run/run.files/exercise/</link>
+      <link>//localhost:1313/run/exercise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/run/run.files/exercise/</guid>
-      <description>make helm_update helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp;
-helm repo update &amp;ldquo;stable&amp;rdquo; has been added to your repositories Hang tight while we grab the latest from your chart repositories&amp;hellip; &amp;hellip;Successfully got an update from the &amp;ldquo;stable&amp;rdquo; chart repository Update Complete. ⎈Happy Helming!⎈
-~/environment/devsecopspipeline (master) $ make prom helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp;
-helm repo update &amp;ldquo;stable&amp;rdquo; already exists with the same configuration, skipping Hang tight while we grab the latest from your chart repositories&amp;hellip; &amp;hellip;Successfully got an update from the &amp;ldquo;stable&amp;rdquo; chart repository Update Complete.</description>
+      <guid>//localhost:1313/run/exercise/</guid>
+      <description>make helm_update helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp; \ helm repo update &amp;#34;stable&amp;#34; has been added to your repositories Hang tight while we grab the latest from your chart repositories... ...Successfully got an update from the &amp;#34;stable&amp;#34; chart repository Update Complete. ⎈Happy Helming!⎈ ~/environment/devsecopspipeline (master) $ make prom helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp; \ helm repo update &amp;#34;stable&amp;#34; already exists with the same configuration, skipping Hang tight while we grab the latest from your chart repositories.</description>
     </item>
     
     <item>
@@ -169,11 +178,16 @@ helm repo update &amp;ldquo;stable&amp;rdquo; already exists with the same confi
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/conclusion/clean/</guid>
-      <description></description>
+      <description>AWS Code resources Delete the Codebuild, Code commit and pipeline
+make tf_delete Cluster Delete the EKS Cluster
+make clean_cluster Make sure to delete any other resources created
+Load Balancers Verify there are no Load balancers running, ALB or otherwise
+aws elbv2 describe-load-balancers --query &amp;#34;LoadBalancers[].LoadBalancerArn&amp;#34; aws elb describe-load-balancers --query &amp;#34;LoadBalancerDescriptions[].DNSName&amp;#34; PVC and EBS volumes Verify there are no left over EBS volumes from the PVC&amp;rsquo;s for test application
+aws ec2 describe-volumes --filters Name=tag:kubernetes.</description>
     </item>
     
     <item>
-      <title></title>
+      <title>Additional workshops</title>
       <link>//localhost:1313/conclusion/workshops/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -181,17 +195,6 @@ helm repo update &amp;ldquo;stable&amp;rdquo; already exists with the same confi
       <description>https://containersonaws.com/
 https://www.eksworkshop.com/010_introduction/
 https://containersfromthecouch.com/</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>//localhost:1313/run/run.files/falco-demo/nodejs-bad-rest-api/readme/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/run/run.files/falco-demo/nodejs-bad-rest-api/readme/</guid>
-      <description>Demo of falco with bash exec via poorly designed REST API. Introduction This example shows how a server could have a poorly designed API that allowed a client to execute arbitrary programs on the server, and how that behavior can be detected using Sysdig Falco.
-server.js in this directory defines the server. The poorly designed API is this route handler:
-router.get(&amp;#39;/exec/:cmd&amp;#39;, function(req, res) { var output = child_process.execSync(req.params.cmd); res.send(output); }); app.</description>
     </item>
     
     <item>

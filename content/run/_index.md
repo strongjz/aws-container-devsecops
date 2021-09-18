@@ -3,8 +3,6 @@ title: Running Containers
 weight: 50
 ---
 
-{{% children  %}}
-
 - Minimal OS
     - Federa CoreOS
     - CoreOS’s Container Linux
@@ -15,7 +13,7 @@ weight: 50
 
 - Run time - tools should be deployed that monitor running containers that misbehave
 
-- Resource Caps 
+- Resource Caps to reduce DDOS possibilities 
 
 - Continuous scan images in registry for vulnerabilities in the registries, images can run in production but not get updated and deployed
 
