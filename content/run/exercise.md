@@ -121,5 +121,39 @@ We now have deployed the Fluentbit plugin, we should see logs in our CloudWatch 
 ## Deploy Falco 
 
 ```bash
-make deploy-falco
+~/environment/devsecopspipeline (main) $ make deploy-falco
+helm repo add falcosecurity https://falcosecurity.github.io/charts; \
+helm repo update; \
+helm install falco --set falco.jsonOutput=true --set image.tag=0.24.0 falcosecurity/falco
+"falcosecurity" has been added to your repositories
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "falcosecurity" chart repository
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈Happy Helming!⎈
+NAME: falco
+LAST DEPLOYED: Tue Sep 21 19:02:22 2021
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+Falco agents are spinning up on each node in your cluster. After a few
+seconds, they are going to start monitoring your containers looking for
+security issues.
+
+
+No further action should be required.
+
+
+Tip: 
+You can easily forward Falco events to Slack, Kafka, AWS Lambda and more with falcosidekick. 
+Full list of outputs: https://github.com/falcosecurity/charts/falcosidekick.
+You can enable its deployment with `--set falcosidekick.enabled=true` or in your values.yaml. 
+See: https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.yaml for configuration values.
 ```
+
+You can see in Cloud Watch Falco Logs 
+
+https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/falco/log-events/alerts
+
+![](/images/run/falco-logs.png)
