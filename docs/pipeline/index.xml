@@ -29,5 +29,15 @@ Update the devsecopspipeline/terraform/config.tf with the bucket name to store t
 terraform { backend &amp;#34;s3&amp;#34; { bucket = &amp;#34;devsecops-james-strong&amp;#34; key = &amp;#34;devsecops-james-strong/terraform_state&amp;#34; region = &amp;#34;us-west-2&amp;#34; } } Initialize the Terraform cd devsecopspipeline/ make tf_clean tf_init cd terraform/ &amp;amp;&amp;amp; \ rm -rf .terraform \ rm -rf plan.out cd terraform/ &amp;amp;&amp;amp; \ terraform init Initializing the backend.</description>
     </item>
     
+    <item>
+      <title>Container Pipeline Exercise Part 2</title>
+      <link>//localhost:1313/pipeline/exercise_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/pipeline/exercise_2/</guid>
+      <description>AWS ECR Let&amp;rsquo;s push our docker image to ECR that was created from Terraform
+~/environment/devsecopspipeline (master) $ make docker_push docker login -u AWS -p redacted https://123456789012.dkr.ecr.us-west-2.amazonaws.com WARNING! Using --password via the CLI is insecure. Use --password-stdin. WARNING! Your password will be stored unencrypted in /home/ec2-user/.docker/config.json. Configure a credential helper to remove this warning. See https://docs.docker.com/engine/reference/commandline/login/#credentials-store Login Succeeded docker build -t 123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-houston:0.1.20 . Sending build context to Docker daemon 198.3MB Step 1/10 : FROM golang:1.</description>
+    </item>
+    
   </channel>
 </rss>

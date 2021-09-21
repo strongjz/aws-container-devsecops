@@ -49,6 +49,8 @@
   </url><url>
     <loc>//localhost:1313/pipeline/exercise/</loc>
   </url><url>
+    <loc>//localhost:1313/pipeline/exercise_2/</loc>
+  </url><url>
     <loc>//localhost:1313/run/</loc>
   </url><url>
     <loc>//localhost:1313/run/exercise/</loc>

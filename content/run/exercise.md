@@ -4,6 +4,8 @@ weight: 59
 draft: true
 ---
 
+## Installing Prometheus to our cluster 
+
 ```bash
 make helm_update
 helm repo add stable https://charts.helm.sh/stable && \
@@ -87,6 +89,11 @@ For more information on running Prometheus, visit:
 https://prometheus.io/
 ```
 
+
+## Deploying Fluentbit for our logs 
+
+"FireLens gives you a simplified interface to filter logs at source, add useful metadata and send logs to almost any destination. You can now stream logs directly to Amazon CloudWatch, Amazon Kinesis Data Firehose destinations such as Amazon Elasticsearch, Amazon S3, Amazon Kinesis Data Streams and partner tools. Using Amazon ECS task definition parameters, you can select destinations and optionally define filters for additional control and FireLens will ingest logs to target destinations."
+
 ```bash
 $ make deploy-fluent-bit
 aws iam create-policy --policy-name EKS-CloudWatchLogs-"devsecops" --policy-document file://./fluent-bit/aws/iam_role_policy.json
@@ -105,4 +112,14 @@ aws iam create-policy --policy-name EKS-CloudWatchLogs-"devsecops" --policy-docu
 }
 }
 aws iam attach-role-policy --role-name ng-1 --policy-arn `aws iam list-policies | jq -r '.[][] | select(.PolicyName == "EKS-CloudWatchLogs-devsecops") | .Arn'`
+```
+
+We now have deployed the Fluentbit plugin, we should see logs in our CloudWatch log Groups for our application. 
+
+![](/images/run/cloudwatch/png)
+
+## Deploy Falco 
+
+```bash
+make deploy-falco
 ```

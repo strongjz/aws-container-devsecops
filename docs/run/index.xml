@@ -12,7 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/run/exercise/</guid>
-      <description>make helm_update helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp; \ helm repo update &amp;#34;stable&amp;#34; has been added to your repositories Hang tight while we grab the latest from your chart repositories... ...Successfully got an update from the &amp;#34;stable&amp;#34; chart repository Update Complete. ⎈Happy Helming!⎈ ~/environment/devsecopspipeline (master) $ make prom helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp; \ helm repo update &amp;#34;stable&amp;#34; already exists with the same configuration, skipping Hang tight while we grab the latest from your chart repositories.</description>
+      <description>Installing Prometheus to our cluster make helm_update helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp; \ helm repo update &amp;#34;stable&amp;#34; has been added to your repositories Hang tight while we grab the latest from your chart repositories... ...Successfully got an update from the &amp;#34;stable&amp;#34; chart repository Update Complete. ⎈Happy Helming!⎈ ~/environment/devsecopspipeline (master) $ make prom helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp; \ helm repo update &amp;#34;stable&amp;#34; already exists with the same configuration, skipping Hang tight while we grab the latest from your chart repositories.</description>
     </item>
     
   </channel>

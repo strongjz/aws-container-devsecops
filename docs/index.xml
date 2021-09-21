@@ -164,12 +164,22 @@ terraform { backend &amp;#34;s3&amp;#34; { bucket = &amp;#34;devsecops-james-str
     </item>
     
     <item>
+      <title>Container Pipeline Exercise Part 2</title>
+      <link>//localhost:1313/pipeline/exercise_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/pipeline/exercise_2/</guid>
+      <description>AWS ECR Let&amp;rsquo;s push our docker image to ECR that was created from Terraform
+~/environment/devsecopspipeline (master) $ make docker_push docker login -u AWS -p redacted https://123456789012.dkr.ecr.us-west-2.amazonaws.com WARNING! Using --password via the CLI is insecure. Use --password-stdin. WARNING! Your password will be stored unencrypted in /home/ec2-user/.docker/config.json. Configure a credential helper to remove this warning. See https://docs.docker.com/engine/reference/commandline/login/#credentials-store Login Succeeded docker build -t 123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-houston:0.1.20 . Sending build context to Docker daemon 198.3MB Step 1/10 : FROM golang:1.</description>
+    </item>
+    
+    <item>
       <title>Running Containers Exercise</title>
       <link>//localhost:1313/run/exercise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/run/exercise/</guid>
-      <description>make helm_update helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp; \ helm repo update &amp;#34;stable&amp;#34; has been added to your repositories Hang tight while we grab the latest from your chart repositories... ...Successfully got an update from the &amp;#34;stable&amp;#34; chart repository Update Complete. ⎈Happy Helming!⎈ ~/environment/devsecopspipeline (master) $ make prom helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp; \ helm repo update &amp;#34;stable&amp;#34; already exists with the same configuration, skipping Hang tight while we grab the latest from your chart repositories.</description>
+      <description>Installing Prometheus to our cluster make helm_update helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp; \ helm repo update &amp;#34;stable&amp;#34; has been added to your repositories Hang tight while we grab the latest from your chart repositories... ...Successfully got an update from the &amp;#34;stable&amp;#34; chart repository Update Complete. ⎈Happy Helming!⎈ ~/environment/devsecopspipeline (master) $ make prom helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp; \ helm repo update &amp;#34;stable&amp;#34; already exists with the same configuration, skipping Hang tight while we grab the latest from your chart repositories.</description>
     </item>
     
     <item>
@@ -203,7 +213,7 @@ https://containersfromthecouch.com/</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/authors/</guid>
-      <description>&amp;lt;div&amp;gt; &amp;lt;img src=&amp;quot;https://avatars.githubusercontent.com/u/2372917?v=4&amp;quot; class=&amp;quot;inline&amp;quot; width=&amp;quot;32&amp;quot; height=&amp;quot;32&amp;quot; style=&amp;quot;height: 32px;height: 32px;margin-bottom:.25em; vertical-align:middle; &amp;quot;&amp;gt; &amp;lt;label&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/strongjz&amp;quot;&amp;gt;@strongjz&amp;lt;/a&amp;gt;&amp;lt;/label&amp;gt; &amp;lt;span class=&amp;quot;contributions&amp;quot;&amp;gt;52 commits&amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt;  </description>
+      <description>&amp;lt;div&amp;gt; &amp;lt;img src=&amp;quot;https://avatars.githubusercontent.com/u/2372917?v=4&amp;quot; class=&amp;quot;inline&amp;quot; width=&amp;quot;32&amp;quot; height=&amp;quot;32&amp;quot; style=&amp;quot;height: 32px;height: 32px;margin-bottom:.25em; vertical-align:middle; &amp;quot;&amp;gt; &amp;lt;label&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/strongjz&amp;quot;&amp;gt;@strongjz&amp;lt;/a&amp;gt;&amp;lt;/label&amp;gt; &amp;lt;span class=&amp;quot;contributions&amp;quot;&amp;gt;55 commits&amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt;  </description>
     </item>
     
   </channel>
