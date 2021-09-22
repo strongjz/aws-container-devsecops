@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Conclusion on AWS Container DevSecOps</title>
-    <link>/conclusion/</link>
+    <link>//localhost:52564/conclusion/</link>
     <description>Recent content in Conclusion on AWS Container DevSecOps</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="/conclusion/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="//localhost:52564/conclusion/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cleanup</title>
-      <link>/conclusion/clean/</link>
+      <link>//localhost:52564/conclusion/clean/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/conclusion/clean/</guid>
+      <guid>//localhost:52564/conclusion/clean/</guid>
       <description>AWS Code resources Delete the Codebuild, Code commit and pipeline
 make tf_delete Cluster Delete the EKS Cluster
 make clean_cluster Make sure to delete any other resources created
@@ -22,10 +22,10 @@ aws ec2 describe-volumes --filters Name=tag:kubernetes.</description>
     
     <item>
       <title>Additional workshops</title>
-      <link>/conclusion/workshops/</link>
+      <link>//localhost:52564/conclusion/workshops/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/conclusion/workshops/</guid>
+      <guid>//localhost:52564/conclusion/workshops/</guid>
       <description>https://containersonaws.com/
 https://www.eksworkshop.com/010_introduction/
 https://containersfromthecouch.com/</description>

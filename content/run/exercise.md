@@ -1,7 +1,6 @@
 ---
 title: Running Containers Exercise
 weight: 59
-draft: true
 ---
 
 ## Installing Prometheus to our cluster 
@@ -157,3 +156,12 @@ You can see in Cloud Watch Falco Logs
 https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/falco/log-events/alerts
 
 ![](/images/run/falco-logs.png)
+
+
+Now we can deploy the demo app to raise alerts in Cloud watch 
+
+```bash
+kubectl apply falco-demo/nodejs-bad-rest-api/falco-demo.yml 
+```
+
+![](/images/run/falco-demo-alert.png)

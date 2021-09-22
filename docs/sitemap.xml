@@ -2,69 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>//localhost:52564/</loc>
     <lastmod>2021-08-17T15:08:20-04:00</lastmod>
   </url><url>
-    <loc>/intro/</loc>
+    <loc>//localhost:52564/intro/</loc>
   </url><url>
-    <loc>/intro/presenter/</loc>
+    <loc>//localhost:52564/intro/presenter/</loc>
   </url><url>
-    <loc>/intro/contino/</loc>
+    <loc>//localhost:52564/intro/contino/</loc>
   </url><url>
-    <loc>/setup/</loc>
+    <loc>//localhost:52564/setup/</loc>
   </url><url>
-    <loc>/setup/cloud9/</loc>
+    <loc>//localhost:52564/setup/cloud9/</loc>
   </url><url>
-    <loc>/setup/iam/</loc>
+    <loc>//localhost:52564/setup/iam/</loc>
   </url><url>
-    <loc>/setup/tools/</loc>
+    <loc>//localhost:52564/setup/tools/</loc>
   </url><url>
-    <loc>/development/</loc>
+    <loc>//localhost:52564/development/</loc>
     <lastmod>2021-08-17T15:08:20-04:00</lastmod>
   </url><url>
-    <loc>/development/signing/</loc>
+    <loc>//localhost:52564/development/signing/</loc>
     <lastmod>2021-08-17T15:07:49-04:00</lastmod>
   </url><url>
-    <loc>/development/linting/</loc>
+    <loc>//localhost:52564/development/linting/</loc>
     <lastmod>2021-08-17T15:07:57-04:00</lastmod>
   </url><url>
-    <loc>/development/owasp/</loc>
+    <loc>//localhost:52564/development/owasp/</loc>
     <lastmod>2021-08-17T15:07:57-04:00</lastmod>
   </url><url>
-    <loc>/development/pre-commit/</loc>
+    <loc>//localhost:52564/development/pre-commit/</loc>
     <lastmod>2021-08-17T15:08:20-04:00</lastmod>
   </url><url>
-    <loc>/development/3-musketeers/</loc>
+    <loc>//localhost:52564/development/3-musketeers/</loc>
     <lastmod>2021-08-17T15:08:14-04:00</lastmod>
   </url><url>
-    <loc>/build/</loc>
+    <loc>//localhost:52564/build/</loc>
   </url><url>
-    <loc>/build/container/</loc>
+    <loc>//localhost:52564/build/container/</loc>
   </url><url>
-    <loc>/build/exercise/</loc>
+    <loc>//localhost:52564/build/exercise/</loc>
   </url><url>
-    <loc>/pipeline/</loc>
+    <loc>//localhost:52564/pipeline/</loc>
   </url><url>
-    <loc>/pipeline/intro_exercise/</loc>
+    <loc>//localhost:52564/pipeline/intro_exercise/</loc>
   </url><url>
-    <loc>/pipeline/exercise/</loc>
+    <loc>//localhost:52564/pipeline/exercise/</loc>
   </url><url>
-    <loc>/pipeline/exercise_2/</loc>
+    <loc>//localhost:52564/pipeline/exercise_2/</loc>
   </url><url>
-    <loc>/run/</loc>
+    <loc>//localhost:52564/run/</loc>
   </url><url>
-    <loc>/conclusion/</loc>
+    <loc>//localhost:52564/run/exercise/</loc>
   </url><url>
-    <loc>/conclusion/clean/</loc>
+    <loc>//localhost:52564/conclusion/</loc>
   </url><url>
-    <loc>/conclusion/workshops/</loc>
+    <loc>//localhost:52564/conclusion/clean/</loc>
   </url><url>
-    <loc>/survey/</loc>
+    <loc>//localhost:52564/conclusion/workshops/</loc>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>//localhost:52564/survey/</loc>
   </url><url>
-    <loc>/authors/</loc>
+    <loc>//localhost:52564/categories/</loc>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>//localhost:52564/authors/</loc>
+  </url><url>
+    <loc>//localhost:52564/tags/</loc>
   </url>
 </urlset>
