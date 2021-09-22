@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Workshop Setup on AWS Container DevSecOps</title>
-    <link>//localhost:1313/setup/</link>
+    <link>/setup/</link>
     <description>Recent content in Workshop Setup on AWS Container DevSecOps</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="//localhost:1313/setup/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="/setup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS Cloud9</title>
-      <link>//localhost:1313/setup/cloud9/</link>
+      <link>/setup/cloud9/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/setup/cloud9/</guid>
+      <guid>/setup/cloud9/</guid>
       <description>A list of supported browsers for AWS Cloud9 is found here.
    Launch Cloud9 in your closest region
 Create a Cloud9 Environment: https://us-west-2.console.aws.amazon.com/cloud9/home?region=us-west-2
@@ -21,10 +21,10 @@ You&amp;rsquo;ll be prompt to log into your AWS Account in order to provision a 
     
     <item>
       <title>Cloud 9 Settings Configuration</title>
-      <link>//localhost:1313/setup/iam/</link>
+      <link>/setup/iam/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/setup/iam/</guid>
+      <guid>/setup/iam/</guid>
       <description>Create IAM Role   Log into your AWS Account you are using for this workshop.
   Follow this link to create an IAM role with Administrator access.
   Confirm that AWS service and EC2 are selected, then click Next: Permissions to view permissions.   Confirm that AdministratorAccess is checked, then click Next: Tags to assign tags.   Take the defaults, and click Next: Review to review.</description>
@@ -32,10 +32,10 @@ You&amp;rsquo;ll be prompt to log into your AWS Account in order to provision a 
     
     <item>
       <title>Workshop tools</title>
-      <link>//localhost:1313/setup/tools/</link>
+      <link>/setup/tools/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/setup/tools/</guid>
+      <guid>/setup/tools/</guid>
       <description>In order for us to continue with the exercises, there are several tools that our needed to be installed on our Cloud9 instance.
 Download these two repos with git
 git clone https://github.com/strongjz/devsecopspipeline

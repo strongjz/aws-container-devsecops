@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Container Builds on AWS Container DevSecOps</title>
-    <link>//localhost:1313/build/</link>
+    <link>/build/</link>
     <description>Recent content in Container Builds on AWS Container DevSecOps</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="//localhost:1313/build/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="/build/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Secure Containers</title>
-      <link>//localhost:1313/build/container/</link>
+      <link>/build/container/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/build/container/</guid>
+      <guid>/build/container/</guid>
       <description>Baseline  DISABLE ROOT  Mount the container&amp;rsquo;s root filesystem as read-only set k8s Security context set Linux Capabilities Disable privilege escalation    securityContext: allowPrivilegeEscalation: false  Least Privilege by defining user  apiVersion: v1 kind: Pod metadata: name: pod-security spec: securityContext: runAsUser: 10000 runAsGroup: 30000 fsGroup: 20000  Run time Protections  SELinux, AppArmor, Auditd, Falco   Network policies Container Capabilities  capabilities: add: [&amp;#34;NET_ADMIN&amp;#34;, &amp;#34;SYS_TIME&amp;#34;]  DISABLE ROOT  Helpers Versioning</description>
     </item>
     
     <item>
       <title>Secure Containers Exercise</title>
-      <link>//localhost:1313/build/exercise/</link>
+      <link>/build/exercise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/build/exercise/</guid>
+      <guid>/build/exercise/</guid>
       <description>Navigate to DevSecops repo
 cd ~/environment/devsecopspipeline ~/environment/devsecopspipeline/: export DB_PASSWORD=temppassword Run locally ~/environment/devsecopspipeline (master) $ make run env GIT_TERMINAL_PROMPT=1 go get -d -v . github.com/strongjz/go_example_app (download) created GOPATH=/home/ec2-user/go; see &amp;#39;go help gopath&amp;#39; github.com/gin-gonic/gin (download) github.com/gin-contrib/sse (download) github.com/go-playground/validator (download) github.com/go-playground/universal-translator (download) github.com/go-playground/locales (download) github.com/leodido/go-urn (download) get &amp;#34;golang.org/x/crypto/sha3&amp;#34;: found meta tag get.metaImport{Prefix:&amp;#34;golang.org/x/crypto&amp;#34;, VCS:&amp;#34;git&amp;#34;, RepoRoot:&amp;#34;https://go.googlesource.com/crypto&amp;#34;} at //golang.org/x/crypto/sha3?go-get=1 get &amp;#34;golang.org/x/crypto/sha3&amp;#34;: verifying non-authoritative meta tag golang.org/x/crypto (download) get &amp;#34;golang.org/x/text/language&amp;#34;: found meta tag get.metaImport{Prefix:&amp;#34;golang.org/x/text&amp;#34;, VCS:&amp;#34;git&amp;#34;, RepoRoot:&amp;#34;https://go.googlesource.com/text&amp;#34;} at //golang.</description>
     </item>
