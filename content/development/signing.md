@@ -1,5 +1,5 @@
 ---
-title: "Code Signing"
+title: "Git Commit Signing"
 date: 2021-08-17T15:07:49-04:00
 weight: 21
 ---
