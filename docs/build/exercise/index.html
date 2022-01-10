@@ -12,22 +12,22 @@
     <title>Secure Containers Exercise :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641848504" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641848504" rel="stylesheet">
-    <link href="/css/hybrid.css?1641848504" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641848504" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641848504" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641848504" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641848504" rel="stylesheet">
-    <link href="/css/theme.css?1641848504" rel="stylesheet">
-    <link href="/css/tabs.css?1641848504" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641848504" rel="stylesheet">
+    <link href="/css/nucleus.css?1641853451" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641853451" rel="stylesheet">
+    <link href="/css/hybrid.css?1641853451" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641853451" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641853451" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641853451" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641853451" rel="stylesheet">
+    <link href="/css/theme.css?1641853451" rel="stylesheet">
+    <link href="/css/tabs.css?1641853451" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641853451" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641848504" rel="stylesheet">
+    <link href="/css/theme-green.css?1641853451" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641848504"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641853451"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641848504"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641848504"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641853451"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641853451"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641848504"></script>
+<script type="text/javascript" src="/js/search.js?1641853451"></script>
 
     
   </div>
@@ -818,6 +818,7 @@
   <ul>
     <li><a href="#run-locally">Run locally</a></li>
     <li><a href="#running-in-docker-compose">Running in Docker Compose</a></li>
+    <li><a href="#secure-dockerfile">Secure Dockerfile</a></li>
   </ul>
 </nav>
     </div>
@@ -843,12 +844,30 @@
         
 
 
-<p>Navigate to DevSecops repo</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/environment/devsecopspipeline
-~/environment/devsecopspipeline/: export DB_PASSWORD<span style="color:#f92672">=</span>temppassword
-</code></pre></div><h2 id="run-locally">Run locally</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ make run
-env GIT_TERMINAL_PROMPT<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> go get -d -v .
+<p>In this Exercise we are going to</p>
+<ol>
+<li>Run application locally</li>
+<li>Run in Docker compose</li>
+<li>Update Dockerfile</li>
+</ol>
+<p>Navigate to DevSecops repo <code>cd ~/environment/devsecopspipeline</code></p>
+<p>Set a temp password for the local database</p>
+<p><code>export DB_PASSWORD=temppassword</code></p>
+<h2 id="run-locally">Run locally</h2>
+<p><code>make run</code></p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Expand me...
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">env GIT_TERMINAL_PROMPT<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> go get -d -v .
 github.com/strongjz/go_example_app <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
 created GOPATH<span style="color:#f92672">=</span>/home/ec2-user/go; see <span style="color:#e6db74">&#39;go help gopath&#39;</span>
 github.com/gin-gonic/gin <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
@@ -907,15 +926,30 @@ Starting App Engine
 <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /external                 --&gt; github.com/strongjz/go_example_app/app.externalHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
 <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Environment variable PORT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8080&#34;</span>
 <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Listening and serving HTTP on :8080
-</code></pre></div><p>Test</p>
+</code></pre></div>
+    </div>
+</div>
+
+<p>Test</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Default Page&#34;</span><span style="color:#f92672">}</span>
 ~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/data
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;DB is not connected&#34;</span><span style="color:#f92672">}</span>
 </code></pre></div><h2 id="running-in-docker-compose">Running in Docker Compose</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ export DB_PASSWORD<span style="color:#f92672">=</span>temppassword
-~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ make compose_up
-docker-compose up
+<p><code>make compose_up</code></p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Expand me...
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up
 Recreating devsecopspipeline_db_1 ... <span style="color:#66d9ef">done</span>
 Recreating devsecopspipeline_go-example_1 ... <span style="color:#66d9ef">done</span>
 Attaching to devsecopspipeline_db_1, devsecopspipeline_go-example_1
@@ -994,14 +1028,19 @@ db_1          | 2021-09-11 22:16:05.630 UTC <span style="color:#f92672">[</span>
 db_1          | 2021-09-11 22:16:05.634 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  listening on Unix socket <span style="color:#e6db74">&#34;/var/run/postgresql/.s.PGSQL.5432&#34;</span>
 db_1          | 2021-09-11 22:16:05.649 UTC <span style="color:#f92672">[</span>56<span style="color:#f92672">]</span> LOG:  database system was shut down at 2021-09-11 22:16:05 UTC
 db_1          | 2021-09-11 22:16:05.653 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  database system is ready to accept connections
-</code></pre></div><p>Once it is up we can test the applications running locally</p>
+</code></pre></div>
+    </div>
+</div>
+
+<p>Once it is up we can test the applications running locally</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Default Page&#34;</span><span style="color:#f92672">}</span>
 ~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/ping
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Pong Version `0.1.20`&#34;</span><span style="color:#f92672">}</span>
 ~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/data
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Database Connected&#34;</span><span style="color:#f92672">}</span>
-</code></pre></div><p>Let&rsquo;s create a user for the application and rebuild our image</p>
+</code></pre></div><h2 id="secure-dockerfile">Secure Dockerfile</h2>
+<p>Let&rsquo;s create a user for the application and rebuild our image</p>
 <p>Add these lines to the dockerfile to create a new user</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Create appuser.</span>
 ENV USER<span style="color:#f92672">=</span>appuser
@@ -1030,14 +1069,15 @@ USER appuser:appuser
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> USER<span style="color:#f92672">=</span>appuser
 <span style="color:#66d9ef">ENV</span> UID<span style="color:#f92672">=</span><span style="color:#ae81ff">10001</span>
 <span style="color:#75715e"># See https://stackoverflow.com/a/55757473/12429735RUN</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> adduser <span style="color:#ae81ff">\ </span>   <span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>--disabled-password <span style="color:#ae81ff">\ </span>   <span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>--gecos <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\ </span>   <span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>--home <span style="color:#e6db74">&#34;/nonexistent&#34;</span> <span style="color:#ae81ff">\ </span>   <span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>--shell <span style="color:#e6db74">&#34;/sbin/nologin&#34;</span> <span style="color:#ae81ff">\ </span>   <span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>--no-create-home <span style="color:#ae81ff">\ </span>   <span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>--uid <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>UID<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\ </span>   <span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>USER<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> adduser <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#f92672">&amp;&amp;</span> --disabled-password <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#f92672">&amp;&amp;</span> --gecos <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#f92672">&amp;&amp;</span> --home <span style="color:#e6db74">&#34;/nonexistent&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#f92672">&amp;&amp;</span> --shell <span style="color:#e6db74">&#34;/sbin/nologin&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#f92672">&amp;&amp;</span> --no-create-home <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#f92672">&amp;&amp;</span> --uid <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>UID<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#f92672">&amp;&amp;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>USER<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /go/src/app</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
@@ -1058,7 +1098,8 @@ USER appuser:appuser
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 8090</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;/go/bin/app&#34;</span>]<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div>
+</span></code></pre></div><p>This was all done locally now let&rsquo;s get a pipeline running all this!</p>
+
 
 <footer class="footline">
 	
@@ -1539,19 +1580,19 @@ USER appuser:appuser
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641848504"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641848504"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641848504"></script>
-    <script src="/js/jquery.sticky.js?1641848504"></script>
-    <script src="/js/featherlight.min.js?1641848504"></script>
-    <script src="/js/highlight.pack.js?1641848504"></script>
+    <script src="/js/clipboard.min.js?1641853451"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641853451"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641853451"></script>
+    <script src="/js/jquery.sticky.js?1641853451"></script>
+    <script src="/js/featherlight.min.js?1641853451"></script>
+    <script src="/js/highlight.pack.js?1641853451"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641848504"></script>
-    <script src="/js/learn.js?1641848504"></script>
-    <script src="/js/hugo-learn.js?1641848504"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641853451"></script>
+    <script src="/js/learn.js?1641853451"></script>
+    <script src="/js/hugo-learn.js?1641853451"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641848504"></script>
+            <script src="/mermaid/mermaid.js?1641853451"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

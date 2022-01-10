@@ -27,8 +27,6 @@ spec:
     runAsGroup: 30000
     fsGroup: 20000
 ```
-- Run time Protections
-  - SELinux, AppArmor, Auditd, Falco
 - Network policies
 - Container Capabilities
 ```yaml

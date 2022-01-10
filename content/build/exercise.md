@@ -3,16 +3,24 @@ title: Secure Containers Exercise
 weight: 32
 ---
 
-Navigate to DevSecops repo 
+In this Exercise we are going to 
 
-```bash
-cd ~/environment/devsecopspipeline
-~/environment/devsecopspipeline/: export DB_PASSWORD=temppassword
-```
+1. Run application locally
+2. Run in Docker compose 
+3. Update Dockerfile 
+
+Navigate to DevSecops repo `cd ~/environment/devsecopspipeline`
+
+Set a temp password for the local database
+
+`export DB_PASSWORD=temppassword`
 
 ## Run locally
+
+`make run`
+
+{{% expand%}}
 ```bash
-~/environment/devsecopspipeline (master) $ make run
 env GIT_TERMINAL_PROMPT=1 go get -d -v .
 github.com/strongjz/go_example_app (download)
 created GOPATH=/home/ec2-user/go; see 'go help gopath'
@@ -73,8 +81,10 @@ Starting App Engine
 [GIN-debug] Environment variable PORT="8080"
 [GIN-debug] Listening and serving HTTP on :8080
 ```
+{{% /expand%}}
 
 Test 
+
 ```bash
 ~/environment/devsecopspipeline (master) $ curl localhost:8080/
 {"message":"Default Page"}
@@ -84,9 +94,10 @@ Test
 
 ## Running in Docker Compose 
 
+`make compose_up`
+
+{{% expand%}}
 ```bash
-~/environment/devsecopspipeline (master) $ export DB_PASSWORD=temppassword
-~/environment/devsecopspipeline (master) $ make compose_up
 docker-compose up
 Recreating devsecopspipeline_db_1 ... done
 Recreating devsecopspipeline_go-example_1 ... done
@@ -167,6 +178,7 @@ db_1          | 2021-09-11 22:16:05.634 UTC [1] LOG:  listening on Unix socket "
 db_1          | 2021-09-11 22:16:05.649 UTC [56] LOG:  database system was shut down at 2021-09-11 22:16:05 UTC
 db_1          | 2021-09-11 22:16:05.653 UTC [1] LOG:  database system is ready to accept connections
 ```
+{{% /expand%}}
 
 Once it is up we can test the applications running locally 
 
@@ -178,6 +190,8 @@ Once it is up we can test the applications running locally
 ~/environment/devsecopspipeline (master) $ curl localhost:8080/data
 {"message":"Database Connected"}
 ```
+
+## Secure Dockerfile
 
 Let's create a user for the application and rebuild our image
 
@@ -208,6 +222,7 @@ USER appuser:appuser
 ```
 
 The Dockerfile should look like this now
+
 ```dockerfile
 FROM golang:1.13-alpine AS builder
 
@@ -216,14 +231,15 @@ RUN apk update && apk add --no-cache git
 ENV USER=appuser
 ENV UID=10001
 # See https://stackoverflow.com/a/55757473/12429735RUN
-RUN adduser \    
---disabled-password \    
---gecos "" \    
---home "/nonexistent" \    
---shell "/sbin/nologin" \    
---no-create-home \    
---uid "${UID}" \    
-"${USER}"
+RUN adduser \
+  && --disabled-password \
+  && --gecos "" \
+  && --home "/nonexistent" \
+  && --shell "/sbin/nologin" \
+  && --no-create-home \
+  && --uid "${UID}" \
+  && "${USER}"
+
 WORKDIR /go/src/app
 COPY . .
 
@@ -246,5 +262,6 @@ EXPOSE 8090
 CMD ["/go/bin/app"]
 ```
 
+This was all done locally now let's get a pipeline running all this! 
 
 

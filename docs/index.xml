@@ -126,7 +126,8 @@ Confidence - Test your code and pipelines locally before your CI/CD tool runs it
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/build/container/</guid>
-      <description>Baseline  DISABLE ROOT  Mount the container&amp;rsquo;s root filesystem as read-only set k8s Security context set Linux Capabilities Disable privilege escalation    securityContext: allowPrivilegeEscalation: false  Least Privilege by defining user  apiVersion: v1 kind: Pod metadata: name: pod-security spec: securityContext: runAsUser: 10000 runAsGroup: 30000 fsGroup: 20000  Run time Protections  SELinux, AppArmor, Auditd, Falco   Network policies Container Capabilities  capabilities: add: [&amp;#34;NET_ADMIN&amp;#34;, &amp;#34;SYS_TIME&amp;#34;]  DISABLE ROOT  Helpers Versioning</description>
+      <description>Baseline  DISABLE ROOT  Mount the container&amp;rsquo;s root filesystem as read-only set k8s Security context set Linux Capabilities Disable privilege escalation    securityContext: allowPrivilegeEscalation: false  Least Privilege by defining user  apiVersion: v1 kind: Pod metadata: name: pod-security spec: securityContext: runAsUser: 10000 runAsGroup: 30000 fsGroup: 20000  Network policies Container Capabilities  capabilities: add: [&amp;#34;NET_ADMIN&amp;#34;, &amp;#34;SYS_TIME&amp;#34;]  DISABLE ROOT  Helpers Versioning
+ Invest in Strategy Containers follow build Versions of Software  Semantic Versioning   Metadata  LABEL &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt; &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt; &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt; .</description>
     </item>
     
     <item>
@@ -135,8 +136,12 @@ Confidence - Test your code and pipelines locally before your CI/CD tool runs it
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/build/exercise/</guid>
-      <description>Navigate to DevSecops repo
-cd ~/environment/devsecopspipeline ~/environment/devsecopspipeline/: export DB_PASSWORD=temppassword Run locally ~/environment/devsecopspipeline (master) $ make run env GIT_TERMINAL_PROMPT=1 go get -d -v . github.com/strongjz/go_example_app (download) created GOPATH=/home/ec2-user/go; see &amp;#39;go help gopath&amp;#39; github.com/gin-gonic/gin (download) github.com/gin-contrib/sse (download) github.com/go-playground/validator (download) github.com/go-playground/universal-translator (download) github.com/go-playground/locales (download) github.com/leodido/go-urn (download) get &amp;#34;golang.org/x/crypto/sha3&amp;#34;: found meta tag get.metaImport{Prefix:&amp;#34;golang.org/x/crypto&amp;#34;, VCS:&amp;#34;git&amp;#34;, RepoRoot:&amp;#34;https://go.googlesource.com/crypto&amp;#34;} at //golang.org/x/crypto/sha3?go-get=1 get &amp;#34;golang.org/x/crypto/sha3&amp;#34;: verifying non-authoritative meta tag golang.org/x/crypto (download) get &amp;#34;golang.org/x/text/language&amp;#34;: found meta tag get.metaImport{Prefix:&amp;#34;golang.org/x/text&amp;#34;, VCS:&amp;#34;git&amp;#34;, RepoRoot:&amp;#34;https://go.googlesource.com/text&amp;#34;} at //golang.</description>
+      <description>In this Exercise we are going to
+ Run application locally Run in Docker compose Update Dockerfile  Navigate to DevSecops repo cd ~/environment/devsecopspipeline
+Set a temp password for the local database
+export DB_PASSWORD=temppassword
+Run locally make run
+  Expand me...   env GIT_TERMINAL_PROMPT=1 go get -d -v . github.com/strongjz/go_example_app (download) created GOPATH=/home/ec2-user/go; see &amp;#39;go help gopath&amp;#39; github.com/gin-gonic/gin (download) github.com/gin-contrib/sse (download) github.com/go-playground/validator (download) github.com/go-playground/universal-translator (download) github.com/go-playground/locales (download) github.com/leodido/go-urn (download) get &amp;#34;golang.</description>
     </item>
     
     <item>
