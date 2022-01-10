@@ -12,22 +12,22 @@
     <title>Linting :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641844971" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641844971" rel="stylesheet">
-    <link href="/css/hybrid.css?1641844971" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641844971" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641844971" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641844971" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641844971" rel="stylesheet">
-    <link href="/css/theme.css?1641844971" rel="stylesheet">
-    <link href="/css/tabs.css?1641844971" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641844971" rel="stylesheet">
+    <link href="/css/nucleus.css?1641850607" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641850607" rel="stylesheet">
+    <link href="/css/hybrid.css?1641850607" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641850607" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641850607" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641850607" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641850607" rel="stylesheet">
+    <link href="/css/theme.css?1641850607" rel="stylesheet">
+    <link href="/css/tabs.css?1641850607" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641850607" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641844971" rel="stylesheet">
+    <link href="/css/theme-green.css?1641850607" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641844971"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641850607"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641844971"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641844971"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641850607"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641850607"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641844971"></script>
+<script type="text/javascript" src="/js/search.js?1641850607"></script>
 
     
   </div>
@@ -838,13 +838,15 @@
         
 
 
-<p>Linting is the process of analyzing code for syntax issues; it can aid in finding bugs and performance issues, offers simplifications, and enforces style rules.</p>
+<p>Linting is the process of analyzing code for syntax issues; it can aid in finding bugs and performance issues, offers
+simplifications, and enforces style rules.</p>
 <p>Other notable uses for Linting:</p>
 <ul>
 <li>formatting discrepancy, go fmt.</li>
 <li>non-adherence to coding standards and conventions, shellchecker for example</li>
 <li>diagnosing possible logical errors in your applications. go vet</li>
-<li>Interpreted languages like Python, Ruby, and JavaScript benefit from linting, as these languages don’t have a compiling phase to display errors before execution.</li>
+<li>Interpreted languages like Python, Ruby, and JavaScript benefit from linting, as these languages don’t have a
+compiling phase to display errors before execution.</li>
 </ul>
 <p>Here is great collection of Linters for many languages</p>
 <p><a href="https://github.com/collections/clean-code-linters">https://github.com/collections/clean-code-linters</a></p>
@@ -880,9 +882,9 @@ By files:
 
     go tool vet source/directory/*.go
   :
-</code></pre></div><p>For Dockerfiles we can use tools like <a href="https://github.com/hadolint/hadolint">hadolint</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:~/environment $ docker run --rm -i hadolint/hadolint:v2.7.0 &lt; ./content/development/development.files/Dockerfile
--:1 DL3006 warning: Always tag the version of an image explicitly
+</code></pre></div><p>For DockerFiles we can use tools like <a href="https://github.com/hadolint/hadolint">hadolint</a></p>
+<p><code>docker run --rm -i hadolint/hadolint:v2.7.0 &lt;  ~/environment/aws-container-devsecops/content/development/development.files/Dockerfile</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">-:1 DL3006 warning: Always tag the version of an image explicitly
 -:2 DL3015 info: Avoid additional packages by specifying <span style="color:#e6db74">`</span>--no-install-recommends<span style="color:#e6db74">`</span>
 -:2 DL3009 info: Delete the apt-get lists after installing something
 -:2 SC2154 warning: node_verion is referenced but not assigned <span style="color:#f92672">(</span>did you mean <span style="color:#e6db74">&#39;node_version&#39;</span>?<span style="color:#f92672">)</span>.
@@ -1371,19 +1373,19 @@ By files:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641844971"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641844971"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641844971"></script>
-    <script src="/js/jquery.sticky.js?1641844971"></script>
-    <script src="/js/featherlight.min.js?1641844971"></script>
-    <script src="/js/highlight.pack.js?1641844971"></script>
+    <script src="/js/clipboard.min.js?1641850607"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641850607"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641850607"></script>
+    <script src="/js/jquery.sticky.js?1641850607"></script>
+    <script src="/js/featherlight.min.js?1641850607"></script>
+    <script src="/js/highlight.pack.js?1641850607"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641844971"></script>
-    <script src="/js/learn.js?1641844971"></script>
-    <script src="/js/hugo-learn.js?1641844971"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641850607"></script>
+    <script src="/js/learn.js?1641850607"></script>
+    <script src="/js/hugo-learn.js?1641850607"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641844971"></script>
+            <script src="/mermaid/mermaid.js?1641850607"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -3,10 +3,9 @@ title: Cloud 9 Settings Configuration
 weight: 12
 ---
 
-# Create IAM Role
+## Create IAM Role
 1. Log into your AWS Account you are using for this workshop.
 2. Follow this [link to create an IAM role with Administrator access.](https://console.aws.amazon.com/iam/home#/roles$new?step=type&commonUseCase=EC2%2BEC2&selectedUseCase=EC2&policies=arn:aws:iam::aws:policy%2FAdministratorAccess&roleName=devsecops-workshop-admin)
-
 3. Confirm that AWS service and EC2 are selected, then click Next: Permissions to view permissions.
 ![cloud9create](/images/setup/cloud9_role_1_create.png)
 4. Confirm that AdministratorAccess is checked, then click Next: Tags to assign tags.
@@ -16,7 +15,7 @@ weight: 12
 7. Enter devsecop-workshop-admin for the Name, and click Create role.
 ![cloud9create](/images/setup/cloud9_role_4_review.png)
 
-# Attach IAM Role to your Cloud9 instance
+## Attach IAM Role to your Cloud9 instance
 
 1. Click the grey circle button (in top right corner) and select Manage EC2 Instance
 ![cloud9create](/images/setup/cloud9_console_change_instance.png)
@@ -25,9 +24,7 @@ weight: 12
 3. Choose devsecop-workshop-admin from the IAM Role dropdown, and select Save
 ![cloud9create](/images/setup/cloud9_modify_iam_console.png)
 
-
-
-# Update Cloud9 IAM Settings
+## Update Cloud9 IAM Settings
 
 Return to your Cloud9 workspace and click the gear icon (in top right corner)
 
@@ -47,7 +44,8 @@ Use the [GetCallerIdentity CLI command](https://docs.aws.amazon.com/cli/latest/r
 
 ![cloud9create](/images/setup/cloud9_verify_iam_cli.png)
 
-# Change EC2 Instance Settings
+## Change EC2 Instance Settings
+
 1. Open Project Settings
 2. Select EC2 Instance
 3. Change Stop my environment to a day.

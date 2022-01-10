@@ -26,9 +26,7 @@ You&amp;rsquo;ll be prompt to log into your AWS Account in order to provision a 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/setup/iam/</guid>
-      <description>Create IAM Role   Log into your AWS Account you are using for this workshop.
-  Follow this link to create an IAM role with Administrator access.
-  Confirm that AWS service and EC2 are selected, then click Next: Permissions to view permissions.   Confirm that AdministratorAccess is checked, then click Next: Tags to assign tags.   Take the defaults, and click Next: Review to review.</description>
+      <description>Create IAM Role  Log into your AWS Account you are using for this workshop. Follow this link to create an IAM role with Administrator access. Confirm that AWS service and EC2 are selected, then click Next: Permissions to view permissions.  Confirm that AdministratorAccess is checked, then click Next: Tags to assign tags.  Take the defaults, and click Next: Review to review.  Enter devsecop-workshop-admin for the Name, and click Create role.</description>
     </item>
     
     <item>
@@ -43,8 +41,7 @@ git clone https://github.com/strongjz/devsecopspipeline
 git clone https://github.com/strongjz/aws-container-devsecops
 Next will be installing the tools needed for the labs
 The script will install
- docker kind terraform eksctl kubectl helm  Navigate to where you downloaded the installation script from the git repo.
-cd ~/environment/aws-container-devsecops/content/setup/tools.</description>
+ docker kind terraform eksctl kubectl helm  Install Navigate to where you downloaded the installation script from the git repo.</description>
     </item>
     
   </channel>

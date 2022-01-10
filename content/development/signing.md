@@ -6,13 +6,12 @@ weight: 21
 
 Needed:
 * GPG Key
-* Keybase - optional
 * Github Account
 
 # Generating a GPG Key
-1. Generate a with gpg ```gpg --full-generate-key```
-3. Select what key you want to use, ECC (sign and encrypt) *default*
-4. Select what elliptic curve you want, Curve 25519 *default*
+1. Generate a key with gpg ```gpg --gen-key```
+3. Select what key you want to use
+4. Select what elliptic curve you want
 5. Fill out your name and your email address. Make sure this matches the one in your GitHub account.
 6. Add a comment if you want to remind you what the key is for.
 7. You may be prompted for a passphrase to add to the key for extra security
@@ -20,7 +19,7 @@ Needed:
 Here is what the prompts will look like.
 {{%expand "Expand here is what it looks like in its entirety" %}}
 ```bash
-± |main U:26 ?:9 ✗| → gpg --full-generate-key
+± |main U:26 ?:9 ✗| → gpg --gen-key
 gpg (GnuPG) 2.3.1; Copyright (C) 2021 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
@@ -78,12 +77,15 @@ sub   cv25519 2021-08-17 [E]
 ```
 {{% /expand%}}
 
-# Added it to Github Account
+# Added it to GitHub Account
 
-1. Export public key
+## 1. Export public key
+
+Get the Key ID with `gpg --list-keys $EMAIL`
+
+Export the public key with `gpg --armor --export 3E0424931246D33A86890BC78246A1EC900B5E30`
+
 ```bash
-gpg --list-keys
-gpg --armor --export 3E0424931246D33A86890BC78246A1EC900B5E30
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mDMEYRwLhBYJKwYBBAHaRw8BAQdAsQbWuqV2P5y1HXlkoFTM9qyrypc+zB9YO/fI
@@ -98,40 +100,52 @@ fG5zzmP/Hg13SFsxLZc+5EKrxHJ1z+bNQQ5ARxYBANbOuPnxLtPL4eY4TqIY0k1X
 8HmXv9JXEwMHLYiN4fwF
 =03gp
 -----END PGP PUBLIC KEY BLOCK-----
-
 ```
-2. Open https://github.com/settings/keys
+
+## 2. Add to Github
+
+Open https://github.com/settings/keys
 
 ![sign_add_key](/images/development/sign_account_add.png)
 
-4. Copy and Paste the Public Key into your GitHub account
+Copy and Paste the Public Key into your GitHub account
 
 ![sign_add_key](/images/development/sign_add_new_key.png)
 
-# Add to git config and verify
+## 3. Add to git config
 
-1. Get the key id for the one we just created.
+Get the key id for the one we just created.
+
 ```bash
-$ gpg --list-secret-keys --keyid-format LONG
+$ gpg --list-secret-keys --keyid-format LONG $EMAIL
 
 sec   ed25519/8246A1EC900B5E30 2021-08-17 [SC]
       3E0424931246D33A86890BC78246A1EC900B5E30
 uid                 [ultimate] James Strong (testing for workshop) <strong.james.e@gmail.com>
 ssb   cv25519/0BAFF11345FB8338 2021-08-17 [E]
 ```
-2. Update git config to use the key.
 
+Update git config to use the key.
 ```bash
 $ git config --global user.signingkey 3E0424931246D33A86890BC78246A1EC900B5E30
 $ git config --global commit.gpgsign true
 ```
 
-3. Test a Commit.
+## 4. Test a Commit.
+
 ```bash
-± |main S:2 U:28 ?:11 ✗| → git add -A
-± |main S:42 ✗| → git commit -m "signing "
-[main b2a6fb5] signing
+cd ~/environment/
+mkdir signing-test
+git init
+  Initialized empty Git repository in /home/ec2-user/environment/signing-test/.git/
+echo "signing-test" >> README.md
+git add -A
+git commit -m "signing"
+  [main b2a6fb5] signing
+git push origin master 
 ```
+
+## 5. Verify in GitHub
 
 In the commit history you can see a "Verified" tag on your commits now
 
@@ -142,9 +156,11 @@ In the commit history you can see a "Verified" tag on your commits now
 Make sure to store this GPG private key in a secure location
 {{% /notice  %}}
 
+## 6. Store GPG key (optional)
+
 To export the key use this.
 
-1. Identify your private key: ```gpg --list-secret-keys strong.james.e@gmail.com```
+Identify your private key: ```gpg --list-secret-keys $EMAIL```
 
 ```bash
 sec   ed25519 2021-08-17 [SC]
@@ -153,17 +169,13 @@ uid           [ultimate] James Strong (testing for workshop) <strong.james.e@gma
 ssb   cv25519 2021-08-17 [E]
 ```
 
-2. Run this command to export your key: ```gpg --export-secret-keys 3E0424931246D33A86890BC78246A1EC900B5E30 > private.key```
+Run this command to export your key: ```gpg --export-secret-keys 3E0424931246D33A86890BC78246A1EC900B5E30 > private.key```
 
 If you have a passphrase on the key you'll have to enter it to export it.
 
-3. Copy the key file to another secure location.
+Copy the key file to another secure location.
 
-4. To import on a new machine, run
-
-```
-gpg --import private.key
-```
+To import on a new machine, run `gpg --import private.key`
 
 Sources:
 

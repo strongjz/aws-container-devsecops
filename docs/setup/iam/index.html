@@ -12,22 +12,22 @@
     <title>Cloud 9 Settings Configuration :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641848397" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641848397" rel="stylesheet">
-    <link href="/css/hybrid.css?1641848397" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641848397" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641848397" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641848397" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641848397" rel="stylesheet">
-    <link href="/css/theme.css?1641848397" rel="stylesheet">
-    <link href="/css/tabs.css?1641848397" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641848397" rel="stylesheet">
+    <link href="/css/nucleus.css?1641850607" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641850607" rel="stylesheet">
+    <link href="/css/hybrid.css?1641850607" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641850607" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641850607" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641850607" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641850607" rel="stylesheet">
+    <link href="/css/theme.css?1641850607" rel="stylesheet">
+    <link href="/css/tabs.css?1641850607" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641850607" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641848397" rel="stylesheet">
+    <link href="/css/theme-green.css?1641850607" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641848397"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641850607"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641848397"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641848397"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641850607"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641850607"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641848397"></script>
+<script type="text/javascript" src="/js/search.js?1641850607"></script>
 
     
   </div>
@@ -814,7 +814,14 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#create-iam-role">Create IAM Role</a></li>
+    <li><a href="#attach-iam-role-to-your-cloud9-instance">Attach IAM Role to your Cloud9 instance</a></li>
+    <li><a href="#update-cloud9-iam-settings">Update Cloud9 IAM Settings</a></li>
+    <li><a href="#change-ec2-instance-settings">Change EC2 Instance Settings</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -838,32 +845,20 @@
         
 
 
-<h1 id="create-iam-role">Create IAM Role</h1>
+<h2 id="create-iam-role">Create IAM Role</h2>
 <ol>
-<li>
-<p>Log into your AWS Account you are using for this workshop.</p>
-</li>
-<li>
-<p>Follow this <a href="https://console.aws.amazon.com/iam/home#/roles$new?step=type&amp;commonUseCase=EC2%2BEC2&amp;selectedUseCase=EC2&amp;policies=arn:aws:iam::aws:policy%2FAdministratorAccess&amp;roleName=devsecops-workshop-admin">link to create an IAM role with Administrator access.</a></p>
-</li>
-<li>
-<p>Confirm that AWS service and EC2 are selected, then click Next: Permissions to view permissions.
-<img src="/images/setup/cloud9_role_1_create.png" alt="cloud9create"></p>
-</li>
-<li>
-<p>Confirm that AdministratorAccess is checked, then click Next: Tags to assign tags.
-<img src="/images/setup/cloud9_role_2_permissions.png" alt="cloud9create"></p>
-</li>
-<li>
-<p>Take the defaults, and click Next: Review to review.
-<img src="/images/setup/cloud9_role_3_tag.png" alt="cloud9create"></p>
-</li>
-<li>
-<p>Enter devsecop-workshop-admin for the Name, and click Create role.
-<img src="/images/setup/cloud9_role_4_review.png" alt="cloud9create"></p>
-</li>
+<li>Log into your AWS Account you are using for this workshop.</li>
+<li>Follow this <a href="https://console.aws.amazon.com/iam/home#/roles$new?step=type&amp;commonUseCase=EC2%2BEC2&amp;selectedUseCase=EC2&amp;policies=arn:aws:iam::aws:policy%2FAdministratorAccess&amp;roleName=devsecops-workshop-admin">link to create an IAM role with Administrator access.</a></li>
+<li>Confirm that AWS service and EC2 are selected, then click Next: Permissions to view permissions.
+<img src="/images/setup/cloud9_role_1_create.png" alt="cloud9create"></li>
+<li>Confirm that AdministratorAccess is checked, then click Next: Tags to assign tags.
+<img src="/images/setup/cloud9_role_2_permissions.png" alt="cloud9create"></li>
+<li>Take the defaults, and click Next: Review to review.
+<img src="/images/setup/cloud9_role_3_tag.png" alt="cloud9create"></li>
+<li>Enter devsecop-workshop-admin for the Name, and click Create role.
+<img src="/images/setup/cloud9_role_4_review.png" alt="cloud9create"></li>
 </ol>
-<h1 id="attach-iam-role-to-your-cloud9-instance">Attach IAM Role to your Cloud9 instance</h1>
+<h2 id="attach-iam-role-to-your-cloud9-instance">Attach IAM Role to your Cloud9 instance</h2>
 <ol>
 <li>Click the grey circle button (in top right corner) and select Manage EC2 Instance
 <img src="/images/setup/cloud9_console_change_instance.png" alt="cloud9create"></li>
@@ -872,7 +867,7 @@
 <li>Choose devsecop-workshop-admin from the IAM Role dropdown, and select Save
 <img src="/images/setup/cloud9_modify_iam_console.png" alt="cloud9create"></li>
 </ol>
-<h1 id="update-cloud9-iam-settings">Update Cloud9 IAM Settings</h1>
+<h2 id="update-cloud9-iam-settings">Update Cloud9 IAM Settings</h2>
 <p>Return to your Cloud9 workspace and click the gear icon (in top right corner)</p>
 <ol>
 <li>Open Project Settings</li>
@@ -885,7 +880,7 @@
 <p>Use the <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/get-caller-identity.html">GetCallerIdentity CLI command</a> to validate that the Cloud9 IDE is using the correct IAM role.</p>
 <p><code>aws sts get-caller-identity --query Arn | grep devsecops-workshop-admin -q &amp;&amp; echo &quot;IAM role valid&quot; || echo &quot;IAM role NOT valid&quot;</code></p>
 <p><img src="/images/setup/cloud9_verify_iam_cli.png" alt="cloud9create"></p>
-<h1 id="change-ec2-instance-settings">Change EC2 Instance Settings</h1>
+<h2 id="change-ec2-instance-settings">Change EC2 Instance Settings</h2>
 <ol>
 <li>Open Project Settings</li>
 <li>Select EC2 Instance</li>
@@ -1373,19 +1368,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641848397"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641848397"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641848397"></script>
-    <script src="/js/jquery.sticky.js?1641848397"></script>
-    <script src="/js/featherlight.min.js?1641848397"></script>
-    <script src="/js/highlight.pack.js?1641848397"></script>
+    <script src="/js/clipboard.min.js?1641850607"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641850607"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641850607"></script>
+    <script src="/js/jquery.sticky.js?1641850607"></script>
+    <script src="/js/featherlight.min.js?1641850607"></script>
+    <script src="/js/highlight.pack.js?1641850607"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641848397"></script>
-    <script src="/js/learn.js?1641848397"></script>
-    <script src="/js/hugo-learn.js?1641848397"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641850607"></script>
+    <script src="/js/learn.js?1641850607"></script>
+    <script src="/js/hugo-learn.js?1641850607"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641848397"></script>
+            <script src="/mermaid/mermaid.js?1641850607"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

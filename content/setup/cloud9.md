@@ -5,7 +5,7 @@ weight: 11
 
 
 {{% notice info %}}
-A list of supported browsers for AWS Cloud9 is found [here]( https://docs.aws.amazon.com/cloud9/latest/user-guide/browsers.html).
+A list of supported browsers for AWS Cloud9 is found [here](https://docs.aws.amazon.com/cloud9/latest/user-guide/browsers.html).
 {{% /notice %}}
 
 1. Log into your AWS Account
@@ -47,10 +47,11 @@ export instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id
 export vol_id=$(aws ec2 describe-instances --instance-id $instance_id --query 'Reservations[0].Instances[0].BlockDeviceMappings[0].Ebs.VolumeId' --output text)
 aws ec2 modify-volume --size 100 --volume-id $vol_id
 sudo reboot
-
 ```
 
 This will force a reboot of your Cloud9 instance
+
+![cloud9_reboot](/images/setup/cloud9_reboot.png)
 
 Double check it was successful 
 
@@ -65,4 +66,4 @@ tmpfs           3.8G     0  3.8G   0% /sys/fs/cgroup
 tmpfs           768M     0  768M   0% /run/user/1000
 ```
 
-![cloud9_reboot](/images/setup/cloud9_reboot.png)
+

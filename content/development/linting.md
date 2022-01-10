@@ -4,14 +4,16 @@ date: 2021-08-17T15:07:57-04:00
 weight: 22
 ---
 
-Linting is the process of analyzing code for syntax issues; it can aid in finding bugs and performance issues, offers simplifications, and enforces style rules.
+Linting is the process of analyzing code for syntax issues; it can aid in finding bugs and performance issues, offers 
+simplifications, and enforces style rules.
 
 Other notable uses for Linting:
 
 - formatting discrepancy, go fmt.
 - non-adherence to coding standards and conventions, shellchecker for example
 - diagnosing possible logical errors in your applications. go vet
-- Interpreted languages like Python, Ruby, and JavaScript benefit from linting, as these languages don’t have a compiling phase to display errors before execution.
+- Interpreted languages like Python, Ruby, and JavaScript benefit from linting, as these languages don’t have a 
+  compiling phase to display errors before execution.
 
 
 Here is great collection of Linters for many languages
@@ -61,10 +63,11 @@ By files:
   :
   ```
 
-For Dockerfiles we can use tools like [hadolint](https://github.com/hadolint/hadolint)
+For DockerFiles we can use tools like [hadolint](https://github.com/hadolint/hadolint)
+
+`docker run --rm -i hadolint/hadolint:v2.7.0 <  ~/environment/aws-container-devsecops/content/development/development.files/Dockerfile`
 
 ```bash
-:~/environment $ docker run --rm -i hadolint/hadolint:v2.7.0 < ./content/development/development.files/Dockerfile
 -:1 DL3006 warning: Always tag the version of an image explicitly
 -:2 DL3015 info: Avoid additional packages by specifying `--no-install-recommends`
 -:2 DL3009 info: Delete the apt-get lists after installing something
