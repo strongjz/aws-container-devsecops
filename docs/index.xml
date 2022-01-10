@@ -26,6 +26,17 @@
     </item>
     
     <item>
+      <title>CI/CD and Security</title>
+      <link>//localhost:1313/intro/intro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/intro/intro/</guid>
+      <description>CI/CD
+ Maintain a code repository Automate the build Keep the build fast Make the build self-testing Commit early, commit often Every commit to the mainline gets built Everyone can see the results of the build Automate the deployment  Security
+ Immutable artifacts CVE Scanning Least Privileged Network Isolation Run Time protection Signed Commits Signed Images  </description>
+    </item>
+    
+    <item>
       <title>AWS Cloud9</title>
       <link>//localhost:1313/setup/cloud9/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -198,17 +209,6 @@ make clean_cluster Make sure to delete any other resources created
 Load Balancers Verify there are no Load balancers running, ALB or otherwise
 aws elbv2 describe-load-balancers --query &amp;#34;LoadBalancers[].LoadBalancerArn&amp;#34; aws elb describe-load-balancers --query &amp;#34;LoadBalancerDescriptions[].DNSName&amp;#34; PVC and EBS volumes Verify there are no left over EBS volumes from the PVC&amp;rsquo;s for test application
 aws ec2 describe-volumes --filters Name=tag:kubernetes.</description>
-    </item>
-    
-    <item>
-      <title>Additional workshops</title>
-      <link>//localhost:1313/conclusion/workshops/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/conclusion/workshops/</guid>
-      <description>https://containersonaws.com/
-https://www.eksworkshop.com/010_introduction/
-https://containersfromthecouch.com/</description>
     </item>
     
     <item>

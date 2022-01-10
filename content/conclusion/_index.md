@@ -33,3 +33,12 @@ Additional AWS Resources
 [AWS Macie - ML Security](https://aws.amazon.com/macie/)
 
 [AWS Security Hub](https://aws.amazon.com/security-hub/)
+
+Additional Container Workshops
+
+https://containersonaws.com/
+
+https://www.eksworkshop.com/010_introduction/
+
+https://containersfromthecouch.com/
+

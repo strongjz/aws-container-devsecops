@@ -12,22 +12,22 @@
     <title>Container Pipeline Exercise :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641853382" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641853382" rel="stylesheet">
-    <link href="/css/hybrid.css?1641853382" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641853382" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641853382" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641853382" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641853382" rel="stylesheet">
-    <link href="/css/theme.css?1641853382" rel="stylesheet">
-    <link href="/css/tabs.css?1641853382" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641853382" rel="stylesheet">
+    <link href="/css/nucleus.css?1641854390" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641854390" rel="stylesheet">
+    <link href="/css/hybrid.css?1641854390" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641854390" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641854390" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641854390" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641854390" rel="stylesheet">
+    <link href="/css/theme.css?1641854390" rel="stylesheet">
+    <link href="/css/tabs.css?1641854390" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641854390" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641853382" rel="stylesheet">
+    <link href="/css/theme-green.css?1641854390" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641853382"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641854390"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641853382"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641853382"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641854390"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641854390"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641853382"></script>
+<script type="text/javascript" src="/js/search.js?1641854390"></script>
 
     
   </div>
@@ -142,6 +142,27 @@
       <li data-nav-id="/intro/sponsor/" title="Chainguard.dev" class="dd-item ">
         <a href="/intro/sponsor/">
         Chainguard.dev
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/intro/intro/" title="CI/CD and Security" class="dd-item ">
+        <a href="/intro/intro/">
+        CI/CD and Security
         
         </a>
     </li>
@@ -670,27 +691,6 @@
 
             
           
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/conclusion/workshops/" title="Additional workshops" class="dd-item ">
-        <a href="/conclusion/workshops/">
-        Additional workshops
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
         
         </ul>
       
@@ -906,231 +906,231 @@ cd terraform/ <span style="color:#f92672">&amp;&amp;</span> <span style="color:#
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <pre tabindex="0"><code>aws_iam_policy.allow-eks-asg: Refreshing state... [id=arn:aws:iam::123456789012:policy/eks-devsecops-allow-eks-asg]
-aws_s3_bucket.codepipeline_bucket: Refreshing state... [id=houston-devsecops-code]
-aws_ecr_repository.golang_example: Refreshing state... [id=golang_example-houston]
-aws_codecommit_repository.devsecops: Refreshing state... [id=houston-devsecops-repo]
-aws_iam_role.codepipeline_role: Refreshing state... [id=houston-test-role]
-aws_iam_role.main: Refreshing state... [id=eks-devsecops]
-aws_iam_role.devsecops-austin-codebuild: Refreshing state... [id=devsecops-houston-codebuild]
-aws_cloudwatch_log_group.codebuild: Refreshing state... [id=devsecops-houston-codebuild]
-aws_s3_bucket.codebuild_s3: Refreshing state... [id=devsecops-houston-codebuild]
-aws_cloudwatch_log_stream.codebuild: Refreshing state... [id=devsecops-houston-codebuild]
-aws_ssm_parameter.account_id: Refreshing state... [id=ACCOUNT_ID]
-aws_codebuild_project.devsecops-austin-codebuild-BUILD: Refreshing state... [id=arn:aws:codebuild:us-west-2:123456789012:project/devsecops-houston-codebuild-BUILD]
-aws_iam_role_policy_attachment.AmazonEKSClusterPolicy: Refreshing state... [id=devsecops-houston-codebuild-20210911231810453900000003]
-aws_iam_role_policy_attachment.AmazonEKSServicePolicy: Refreshing state... [id=devsecops-houston-codebuild-20210911231810424800000002]
-aws_iam_role_policy.devsecops-austin-codebuild: Refreshing state... [id=devsecops-houston-codebuild:terraform-20210911231810411800000001]
-aws_codebuild_project.devsecops-austin-codebuild-DEPLOY: Refreshing state... [id=arn:aws:codebuild:us-west-2:123456789012:project/devsecops-houston-codebuild-DEPLOY]
-aws_codebuild_project.devsecops-austin-codebuild-STATIC: Refreshing state... [id=arn:aws:codebuild:us-west-2:123456789012:project/devsecops-houston-codebuild-STATIC]
-aws_iam_role_policy.codepipeline_policy: Refreshing state... [id=houston-test-role:houston-codepipeline_policy]
-aws_codepipeline.codepipeline: Refreshing state... [id=houston-devsecops-pipeline]
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws_iam_policy.allow-eks-asg: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>arn:aws:iam::123456789012:policy/eks-devsecops-allow-eks-asg<span style="color:#f92672">]</span>
+aws_s3_bucket.codepipeline_bucket: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>houston-devsecops-code<span style="color:#f92672">]</span>
+aws_ecr_repository.golang_example: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>golang_example-houston<span style="color:#f92672">]</span>
+aws_codecommit_repository.devsecops: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>houston-devsecops-repo<span style="color:#f92672">]</span>
+aws_iam_role.codepipeline_role: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>houston-test-role<span style="color:#f92672">]</span>
+aws_iam_role.main: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>eks-devsecops<span style="color:#f92672">]</span>
+aws_iam_role.devsecops-austin-codebuild: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>devsecops-houston-codebuild<span style="color:#f92672">]</span>
+aws_cloudwatch_log_group.codebuild: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>devsecops-houston-codebuild<span style="color:#f92672">]</span>
+aws_s3_bucket.codebuild_s3: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>devsecops-houston-codebuild<span style="color:#f92672">]</span>
+aws_cloudwatch_log_stream.codebuild: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>devsecops-houston-codebuild<span style="color:#f92672">]</span>
+aws_ssm_parameter.account_id: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>ACCOUNT_ID<span style="color:#f92672">]</span>
+aws_codebuild_project.devsecops-austin-codebuild-BUILD: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>arn:aws:codebuild:us-west-2:123456789012:project/devsecops-houston-codebuild-BUILD<span style="color:#f92672">]</span>
+aws_iam_role_policy_attachment.AmazonEKSClusterPolicy: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>devsecops-houston-codebuild-20210911231810453900000003<span style="color:#f92672">]</span>
+aws_iam_role_policy_attachment.AmazonEKSServicePolicy: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>devsecops-houston-codebuild-20210911231810424800000002<span style="color:#f92672">]</span>
+aws_iam_role_policy.devsecops-austin-codebuild: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>devsecops-houston-codebuild:terraform-20210911231810411800000001<span style="color:#f92672">]</span>
+aws_codebuild_project.devsecops-austin-codebuild-DEPLOY: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>arn:aws:codebuild:us-west-2:123456789012:project/devsecops-houston-codebuild-DEPLOY<span style="color:#f92672">]</span>
+aws_codebuild_project.devsecops-austin-codebuild-STATIC: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>arn:aws:codebuild:us-west-2:123456789012:project/devsecops-houston-codebuild-STATIC<span style="color:#f92672">]</span>
+aws_iam_role_policy.codepipeline_policy: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>houston-test-role:houston-codepipeline_policy<span style="color:#f92672">]</span>
+aws_codepipeline.codepipeline: Refreshing state... <span style="color:#f92672">[</span>id<span style="color:#f92672">=</span>houston-devsecops-pipeline<span style="color:#f92672">]</span>
 
 Note: Objects have changed outside of Terraform
 
-Terraform detected the following changes made outside of Terraform since the last &quot;terraform apply&quot;:
+Terraform detected the following changes made outside of Terraform since the last <span style="color:#e6db74">&#34;terraform apply&#34;</span>:
 
-  # aws_iam_role.main has been changed
-  ~ resource &quot;aws_iam_role&quot; &quot;main&quot; {
-        id                    = &quot;eks-devsecops&quot;
-        name                  = &quot;eks-devsecops&quot;
-      + tags                  = {}
-        # (10 unchanged attributes hidden)
+  <span style="color:#75715e"># aws_iam_role.main has been changed</span>
+  ~ resource <span style="color:#e6db74">&#34;aws_iam_role&#34;</span> <span style="color:#e6db74">&#34;main&#34;</span> <span style="color:#f92672">{</span>
+        id                    <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;eks-devsecops&#34;</span>
+        name                  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;eks-devsecops&#34;</span>
+      + tags                  <span style="color:#f92672">=</span> <span style="color:#f92672">{}</span>
+        <span style="color:#75715e"># (10 unchanged attributes hidden)</span>
 
-        # (1 unchanged block hidden)
-    }
-  # aws_codepipeline.codepipeline has been changed
-  ~ resource &quot;aws_codepipeline&quot; &quot;codepipeline&quot; {
-        id       = &quot;houston-devsecops-pipeline&quot;
-        name     = &quot;houston-devsecops-pipeline&quot;
-      + tags     = {}
-        # (3 unchanged attributes hidden)
+        <span style="color:#75715e"># (1 unchanged block hidden)</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#75715e"># aws_codepipeline.codepipeline has been changed</span>
+  ~ resource <span style="color:#e6db74">&#34;aws_codepipeline&#34;</span> <span style="color:#e6db74">&#34;codepipeline&#34;</span> <span style="color:#f92672">{</span>
+        id       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;houston-devsecops-pipeline&#34;</span>
+        name     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;houston-devsecops-pipeline&#34;</span>
+      + tags     <span style="color:#f92672">=</span> <span style="color:#f92672">{}</span>
+        <span style="color:#75715e"># (3 unchanged attributes hidden)</span>
 
 
-      ~ stage {
-            name = &quot;Source&quot;
+      ~ stage <span style="color:#f92672">{</span>
+            name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Source&#34;</span>
 
-          ~ action {
-              + input_artifacts  = []
-                name             = &quot;Source&quot;
-                # (7 unchanged attributes hidden)
-            }
-        }
-      ~ stage {
-            name = &quot;Build&quot;
+          ~ action <span style="color:#f92672">{</span>
+              + input_artifacts  <span style="color:#f92672">=</span> <span style="color:#f92672">[]</span>
+                name             <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Source&#34;</span>
+                <span style="color:#75715e"># (7 unchanged attributes hidden)</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+      ~ stage <span style="color:#f92672">{</span>
+            name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Build&#34;</span>
 
-          ~ action {
-                name             = &quot;Build&quot;
-              + output_artifacts = []
-                # (7 unchanged attributes hidden)
-            }
-        }
-      ~ stage {
-            name = &quot;Deploy&quot;
+          ~ action <span style="color:#f92672">{</span>
+                name             <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Build&#34;</span>
+              + output_artifacts <span style="color:#f92672">=</span> <span style="color:#f92672">[]</span>
+                <span style="color:#75715e"># (7 unchanged attributes hidden)</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+      ~ stage <span style="color:#f92672">{</span>
+            name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Deploy&#34;</span>
 
-          ~ action {
-                name             = &quot;Deploy&quot;
-              + output_artifacts = []
-                # (7 unchanged attributes hidden)
-            }
-        }
-        # (2 unchanged blocks hidden)
-    }
-  # aws_s3_bucket.codepipeline_bucket has been changed
-  ~ resource &quot;aws_s3_bucket&quot; &quot;codepipeline_bucket&quot; {
-        id                          = &quot;houston-devsecops-code&quot;
-      + tags                        = {}
-        # (10 unchanged attributes hidden)
+          ~ action <span style="color:#f92672">{</span>
+                name             <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Deploy&#34;</span>
+              + output_artifacts <span style="color:#f92672">=</span> <span style="color:#f92672">[]</span>
+                <span style="color:#75715e"># (7 unchanged attributes hidden)</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#75715e"># (2 unchanged blocks hidden)</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#75715e"># aws_s3_bucket.codepipeline_bucket has been changed</span>
+  ~ resource <span style="color:#e6db74">&#34;aws_s3_bucket&#34;</span> <span style="color:#e6db74">&#34;codepipeline_bucket&#34;</span> <span style="color:#f92672">{</span>
+        id                          <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;houston-devsecops-code&#34;</span>
+      + tags                        <span style="color:#f92672">=</span> <span style="color:#f92672">{}</span>
+        <span style="color:#75715e"># (10 unchanged attributes hidden)</span>
 
-        # (1 unchanged block hidden)
-    }
-  # aws_ssm_parameter.account_id has been changed
-  ~ resource &quot;aws_ssm_parameter&quot; &quot;account_id&quot; {
-        id        = &quot;ACCOUNT_ID&quot;
-        name      = &quot;ACCOUNT_ID&quot;
-      + tags      = {}
-        # (8 unchanged attributes hidden)
-    }
-  # aws_codecommit_repository.devsecops has been changed
-  ~ resource &quot;aws_codecommit_repository&quot; &quot;devsecops&quot; {
-        id              = &quot;houston-devsecops-repo&quot;
-      + tags            = {}
-        # (8 unchanged attributes hidden)
-    }
-  # aws_cloudwatch_log_group.codebuild has been changed
-  ~ resource &quot;aws_cloudwatch_log_group&quot; &quot;codebuild&quot; {
-        id                = &quot;devsecops-houston-codebuild&quot;
-        name              = &quot;devsecops-houston-codebuild&quot;
-      + tags              = {}
-        # (3 unchanged attributes hidden)
-    }
-  # aws_iam_role.codepipeline_role has been changed
-  ~ resource &quot;aws_iam_role&quot; &quot;codepipeline_role&quot; {
-        id                    = &quot;houston-test-role&quot;
-        name                  = &quot;houston-test-role&quot;
-      + tags                  = {}
-        # (9 unchanged attributes hidden)
+        <span style="color:#75715e"># (1 unchanged block hidden)</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#75715e"># aws_ssm_parameter.account_id has been changed</span>
+  ~ resource <span style="color:#e6db74">&#34;aws_ssm_parameter&#34;</span> <span style="color:#e6db74">&#34;account_id&#34;</span> <span style="color:#f92672">{</span>
+        id        <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ACCOUNT_ID&#34;</span>
+        name      <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ACCOUNT_ID&#34;</span>
+      + tags      <span style="color:#f92672">=</span> <span style="color:#f92672">{}</span>
+        <span style="color:#75715e"># (8 unchanged attributes hidden)</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#75715e"># aws_codecommit_repository.devsecops has been changed</span>
+  ~ resource <span style="color:#e6db74">&#34;aws_codecommit_repository&#34;</span> <span style="color:#e6db74">&#34;devsecops&#34;</span> <span style="color:#f92672">{</span>
+        id              <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;houston-devsecops-repo&#34;</span>
+      + tags            <span style="color:#f92672">=</span> <span style="color:#f92672">{}</span>
+        <span style="color:#75715e"># (8 unchanged attributes hidden)</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#75715e"># aws_cloudwatch_log_group.codebuild has been changed</span>
+  ~ resource <span style="color:#e6db74">&#34;aws_cloudwatch_log_group&#34;</span> <span style="color:#e6db74">&#34;codebuild&#34;</span> <span style="color:#f92672">{</span>
+        id                <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;devsecops-houston-codebuild&#34;</span>
+        name              <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;devsecops-houston-codebuild&#34;</span>
+      + tags              <span style="color:#f92672">=</span> <span style="color:#f92672">{}</span>
+        <span style="color:#75715e"># (3 unchanged attributes hidden)</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#75715e"># aws_iam_role.codepipeline_role has been changed</span>
+  ~ resource <span style="color:#e6db74">&#34;aws_iam_role&#34;</span> <span style="color:#e6db74">&#34;codepipeline_role&#34;</span> <span style="color:#f92672">{</span>
+        id                    <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;houston-test-role&#34;</span>
+        name                  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;houston-test-role&#34;</span>
+      + tags                  <span style="color:#f92672">=</span> <span style="color:#f92672">{}</span>
+        <span style="color:#75715e"># (9 unchanged attributes hidden)</span>
 
-      - inline_policy {}
-      + inline_policy {
-          + name   = &quot;houston-codepipeline_policy&quot;
-          + policy = jsonencode(
-                {
-                  + Statement = [
-                      + {
-                          + Action   = [
-                              + &quot;s3:GetObject&quot;,
-                              + &quot;s3:GetObjectVersion&quot;,
-                              + &quot;s3:GetBucketVersioning&quot;,
-                              + &quot;s3:PutObject&quot;,
-                            ]
-                          + Effect   = &quot;Allow&quot;
-                          + Resource = [
-                              + &quot;arn:aws:s3:::houston-devsecops-code&quot;,
-                              + &quot;arn:aws:s3:::houston-devsecops-code/*&quot;,
-                            ]
-                        },
-                      + {
-                          + Action   = [
-                              + &quot;codebuild:BatchGetBuilds&quot;,
-                              + &quot;codebuild:StartBuild&quot;,
-                            ]
-                          + Effect   = &quot;Allow&quot;
-                          + Resource = &quot;*&quot;
-                        },
-                    ]
-                  + Version   = &quot;2012-10-17&quot;
-                }
-            )
-        }
-    }
-  # aws_s3_bucket.codebuild_s3 has been changed
-  ~ resource &quot;aws_s3_bucket&quot; &quot;codebuild_s3&quot; {
-        id                          = &quot;devsecops-houston-codebuild&quot;
-      + tags                        = {}
-        # (10 unchanged attributes hidden)
+      - inline_policy <span style="color:#f92672">{}</span>
+      + inline_policy <span style="color:#f92672">{</span>
+          + name   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;houston-codepipeline_policy&#34;</span>
+          + policy <span style="color:#f92672">=</span> jsonencode<span style="color:#f92672">(</span>
+                <span style="color:#f92672">{</span>
+                  + Statement <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+                      + <span style="color:#f92672">{</span>
+                          + Action   <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+                              + <span style="color:#e6db74">&#34;s3:GetObject&#34;</span>,
+                              + <span style="color:#e6db74">&#34;s3:GetObjectVersion&#34;</span>,
+                              + <span style="color:#e6db74">&#34;s3:GetBucketVersioning&#34;</span>,
+                              + <span style="color:#e6db74">&#34;s3:PutObject&#34;</span>,
+                            <span style="color:#f92672">]</span>
+                          + Effect   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Allow&#34;</span>
+                          + Resource <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+                              + <span style="color:#e6db74">&#34;arn:aws:s3:::houston-devsecops-code&#34;</span>,
+                              + <span style="color:#e6db74">&#34;arn:aws:s3:::houston-devsecops-code/*&#34;</span>,
+                            <span style="color:#f92672">]</span>
+                        <span style="color:#f92672">}</span>,
+                      + <span style="color:#f92672">{</span>
+                          + Action   <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+                              + <span style="color:#e6db74">&#34;codebuild:BatchGetBuilds&#34;</span>,
+                              + <span style="color:#e6db74">&#34;codebuild:StartBuild&#34;</span>,
+                            <span style="color:#f92672">]</span>
+                          + Effect   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Allow&#34;</span>
+                          + Resource <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;*&#34;</span>
+                        <span style="color:#f92672">}</span>,
+                    <span style="color:#f92672">]</span>
+                  + Version   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2012-10-17&#34;</span>
+                <span style="color:#f92672">}</span>
+            <span style="color:#f92672">)</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#75715e"># aws_s3_bucket.codebuild_s3 has been changed</span>
+  ~ resource <span style="color:#e6db74">&#34;aws_s3_bucket&#34;</span> <span style="color:#e6db74">&#34;codebuild_s3&#34;</span> <span style="color:#f92672">{</span>
+        id                          <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;devsecops-houston-codebuild&#34;</span>
+      + tags                        <span style="color:#f92672">=</span> <span style="color:#f92672">{}</span>
+        <span style="color:#75715e"># (10 unchanged attributes hidden)</span>
 
-        # (1 unchanged block hidden)
-    }
-  # aws_iam_role.devsecops-austin-codebuild has been changed
-  ~ resource &quot;aws_iam_role&quot; &quot;devsecops-austin-codebuild&quot; {
-        id                    = &quot;devsecops-houston-codebuild&quot;
-      ~ managed_policy_arns   = [
-          + &quot;arn:aws:iam::aws:policy/AmazonEKSClusterPolicy&quot;,
-          + &quot;arn:aws:iam::aws:policy/AmazonEKSServicePolicy&quot;,
-        ]
-        name                  = &quot;devsecops-houston-codebuild&quot;
-      + tags                  = {}
-        # (8 unchanged attributes hidden)
+        <span style="color:#75715e"># (1 unchanged block hidden)</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#75715e"># aws_iam_role.devsecops-austin-codebuild has been changed</span>
+  ~ resource <span style="color:#e6db74">&#34;aws_iam_role&#34;</span> <span style="color:#e6db74">&#34;devsecops-austin-codebuild&#34;</span> <span style="color:#f92672">{</span>
+        id                    <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;devsecops-houston-codebuild&#34;</span>
+      ~ managed_policy_arns   <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+          + <span style="color:#e6db74">&#34;arn:aws:iam::aws:policy/AmazonEKSClusterPolicy&#34;</span>,
+          + <span style="color:#e6db74">&#34;arn:aws:iam::aws:policy/AmazonEKSServicePolicy&#34;</span>,
+        <span style="color:#f92672">]</span>
+        name                  <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;devsecops-houston-codebuild&#34;</span>
+      + tags                  <span style="color:#f92672">=</span> <span style="color:#f92672">{}</span>
+        <span style="color:#75715e"># (8 unchanged attributes hidden)</span>
 
-      - inline_policy {}
-      + inline_policy {
-          + name   = &quot;terraform-20210911231810411800000001&quot;
-          + policy = jsonencode(
-                {
-                  + Statement = [
-                      + {
-                          + Action   = [
-                              + &quot;logs:CreateLogGroup&quot;,
-                              + &quot;logs:CreateLogStream&quot;,
-                              + &quot;logs:PutLogEvents&quot;,
-                              + &quot;sts:AssumeRole&quot;,
-                              + &quot;eks:*&quot;,
-                            ]
-                          + Effect   = &quot;Allow&quot;
-                          + Resource = [
-                              + &quot;*&quot;,
-                            ]
-                        },
-                      + {
-                          + Action   = [
-                              + &quot;ec2:CreateNetworkInterface&quot;,
-                              + &quot;ec2:DescribeDhcpOptions&quot;,
-                              + &quot;ec2:DescribeNetworkInterfaces&quot;,
-                              + &quot;ec2:DeleteNetworkInterface&quot;,
-                              + &quot;ec2:DescribeSubnets&quot;,
-                              + &quot;ec2:DescribeSecurityGroups&quot;,
-                              + &quot;ec2:DescribeVpcs&quot;,
-                              + &quot;ecr:*&quot;,
-                              + &quot;ssm:*&quot;,
-                            ]
-                          + Effect   = &quot;Allow&quot;
-                          + Resource = &quot;*&quot;
-                        },
-                      + {
-                          + Action   = [
-                              + &quot;ec2:CreateNetworkInterfacePermission&quot;,
-                            ]
-                          + Effect   = &quot;Allow&quot;
-                          + Resource = [
-                              + &quot;arn:aws:ec2:us-west-2:*:network-interface/*&quot;,
-                            ]
-                        },
-                      + {
-                          + Action   = [
-                              + &quot;s3:*&quot;,
-                            ]
-                          + Effect   = &quot;Allow&quot;
-                          + Resource = [
-                              + &quot;arn:aws:s3:::devsecops-houston-codebuild&quot;,
-                              + &quot;arn:aws:s3:::devsecops-houston-codebuild/*&quot;,
-                              + &quot;arn:aws:s3:::houston-devsecops-code&quot;,
-                              + &quot;arn:aws:s3:::houston-devsecops-code/*&quot;,
-                            ]
-                        },
-                    ]
-                  + Version   = &quot;2012-10-17&quot;
-                }
-            )
-        }
-    }
-  # aws_iam_policy.allow-eks-asg has been changed
-  ~ resource &quot;aws_iam_policy&quot; &quot;allow-eks-asg&quot; {
-        id        = &quot;arn:aws:iam::123456789012:policy/eks-devsecops-allow-eks-asg&quot;
-        name      = &quot;eks-devsecops-allow-eks-asg&quot;
-      + tags      = {}
-        # (5 unchanged attributes hidden)
-    }
+      - inline_policy <span style="color:#f92672">{}</span>
+      + inline_policy <span style="color:#f92672">{</span>
+          + name   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;terraform-20210911231810411800000001&#34;</span>
+          + policy <span style="color:#f92672">=</span> jsonencode<span style="color:#f92672">(</span>
+                <span style="color:#f92672">{</span>
+                  + Statement <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+                      + <span style="color:#f92672">{</span>
+                          + Action   <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+                              + <span style="color:#e6db74">&#34;logs:CreateLogGroup&#34;</span>,
+                              + <span style="color:#e6db74">&#34;logs:CreateLogStream&#34;</span>,
+                              + <span style="color:#e6db74">&#34;logs:PutLogEvents&#34;</span>,
+                              + <span style="color:#e6db74">&#34;sts:AssumeRole&#34;</span>,
+                              + <span style="color:#e6db74">&#34;eks:*&#34;</span>,
+                            <span style="color:#f92672">]</span>
+                          + Effect   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Allow&#34;</span>
+                          + Resource <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+                              + <span style="color:#e6db74">&#34;*&#34;</span>,
+                            <span style="color:#f92672">]</span>
+                        <span style="color:#f92672">}</span>,
+                      + <span style="color:#f92672">{</span>
+                          + Action   <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+                              + <span style="color:#e6db74">&#34;ec2:CreateNetworkInterface&#34;</span>,
+                              + <span style="color:#e6db74">&#34;ec2:DescribeDhcpOptions&#34;</span>,
+                              + <span style="color:#e6db74">&#34;ec2:DescribeNetworkInterfaces&#34;</span>,
+                              + <span style="color:#e6db74">&#34;ec2:DeleteNetworkInterface&#34;</span>,
+                              + <span style="color:#e6db74">&#34;ec2:DescribeSubnets&#34;</span>,
+                              + <span style="color:#e6db74">&#34;ec2:DescribeSecurityGroups&#34;</span>,
+                              + <span style="color:#e6db74">&#34;ec2:DescribeVpcs&#34;</span>,
+                              + <span style="color:#e6db74">&#34;ecr:*&#34;</span>,
+                              + <span style="color:#e6db74">&#34;ssm:*&#34;</span>,
+                            <span style="color:#f92672">]</span>
+                          + Effect   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Allow&#34;</span>
+                          + Resource <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;*&#34;</span>
+                        <span style="color:#f92672">}</span>,
+                      + <span style="color:#f92672">{</span>
+                          + Action   <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+                              + <span style="color:#e6db74">&#34;ec2:CreateNetworkInterfacePermission&#34;</span>,
+                            <span style="color:#f92672">]</span>
+                          + Effect   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Allow&#34;</span>
+                          + Resource <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+                              + <span style="color:#e6db74">&#34;arn:aws:ec2:us-west-2:*:network-interface/*&#34;</span>,
+                            <span style="color:#f92672">]</span>
+                        <span style="color:#f92672">}</span>,
+                      + <span style="color:#f92672">{</span>
+                          + Action   <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+                              + <span style="color:#e6db74">&#34;s3:*&#34;</span>,
+                            <span style="color:#f92672">]</span>
+                          + Effect   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Allow&#34;</span>
+                          + Resource <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>
+                              + <span style="color:#e6db74">&#34;arn:aws:s3:::devsecops-houston-codebuild&#34;</span>,
+                              + <span style="color:#e6db74">&#34;arn:aws:s3:::devsecops-houston-codebuild/*&#34;</span>,
+                              + <span style="color:#e6db74">&#34;arn:aws:s3:::houston-devsecops-code&#34;</span>,
+                              + <span style="color:#e6db74">&#34;arn:aws:s3:::houston-devsecops-code/*&#34;</span>,
+                            <span style="color:#f92672">]</span>
+                        <span style="color:#f92672">}</span>,
+                    <span style="color:#f92672">]</span>
+                  + Version   <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;2012-10-17&#34;</span>
+                <span style="color:#f92672">}</span>
+            <span style="color:#f92672">)</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#75715e"># aws_iam_policy.allow-eks-asg has been changed</span>
+  ~ resource <span style="color:#e6db74">&#34;aws_iam_policy&#34;</span> <span style="color:#e6db74">&#34;allow-eks-asg&#34;</span> <span style="color:#f92672">{</span>
+        id        <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;arn:aws:iam::123456789012:policy/eks-devsecops-allow-eks-asg&#34;</span>
+        name      <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;eks-devsecops-allow-eks-asg&#34;</span>
+      + tags      <span style="color:#f92672">=</span> <span style="color:#f92672">{}</span>
+        <span style="color:#75715e"># (5 unchanged attributes hidden)</span>
+    <span style="color:#f92672">}</span>
 
 Unless you have made equivalent changes to your configuration, or ignored the relevant attributes using ignore_changes, the following plan may include actions to undo or respond to these changes.
 
@@ -1138,9 +1138,9 @@ Unless you have made equivalent changes to your configuration, or ignored the re
 
 No changes. Your infrastructure matches the configuration.
 
-Your configuration already matches the changes detected above. If you'd like to update the Terraform state to match, create and apply a refresh-only plan:
+Your configuration already matches the changes detected above. If you<span style="color:#960050;background-color:#1e0010">&#39;</span>d like to update the Terraform state to match, create and apply a refresh-only plan:
   terraform apply -refresh-only
-</code></pre>
+</code></pre></div>
     </div>
 </div>
 
@@ -1959,54 +1959,6 @@ Redirecting to /bin/systemctl start docker.service
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -2038,38 +1990,6 @@ Redirecting to /bin/systemctl start docker.service
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -2167,30 +2087,10 @@ Redirecting to /bin/systemctl start docker.service
             
         
                     
-            
-        
-                    
                         
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -2208,7 +2108,6 @@ Redirecting to /bin/systemctl start docker.service
             
                 
                     
-                    
                 
                 
 
@@ -2219,41 +2118,6 @@ Redirecting to /bin/systemctl start docker.service
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -2302,6 +2166,142 @@ Redirecting to /bin/systemctl start docker.service
                     
             
         
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
                         
             
@@ -2360,19 +2360,19 @@ Redirecting to /bin/systemctl start docker.service
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641853382"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641853382"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641853382"></script>
-    <script src="/js/jquery.sticky.js?1641853382"></script>
-    <script src="/js/featherlight.min.js?1641853382"></script>
-    <script src="/js/highlight.pack.js?1641853382"></script>
+    <script src="/js/clipboard.min.js?1641854390"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641854390"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641854390"></script>
+    <script src="/js/jquery.sticky.js?1641854390"></script>
+    <script src="/js/featherlight.min.js?1641854390"></script>
+    <script src="/js/highlight.pack.js?1641854390"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641853382"></script>
-    <script src="/js/learn.js?1641853382"></script>
-    <script src="/js/hugo-learn.js?1641853382"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641854390"></script>
+    <script src="/js/learn.js?1641854390"></script>
+    <script src="/js/hugo-learn.js?1641854390"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641853382"></script>
+            <script src="/mermaid/mermaid.js?1641854390"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

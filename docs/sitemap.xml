@@ -11,6 +11,8 @@
   </url><url>
     <loc>//localhost:1313/intro/sponsor/</loc>
   </url><url>
+    <loc>//localhost:1313/intro/intro/</loc>
+  </url><url>
     <loc>//localhost:1313/setup/</loc>
   </url><url>
     <loc>//localhost:1313/setup/cloud9/</loc>
@@ -58,8 +60,6 @@
     <loc>//localhost:1313/conclusion/</loc>
   </url><url>
     <loc>//localhost:1313/conclusion/clean/</loc>
-  </url><url>
-    <loc>//localhost:1313/conclusion/workshops/</loc>
   </url><url>
     <loc>//localhost:1313/survey/</loc>
   </url><url>

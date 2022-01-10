@@ -86,8 +86,10 @@ The push refers to repository [123456789012.dkr.ecr.us-west-2.amazonaws.com/gola
 
 ### ECR scans our images for vulnerabilities
 
+
+`make ecr_scan_findings`
+
 ```bash
- make ecr_scan_findings
 aws ecr describe-image-scan-findings --repository-name golang_example-houston --image-id imageTag=0.1.20
 {
     "imageScanStatus": {

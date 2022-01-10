@@ -15,8 +15,6 @@ Inside our Terraform Directory in the devsecops repo
 
 Update the `devsecopspipeline/terraform/config.tf` with the bucket name to store terraform state 
 
-
-
 ```hcl 
 terraform {
     backend "s3" {
@@ -72,7 +70,7 @@ terraform plan -out=plan.out
 ```
 
 {{%expand "Expand here is what it looks like in its entirety" %}}
-```
+```bash
 aws_iam_policy.allow-eks-asg: Refreshing state... [id=arn:aws:iam::123456789012:policy/eks-devsecops-allow-eks-asg]
 aws_s3_bucket.codepipeline_bucket: Refreshing state... [id=houston-devsecops-code]
 aws_ecr_repository.golang_example: Refreshing state... [id=golang_example-houston]

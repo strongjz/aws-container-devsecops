@@ -20,16 +20,5 @@ aws elbv2 describe-load-balancers --query &amp;#34;LoadBalancers[].LoadBalancerA
 aws ec2 describe-volumes --filters Name=tag:kubernetes.</description>
     </item>
     
-    <item>
-      <title>Additional workshops</title>
-      <link>//localhost:1313/conclusion/workshops/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/conclusion/workshops/</guid>
-      <description>https://containersonaws.com/
-https://www.eksworkshop.com/010_introduction/
-https://containersfromthecouch.com/</description>
-    </item>
-    
   </channel>
 </rss>
