@@ -19,6 +19,8 @@ From https://3musketeers.io/
 
 **Confidence** - Test your code and pipelines locally before your CI/CD tool runs it. Feel confident that if it works locally, it will work in your CI/CD server.
 
+# Exercise
+
 {{%attachments title="3M Example" /%}}
 
 ```bash

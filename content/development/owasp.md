@@ -37,7 +37,6 @@ The OWASP Top 10 is a standard awareness document for developers and web applica
 {{%expand "A10:2017-Insufficient Logging & Monitoring" %}} Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems, and tamper, extract, or destroy data. Most breach studies show time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring.
 {{% /expand%}}
 
-
 ## Handy Cheatsheets
 
 ![](/images/development/owasp_cheatsheet.png)

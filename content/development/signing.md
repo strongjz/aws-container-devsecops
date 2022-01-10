@@ -6,7 +6,7 @@ weight: 21
 
 Needed:
 * GPG Key
-* Github Account
+* GitHub Account
 
 # Generating a GPG Key
 1. Generate a key with gpg ```gpg --gen-key```
@@ -102,7 +102,7 @@ fG5zzmP/Hg13SFsxLZc+5EKrxHJ1z+bNQQ5ARxYBANbOuPnxLtPL4eY4TqIY0k1X
 -----END PGP PUBLIC KEY BLOCK-----
 ```
 
-## 2. Add to Github
+## 2. Add to GitHub
 
 Open https://github.com/settings/keys
 
@@ -150,7 +150,6 @@ git push origin master
 In the commit history you can see a "Verified" tag on your commits now
 
 ![sign_add_key](/images/development/sign_verify.png)
-
 
 {{% notice warning %}}
 Make sure to store this GPG private key in a secure location

@@ -14,7 +14,7 @@
       
       <guid>//localhost:1313/development/signing/</guid>
       <description>Needed:
- GPG Key Github Account  Generating a GPG Key  Generate a key with gpg gpg --gen-key Select what key you want to use Select what elliptic curve you want Fill out your name and your email address. Make sure this matches the one in your GitHub account. Add a comment if you want to remind you what the key is for. You may be prompted for a passphrase to add to the key for extra security  Here is what the prompts will look like.</description>
+ GPG Key GitHub Account  Generating a GPG Key  Generate a key with gpg gpg --gen-key Select what key you want to use Select what elliptic curve you want Fill out your name and your email address. Make sure this matches the one in your GitHub account. Add a comment if you want to remind you what the key is for. You may be prompted for a passphrase to add to the key for extra security  Here is what the prompts will look like.</description>
     </item>
     
     <item>

@@ -63,6 +63,8 @@ By files:
   :
   ```
 
+# Exercise 
+
 For DockerFiles we can use tools like [hadolint](https://github.com/hadolint/hadolint)
 
 `docker run --rm -i hadolint/hadolint:v2.7.0 <  ~/environment/aws-container-devsecops/content/development/development.files/Dockerfile`
@@ -77,4 +79,12 @@ For DockerFiles we can use tools like [hadolint](https://github.com/hadolint/had
 -:5 DL3016 warning: Pin versions in npm. Instead of `npm install <package>` use `npm install <package>@<version>`
 -:8 DL3011 error: Valid UNIX ports range from 0 to 65535
 ```
+
+Try to fix the issues with the Dockerfile on your own 
+
+If you get stuck look at the 
+
+`docker run --rm -i hadolint/hadolint:v2.7.0 <  ~/environment/aws-container-devsecops/content/development/development.files/Dockerfilefixed`
+
+
 

@@ -12,22 +12,22 @@
     <title>Linting :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641850607" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641850607" rel="stylesheet">
-    <link href="/css/hybrid.css?1641850607" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641850607" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641850607" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641850607" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641850607" rel="stylesheet">
-    <link href="/css/theme.css?1641850607" rel="stylesheet">
-    <link href="/css/tabs.css?1641850607" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641850607" rel="stylesheet">
+    <link href="/css/nucleus.css?1641852277" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641852277" rel="stylesheet">
+    <link href="/css/hybrid.css?1641852277" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641852277" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641852277" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641852277" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641852277" rel="stylesheet">
+    <link href="/css/theme.css?1641852277" rel="stylesheet">
+    <link href="/css/tabs.css?1641852277" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641852277" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641850607" rel="stylesheet">
+    <link href="/css/theme-green.css?1641852277" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641850607"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641852277"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641850607"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641850607"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641852277"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641852277"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641850607"></script>
+<script type="text/javascript" src="/js/search.js?1641852277"></script>
 
     
   </div>
@@ -882,7 +882,8 @@ By files:
 
     go tool vet source/directory/*.go
   :
-</code></pre></div><p>For DockerFiles we can use tools like <a href="https://github.com/hadolint/hadolint">hadolint</a></p>
+</code></pre></div><h1 id="exercise">Exercise</h1>
+<p>For DockerFiles we can use tools like <a href="https://github.com/hadolint/hadolint">hadolint</a></p>
 <p><code>docker run --rm -i hadolint/hadolint:v2.7.0 &lt;  ~/environment/aws-container-devsecops/content/development/development.files/Dockerfile</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">-:1 DL3006 warning: Always tag the version of an image explicitly
 -:2 DL3015 info: Avoid additional packages by specifying <span style="color:#e6db74">`</span>--no-install-recommends<span style="color:#e6db74">`</span>
@@ -892,7 +893,10 @@ By files:
 -:5 DL3003 warning: Use WORKDIR to switch to a directory
 -:5 DL3016 warning: Pin versions in npm. Instead of <span style="color:#e6db74">`</span>npm install &lt;package&gt;<span style="color:#e6db74">`</span> use <span style="color:#e6db74">`</span>npm install &lt;package&gt;@&lt;version&gt;<span style="color:#e6db74">`</span>
 -:8 DL3011 error: Valid UNIX ports range from <span style="color:#ae81ff">0</span> to <span style="color:#ae81ff">65535</span>
-</code></pre></div>
+</code></pre></div><p>Try to fix the issues with the Dockerfile on your own</p>
+<p>If you get stuck look at the</p>
+<p><code>docker run --rm -i hadolint/hadolint:v2.7.0 &lt;  ~/environment/aws-container-devsecops/content/development/development.files/Dockerfilefixed</code></p>
+
 
 <footer class="footline">
 	
@@ -1373,19 +1377,19 @@ By files:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641850607"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641850607"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641850607"></script>
-    <script src="/js/jquery.sticky.js?1641850607"></script>
-    <script src="/js/featherlight.min.js?1641850607"></script>
-    <script src="/js/highlight.pack.js?1641850607"></script>
+    <script src="/js/clipboard.min.js?1641852277"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641852277"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641852277"></script>
+    <script src="/js/jquery.sticky.js?1641852277"></script>
+    <script src="/js/featherlight.min.js?1641852277"></script>
+    <script src="/js/highlight.pack.js?1641852277"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641850607"></script>
-    <script src="/js/learn.js?1641850607"></script>
-    <script src="/js/hugo-learn.js?1641850607"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641852277"></script>
+    <script src="/js/learn.js?1641852277"></script>
+    <script src="/js/hugo-learn.js?1641852277"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641850607"></script>
+            <script src="/mermaid/mermaid.js?1641852277"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

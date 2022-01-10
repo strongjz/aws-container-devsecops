@@ -30,17 +30,23 @@ https://github.com/pre-commit/pre-commit
 - check-merge-conflict - Check for files that contain merge conflict strings.
 
 
+# Exercise 
+
 ## Install
 
+`pip install pre-commit`
+
 ```bash
-:~/environment $ pip install pre-commit
-:~/environment $ pre-commit --version
+pre-commit installed at .git/hooks/pre-commit
+pre-commit --version
 pre-commit 1.21.0
 ```
 
 ## Configure
 
 We have already created the .pre-commit-config.yaml in the Files directory
+
+`cat ~/environment/aws-container-devsecops/content/development/development.files/.pre-commit-config.yaml`
 
 ```yaml
 repos:
@@ -53,14 +59,12 @@ repos:
 ## Test
 
 ```bash
-:~/environment $ cd ~/environment/aws-container-devsecops/content/development.files
-
+cd ~/environment/aws-container-devsecops/content/development.files
 ```
 
-Using the pre-commit hook cli we can run the checks and see that the commit would fail. 
+Using the pre-commit hook cli we can run the checks and see that the commit would fail. `pre-commit run --all-files`
 
 ```bash
-:~/environment $ pre-commit run --all-files
 Detect Private Key.......................................................Failed
 - hook id: detect-private-key
 - exit code: 1
