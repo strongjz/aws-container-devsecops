@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Introduction on AWS Container DevSecOps</title>
-    <link>//localhost:52564/intro/</link>
+    <link>//localhost:1313/intro/</link>
     <description>Recent content in Introduction on AWS Container DevSecOps</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="//localhost:52564/intro/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="//localhost:1313/intro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Presenter</title>
-      <link>//localhost:52564/intro/presenter/</link>
+      <link>//localhost:1313/intro/presenter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:52564/intro/presenter/</guid>
-      <description> AWS Ambassador O&amp;rsquo;Reilly Author - Networking and Kubernetes: A Layer Approach A Cloud Guru Instructor- Advanced Networking with Kubernetes on AWS Kubernetes Ingress NGINX Maintainer Kube Philly Organizer Cloud Native Director @ Contino  </description>
+      <guid>//localhost:1313/intro/presenter/</guid>
+      <description> Lead Solutions Architect @ Chainguard.dev AWS Ambassador O&amp;rsquo;Reilly Author - Networking and Kubernetes: A Layer Approach A Cloud Guru Instructor- Advanced Networking with Kubernetes on AWS Kubernetes Ingress NGINX Maintainer Kube Philly Organizer  </description>
     </item>
     
     <item>
-      <title>Contino</title>
-      <link>//localhost:52564/intro/contino/</link>
+      <title>Chainguard.dev</title>
+      <link>//localhost:1313/intro/sponsor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:52564/intro/contino/</guid>
+      <guid>//localhost:1313/intro/sponsor/</guid>
       <description></description>
     </item>
     

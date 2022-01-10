@@ -11,9 +11,8 @@ Download these two repos with git
 
 `git clone https://github.com/strongjz/aws-container-devsecops`
 
-Or Download the script here.
 
-{{%attachments title="Scripts" pattern="tools-install.sh"/%}}
+Next will be installing the tools needed for the labs
 
 The script will install
 
@@ -24,10 +23,9 @@ The script will install
 * kubectl
 * helm
 
+Navigate to where you downloaded the installation script from the git repo.
 
-Navigate to where you downloaded the installation script.
-
-`cd aws-container-devsecops/content/setup/clone.files/`
+`cd ~/environment/aws-container-devsecops/content/setup/tools.files/`
 
 `sudo bash ./tools-install.sh`
 
@@ -299,8 +297,12 @@ INSTALLING helm
 
 Now since EKS takes about 20 mins to create a cluster we need to start that now so it's ready when we need it. 
 
+`cd ~/environment/devsecopspipeline`
+
+`make cluster`
+
+Output should look like this: 
 ```bash
-~/environment/devsecopspipeline (master) $ make cluster
 eksctl create cluster -f eks-config.yml
 2021-09-11 21:58:05 [ℹ]  eksctl version 0.61.0
 2021-09-11 21:58:05 [ℹ]  using region us-west-2
@@ -321,4 +323,7 @@ eksctl create cluster -f eks-config.yml
 2021-09-11 21:58:05 [ℹ]  2 sequential tasks: { create cluster control plane "devsecops", 3 sequential sub-tasks: { wait for control plane to become ready, 1 task: { create addons }, create nodegroup "node-group-1" } }
 2021-09-11 21:58:05 [ℹ]  building cluster stack "eksctl-devsecops-cluster"
 2021-09-11 21:58:06 [ℹ]  deploying stack "eksctl-devsecops-cluster"
+2021-09-11 21:58:07 [ℹ]  waiting for CloudFormation stack "eksctl-devsecops-cluster"
 ```
+
+Let it run and deploy while we move onto to the next steps

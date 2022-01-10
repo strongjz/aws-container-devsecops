@@ -46,9 +46,6 @@ non-production-build: ## (via hugo) Build the non-production site, which adds no
 serve:                ## (via hugo) Boot the development server
 	hugo -D server --watch --bind 0.0.0.0 -d $(HUGO_LOCAL_OUTPUT_DIR)
 
-
-
-
 # Docker specific
 #-------------------------------------------------------------------------------
 

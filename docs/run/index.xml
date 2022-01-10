@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Running Containers on AWS Container DevSecOps</title>
-    <link>//localhost:52564/run/</link>
+    <link>//localhost:1313/run/</link>
     <description>Recent content in Running Containers on AWS Container DevSecOps</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="//localhost:52564/run/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="//localhost:1313/run/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Running Containers Exercise</title>
-      <link>//localhost:52564/run/exercise/</link>
+      <link>//localhost:1313/run/exercise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:52564/run/exercise/</guid>
+      <guid>//localhost:1313/run/exercise/</guid>
       <description>Installing Prometheus to our cluster make helm_update helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp; \ helm repo update &amp;#34;stable&amp;#34; has been added to your repositories Hang tight while we grab the latest from your chart repositories... ...Successfully got an update from the &amp;#34;stable&amp;#34; chart repository Update Complete. ⎈Happy Helming!⎈ ~/environment/devsecopspipeline (master) $ make prom helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp; \ helm repo update &amp;#34;stable&amp;#34; already exists with the same configuration, skipping Hang tight while we grab the latest from your chart repositories.</description>
     </item>
     
