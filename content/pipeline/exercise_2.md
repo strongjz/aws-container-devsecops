@@ -220,33 +220,6 @@ https://us-west-2.console.aws.amazon.com/ecr/repositories
 
 ![](/images/pipeline/ecr-scan.png)
 
-### Let's reduce our image size
-
-Update your Dockerfile
-
-`FROM golang:1.13-alpine`
-
-to
-
-`FROM scratch`
-
-you should get an error
-
-```bash
-tag invalid: The image tag '0.1.20' already exists in the 'golang_example-codemash' repository and cannot be overwritten because the repository is immutable.
-make: *** [docker_push] Error 1
-```
-
-Update the `~/environment/devsecopspipeline/VERSION.txt` to the number you think is appropriate
-
-Then rebuild `make docker_build`
-
-Inspect the image size differences
-```bash
-docker images 
-123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-codemash   0.1.21        e199bbd29e43   3 minutes ago    16.1MB
-123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-codemash   0.1.20        20b885db4549   12 minutes ago   376MB
-```
 
 Now scratch container only has the go binary in it, and ECR doesnt not support scanning Scratch. 
 

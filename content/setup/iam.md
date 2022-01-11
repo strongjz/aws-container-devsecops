@@ -12,7 +12,12 @@ weight: 12
 ![cloud9create](/images/setup/cloud9_role_2_permissions.png)
 5. Take the defaults, and click Next: Review to review.
 ![cloud9create](/images/setup/cloud9_role_3_tag.png)
-7. Enter devsecop-workshop-admin for the Name, and click Create role.
+6. Enter devsecop-workshop-admin for the Name, and click Create role.
+ 
+{{% notice warning %}}
+Ensure that the name of the role is devsecop-workshop-admin 
+{{% /notice %}}
+
 ![cloud9create](/images/setup/cloud9_role_4_review.png)
 
 ## Attach IAM Role to your Cloud9 instance
@@ -38,9 +43,14 @@ To ensure temporary credentials aren’t already in place we will also remove an
 
 `rm -vf ${HOME}/.aws/credentials`
 
-Use the [GetCallerIdentity CLI command](https://docs.aws.amazon.com/cli/latest/reference/sts/get-caller-identity.html) to validate that the Cloud9 IDE is using the correct IAM role.
+Use the [GetCallerIdentity CLI command](https://docs.aws.amazon.com/cli/latest/reference/sts/get-caller-identity.html) 
+to validate that the Cloud9 IDE is using the correct IAM role.
 
-`aws sts get-caller-identity --query Arn | grep devsecops-workshop-admin -q && echo "IAM role valid" || echo "IAM role NOT valid"`
+```bash
+aws sts get-caller-identity \
+--query Arn | grep devsecops-workshop-admin -q \
+&& echo "IAM role valid" || echo "IAM role NOT valid"
+```
 
 ![cloud9create](/images/setup/cloud9_verify_iam_cli.png)
 

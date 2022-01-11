@@ -5,9 +5,11 @@ weight: 32
 
 In this Exercise we are going to 
 
-1. Run application locally
-2. Run in Docker compose 
-3. Update Dockerfile 
+1. Run Application locally
+2. Run in Docker compose
+3. Go Reporter for static Analysis 
+4. Go Sec for code cve scanning 
+5. Secure Dockerfile 
 
 {{% notice info %}}
 You may need to start docker
@@ -24,7 +26,7 @@ Set a temp password for the local database
 
 `export DB_PASSWORD=temppassword`
 
-## Run locally
+## 1. Run locally
 
 `make run`
 
@@ -94,6 +96,7 @@ Starting App Engine
 
 Test 
 
+`make test_local`
 ```bash
 ~/environment/devsecopspipeline (master) $ curl localhost:8080/
 {"message":"Default Page"}
@@ -101,7 +104,7 @@ Test
 {"message":"DB is not connected"}
 ```
 
-## Running in Docker Compose 
+## 2. Running in Docker Compose 
 
 `make compose_up`
 
@@ -200,7 +203,143 @@ Once it is up we can test the applications running locally
 {"message":"Database Connected"}
 ```
 
-## Secure Dockerfile
+## 3. Go Reporter 
+
+A Golang tool that does static analysis, unit testing, code review and generate code quality report.
+
+https://github.com/qax-os/goreporter
+
+
+`make go_report`
+
+{{% expand%}}
+```bash
+rm -rf goreporter/
+git clone https://github.com/qax-os/goreporter.git && \
+cd goreporter/ && \
+go mod init github.com/360EntSecGroup-Skylar/goreporter && \
+go build && \
+ls -la
+Cloning into 'goreporter'...
+remote: Enumerating objects: 4146, done.
+remote: Total 4146 (delta 0), reused 0 (delta 0), pack-reused 4146
+Receiving objects: 100% (4146/4146), 29.61 MiB | 9.99 MiB/s, done.
+Resolving deltas: 100% (1510/1510), done.
+go: creating new go.mod: module github.com/360EntSecGroup-Skylar/goreporter
+total 16848
+drwxrwxr-x 10 ec2-user ec2-user      334 Jan 11 20:40 .
+drwxrwxr-x 10 ec2-user ec2-user     4096 Jan 11 20:40 ..
+-rw-rw-r--  1 ec2-user ec2-user     3215 Jan 11 20:40 CODE_OF_CONDUCT.md
+-rw-rw-r--  1 ec2-user ec2-user    17083 Jan 11 20:40 CONTRIBUTING.md
+-rw-rw-r--  1 ec2-user ec2-user   895165 Jan 11 20:40 DISPLAY.gif
+drwxrwxr-x  2 ec2-user ec2-user      237 Jan 11 20:40 doc
+drwxrwxr-x  3 ec2-user ec2-user     4096 Jan 11 20:40 engine
+drwxrwxr-x  8 ec2-user ec2-user      163 Jan 11 20:40 .git
+-rw-rw-r--  1 ec2-user ec2-user      272 Jan 11 20:40 .gitignore
+drwxrwxr-x  2 ec2-user ec2-user       20 Jan 11 20:40 Godeps
+-rw-rw-r--  1 ec2-user ec2-user       60 Jan 11 20:40 go.mod
+-rwxrwxr-x  1 ec2-user ec2-user 16148838 Jan 11 20:40 goreporter
+-rwxrwxr-x  1 ec2-user ec2-user      265 Jan 11 20:40 go.test.sh
+-rw-rw-r--  1 ec2-user ec2-user    11357 Jan 11 20:40 LICENSE
+drwxrwxr-x 22 ec2-user ec2-user      323 Jan 11 20:40 linters
+-rw-rw-r--  1 ec2-user ec2-user   125706 Jan 11 20:40 logo.png
+-rw-rw-r--  1 ec2-user ec2-user     5114 Jan 11 20:40 main.go
+-rw-rw-r--  1 ec2-user ec2-user     4760 Jan 11 20:40 README.md
+drwxrwxr-x  2 ec2-user ec2-user       75 Jan 11 20:40 templates
+-rw-rw-r--  1 ec2-user ec2-user      205 Jan 11 20:40 .travis.yml
+drwxrwxr-x  2 ec2-user ec2-user       43 Jan 11 20:40 utils
+drwxrwxr-x  5 ec2-user ec2-user       58 Jan 11 20:40 vendor
+chmod u+x ./goreporter
+cd ..
+./goreporter/goreporter -p . -f html
+2022/01/11 20:40:14 The template path is not specified,and will use the default template
+2022/01/11 20:40:14 The report path is not specified, and the current path is used by default
+2022/01/11 20:40:14 There are no packages that are excepted, review all items of the package
+2022/01/11 20:40:14 Linter:CountCode over,time consuming 0.061658138s
+2022/01/11 20:40:14 Linter:Cyclo over,time consuming 0.063365171s
+2022/01/11 20:40:14 Linter:Deadcode over,time consuming 0.063735884s
+E0111 20:40:23.226420   17200 depend.go:139] exec: "dot": executable file not found in $PATH
+E0111 20:40:23.227365   17200 depend.go:144] open pkgdep.svg: no such file or directory
+E0111 20:40:23.227492   17200 depend.go:149] remove pkgdep.svg: no such file or directory
+2022/01/11 20:40:23 Linter:DependGraph over,time consuming 8.787942044s
+2022/01/11 20:40:23 Linter:Depth over,time consuming 8.790083664s
+2022/01/11 20:40:23 Linter:ImportPackages over,time consuming 9.416117587s
+package skip/testdata is not in GOROOT (/usr/lib/golang/src/skip/testdata)
+package deps is not in GOROOT (/usr/lib/golang/src/deps)
+package grab-import/def is not in GOROOT (/usr/lib/golang/src/grab-import/def)
+package grab-import is not in GOROOT (/usr/lib/golang/src/grab-import)
+package single is not in GOROOT (/usr/lib/golang/src/single)
+package skip/.hidden is not in GOROOT (/usr/lib/golang/src/skip/.hidden)
+package skip is not in GOROOT (/usr/lib/golang/src/skip)
+package nested/pkg is not in GOROOT (/usr/lib/golang/src/nested/pkg)
+package grab-import/def/nested is not in GOROOT (/usr/lib/golang/src/grab-import/def/nested)
+2022/01/11 20:40:25 no initial packages were loaded
+2022/01/11 20:40:25 Linter:Interfacer over,time consuming 10.582002842s
+can't load package "goreporter/linters/interfacer/testdata/src/deps": package goreporter/linters/interfacer/testdata/src/deps is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/deps)
+package goreporter/linters/interfacer/testdata/src/deps is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/deps)
+can't load package "goreporter/linters/interfacer/testdata/src/grab-import/def": package goreporter/linters/interfacer/testdata/src/grab-import/def is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/grab-import/def)
+package goreporter/linters/interfacer/testdata/src/grab-import/def is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/grab-import/def)
+can't load package "goreporter/linters/interfacer/testdata/src/grab-import/def/nested": package goreporter/linters/interfacer/testdata/src/grab-import/def/nested is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/grab-import/def/nested)
+package goreporter/linters/interfacer/testdata/src/grab-import/def/nested is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/grab-import/def/nested)
+can't load package "goreporter/linters/interfacer/testdata/src/grab-import": package goreporter/linters/interfacer/testdata/src/grab-import is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/grab-import)
+package goreporter/linters/interfacer/testdata/src/grab-import is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/grab-import)
+can't load package "goreporter/linters/interfacer/testdata/src/nested/pkg": package goreporter/linters/interfacer/testdata/src/nested/pkg is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/nested/pkg)
+package goreporter/linters/interfacer/testdata/src/nested/pkg is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/nested/pkg)
+can't load package "goreporter/linters/interfacer/testdata/src/single": package goreporter/linters/interfacer/testdata/src/single is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/single)
+package goreporter/linters/interfacer/testdata/src/single is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/single)
+can't load package "goreporter/linters/interfacer/testdata/src/skip/.hidden": package goreporter/linters/interfacer/testdata/src/skip/.hidden is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/skip/.hidden)
+package goreporter/linters/interfacer/testdata/src/skip/.hidden is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/skip/.hidden)
+can't load package "goreporter/linters/interfacer/testdata/src/skip": package goreporter/linters/interfacer/testdata/src/skip is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/skip)
+package goreporter/linters/interfacer/testdata/src/skip is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/skip)
+can't load package "goreporter/linters/interfacer/testdata/src/skip/testdata": package goreporter/linters/interfacer/testdata/src/skip/testdata is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/skip/testdata)
+package goreporter/linters/interfacer/testdata/src/skip/testdata is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/skip/testdata)
+2022/01/11 20:40:27 Linter:Simple over,time consuming 12.955047065s
+2022/01/11 20:40:27 Linter:SpellCheck over,time consuming 13.463511588s
+2022/01/11 20:41:02 Linter:UnitTest over,time consuming 47.960319904s
+2022/01/11 20:41:02 Linter:GoLint over,time consuming 47.981047773s
+2022/01/11 20:41:02 Linter:GoVet over,time consuming 47.988504482s
+2022/01/11 20:41:04 To display report file:///home/ec2-user/environment/devsecopspipeline/devsecopspipeline-2022-01-11-20-41-04.html in browser
+2022/01/11 20:41:04 exec: "xdg-open": executable file not found in $PATH
+2022/01/11 20:41:04 GoReporter Finished,time consuming 49.725472744s```
+```
+{{% /expand%}}
+
+## 4. Go Sec 
+
+Inspects source code for security problems by scanning the Go AST.
+
+https://securego.io/docs/rules/rule-intro.html
+
+`make go_sec`
+
+{{% expand%}}
+```bash
+
+wget -O - -q https://raw.githubusercontent.com/securego/gosec/master/install.sh | sh -s v2.9.5
+securego/gosec info checking GitHub for tag 'v2.9.5'
+securego/gosec info found version: 2.9.5 for v2.9.5/linux/amd64
+securego/gosec info installed ./bin/gosec
+./bin/gosec -fmt=json -out=security.json -stdout .
+[gosec] 2022/01/11 20:42:59 Including rules: default
+[gosec] 2022/01/11 20:42:59 Excluding rules: default
+[gosec] 2022/01/11 20:42:59 Import directory: /home/ec2-user/environment/devsecopspipeline
+[gosec] 2022/01/11 20:42:59 Checking package: main
+[gosec] 2022/01/11 20:42:59 Checking file: /home/ec2-user/environment/devsecopspipeline/main.go
+{
+        "Golang errors": {},
+        "Issues": [],
+        "Stats": {
+                "files": 1,
+                "lines": 18,
+                "nosec": 0,
+                "found": 0
+        },
+        "GosecVersion": "2.9.5"
+}AWSReservedSSO_Engineering-Admin_a62927498966bb0a:~/environment/devsecopspipeline 
+```
+{{% /expand%}}
+
+## 5. Secure Dockerfile
 
 Let's create a user for the application and rebuild our image
 
@@ -220,7 +359,7 @@ RUN adduser \
 "${USER}"
 ```
 
-Inside the scratch container add these lines. 
+Inside the app container add these lines. 
 ```bash
 # Import the user and group files from the builder.
 COPY --from=builder /etc/passwd /etc/passwd
@@ -270,6 +409,8 @@ EXPOSE 8090
 
 CMD ["/go/bin/app"]
 ```
+
+
 
 This was all done locally now let's get a pipeline running all this! 
 

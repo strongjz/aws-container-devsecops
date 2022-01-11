@@ -5,8 +5,8 @@ weight: 49
 
 The AWS Resources for pipeline, etc are build using Terraform. 
 
-1. Create the State bucket 
-2. Init Terraform
+1. Create the Terraform state bucket 
+2. Initialize Terraform
 3. Plan Terraform 
 4. Apply terraform
 
@@ -35,7 +35,8 @@ terraform {
 
 `cd ~/environment/devsecopspipeline/`
 
-Use make to Initialize
+Use make to Initialize, this is the first step of the Terraform execution. 
+
 `make tf_clean tf_init`
 
 {{% expand%}}
@@ -73,7 +74,8 @@ commands will detect it and remind you to do so if necessary.
 {{% /expand%}}
 
 ## Terraform Plan  
-Terraform Plan 
+
+Terraform Plan will create the plan for the run and allow us to see all the resources that will be created. 
 
 `make tf_plan`
 
@@ -321,8 +323,8 @@ Your configuration already matches the changes detected above. If you'd like to 
 
 ## Terraform Apply
 
-Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
-```+ create```
+Terraform uses the selected providers to generate the following execution plan. Resource actions are indicated with 
+the following symbols: ```+ create```
 
 `make tf_apply`
 

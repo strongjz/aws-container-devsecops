@@ -12,22 +12,22 @@
     <title>Container Pipeline Exercise :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641868077" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641868077" rel="stylesheet">
-    <link href="/css/hybrid.css?1641868077" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641868077" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641868077" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641868077" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641868077" rel="stylesheet">
-    <link href="/css/theme.css?1641868077" rel="stylesheet">
-    <link href="/css/tabs.css?1641868077" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641868077" rel="stylesheet">
+    <link href="/css/nucleus.css?1641933981" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641933981" rel="stylesheet">
+    <link href="/css/hybrid.css?1641933981" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641933981" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641933981" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641933981" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641933981" rel="stylesheet">
+    <link href="/css/theme.css?1641933981" rel="stylesheet">
+    <link href="/css/tabs.css?1641933981" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641933981" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641868077" rel="stylesheet">
+    <link href="/css/theme-green.css?1641933981" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641868077"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641933981"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641868077"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641868077"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641933981"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641933981"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641868077"></script>
+<script type="text/javascript" src="/js/search.js?1641933981"></script>
 
     
   </div>
@@ -844,8 +844,8 @@
 
 <p>The AWS Resources for pipeline, etc are build using Terraform.</p>
 <ol>
-<li>Create the State bucket</li>
-<li>Init Terraform</li>
+<li>Create the Terraform state bucket</li>
+<li>Initialize Terraform</li>
 <li>Plan Terraform</li>
 <li>Apply terraform</li>
 </ol>
@@ -863,8 +863,8 @@ make_bucket: devsecops-codemash-2022
 }
 </code></pre></div><h2 id="initialize-the-terraform">Initialize the Terraform</h2>
 <p><code>cd ~/environment/devsecopspipeline/</code></p>
-<p>Use make to Initialize
-<code>make tf_clean tf_init</code></p>
+<p>Use make to Initialize, this is the first step of the Terraform execution.</p>
+<p><code>make tf_clean tf_init</code></p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -911,7 +911,7 @@ commands will detect it and remind you to <span style="color:#66d9ef">do</span> 
 </div>
 
 <h2 id="terraform-plan">Terraform Plan</h2>
-<p>Terraform Plan</p>
+<p>Terraform Plan will create the plan for the run and allow us to see all the resources that will be created.</p>
 <p><code>make tf_plan</code></p>
 
 <div class="expand">
@@ -1167,8 +1167,8 @@ Your configuration already matches the changes detected above. If you<span style
 </div>
 
 <h2 id="terraform-apply">Terraform Apply</h2>
-<p>Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
-<code>+ create</code></p>
+<p>Terraform uses the selected providers to generate the following execution plan. Resource actions are indicated with
+the following symbols: <code>+ create</code></p>
 <p><code>make tf_apply</code></p>
 
 <div class="expand">
@@ -2379,19 +2379,19 @@ Apply complete! Resources: <span style="color:#ae81ff">19</span> added, <span st
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641868077"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641868077"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641868077"></script>
-    <script src="/js/jquery.sticky.js?1641868077"></script>
-    <script src="/js/featherlight.min.js?1641868077"></script>
-    <script src="/js/highlight.pack.js?1641868077"></script>
+    <script src="/js/clipboard.min.js?1641933981"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641933981"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641933981"></script>
+    <script src="/js/jquery.sticky.js?1641933981"></script>
+    <script src="/js/featherlight.min.js?1641933981"></script>
+    <script src="/js/highlight.pack.js?1641933981"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641868077"></script>
-    <script src="/js/learn.js?1641868077"></script>
-    <script src="/js/hugo-learn.js?1641868077"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641933981"></script>
+    <script src="/js/learn.js?1641933981"></script>
+    <script src="/js/hugo-learn.js?1641933981"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641868077"></script>
+            <script src="/mermaid/mermaid.js?1641933981"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

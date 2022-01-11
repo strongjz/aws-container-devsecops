@@ -23,12 +23,12 @@
       
       <guid>//localhost:1313/build/exercise/</guid>
       <description>In this Exercise we are going to
- Run application locally Run in Docker compose Update Dockerfile  You may need to start docker
+ Run Application locally Run in Docker compose Go Reporter for static Analysis Go Sec for code cve scanning Secure Dockerfile  You may need to start docker
  sudo service docker start Redirecting to /bin/systemctl start docker.service Navigate to DevSecops repo cd ~/environment/devsecopspipeline
 Set a temp password for the local database
 export DB_PASSWORD=temppassword
-Run locally make run
-  Expand me...   env GIT_TERMINAL_PROMPT=1 go get -d -v . github.com/strongjz/go_example_app (download) created GOPATH=/home/ec2-user/go; see &amp;#39;go help gopath&amp;#39; github.</description>
+1. Run locally make run
+  Expand me...   env GIT_TERMINAL_PROMPT=1 go get -d -v .</description>
     </item>
     
   </channel>

@@ -9,25 +9,25 @@
 
     <link rel="shortcut icon" href="/images/container-green.png" type="image/x-icon" />
 
-    <title>Git Commit Signing :: AWS Container DevSecOps</title>
+    <title>Secure Containers Exercise :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641933981" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641933981" rel="stylesheet">
-    <link href="/css/hybrid.css?1641933981" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641933981" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641933981" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641933981" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641933981" rel="stylesheet">
-    <link href="/css/theme.css?1641933981" rel="stylesheet">
-    <link href="/css/tabs.css?1641933981" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641933981" rel="stylesheet">
+    <link href="/css/nucleus.css?1641931799" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641931799" rel="stylesheet">
+    <link href="/css/hybrid.css?1641931799" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641931799" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641931799" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641931799" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641931799" rel="stylesheet">
+    <link href="/css/theme.css?1641931799" rel="stylesheet">
+    <link href="/css/tabs.css?1641931799" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641931799" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641933981" rel="stylesheet">
+    <link href="/css/theme-green.css?1641931799" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641933981"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641931799"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -38,7 +38,7 @@
     
 
   </head>
-  <body class="" data-url="/development/signing/">
+  <body class="" data-url="/build/reduce/">
     <nav id="sidebar" class="">
 
 
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641933981"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641933981"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641931799"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641931799"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641933981"></script>
+<script type="text/javascript" src="/js/search.js?1641931799"></script>
 
     
   </div>
@@ -286,7 +286,7 @@
   
     
     <li data-nav-id="/development/" title="Development Environment" class="dd-item
-        parent
+        
         
         
         ">
@@ -312,7 +312,7 @@
  
   
     
-      <li data-nav-id="/development/signing/" title="Git Commit Signing" class="dd-item active">
+      <li data-nav-id="/development/signing/" title="Git Commit Signing" class="dd-item ">
         <a href="/development/signing/">
         Git Commit Signing
         
@@ -425,7 +425,7 @@
   
     
     <li data-nav-id="/build/" title="Container Builds" class="dd-item
-        
+        parent
         
         
         ">
@@ -474,6 +474,27 @@
     
       <li data-nav-id="/build/exercise/" title="Secure Containers Exercise" class="dd-item ">
         <a href="/build/exercise/">
+        Secure Containers Exercise
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/build/reduce/" title="Secure Containers Exercise" class="dd-item active">
+        <a href="/build/reduce/">
         Secure Containers Exercise
         
         </a>
@@ -767,7 +788,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/strongjz/aws-container-devsecopsdevelopment/signing.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/strongjz/aws-container-devsecopsbuild/reduce.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -798,7 +819,7 @@
             
           
           
-            <a href='/'>AWS DevSecOps Container Pipeline</a> > <a href='/development/'>Development Environment</a> > Git Commit Signing
+            <a href='/'>AWS DevSecOps Container Pipeline</a> > <a href='/build/'>Container Builds</a> > Secure Containers Exercise
           
         
           
@@ -813,12 +834,11 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#1-export-public-key">1. Export public key</a></li>
-    <li><a href="#2-add-to-github">2. Add to GitHub</a></li>
-    <li><a href="#3-add-to-git-config">3. Add to git config</a></li>
-    <li><a href="#4-test-a-commit">4. Test a Commit.</a></li>
-    <li><a href="#5-verify-in-github">5. Verify in GitHub</a></li>
-    <li><a href="#6-store-gpg-key-optional">6. Store GPG key (optional)</a></li>
+    <li>
+      <ul>
+        <li><a href="#lets-reduce-our-image-size">Let&rsquo;s reduce our image size</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -837,165 +857,25 @@
           
             <h1>
               
-              Git Commit Signing
+              Secure Containers Exercise
             </h1>
           
 
         
 
 
-<p>Needed:</p>
-<ul>
-<li>GPG Key</li>
-<li>GitHub Account</li>
-</ul>
-<h1 id="generating-a-gpg-key">Generating a GPG Key</h1>
-<ol>
-<li>Generate a key with gpg <code>gpg --gen-key</code></li>
-<li>Select what key you want to use</li>
-<li>Select what elliptic curve you want</li>
-<li>Fill out your name and your email address. Make sure this matches the one in your GitHub account.</li>
-<li>Add a comment if you want to remind you what the key is for.</li>
-<li>You may be prompted for a passphrase to add to the key for extra security</li>
-</ol>
-<p>Here is what the prompts will look like.
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Expand here is what it looks like in its entirety
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">± |main U:26 ?:9 ✗| → gpg --gen-key
-gpg <span style="color:#f92672">(</span>GnuPG<span style="color:#f92672">)</span> 2.3.1; Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2021</span> Free Software Foundation, Inc.
-This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-
-Please <span style="color:#66d9ef">select</span> what kind of key you want:
-   <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> RSA and RSA
-   <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span> DSA and Elgamal
-   <span style="color:#f92672">(</span>3<span style="color:#f92672">)</span> DSA <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
-   <span style="color:#f92672">(</span>4<span style="color:#f92672">)</span> RSA <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
-   <span style="color:#f92672">(</span>9<span style="color:#f92672">)</span> ECC <span style="color:#f92672">(</span>sign and encrypt<span style="color:#f92672">)</span> *default*
-  <span style="color:#f92672">(</span>10<span style="color:#f92672">)</span> ECC <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
-  <span style="color:#f92672">(</span>14<span style="color:#f92672">)</span> Existing key from card
-Your selection? <span style="color:#ae81ff">9</span>
-Please <span style="color:#66d9ef">select</span> which elliptic curve you want:
-   <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> Curve <span style="color:#ae81ff">25519</span> *default*
-   <span style="color:#f92672">(</span>4<span style="color:#f92672">)</span> NIST P-384
-   <span style="color:#f92672">(</span>6<span style="color:#f92672">)</span> Brainpool P-256
-Your selection? <span style="color:#ae81ff">1</span>
-Please specify how long the key should be valid.
-         0 <span style="color:#f92672">=</span> key does not expire
-      &lt;n&gt;  <span style="color:#f92672">=</span> key expires in n days
-      &lt;n&gt;w <span style="color:#f92672">=</span> key expires in n weeks
-      &lt;n&gt;m <span style="color:#f92672">=</span> key expires in n months
-      &lt;n&gt;y <span style="color:#f92672">=</span> key expires in n years
-Key is valid <span style="color:#66d9ef">for</span>? <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span> <span style="color:#ae81ff">0</span>
-Key does not expire at all
-Is this correct? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
-
-GnuPG needs to construct a user ID to identify your key.
-
-Real name: James Strong
-Email address: strong.james.e@gmail.com
-Comment: testing <span style="color:#66d9ef">for</span> workshop
-You selected this USER-ID:
-    <span style="color:#e6db74">&#34;James Strong (testing for workshop) &lt;strong.james.e@gmail.com&gt;&#34;</span>
-
-Change <span style="color:#f92672">(</span>N<span style="color:#f92672">)</span>ame, <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span>omment, <span style="color:#f92672">(</span>E<span style="color:#f92672">)</span>mail or <span style="color:#f92672">(</span>O<span style="color:#f92672">)</span>kay/<span style="color:#f92672">(</span>Q<span style="color:#f92672">)</span>uit? O
-We need to generate a lot of random bytes. It is a good idea to perform
-some other action <span style="color:#f92672">(</span>type on the keyboard, move the mouse, utilize the
-disks<span style="color:#f92672">)</span> during the prime generation; this gives the random number
-generator a better chance to gain enough entropy.
-We need to generate a lot of random bytes. It is a good idea to perform
-some other action <span style="color:#f92672">(</span>type on the keyboard, move the mouse, utilize the
-disks<span style="color:#f92672">)</span> during the prime generation; this gives the random number
-generator a better chance to gain enough entropy.
-gpg: key 8246A1EC900B5E30 marked as ultimately trusted
-gpg: directory <span style="color:#e6db74">&#39;/Users/strongjz/.gnupg/openpgp-revocs.d&#39;</span> created
-gpg: revocation certificate stored as <span style="color:#e6db74">&#39;/Users/strongjz/.gnupg/openpgp-revocs.d/3E0424931246D33A86890BC78246A1EC900B5E30.rev&#39;</span>
-public and secret key created and signed.
-
-pub   ed25519 2021-08-17 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span>
-      3E0424931246D33A86890BC78246A1EC900B5E30
-uid                      James Strong <span style="color:#f92672">(</span>testing <span style="color:#66d9ef">for</span> workshop<span style="color:#f92672">)</span> &lt;strong.james.e@gmail.com&gt;
-sub   cv25519 2021-08-17 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span>
+<h3 id="lets-reduce-our-image-size">Let&rsquo;s reduce our image size</h3>
+<p>Update your Dockerfile</p>
+<p><code>FROM golang:1.13-alpine</code></p>
+<p>to</p>
+<p><code>FROM scratch</code></p>
+<p>Update the <code>~/environment/devsecopspipeline/VERSION.txt</code> to the number you think is appropriate</p>
+<p>Then rebuild <code>make docker_build</code></p>
+<p>Inspect the image size differences</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker images 
+golang_example-codemash   0.1.21        e199bbd29e43   <span style="color:#ae81ff">3</span> minutes ago    16.1MB
+golang_example-codemash   0.1.20        20b885db4549   <span style="color:#ae81ff">12</span> minutes ago   376MB
 </code></pre></div>
-    </div>
-</div>
-</p>
-<h1 id="added-it-to-github-account">Added it to GitHub Account</h1>
-<h2 id="1-export-public-key">1. Export public key</h2>
-<p>Get the Key ID with <code>gpg --list-keys $EMAIL</code></p>
-<p>Export the public key with <code>gpg --armor --export 3E0424931246D33A86890BC78246A1EC900B5E30</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">-----BEGIN PGP PUBLIC KEY BLOCK-----
-
-mDMEYRwLhBYJKwYBBAHaRw8BAQdAsQbWuqV2P5y1HXlkoFTM9qyrypc+zB9YO/fI
-DYAjZ6C0PkphbWVzIFN0cm9uZyAodGVzdGluZyBmb3Igd29ya3Nob3ApIDxzdHJv
-bmcuamFtZXMuZUBnbWFpbC5jb20+iJQEExYKADwWIQQ+BCSTEkbTOoaJC8eCRqHs
-kAteMAUCYRwLhAIbAwULCQgHAgMiAgEGFQoJCAsCBBYCAwECHgcCF4AACgkQgkah
-7JALXjDeKgEA1JtsGyIEg8ZUANvkbJfdNEs2e1Ns/M3PcRYMUxc1yugA/3tHEDJb
-Fw+QghwzcHXWsqlkAmj5TZglHyfYsbwlgzoLuDgEYRwLhBIKKwYBBAGXVQEFAQEH
-QGg2S81eJftEiG4AeiKC3D6H94y1ifSuTZ6BBofcilsTAwEIB4h4BBgWCgAgFiEE
-PgQkkxJG0zqGiQvHgkah7JALXjAFAmEcC4QCGwwACgkQgkah7JALXjCVgwD+Ob4+
-fG5zzmP/Hg13SFsxLZc+5EKrxHJ1z+bNQQ5ARxYBANbOuPnxLtPL4eY4TqIY0k1X
-8HmXv9JXEwMHLYiN4fwF
-<span style="color:#f92672">=</span>03gp
------END PGP PUBLIC KEY BLOCK-----
-</code></pre></div><h2 id="2-add-to-github">2. Add to GitHub</h2>
-<p>Open <a href="https://github.com/settings/keys">https://github.com/settings/keys</a></p>
-<p><img src="/images/development/sign_account_add.png" alt="sign_add_key"></p>
-<p>Copy and Paste the Public Key into your GitHub account</p>
-<p><img src="/images/development/sign_add_new_key.png" alt="sign_add_key"></p>
-<h2 id="3-add-to-git-config">3. Add to git config</h2>
-<p>Get the key id for the one we just created.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ gpg --list-secret-keys --keyid-format LONG $EMAIL
-
-sec   ed25519/8246A1EC900B5E30 2021-08-17 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span>
-      3E0424931246D33A86890BC78246A1EC900B5E30
-uid                 <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> James Strong <span style="color:#f92672">(</span>testing <span style="color:#66d9ef">for</span> workshop<span style="color:#f92672">)</span> &lt;strong.james.e@gmail.com&gt;
-ssb   cv25519/0BAFF11345FB8338 2021-08-17 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span>
-</code></pre></div><p>Update git config to use the key.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git config --global user.signingkey 3E0424931246D33A86890BC78246A1EC900B5E30
-$ git config --global commit.gpgsign true
-</code></pre></div><h2 id="4-test-a-commit">4. Test a Commit.</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd ~/environment/
-mkdir signing-test
-git init
-  Initialized empty Git repository in /home/ec2-user/environment/signing-test/.git/
-echo <span style="color:#e6db74">&#34;signing-test&#34;</span> &gt;&gt; README.md
-git add -A
-git commit -m <span style="color:#e6db74">&#34;signing&#34;</span>
-  <span style="color:#f92672">[</span>main b2a6fb5<span style="color:#f92672">]</span> signing
-git push origin master 
-</code></pre></div><h2 id="5-verify-in-github">5. Verify in GitHub</h2>
-<p>In the commit history you can see a &ldquo;Verified&rdquo; tag on your commits now</p>
-<p><img src="/images/development/sign_verify.png" alt="sign_add_key"></p>
-
-<div class="notices warning" ><p>Make sure to store this GPG private key in a secure location</p>
-</div>
-
-<h2 id="6-store-gpg-key-optional">6. Store GPG key (optional)</h2>
-<p>To export the key use this.</p>
-<p>Identify your private key: <code>gpg --list-secret-keys $EMAIL</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sec   ed25519 2021-08-17 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span>
-      3E0424931246D33A86890BC78246A1EC900B5E30
-uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> James Strong <span style="color:#f92672">(</span>testing <span style="color:#66d9ef">for</span> workshop<span style="color:#f92672">)</span> &lt;strong.james.e@gmail.com&gt;
-ssb   cv25519 2021-08-17 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span>
-</code></pre></div><p>Run this command to export your key: <code>gpg --export-secret-keys 3E0424931246D33A86890BC78246A1EC900B5E30 &gt; private.key</code></p>
-<p>If you have a passphrase on the key you&rsquo;ll have to enter it to export it.</p>
-<p>Copy the key file to another secure location.</p>
-<p>To import on a new machine, run <code>gpg --import private.key</code></p>
-<p>Sources:</p>
-<p>Using Keybase: <a href="https://github.com/pstadler/keybase-gpg-github">https://github.com/pstadler/keybase-gpg-github</a></p>
-<p>Plain GPG: <a href="https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/generating-a-new-gpg-key">https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/generating-a-new-gpg-key</a></p>
-
 
 <footer class="footline">
 	
@@ -1163,7 +1043,6 @@ ssb   cv25519 2021-08-17 <span style="color:#f92672">[</span>E<span style="color
             
                 
                     
-                    
                 
                 
 
@@ -1176,7 +1055,6 @@ ssb   cv25519 2021-08-17 <span style="color:#f92672">[</span>E<span style="color
             
             
                 
-                    
                     
                 
                 
@@ -1193,9 +1071,6 @@ ssb   cv25519 2021-08-17 <span style="color:#f92672">[</span>E<span style="color
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1264,6 +1139,7 @@ ssb   cv25519 2021-08-17 <span style="color:#f92672">[</span>E<span style="color
             
                 
                     
+                    
                 
                 
 
@@ -1276,6 +1152,9 @@ ssb   cv25519 2021-08-17 <span style="color:#f92672">[</span>E<span style="color
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1304,6 +1183,23 @@ ssb   cv25519 2021-08-17 <span style="color:#f92672">[</span>E<span style="color
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1311,6 +1207,9 @@ ssb   cv25519 2021-08-17 <span style="color:#f92672">[</span>E<span style="color
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1460,10 +1359,10 @@ ssb   cv25519 2021-08-17 <span style="color:#f92672">[</span>E<span style="color
 	 
 	 
 		
-			<a class="nav nav-prev" href="/development/" title="Development Environment"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/build/exercise/" title="Secure Containers Exercise"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/development/linting/" title="Linting" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/pipeline/" title="Container Pipeline" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1473,19 +1372,19 @@ ssb   cv25519 2021-08-17 <span style="color:#f92672">[</span>E<span style="color
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641933981"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641933981"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641933981"></script>
-    <script src="/js/jquery.sticky.js?1641933981"></script>
-    <script src="/js/featherlight.min.js?1641933981"></script>
-    <script src="/js/highlight.pack.js?1641933981"></script>
+    <script src="/js/clipboard.min.js?1641931799"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641931799"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641931799"></script>
+    <script src="/js/jquery.sticky.js?1641931799"></script>
+    <script src="/js/featherlight.min.js?1641931799"></script>
+    <script src="/js/highlight.pack.js?1641931799"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641933981"></script>
-    <script src="/js/learn.js?1641933981"></script>
-    <script src="/js/hugo-learn.js?1641933981"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641931799"></script>
+    <script src="/js/learn.js?1641931799"></script>
+    <script src="/js/hugo-learn.js?1641931799"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641933981"></script>
+            <script src="/mermaid/mermaid.js?1641931799"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

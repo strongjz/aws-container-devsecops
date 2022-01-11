@@ -10,11 +10,15 @@ A list of supported browsers for AWS Cloud9 is found [here](https://docs.aws.ama
 
 1. Log into your AWS Account
 
+{{% notice note %}}
+Everything defaults to us-west-2 in this Workshop
+{{% /notice %}}
+
 2. Launch Cloud9 in your closest region
 
    Create a Cloud9 Environment: https://us-west-2.console.aws.amazon.com/cloud9/home?region=us-west-2
 
-   You'll be prompt to log into your AWS Account in order to provision a Cloud9 Workspace
+   You'll be prompted to log into your AWS Account in order to provision a Cloud9 Workspace
 
 ![cloud9step_0](/images/setup/cloud9_step0_create.png)
 

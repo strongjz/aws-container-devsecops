@@ -1,0 +1,26 @@
+---
+title: Secure Containers Exercise
+weight: 32
+draft: true
+---
+
+### Let's reduce our image size
+
+Update your Dockerfile
+
+`FROM golang:1.13-alpine`
+
+to
+
+`FROM scratch`
+
+Update the `~/environment/devsecopspipeline/VERSION.txt` to the number you think is appropriate
+
+Then rebuild `make docker_build`
+
+Inspect the image size differences
+```bash
+docker images 
+golang_example-codemash   0.1.21        e199bbd29e43   3 minutes ago    16.1MB
+golang_example-codemash   0.1.20        20b885db4549   12 minutes ago   376MB
+```

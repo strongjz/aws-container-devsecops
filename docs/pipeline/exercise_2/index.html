@@ -12,22 +12,22 @@
     <title>Container Pipeline Exercise Part 2 :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641868077" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641868077" rel="stylesheet">
-    <link href="/css/hybrid.css?1641868077" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641868077" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641868077" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641868077" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641868077" rel="stylesheet">
-    <link href="/css/theme.css?1641868077" rel="stylesheet">
-    <link href="/css/tabs.css?1641868077" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641868077" rel="stylesheet">
+    <link href="/css/nucleus.css?1641933981" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641933981" rel="stylesheet">
+    <link href="/css/hybrid.css?1641933981" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641933981" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641933981" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641933981" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641933981" rel="stylesheet">
+    <link href="/css/theme.css?1641933981" rel="stylesheet">
+    <link href="/css/tabs.css?1641933981" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641933981" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641868077" rel="stylesheet">
+    <link href="/css/theme-green.css?1641933981" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641868077"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641933981"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641868077"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641868077"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641933981"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641933981"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641868077"></script>
+<script type="text/javascript" src="/js/search.js?1641933981"></script>
 
     
   </div>
@@ -816,7 +816,6 @@
     <li><a href="#aws-ecr">AWS ECR</a>
       <ul>
         <li><a href="#ecr-scans-our-images-for-vulnerabilities">ECR scans our images for vulnerabilities</a></li>
-        <li><a href="#lets-reduce-our-image-size">Let&rsquo;s reduce our image size</a></li>
       </ul>
     </li>
     <li><a href="#aws-codepipeline">AWS CodePipeline</a></li>
@@ -1075,21 +1074,7 @@ The push refers to repository <span style="color:#f92672">[</span>123456789012.d
 <p>In the Console it would look this</p>
 <p><a href="https://us-west-2.console.aws.amazon.com/ecr/repositories">https://us-west-2.console.aws.amazon.com/ecr/repositories</a></p>
 <p><img src="/images/pipeline/ecr-scan.png" alt=""></p>
-<h3 id="lets-reduce-our-image-size">Let&rsquo;s reduce our image size</h3>
-<p>Update your Dockerfile</p>
-<p><code>FROM golang:1.13-alpine</code></p>
-<p>to</p>
-<p><code>FROM scratch</code></p>
-<p>you should get an error</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tag invalid: The image tag <span style="color:#e6db74">&#39;0.1.20&#39;</span> already exists in the <span style="color:#e6db74">&#39;golang_example-codemash&#39;</span> repository and cannot be overwritten because the repository is immutable.
-make: *** <span style="color:#f92672">[</span>docker_push<span style="color:#f92672">]</span> Error <span style="color:#ae81ff">1</span>
-</code></pre></div><p>Update the <code>~/environment/devsecopspipeline/VERSION.txt</code> to the number you think is appropriate</p>
-<p>Then rebuild <code>make docker_build</code></p>
-<p>Inspect the image size differences</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker images 
-123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-codemash   0.1.21        e199bbd29e43   <span style="color:#ae81ff">3</span> minutes ago    16.1MB
-123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-codemash   0.1.20        20b885db4549   <span style="color:#ae81ff">12</span> minutes ago   376MB
-</code></pre></div><p>Now scratch container only has the go binary in it, and ECR doesnt not support scanning Scratch.</p>
+<p>Now scratch container only has the go binary in it, and ECR doesnt not support scanning Scratch.</p>
 <p><code>make ecr_scan_findings</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws ecr describe-image-scan-findings --repository-name golang_example-codemash --image-id imageTag<span style="color:#f92672">=</span>0.1.21
 <span style="color:#f92672">{</span>
@@ -1621,19 +1606,19 @@ curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/host
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641868077"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641868077"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641868077"></script>
-    <script src="/js/jquery.sticky.js?1641868077"></script>
-    <script src="/js/featherlight.min.js?1641868077"></script>
-    <script src="/js/highlight.pack.js?1641868077"></script>
+    <script src="/js/clipboard.min.js?1641933981"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641933981"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641933981"></script>
+    <script src="/js/jquery.sticky.js?1641933981"></script>
+    <script src="/js/featherlight.min.js?1641933981"></script>
+    <script src="/js/highlight.pack.js?1641933981"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641868077"></script>
-    <script src="/js/learn.js?1641868077"></script>
-    <script src="/js/hugo-learn.js?1641868077"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641933981"></script>
+    <script src="/js/learn.js?1641933981"></script>
+    <script src="/js/hugo-learn.js?1641933981"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641868077"></script>
+            <script src="/mermaid/mermaid.js?1641933981"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

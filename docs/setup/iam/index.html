@@ -12,22 +12,22 @@
     <title>Cloud 9 Settings Configuration :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641868077" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641868077" rel="stylesheet">
-    <link href="/css/hybrid.css?1641868077" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641868077" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641868077" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641868077" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641868077" rel="stylesheet">
-    <link href="/css/theme.css?1641868077" rel="stylesheet">
-    <link href="/css/tabs.css?1641868077" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641868077" rel="stylesheet">
+    <link href="/css/nucleus.css?1641933981" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641933981" rel="stylesheet">
+    <link href="/css/hybrid.css?1641933981" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641933981" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641933981" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641933981" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641933981" rel="stylesheet">
+    <link href="/css/theme.css?1641933981" rel="stylesheet">
+    <link href="/css/tabs.css?1641933981" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641933981" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641868077" rel="stylesheet">
+    <link href="/css/theme-green.css?1641933981" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641868077"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641933981"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641868077"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641868077"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641933981"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641933981"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641868077"></script>
+<script type="text/javascript" src="/js/search.js?1641933981"></script>
 
     
   </div>
@@ -852,9 +852,13 @@
 <img src="/images/setup/cloud9_role_2_permissions.png" alt="cloud9create"></li>
 <li>Take the defaults, and click Next: Review to review.
 <img src="/images/setup/cloud9_role_3_tag.png" alt="cloud9create"></li>
-<li>Enter devsecop-workshop-admin for the Name, and click Create role.
-<img src="/images/setup/cloud9_role_4_review.png" alt="cloud9create"></li>
+<li>Enter devsecop-workshop-admin for the Name, and click Create role.</li>
 </ol>
+
+<div class="notices warning" ><p>Ensure that the name of the role is devsecop-workshop-admin</p>
+</div>
+
+<p><img src="/images/setup/cloud9_role_4_review.png" alt="cloud9create"></p>
 <h2 id="attach-iam-role-to-your-cloud9-instance">Attach IAM Role to your Cloud9 instance</h2>
 <ol>
 <li>Click the grey circle button (in top right corner) and select Manage EC2 Instance
@@ -874,9 +878,12 @@
 <p>Let&rsquo;s make sure we have the right settings with the AWS CLI.</p>
 <p>To ensure temporary credentials aren’t already in place we will also remove any existing credentials file:</p>
 <p><code>rm -vf ${HOME}/.aws/credentials</code></p>
-<p>Use the <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/get-caller-identity.html">GetCallerIdentity CLI command</a> to validate that the Cloud9 IDE is using the correct IAM role.</p>
-<p><code>aws sts get-caller-identity --query Arn | grep devsecops-workshop-admin -q &amp;&amp; echo &quot;IAM role valid&quot; || echo &quot;IAM role NOT valid&quot;</code></p>
-<p><img src="/images/setup/cloud9_verify_iam_cli.png" alt="cloud9create"></p>
+<p>Use the <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/get-caller-identity.html">GetCallerIdentity CLI command</a>
+to validate that the Cloud9 IDE is using the correct IAM role.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws sts get-caller-identity <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--query Arn | grep devsecops-workshop-admin -q <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span><span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;IAM role valid&#34;</span> <span style="color:#f92672">||</span> echo <span style="color:#e6db74">&#34;IAM role NOT valid&#34;</span>
+</code></pre></div><p><img src="/images/setup/cloud9_verify_iam_cli.png" alt="cloud9create"></p>
 <h2 id="change-ec2-instance-settings">Change EC2 Instance Settings</h2>
 <ol>
 <li>Open Project Settings</li>
@@ -1365,19 +1372,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641868077"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641868077"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641868077"></script>
-    <script src="/js/jquery.sticky.js?1641868077"></script>
-    <script src="/js/featherlight.min.js?1641868077"></script>
-    <script src="/js/highlight.pack.js?1641868077"></script>
+    <script src="/js/clipboard.min.js?1641933981"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641933981"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641933981"></script>
+    <script src="/js/jquery.sticky.js?1641933981"></script>
+    <script src="/js/featherlight.min.js?1641933981"></script>
+    <script src="/js/highlight.pack.js?1641933981"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641868077"></script>
-    <script src="/js/learn.js?1641868077"></script>
-    <script src="/js/hugo-learn.js?1641868077"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641933981"></script>
+    <script src="/js/learn.js?1641933981"></script>
+    <script src="/js/hugo-learn.js?1641933981"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641868077"></script>
+            <script src="/mermaid/mermaid.js?1641933981"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
