@@ -12,22 +12,22 @@
     <title>Secure Containers Exercise :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641937751" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641937751" rel="stylesheet">
-    <link href="/css/hybrid.css?1641937751" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641937751" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641937751" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641937751" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641937751" rel="stylesheet">
-    <link href="/css/theme.css?1641937751" rel="stylesheet">
-    <link href="/css/tabs.css?1641937751" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641937751" rel="stylesheet">
+    <link href="/css/nucleus.css?1641941362" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641941362" rel="stylesheet">
+    <link href="/css/hybrid.css?1641941362" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641941362" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641941362" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641941362" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641941362" rel="stylesheet">
+    <link href="/css/theme.css?1641941362" rel="stylesheet">
+    <link href="/css/tabs.css?1641941362" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641941362" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641937751" rel="stylesheet">
+    <link href="/css/theme-green.css?1641941362" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641937751"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641941362"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641937751"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641937751"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641941362"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641941362"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641937751"></script>
+<script type="text/javascript" src="/js/search.js?1641941362"></script>
 
     
   </div>
@@ -938,12 +938,19 @@ Starting App Engine
 </div>
 
 <p>Test</p>
+<p>In a new terminal test the application <code>cd ~/environment/devsecopspipeline</code>.</p>
+<p>The <code>make run</code> just runs the golang app and not the database</p>
 <p><code>make test_local</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Default Page&#34;</span><span style="color:#f92672">}</span>
 ~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/data
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;DB is not connected&#34;</span><span style="color:#f92672">}</span>
 </code></pre></div><h2 id="2-running-in-docker-compose">2. Running in Docker Compose</h2>
+
+<div class="notices info" ><p>Update Makefile NAME with your name or some unique identifier.</p>
+</div>
+
+<p>Stop the local <code>make run</code> and run the app with compose</p>
 <p><code>make compose_up</code></p>
 
 <div class="expand">
@@ -1040,7 +1047,8 @@ db_1          | 2021-09-11 22:16:05.653 UTC <span style="color:#f92672">[</span>
     </div>
 </div>
 
-<p>Once it is up we can test the applications running locally</p>
+<p>Once it is up we can test the applications running in compose, same thing, new terminal and test</p>
+<p><code>make test_local</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Default Page&#34;</span><span style="color:#f92672">}</span>
 ~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/ping
@@ -1227,13 +1235,13 @@ USER appuser:appuser
 <span style="color:#66d9ef">ENV</span> UID<span style="color:#f92672">=</span><span style="color:#ae81ff">10001</span>
 <span style="color:#75715e"># See https://stackoverflow.com/a/55757473/12429735RUN</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> adduser <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  <span style="color:#f92672">&amp;&amp;</span> --disabled-password <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  <span style="color:#f92672">&amp;&amp;</span> --gecos <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  <span style="color:#f92672">&amp;&amp;</span> --home <span style="color:#e6db74">&#34;/nonexistent&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  <span style="color:#f92672">&amp;&amp;</span> --shell <span style="color:#e6db74">&#34;/sbin/nologin&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  <span style="color:#f92672">&amp;&amp;</span> --no-create-home <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  <span style="color:#f92672">&amp;&amp;</span> --uid <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>UID<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  <span style="color:#f92672">&amp;&amp;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>USER<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#ae81ff"></span>  --disabled-password <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --gecos <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --home <span style="color:#e6db74">&#34;/nonexistent&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --shell <span style="color:#e6db74">&#34;/sbin/nologin&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --no-create-home <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --uid <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>UID<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>USER<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /go/src/app</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
@@ -1737,19 +1745,19 @@ USER appuser:appuser
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641937751"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641937751"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641937751"></script>
-    <script src="/js/jquery.sticky.js?1641937751"></script>
-    <script src="/js/featherlight.min.js?1641937751"></script>
-    <script src="/js/highlight.pack.js?1641937751"></script>
+    <script src="/js/clipboard.min.js?1641941362"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641941362"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641941362"></script>
+    <script src="/js/jquery.sticky.js?1641941362"></script>
+    <script src="/js/featherlight.min.js?1641941362"></script>
+    <script src="/js/highlight.pack.js?1641941362"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641937751"></script>
-    <script src="/js/learn.js?1641937751"></script>
-    <script src="/js/hugo-learn.js?1641937751"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641941362"></script>
+    <script src="/js/learn.js?1641941362"></script>
+    <script src="/js/hugo-learn.js?1641941362"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641937751"></script>
+            <script src="/mermaid/mermaid.js?1641941362"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

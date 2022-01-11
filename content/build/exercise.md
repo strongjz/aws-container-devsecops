@@ -97,6 +97,10 @@ Starting App Engine
 
 Test 
 
+In a new terminal test the application `cd ~/environment/devsecopspipeline`. 
+
+The `make run` just runs the golang app and not the database
+
 `make test_local`
 ```bash
 ~/environment/devsecopspipeline (master) $ curl localhost:8080/
@@ -106,6 +110,12 @@ Test
 ```
 
 ## 2. Running in Docker Compose 
+
+{{% notice info %}}
+Update Makefile NAME with your name or some unique identifier. 
+{{% /notice %}}
+
+Stop the local `make run` and run the app with compose
 
 `make compose_up`
 
@@ -193,7 +203,9 @@ db_1          | 2021-09-11 22:16:05.653 UTC [1] LOG:  database system is ready t
 ```
 {{% /expand%}}
 
-Once it is up we can test the applications running locally 
+Once it is up we can test the applications running in compose, same thing, new terminal and test  
+
+`make test_local`
 
 ```bash
 ~/environment/devsecopspipeline (master) $ curl localhost:8080/
@@ -381,13 +393,13 @@ ENV USER=appuser
 ENV UID=10001
 # See https://stackoverflow.com/a/55757473/12429735RUN
 RUN adduser \
-  && --disabled-password \
-  && --gecos "" \
-  && --home "/nonexistent" \
-  && --shell "/sbin/nologin" \
-  && --no-create-home \
-  && --uid "${UID}" \
-  && "${USER}"
+  --disabled-password \
+  --gecos "" \
+  --home "/nonexistent" \
+  --shell "/sbin/nologin" \
+  --no-create-home \
+  --uid "${UID}" \
+  "${USER}"
 
 WORKDIR /go/src/app
 COPY . .
