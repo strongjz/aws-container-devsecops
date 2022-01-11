@@ -12,22 +12,22 @@
     <title>Container Pipeline Exercise :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641865848" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641865848" rel="stylesheet">
-    <link href="/css/hybrid.css?1641865848" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641865848" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641865848" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641865848" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641865848" rel="stylesheet">
-    <link href="/css/theme.css?1641865848" rel="stylesheet">
-    <link href="/css/tabs.css?1641865848" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641865848" rel="stylesheet">
+    <link href="/css/nucleus.css?1641867828" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641867828" rel="stylesheet">
+    <link href="/css/hybrid.css?1641867828" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641867828" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641867828" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641867828" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641867828" rel="stylesheet">
+    <link href="/css/theme.css?1641867828" rel="stylesheet">
+    <link href="/css/tabs.css?1641867828" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641867828" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641865848" rel="stylesheet">
+    <link href="/css/theme-green.css?1641867828" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641865848"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641867828"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641865848"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641865848"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641867828"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641867828"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641865848"></script>
+<script type="text/javascript" src="/js/search.js?1641867828"></script>
 
     
   </div>
@@ -845,7 +845,7 @@
         
 
 
-<p>The AWS Resources for pipeline and etc are build using Terraform.</p>
+<p>The AWS Resources for pipeline, etc are build using Terraform.</p>
 <ol>
 <li>Create the State bucket</li>
 <li>Init Terraform</li>
@@ -855,8 +855,8 @@
 <h2 id="first-create-the-state-file-s3-bucket">First Create the state file s3 bucket</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> aws s3 mb s3://devsecops-codemash-2022 --region us-west-2
 make_bucket: devsecops-codemash-2022
-</code></pre></div><p>Inside our Terraform Directory in the devsecops repo</p>
-<p>Update the <code>devsecopspipeline/terraform/config.tf</code> with the bucket name to store terraform state</p>
+</code></pre></div><p>Inside our Terraform Directory in the devsecops repo <code>cd ~/environments/devsecopspipeline/</code></p>
+<p>Update the <code>~/environments/devsecopspipeline/terraform/config.tf</code> with the bucket name to store terraform state</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">terraform</span> {
     <span style="color:#66d9ef">backend</span> <span style="color:#e6db74">&#34;s3&#34;</span> {
         bucket <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;devsecops-codemash-2022&#34;</span>
@@ -1899,7 +1899,8 @@ Apply complete! Resources: <span style="color:#ae81ff">19</span> added, <span st
 </div>
 
 <p>Navigate to AWS codepipeline and ensure your Pipeline created properly</p>
-<p><a href="https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines">https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines</a></p>
+<p><a href="https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipeline">https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipeline</a></p>
+<p>Don&rsquo;t worry about the failure, were going to fix that in the next Exercise</p>
 
 
 <footer class="footline">
@@ -2381,19 +2382,19 @@ Apply complete! Resources: <span style="color:#ae81ff">19</span> added, <span st
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641865848"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641865848"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641865848"></script>
-    <script src="/js/jquery.sticky.js?1641865848"></script>
-    <script src="/js/featherlight.min.js?1641865848"></script>
-    <script src="/js/highlight.pack.js?1641865848"></script>
+    <script src="/js/clipboard.min.js?1641867828"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641867828"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641867828"></script>
+    <script src="/js/jquery.sticky.js?1641867828"></script>
+    <script src="/js/featherlight.min.js?1641867828"></script>
+    <script src="/js/highlight.pack.js?1641867828"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641865848"></script>
-    <script src="/js/learn.js?1641865848"></script>
-    <script src="/js/hugo-learn.js?1641865848"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641867828"></script>
+    <script src="/js/learn.js?1641867828"></script>
+    <script src="/js/hugo-learn.js?1641867828"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641865848"></script>
+            <script src="/mermaid/mermaid.js?1641867828"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

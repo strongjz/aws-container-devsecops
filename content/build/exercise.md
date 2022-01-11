@@ -9,6 +9,15 @@ In this Exercise we are going to
 2. Run in Docker compose 
 3. Update Dockerfile 
 
+{{% notice info %}}
+You may need to start docker
+{{% /notice %}}
+
+```bash
+sudo service docker start                                                                                                                                
+Redirecting to /bin/systemctl start docker.service
+```
+
 Navigate to DevSecops repo `cd ~/environment/devsecopspipeline`
 
 Set a temp password for the local database

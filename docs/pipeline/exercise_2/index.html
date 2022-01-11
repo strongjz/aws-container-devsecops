@@ -12,22 +12,22 @@
     <title>Container Pipeline Exercise Part 2 :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641865848" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641865848" rel="stylesheet">
-    <link href="/css/hybrid.css?1641865848" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641865848" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641865848" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641865848" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641865848" rel="stylesheet">
-    <link href="/css/theme.css?1641865848" rel="stylesheet">
-    <link href="/css/tabs.css?1641865848" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641865848" rel="stylesheet">
+    <link href="/css/nucleus.css?1641867828" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641867828" rel="stylesheet">
+    <link href="/css/hybrid.css?1641867828" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641867828" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641867828" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641867828" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641867828" rel="stylesheet">
+    <link href="/css/theme.css?1641867828" rel="stylesheet">
+    <link href="/css/tabs.css?1641867828" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641867828" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641865848" rel="stylesheet">
+    <link href="/css/theme-green.css?1641867828" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641865848"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641867828"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641865848"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641865848"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641867828"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641867828"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641865848"></script>
+<script type="text/javascript" src="/js/search.js?1641867828"></script>
 
     
   </div>
@@ -848,23 +848,31 @@
         
 
 
-
-<div class="notices info" ><p>You may need to start docker</p>
-</div>
-
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo service docker start                                                                                                                                
-Redirecting to /bin/systemctl start docker.service
-</code></pre></div><h2 id="aws-ecr">AWS ECR</h2>
+<p>Inside the devsecops repo <code>cd ~/environments/devsecopspipeline/</code> we are going to manually push our application
+image to AWS ECR</p>
+<h2 id="aws-ecr">AWS ECR</h2>
 <p>Let&rsquo;s push our docker image to ECR that was created from Terraform</p>
 <p><code>make docker_push</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker login -u AWS -p redacted https://123456789012.dkr.ecr.us-west-2.amazonaws.com
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Expand me...
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker login -u AWS -p redacted https://123456789012.dkr.ecr.us-west-2.amazonaws.com
 WARNING! Using --password via the CLI is insecure. Use --password-stdin.
 WARNING! Your password will be stored unencrypted in /home/ec2-user/.docker/config.json.
 Configure a credential helper to remove this warning. See
 https://docs.docker.com/engine/reference/commandline/login/#credentials-store
 
 Login Succeeded
-docker build -t 123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-houston:0.1.20 .
+docker build -t 123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-codemash:0.1.20 .
 Sending build context to Docker daemon  198.3MB
 Step 1/10 : FROM golang:1.13-alpine AS builder
  ---&gt; 5863598a981a
@@ -920,9 +928,9 @@ Step 10/10 : CMD <span style="color:#f92672">[</span><span style="color:#e6db74"
  ---&gt; Using cache
  ---&gt; 20b885db4549
 Successfully built 20b885db4549
-Successfully tagged 123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-houston:0.1.20
-docker push 123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-houston:0.1.20
-The push refers to repository <span style="color:#f92672">[</span>123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-houston<span style="color:#f92672">]</span>
+Successfully tagged 123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-codemash:0.1.20
+docker push 123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-codemash:0.1.20
+The push refers to repository <span style="color:#f92672">[</span>123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-codemash<span style="color:#f92672">]</span>
 6223903865fc: Pushed 
 39c40114257b: Pushed 
 08161ff6b353: Pushed 
@@ -930,15 +938,31 @@ The push refers to repository <span style="color:#f92672">[</span>123456789012.d
 0f7493e3a35b: Pushed 
 50644c29ef5a: Pushed 
 0.1.20: digest: sha256:256531371d0ca8da6d1aa13ad63579f887a1c5e8e2de25136bface4e3e13ccd4 size: <span style="color:#ae81ff">1576</span>
-</code></pre></div><h3 id="ecr-scans-our-images-for-vulnerabilities">ECR scans our images for vulnerabilities</h3>
+</code></pre></div>
+    </div>
+</div>
+
+<h3 id="ecr-scans-our-images-for-vulnerabilities">ECR scans our images for vulnerabilities</h3>
 <p><code>make ecr_scan_findings</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws ecr describe-image-scan-findings --repository-name golang_example-houston --image-id imageTag<span style="color:#f92672">=</span>0.1.20
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Expand me...
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws ecr describe-image-scan-findings --repository-name golang_example-codemash --image-id imageTag<span style="color:#f92672">=</span>0.1.20
 <span style="color:#f92672">{</span>
     <span style="color:#e6db74">&#34;imageScanStatus&#34;</span>: <span style="color:#f92672">{</span>
         <span style="color:#e6db74">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;COMPLETE&#34;</span>, 
         <span style="color:#e6db74">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;The scan was completed successfully.&#34;</span>
     <span style="color:#f92672">}</span>, 
-    <span style="color:#e6db74">&#34;repositoryName&#34;</span>: <span style="color:#e6db74">&#34;golang_example-houston&#34;</span>, 
+    <span style="color:#e6db74">&#34;repositoryName&#34;</span>: <span style="color:#e6db74">&#34;golang_example-codemash&#34;</span>, 
     <span style="color:#e6db74">&#34;registryId&#34;</span>: <span style="color:#e6db74">&#34;123456789012&#34;</span>, 
     <span style="color:#e6db74">&#34;imageId&#34;</span>: <span style="color:#f92672">{</span>
         <span style="color:#e6db74">&#34;imageTag&#34;</span>: <span style="color:#e6db74">&#34;0.1.20&#34;</span>, 
@@ -1047,30 +1071,36 @@ The push refers to repository <span style="color:#f92672">[</span>123456789012.d
         <span style="color:#f92672">}</span>
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/images/pipeline/ecr-scan.png" alt=""></p>
+</code></pre></div>
+    </div>
+</div>
+
+<p>In the Console it would look this</p>
+<p><a href="https://us-west-2.console.aws.amazon.com/ecr/repositories">https://us-west-2.console.aws.amazon.com/ecr/repositories</a></p>
+<p><img src="/images/pipeline/ecr-scan.png" alt=""></p>
 <h3 id="lets-reduce-our-image-size">Let&rsquo;s reduce our image size</h3>
 <p>Update your Dockerfile</p>
 <p><code>FROM golang:1.13-alpine</code></p>
 <p>to</p>
 <p><code>FROM scratch</code></p>
 <p>you should get an error</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tag invalid: The image tag <span style="color:#e6db74">&#39;0.1.20&#39;</span> already exists in the <span style="color:#e6db74">&#39;golang_example-houston&#39;</span> repository and cannot be overwritten because the repository is immutable.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tag invalid: The image tag <span style="color:#e6db74">&#39;0.1.20&#39;</span> already exists in the <span style="color:#e6db74">&#39;golang_example-codemash&#39;</span> repository and cannot be overwritten because the repository is immutable.
 make: *** <span style="color:#f92672">[</span>docker_push<span style="color:#f92672">]</span> Error <span style="color:#ae81ff">1</span>
-</code></pre></div><p>Update the version.txt to the number you think is appropriate</p>
-<p>Then rebuild</p>
+</code></pre></div><p>Update the <code>~/environment/devsecopspipeline/VERSION.txt</code> to the number you think is appropriate</p>
+<p>Then rebuild <code>make docker_build</code></p>
 <p>Inspect the image size differences</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker images 
-123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-houston   0.1.21        e199bbd29e43   <span style="color:#ae81ff">3</span> minutes ago    16.1MB
-123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-houston   0.1.20        20b885db4549   <span style="color:#ae81ff">12</span> minutes ago   376MB
-</code></pre></div><p>Now scratch container only has the go binary in it</p>
+123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-codemash   0.1.21        e199bbd29e43   <span style="color:#ae81ff">3</span> minutes ago    16.1MB
+123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-codemash   0.1.20        20b885db4549   <span style="color:#ae81ff">12</span> minutes ago   376MB
+</code></pre></div><p>Now scratch container only has the go binary in it, and ECR doesnt not support scanning Scratch.</p>
 <p><code>make ecr_scan_findings</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws ecr describe-image-scan-findings --repository-name golang_example-houston --image-id imageTag<span style="color:#f92672">=</span>0.1.21
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws ecr describe-image-scan-findings --repository-name golang_example-codemash --image-id imageTag<span style="color:#f92672">=</span>0.1.21
 <span style="color:#f92672">{</span>
     <span style="color:#e6db74">&#34;imageScanStatus&#34;</span>: <span style="color:#f92672">{</span>
         <span style="color:#e6db74">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;FAILED&#34;</span>, 
         <span style="color:#e6db74">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;UnsupportedImageError: The operating system and/or package manager are not supported.&#34;</span>
     <span style="color:#f92672">}</span>, 
-    <span style="color:#e6db74">&#34;repositoryName&#34;</span>: <span style="color:#e6db74">&#34;golang_example-houston&#34;</span>, 
+    <span style="color:#e6db74">&#34;repositoryName&#34;</span>: <span style="color:#e6db74">&#34;golang_example-codemash&#34;</span>, 
     <span style="color:#e6db74">&#34;registryId&#34;</span>: <span style="color:#e6db74">&#34;123456789012&#34;</span>, 
     <span style="color:#e6db74">&#34;imageId&#34;</span>: <span style="color:#f92672">{</span>
         <span style="color:#e6db74">&#34;imageTag&#34;</span>: <span style="color:#e6db74">&#34;0.1.21&#34;</span>, 
@@ -1079,40 +1109,40 @@ make: *** <span style="color:#f92672">[</span>docker_push<span style="color:#f92
     <span style="color:#e6db74">&#34;imageScanFindings&#34;</span>: null
 <span style="color:#f92672">}</span>
 </code></pre></div><h2 id="aws-codepipeline">AWS CodePipeline</h2>
-<p>Now that we have a CodePipeline setup thanks to terraform let&rsquo;s push our code there and watch the pipeline run</p>
-<p>We need to give our Codepipeline Role access to the cluster</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make cluster_iam
-eksctl create iamidentitymapping --cluster devsecops --arn arn:aws:iam::123456789012:role/devsecops-houston-codebuild   --username admin <span style="color:#ae81ff">\
+<p>Now that we have a CodePipeline setup thanks to terraform let&rsquo;s push our code there and watch the pipeline run,
+and do everything we just did but in the CodePipeline</p>
+<p>First We need to give our Codepipeline Role access to the cluster <code>make cluster_iam</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eksctl create iamidentitymapping --cluster devsecops --arn arn:aws:iam::123456789012:role/devsecops-codemash-codebuild   --username admin <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>--group system:masters
 2021-09-18 20:33:43 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  eksctl version 0.67.0
 2021-09-18 20:33:43 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  using region us-west-2
-2021-09-18 20:33:43 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  adding identity <span style="color:#e6db74">&#34;arn:aws:iam::123456789012:role/devsecops-houston-codebuild&#34;</span> to auth ConfigMap
-</code></pre></div><p>We clone the repo from github but now let&rsquo;s push it to AWS CodeCommit</p>
-<p>If you don&rsquo;t remember the name we can use the aws cli to find it for use</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> aws codecommit   list-repositories
-<span style="color:#f92672">{</span>
+2021-09-18 20:33:43 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  adding identity <span style="color:#e6db74">&#34;arn:aws:iam::123456789012:role/devsecops-codemash-codebuild&#34;</span> to auth ConfigMap
+</code></pre></div><p>We clone the repo from GitHub but now let&rsquo;s push it to AWS CodeCommit</p>
+<p>If you don&rsquo;t remember the name we can use the aws cli to find it for use <code>aws codecommit list-repositories</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">{</span>
     <span style="color:#e6db74">&#34;repositories&#34;</span>: <span style="color:#f92672">[</span>
         <span style="color:#f92672">{</span>
-            <span style="color:#e6db74">&#34;repositoryName&#34;</span>: <span style="color:#e6db74">&#34;houston-devsecops-repo&#34;</span>, 
+            <span style="color:#e6db74">&#34;repositoryName&#34;</span>: <span style="color:#e6db74">&#34;codemash-devsecops-repo&#34;</span>, 
             <span style="color:#e6db74">&#34;repositoryId&#34;</span>: <span style="color:#e6db74">&#34;568b8724-36c5-44fe-9848-42e2db43a861&#34;</span>
         <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><p>Now we can push the repo to AWS Code commit by adding a new remote</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add aws https://git-codecommit.us-west-2.amazonaws.com/v1/repos/houston-devsecops-repo
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add aws https://git-codecommit.us-west-2.amazonaws.com/v1/repos/codemash-devsecops-repo
 git push aws 
-</code></pre></div><p><a href="https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines?region=us-west-2">Navigate to the CodePipeline console to build in progress</a></p>
+</code></pre></div><p><a href="https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines">Navigate to the CodePipeline console to build in progress</a></p>
 <p><img src="/images/pipeline/code-pipeline-progress.png" alt=""></p>
-<p>Once our deploymnet finishes we can test the cluster in AWS</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get svc clusterip-service
-NAME                TYPE           CLUSTER-IP       EXTERNAL-IP                                                              PORT<span style="color:#f92672">(</span>S<span style="color:#f92672">)</span>        AGE
+<p>Once our deployment finishes we can test the cluster in AWS <code>kubectl get svc clusterip-service</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NAME                TYPE           CLUSTER-IP       EXTERNAL-IP                                                              PORT<span style="color:#f92672">(</span>S<span style="color:#f92672">)</span>        AGE
 clusterip-service   LoadBalancer   10.100.254.156   a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com   80:30430/TCP   87m
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>main<span style="color:#f92672">)</span> $curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/
+</code></pre></div><p>Take that EXTERNAL-IP and test the application</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Default Page&#34;</span><span style="color:#f92672">}</span>
-~/environment/devsecopspipeline <span style="color:#f92672">(</span>main<span style="color:#f92672">)</span> $ curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/data
+
+curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/data
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Database Connected&#34;</span><span style="color:#f92672">}</span>
-~/environment/devsecopspipeline <span style="color:#f92672">(</span>main<span style="color:#f92672">)</span> $ curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/host
+
+curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/host
 <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;NODE: ip-192-168-62-23.us-west-2.compute.internal, POD IP:192.168.51.0&#34;</span><span style="color:#f92672">}</span>
-~/environment/devsecopspipeline <span style="color:#f92672">(</span>main<span style="color:#f92672">)</span> $ 
 </code></pre></div>
 
 <footer class="footline">
@@ -1594,19 +1624,19 @@ clusterip-service   LoadBalancer   10.100.254.156   a9d40a7cc91b447e7a7830a6aa4a
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641865848"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641865848"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641865848"></script>
-    <script src="/js/jquery.sticky.js?1641865848"></script>
-    <script src="/js/featherlight.min.js?1641865848"></script>
-    <script src="/js/highlight.pack.js?1641865848"></script>
+    <script src="/js/clipboard.min.js?1641867828"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641867828"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641867828"></script>
+    <script src="/js/jquery.sticky.js?1641867828"></script>
+    <script src="/js/featherlight.min.js?1641867828"></script>
+    <script src="/js/highlight.pack.js?1641867828"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641865848"></script>
-    <script src="/js/learn.js?1641865848"></script>
-    <script src="/js/hugo-learn.js?1641865848"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641867828"></script>
+    <script src="/js/learn.js?1641867828"></script>
+    <script src="/js/hugo-learn.js?1641867828"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641865848"></script>
+            <script src="/mermaid/mermaid.js?1641867828"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

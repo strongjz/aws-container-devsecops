@@ -12,22 +12,22 @@
     <title>Running Containers Exercise :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641864116" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641864116" rel="stylesheet">
-    <link href="/css/hybrid.css?1641864116" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641864116" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641864116" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641864116" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641864116" rel="stylesheet">
-    <link href="/css/theme.css?1641864116" rel="stylesheet">
-    <link href="/css/tabs.css?1641864116" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641864116" rel="stylesheet">
+    <link href="/css/nucleus.css?1641867828" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641867828" rel="stylesheet">
+    <link href="/css/hybrid.css?1641867828" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641867828" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641867828" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641867828" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641867828" rel="stylesheet">
+    <link href="/css/theme.css?1641867828" rel="stylesheet">
+    <link href="/css/tabs.css?1641867828" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641867828" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641864116" rel="stylesheet">
+    <link href="/css/theme-green.css?1641867828" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641864116"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641867828"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641864116"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641864116"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641867828"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641867828"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641864116"></script>
+<script type="text/javascript" src="/js/search.js?1641867828"></script>
 
     
   </div>
@@ -845,15 +845,27 @@
 
 
 <h2 id="installing-prometheus-to-our-cluster">Installing Prometheus to our cluster</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make helm_update
-helm repo add stable https://charts.helm.sh/stable <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+<p><code>make helm_update</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm repo add stable https://charts.helm.sh/stable <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>helm repo update
 <span style="color:#e6db74">&#34;stable&#34;</span> has been added to your repositories
 Hang tight <span style="color:#66d9ef">while</span> we grab the latest from your chart repositories...
 ...Successfully got an update from the <span style="color:#e6db74">&#34;stable&#34;</span> chart repository
 Update Complete. ⎈Happy Helming!⎈
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ make prom
-helm repo add stable https://charts.helm.sh/stable <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</code></pre></div><p><code>make prom</code>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Expand me...
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm repo add stable https://charts.helm.sh/stable <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>helm repo update
 <span style="color:#e6db74">&#34;stable&#34;</span> already exists with the same configuration, skipping
 Hang tight <span style="color:#66d9ef">while</span> we grab the latest from your chart repositories...
@@ -922,9 +934,26 @@ kubectl --namespace prometheus port-forward $POD_NAME <span style="color:#ae81ff
 
 For more information on running Prometheus, visit:
 https://prometheus.io/
-</code></pre></div><h2 id="deploying-fluentbit-for-our-logs">Deploying Fluentbit for our logs</h2>
+</code></pre></div>
+    </div>
+</div>
+</p>
+<h2 id="deploying-fluentbit-for-our-logs">Deploying Fluentbit for our logs</h2>
 <p>&ldquo;FireLens gives you a simplified interface to filter logs at source, add useful metadata and send logs to almost any destination. You can now stream logs directly to Amazon CloudWatch, Amazon Kinesis Data Firehose destinations such as Amazon Elasticsearch, Amazon S3, Amazon Kinesis Data Streams and partner tools. Using Amazon ECS task definition parameters, you can select destinations and optionally define filters for additional control and FireLens will ingest logs to target destinations.&rdquo;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ make deploy-fluent-bit
+<p><code>make deploy-fluent-bit</code></p>
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Expand me...
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ 
 aws iam create-policy --policy-name EKS-CloudWatchLogs-<span style="color:#e6db74">&#34;devsecops&#34;</span> --policy-document file://./fluent-bit/aws/iam_role_policy.json
 <span style="color:#f92672">{</span>
 <span style="color:#e6db74">&#34;Policy&#34;</span>: <span style="color:#f92672">{</span>
@@ -941,11 +970,15 @@ aws iam create-policy --policy-name EKS-CloudWatchLogs-<span style="color:#e6db7
 <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 aws iam attach-role-policy --role-name ng-1 --policy-arn <span style="color:#e6db74">`</span>aws iam list-policies | jq -r <span style="color:#e6db74">&#39;.[][] | select(.PolicyName == &#34;EKS-CloudWatchLogs-devsecops&#34;) | .Arn&#39;</span><span style="color:#e6db74">`</span>
-</code></pre></div><p>We now have deployed the Fluentbit plugin, we should see logs in our CloudWatch log Groups for our application.</p>
+</code></pre></div>
+    </div>
+</div>
+
+<p>We now have deployed the Fluentbit plugin, we should see logs in our CloudWatch log Groups for our application.</p>
 <p><img src="/images/run/cloudwatch/png" alt=""></p>
 <h2 id="deploy-falco">Deploy Falco</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>main<span style="color:#f92672">)</span> $ make deploy-falco
-helm repo add falcosecurity https://falcosecurity.github.io/charts; <span style="color:#ae81ff">\
+<p><code>make deploy-falco</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm repo add falcosecurity https://falcosecurity.github.io/charts; <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>helm repo update; <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>helm install falco --set falco.jsonOutput<span style="color:#f92672">=</span>true --set image.tag<span style="color:#f92672">=</span>0.24.0 falcosecurity/falco
 <span style="color:#e6db74">&#34;falcosecurity&#34;</span> has been added to your repositories
@@ -977,8 +1010,9 @@ See: https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.ya
 <p><a href="https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/falco/log-events/alerts">https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/falco/log-events/alerts</a></p>
 <p><img src="/images/run/falco-logs.png" alt=""></p>
 <p>Now we can deploy the demo app to raise alerts in Cloud watch</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl apply falco-demo/nodejs-bad-rest-api/falco-demo.yml 
-</code></pre></div><p><img src="/images/run/falco-demo-alert.png" alt=""></p>
+<p><code>kubectl apply falco-demo/nodejs-bad-rest-api/falco-demo.yml</code></p>
+<p>Navigate to CloudWatch Logs</p>
+<p><img src="/images/run/falco-demo-alert.png" alt=""></p>
 
 
 <footer class="footline">
@@ -1457,19 +1491,19 @@ See: https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.ya
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641864116"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641864116"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641864116"></script>
-    <script src="/js/jquery.sticky.js?1641864116"></script>
-    <script src="/js/featherlight.min.js?1641864116"></script>
-    <script src="/js/highlight.pack.js?1641864116"></script>
+    <script src="/js/clipboard.min.js?1641867828"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641867828"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641867828"></script>
+    <script src="/js/jquery.sticky.js?1641867828"></script>
+    <script src="/js/featherlight.min.js?1641867828"></script>
+    <script src="/js/highlight.pack.js?1641867828"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641864116"></script>
-    <script src="/js/learn.js?1641864116"></script>
-    <script src="/js/hugo-learn.js?1641864116"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641867828"></script>
+    <script src="/js/learn.js?1641867828"></script>
+    <script src="/js/hugo-learn.js?1641867828"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641864116"></script>
+            <script src="/mermaid/mermaid.js?1641867828"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

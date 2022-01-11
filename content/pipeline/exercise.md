@@ -3,7 +3,7 @@ title: Container Pipeline Exercise
 weight: 49
 ---
 
-The AWS Resources for pipeline and etc are build using Terraform. 
+The AWS Resources for pipeline, etc are build using Terraform. 
 
 1. Create the State bucket 
 2. Init Terraform
@@ -17,9 +17,9 @@ The AWS Resources for pipeline and etc are build using Terraform.
 make_bucket: devsecops-codemash-2022
 ```
 
-Inside our Terraform Directory in the devsecops repo  
+Inside our Terraform Directory in the devsecops repo `cd ~/environments/devsecopspipeline/`
 
-Update the `devsecopspipeline/terraform/config.tf` with the bucket name to store terraform state 
+Update the `~/environments/devsecopspipeline/terraform/config.tf` with the bucket name to store terraform state 
 
 ```hcl 
 terraform {
@@ -1042,6 +1042,6 @@ Apply complete! Resources: 19 added, 0 changed, 0 destroyed.
 
 Navigate to AWS codepipeline and ensure your Pipeline created properly 
 
-https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines
+https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipeline
 
-
+Don't worry about the failure, were going to fix that in the next Exercise

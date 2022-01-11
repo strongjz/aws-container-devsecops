@@ -5,8 +5,9 @@ weight: 59
 
 ## Installing Prometheus to our cluster 
 
+`make helm_update`
+
 ```bash
-make helm_update
 helm repo add stable https://charts.helm.sh/stable && \
 helm repo update
 "stable" has been added to your repositories
@@ -15,8 +16,9 @@ Hang tight while we grab the latest from your chart repositories...
 Update Complete. ⎈Happy Helming!⎈
 ```
 
+`make prom`
+{{% expand%}}
 ```bash
-~/environment/devsecopspipeline (master) $ make prom
 helm repo add stable https://charts.helm.sh/stable && \
 helm repo update
 "stable" already exists with the same configuration, skipping
@@ -87,14 +89,17 @@ kubectl --namespace prometheus port-forward $POD_NAME 9091
 For more information on running Prometheus, visit:
 https://prometheus.io/
 ```
-
+{{% /expand%}}
 
 ## Deploying Fluentbit for our logs 
 
 "FireLens gives you a simplified interface to filter logs at source, add useful metadata and send logs to almost any destination. You can now stream logs directly to Amazon CloudWatch, Amazon Kinesis Data Firehose destinations such as Amazon Elasticsearch, Amazon S3, Amazon Kinesis Data Streams and partner tools. Using Amazon ECS task definition parameters, you can select destinations and optionally define filters for additional control and FireLens will ingest logs to target destinations."
 
+`make deploy-fluent-bit`
+
+{{% expand%}}
 ```bash
-$ make deploy-fluent-bit
+$ 
 aws iam create-policy --policy-name EKS-CloudWatchLogs-"devsecops" --policy-document file://./fluent-bit/aws/iam_role_policy.json
 {
 "Policy": {
@@ -112,6 +117,7 @@ aws iam create-policy --policy-name EKS-CloudWatchLogs-"devsecops" --policy-docu
 }
 aws iam attach-role-policy --role-name ng-1 --policy-arn `aws iam list-policies | jq -r '.[][] | select(.PolicyName == "EKS-CloudWatchLogs-devsecops") | .Arn'`
 ```
+{{% /expand%}}
 
 We now have deployed the Fluentbit plugin, we should see logs in our CloudWatch log Groups for our application. 
 
@@ -119,8 +125,9 @@ We now have deployed the Fluentbit plugin, we should see logs in our CloudWatch 
 
 ## Deploy Falco 
 
+`make deploy-falco`
+
 ```bash
-~/environment/devsecopspipeline (main) $ make deploy-falco
 helm repo add falcosecurity https://falcosecurity.github.io/charts; \
 helm repo update; \
 helm install falco --set falco.jsonOutput=true --set image.tag=0.24.0 falcosecurity/falco
@@ -157,11 +164,10 @@ https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2
 
 ![](/images/run/falco-logs.png)
 
-
 Now we can deploy the demo app to raise alerts in Cloud watch 
 
-```bash
-kubectl apply falco-demo/nodejs-bad-rest-api/falco-demo.yml 
-```
+`kubectl apply falco-demo/nodejs-bad-rest-api/falco-demo.yml`
+
+Navigate to CloudWatch Logs 
 
 ![](/images/run/falco-demo-alert.png)
