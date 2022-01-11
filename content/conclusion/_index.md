@@ -22,7 +22,7 @@ Security
 - Least Privileged - Docker and Pod Security settings
 - Network Isolation - Network Policies
 - Run Time protection - Falco
-- Signed Commits - Git and PGP 
+- Signed Commits - Git and GPG 
 - Signed Images - Docker Notary and SigStore cosign
 
 

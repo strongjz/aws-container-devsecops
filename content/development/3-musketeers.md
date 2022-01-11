@@ -21,18 +21,25 @@ From https://3musketeers.io/
 
 # Exercise
 
+In this simple exercise were going to use Docker compose, make to start a simple docker echo container. 
+
 {{%attachments title="3M Example" /%}}
 
-```bash
-:~/environment $ cd ~/environment/aws-container-devsecops/content/development/3-musketeers.files/
+`cd ~/environment/aws-container-devsecops/content/development/3-musketeers.files/`
 
-:~/environment $ make echo
+`make echo`
+
+```bash
+$/environment/aws-container-devsecops/content/development/3-musketeers.files (main) $ make echo
 docker-compose run --rm alpine echo 'Hello, World!'
-[+] Running 1/1
- ⠿ Network 3-musketeersfiles_default  Created                                                                                                                                                                                                                                                                      0.4s
-[+] Running 2/2
- ⠿ alpine Pulled                                                                                                                                                                                                                                                                                                   4.7s
-   ⠿ a0d0a0d46f8b Pull complete                                                                                                                                                                                                                                                                                    2.9s
+Creating network "3-musketeersfiles_default" with the default driver
+Pulling alpine (alpine:)...
+latest: Pulling from library/alpine
+59bf1c3509f3: Pull complete
+Digest: sha256:21a3deaa0d32a8057914f36584b5288d2e5ecc984380bc0118285c70fa8c9300
+Status: Downloaded newer image for alpine:latest
+Creating 3-musketeersfiles_alpine_run ... done
 Hello, World!
-:~/environment $
 ```
+
+Make sure this works it will build on our next exercises! 

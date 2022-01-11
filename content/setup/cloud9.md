@@ -41,22 +41,20 @@ Increase the disk size of your instances, this will cause your instance to reboo
 With the docker images and all the other information it would be helpful to have a larger working space.
 
 ```bash
-yum install -y jq
+sudo yum install -y jq
 export AWS_DEFAULT_REGION=$(curl --silent http://169.254.169.254/latest/dynamic/instance-identity/document | jq -r .region)
 export instance_id=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
 export vol_id=$(aws ec2 describe-instances --instance-id $instance_id --query 'Reservations[0].Instances[0].BlockDeviceMappings[0].Ebs.VolumeId' --output text)
 aws ec2 modify-volume --size 100 --volume-id $vol_id
-sudo reboot
 ```
 
-This will force a reboot of your Cloud9 instance
+Now reboot your Cloud9 instance `sudo reboot`
 
 ![cloud9_reboot](/images/setup/cloud9_reboot.png)
 
-Double check it was successful 
+Double check it was successful `df -h`
 
 ```bash
-$ df -h
 Filesystem      Size  Used Avail Use% Mounted on
 devtmpfs        3.8G     0  3.8G   0% /dev
 tmpfs           3.8G     0  3.8G   0% /dev/shm

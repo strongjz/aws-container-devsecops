@@ -3,12 +3,22 @@ title: Container Pipeline Exercise Part 2
 weight: 49
 ---
 
+{{% notice info %}}
+You may need to start docker
+{{% /notice %}}
+
+```bash
+sudo service docker start                                                                                                                                
+Redirecting to /bin/systemctl start docker.service
+```
+
 ## AWS ECR
 
 Let's push our docker image to ECR that was created from Terraform
 
+`make docker_push`
+
 ```bash
-~/environment/devsecopspipeline (master) $ make docker_push
 docker login -u AWS -p redacted https://123456789012.dkr.ecr.us-west-2.amazonaws.com
 WARNING! Using --password via the CLI is insecure. Use --password-stdin.
 WARNING! Your password will be stored unencrypted in /home/ec2-user/.docker/config.json.
@@ -85,7 +95,6 @@ The push refers to repository [123456789012.dkr.ecr.us-west-2.amazonaws.com/gola
 ```
 
 ### ECR scans our images for vulnerabilities
-
 
 `make ecr_scan_findings`
 
@@ -214,6 +223,7 @@ aws ecr describe-image-scan-findings --repository-name golang_example-houston --
 Update your Dockerfile
 
 `FROM golang:1.13-alpine`
+
 to
 
 `FROM scratch`
@@ -238,8 +248,9 @@ docker images
 
 Now scratch container only has the go binary in it
 
+`make ecr_scan_findings`
+
 ```bash
-$ make ecr_scan_findings
 aws ecr describe-image-scan-findings --repository-name golang_example-houston --image-id imageTag=0.1.21
 {
     "imageScanStatus": {

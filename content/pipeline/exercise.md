@@ -3,12 +3,18 @@ title: Container Pipeline Exercise
 weight: 49
 ---
 
+The AWS Resources for pipeline and etc are build using Terraform. 
+
+1. Create the State bucket 
+2. Init Terraform
+3. Plan Terraform 
+4. Apply terraform
 
 ## First Create the state file s3 bucket 
 
 ```bash
-aws s3 mb s3://devsecops-james-strong --region us-west-2
-make_bucket: devsecops-james-strong
+ aws s3 mb s3://devsecops-codemash-2022 --region us-west-2
+make_bucket: devsecops-codemash-2022
 ```
 
 Inside our Terraform Directory in the devsecops repo  
@@ -18,8 +24,8 @@ Update the `devsecopspipeline/terraform/config.tf` with the bucket name to store
 ```hcl 
 terraform {
     backend "s3" {
-        bucket = "devsecops-james-strong"
-        key    = "devsecops-james-strong/terraform_state"
+        bucket = "devsecops-codemash-2022"
+        key    = "devsecops-codemash-2022/terraform_state"
         region = "us-west-2"
     }
 }
@@ -27,9 +33,13 @@ terraform {
 
 ## Initialize the Terraform 
 
+`cd ~/environment/devsecopspipeline/`
+
+Use make to Initialize
+`make tf_clean tf_init`
+
+{{% expand%}}
 ```bash
-cd devsecopspipeline/
-make tf_clean tf_init
 cd terraform/ && \
 rm -rf .terraform \
 rm -rf plan.out
@@ -60,17 +70,18 @@ If you ever set or change modules or backend configuration for Terraform,
 rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
 ```
+{{% /expand%}}
 
 ## Terraform Plan  
 Terraform Plan 
-```bash
- make tf_plan
-cd terraform/ && \
-terraform plan -out=plan.out
-```
+
+`make tf_plan`
 
 {{%expand "Expand here is what it looks like in its entirety" %}}
 ```bash
+
+cd terraform/ && \
+terraform plan -out=plan.out
 aws_iam_policy.allow-eks-asg: Refreshing state... [id=arn:aws:iam::123456789012:policy/eks-devsecops-allow-eks-asg]
 aws_s3_bucket.codepipeline_bucket: Refreshing state... [id=houston-devsecops-code]
 aws_ecr_repository.golang_example: Refreshing state... [id=golang_example-houston]
@@ -309,17 +320,17 @@ Your configuration already matches the changes detected above. If you'd like to 
 {{% /expand%}}
 
 ## Terraform Apply
-```bash
-~/environment/devsecopspipeline (master) $ make tf_apply
-cd terraform/ && \
-terraform apply -auto-approve
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
-+ create
-```
+```+ create```
+
+`make tf_apply`
 
 {{%expand "Expand here is what it looks like in its entirety" %}}
 ```bash
+cd terraform/ && \
+terraform apply -auto-approve
+
 Terraform will perform the following actions:
 
 # aws_cloudwatch_log_group.codebuild will be created
@@ -1029,11 +1040,8 @@ Apply complete! Resources: 19 added, 0 changed, 0 destroyed.
 ```
 {{% /expand%}}
 
-{{% notice info %}}
-You may need to start docker
-{{% /notice %}}
+Navigate to AWS codepipeline and ensure your Pipeline created properly 
 
-```bash 
-sudo service docker start                                                                                                                                
-Redirecting to /bin/systemctl start docker.service
-``
+https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines
+
+

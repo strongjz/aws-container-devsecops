@@ -12,22 +12,22 @@
     <title>Container Pipeline Exercise Part 2 :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641854390" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641854390" rel="stylesheet">
-    <link href="/css/hybrid.css?1641854390" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641854390" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641854390" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641854390" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641854390" rel="stylesheet">
-    <link href="/css/theme.css?1641854390" rel="stylesheet">
-    <link href="/css/tabs.css?1641854390" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641854390" rel="stylesheet">
+    <link href="/css/nucleus.css?1641865848" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641865848" rel="stylesheet">
+    <link href="/css/hybrid.css?1641865848" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641865848" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641865848" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641865848" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641865848" rel="stylesheet">
+    <link href="/css/theme.css?1641865848" rel="stylesheet">
+    <link href="/css/tabs.css?1641865848" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641865848" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641854390" rel="stylesheet">
+    <link href="/css/theme-green.css?1641865848" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641854390"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641865848"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641854390"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641854390"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641865848"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641865848"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641854390"></script>
+<script type="text/javascript" src="/js/search.js?1641865848"></script>
 
     
   </div>
@@ -848,10 +848,16 @@
         
 
 
-<h2 id="aws-ecr">AWS ECR</h2>
+
+<div class="notices info" ><p>You may need to start docker</p>
+</div>
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo service docker start                                                                                                                                
+Redirecting to /bin/systemctl start docker.service
+</code></pre></div><h2 id="aws-ecr">AWS ECR</h2>
 <p>Let&rsquo;s push our docker image to ECR that was created from Terraform</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ make docker_push
-docker login -u AWS -p redacted https://123456789012.dkr.ecr.us-west-2.amazonaws.com
+<p><code>make docker_push</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker login -u AWS -p redacted https://123456789012.dkr.ecr.us-west-2.amazonaws.com
 WARNING! Using --password via the CLI is insecure. Use --password-stdin.
 WARNING! Your password will be stored unencrypted in /home/ec2-user/.docker/config.json.
 Configure a credential helper to remove this warning. See
@@ -1044,8 +1050,8 @@ The push refers to repository <span style="color:#f92672">[</span>123456789012.d
 </code></pre></div><p><img src="/images/pipeline/ecr-scan.png" alt=""></p>
 <h3 id="lets-reduce-our-image-size">Let&rsquo;s reduce our image size</h3>
 <p>Update your Dockerfile</p>
-<p><code>FROM golang:1.13-alpine</code>
-to</p>
+<p><code>FROM golang:1.13-alpine</code></p>
+<p>to</p>
 <p><code>FROM scratch</code></p>
 <p>you should get an error</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tag invalid: The image tag <span style="color:#e6db74">&#39;0.1.20&#39;</span> already exists in the <span style="color:#e6db74">&#39;golang_example-houston&#39;</span> repository and cannot be overwritten because the repository is immutable.
@@ -1057,8 +1063,8 @@ make: *** <span style="color:#f92672">[</span>docker_push<span style="color:#f92
 123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-houston   0.1.21        e199bbd29e43   <span style="color:#ae81ff">3</span> minutes ago    16.1MB
 123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-houston   0.1.20        20b885db4549   <span style="color:#ae81ff">12</span> minutes ago   376MB
 </code></pre></div><p>Now scratch container only has the go binary in it</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ make ecr_scan_findings
-aws ecr describe-image-scan-findings --repository-name golang_example-houston --image-id imageTag<span style="color:#f92672">=</span>0.1.21
+<p><code>make ecr_scan_findings</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws ecr describe-image-scan-findings --repository-name golang_example-houston --image-id imageTag<span style="color:#f92672">=</span>0.1.21
 <span style="color:#f92672">{</span>
     <span style="color:#e6db74">&#34;imageScanStatus&#34;</span>: <span style="color:#f92672">{</span>
         <span style="color:#e6db74">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;FAILED&#34;</span>, 
@@ -1588,19 +1594,19 @@ clusterip-service   LoadBalancer   10.100.254.156   a9d40a7cc91b447e7a7830a6aa4a
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641854390"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641854390"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641854390"></script>
-    <script src="/js/jquery.sticky.js?1641854390"></script>
-    <script src="/js/featherlight.min.js?1641854390"></script>
-    <script src="/js/highlight.pack.js?1641854390"></script>
+    <script src="/js/clipboard.min.js?1641865848"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641865848"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641865848"></script>
+    <script src="/js/jquery.sticky.js?1641865848"></script>
+    <script src="/js/featherlight.min.js?1641865848"></script>
+    <script src="/js/highlight.pack.js?1641865848"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641854390"></script>
-    <script src="/js/learn.js?1641854390"></script>
-    <script src="/js/hugo-learn.js?1641854390"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641865848"></script>
+    <script src="/js/learn.js?1641865848"></script>
+    <script src="/js/hugo-learn.js?1641865848"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641854390"></script>
+            <script src="/mermaid/mermaid.js?1641865848"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

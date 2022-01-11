@@ -29,7 +29,7 @@ Navigate to where you downloaded the installation script from the git repo.
 
 `cd ~/environment/aws-container-devsecops/content/setup/tools.files/`
 
-Start the install with this command `sudo bash ./tools-install.sh`
+Start the installation with this command `sudo bash ./tools-install.sh`
 
 {{%expand "Expand here is what it looks like in its entirety" %}}
 ```bash
@@ -296,7 +296,7 @@ INSTALLING helm
 ```
 {{% /expand%}}
 
-Now since EKS takes about 20 mins to create a cluster we need to start that now so it's ready when we need it. 
+Now since EKS takes about 20 minutes to create a cluster we need to start that now so it's ready when we need it. 
 
 ### Kubernetes Cluster Creation
 
