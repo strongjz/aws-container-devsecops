@@ -12,10 +12,15 @@ The AWS Resources for pipeline, etc are build using Terraform.
 
 ## First Create the state file s3 bucket 
 
+`aws s3 mb s3://devsecops-codemash-2022 --region us-west-2`
+
 ```bash
- aws s3 mb s3://devsecops-codemash-2022 --region us-west-2
 make_bucket: devsecops-codemash-2022
 ```
+
+{{% notice warning %}}
+Ensure the s3 bucket is updates and is unique. 
+{{% /notice %}}
 
 Inside our Terraform Directory in the devsecops repo `cd ~/environments/devsecopspipeline/`
 

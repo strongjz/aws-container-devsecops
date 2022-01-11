@@ -24,7 +24,8 @@
       <guid>//localhost:1313/build/exercise/</guid>
       <description>In this Exercise we are going to
  Run Application locally Run in Docker compose Go Reporter for static Analysis Go Sec for code cve scanning Secure Dockerfile  You may need to start docker
- sudo service docker start Redirecting to /bin/systemctl start docker.service Navigate to DevSecops repo cd ~/environment/devsecopspipeline
+ sudo service docker start
+Redirecting to /bin/systemctl start docker.service Navigate to DevSecops repo cd ~/environment/devsecopspipeline
 Set a temp password for the local database
 export DB_PASSWORD=temppassword
 1. Run locally make run

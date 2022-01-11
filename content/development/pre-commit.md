@@ -58,9 +58,7 @@ repos:
 
 ## Test
 
-```bash
-cd ~/environment/aws-container-devsecops/content/development.files
-```
+`cd ~/environment/aws-container-devsecops/content/development/development.files''
 
 Using the pre-commit hook cli we can run the checks and see that the commit would fail. `pre-commit run --all-files`
 

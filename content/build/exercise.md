@@ -15,8 +15,9 @@ In this Exercise we are going to
 You may need to start docker
 {{% /notice %}}
 
+`sudo service docker start`
+
 ```bash
-sudo service docker start                                                                                                                                
 Redirecting to /bin/systemctl start docker.service
 ```
 

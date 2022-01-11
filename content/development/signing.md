@@ -9,12 +9,12 @@ Needed:
 * GitHub Account
 
 # Generating a GPG Key
-1. Generate a key with gpg ```gpg --gen-key```
-3. Select what key you want to use
-4. Select what elliptic curve you want
-5. Fill out your name and your email address. Make sure this matches the one in your GitHub account.
-6. Add a comment if you want to remind you what the key is for.
-7. You may be prompted for a passphrase to add to the key for extra security
+1. Generate a key with gpg ```gpg --passphase '' '--gen-key```
+2. Select what key you want to use
+3. Fill out your name and your email address. Make sure this matches the one in your GitHub account.
+4. Add a comment if you want to remind you what the key is for.
+5. You may be prompted for a passphrase to add to the key for extra security, for this example hit enter 3 times
+
 
 Here is what the prompts will look like.
 {{%expand "Expand here is what it looks like in its entirety" %}}
