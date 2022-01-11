@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/container-green.png" type="image/x-icon" />
 
-    <title>Running Containers Exercise :: AWS Container DevSecOps</title>
+    <title>Survey :: AWS Container DevSecOps</title>
 
     
     <link href="/css/nucleus.css?1641868077" rel="stylesheet">
@@ -38,7 +38,7 @@
     
 
   </head>
-  <body class="" data-url="/run/exercise/">
+  <body class="" data-url="/conclusion/survey/">
     <nav id="sidebar" class="">
 
 
@@ -598,7 +598,7 @@
   
     
     <li data-nav-id="/run/" title="Running Containers" class="dd-item
-        parent
+        
         
         
         ">
@@ -624,7 +624,7 @@
  
   
     
-      <li data-nav-id="/run/exercise/" title="Running Containers Exercise" class="dd-item active">
+      <li data-nav-id="/run/exercise/" title="Running Containers Exercise" class="dd-item ">
         <a href="/run/exercise/">
         Running Containers Exercise
         
@@ -653,7 +653,7 @@
   
     
     <li data-nav-id="/conclusion/" title="Conclusion" class="dd-item
-        
+        parent
         
         
         ">
@@ -679,7 +679,7 @@
  
   
     
-      <li data-nav-id="/conclusion/survey/" title="Survey" class="dd-item ">
+      <li data-nav-id="/conclusion/survey/" title="Survey" class="dd-item active">
         <a href="/conclusion/survey/">
         Survey
         
@@ -767,7 +767,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/strongjz/aws-container-devsecopsrun/exercise.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/strongjz/aws-container-devsecopsconclusion/survey.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -798,7 +798,7 @@
             
           
           
-            <a href='/'>AWS DevSecOps Container Pipeline</a> > <a href='/run/'>Running Containers</a> > Running Containers Exercise
+            <a href='/'>AWS DevSecOps Container Pipeline</a> > <a href='/conclusion/'>Conclusion</a> > Survey
           
         
           
@@ -811,13 +811,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#installing-prometheus-to-our-cluster">Installing Prometheus to our cluster</a></li>
-    <li><a href="#deploying-fluentbit-for-our-logs">Deploying Fluentbit for our logs</a></li>
-    <li><a href="#deploy-falco">Deploy Falco</a></li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -834,182 +828,15 @@
           
             <h1>
               
-              Running Containers Exercise
+              Survey
             </h1>
           
 
         
 
 
-<h2 id="installing-prometheus-to-our-cluster">Installing Prometheus to our cluster</h2>
-<p><code>make helm_update</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm repo add stable https://charts.helm.sh/stable <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>helm repo update
-<span style="color:#e6db74">&#34;stable&#34;</span> has been added to your repositories
-Hang tight <span style="color:#66d9ef">while</span> we grab the latest from your chart repositories...
-...Successfully got an update from the <span style="color:#e6db74">&#34;stable&#34;</span> chart repository
-Update Complete. ⎈Happy Helming!⎈
-</code></pre></div><p><code>make prom</code>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Expand me...
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm repo add stable https://charts.helm.sh/stable <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>helm repo update
-<span style="color:#e6db74">&#34;stable&#34;</span> already exists with the same configuration, skipping
-Hang tight <span style="color:#66d9ef">while</span> we grab the latest from your chart repositories...
-...Successfully got an update from the <span style="color:#e6db74">&#34;stable&#34;</span> chart repository
-Update Complete. ⎈Happy Helming!⎈
-kubectl apply -f namespace_prometheus.yml <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>helm install prometheus stable/prometheus <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--namespace prometheus <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--set alertmanager.persistentVolume.storageClass<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gp2&#34;</span>,server.persistentVolume.storageClass<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gp2&#34;</span>
-namespace/prometheus created
-WARNING: This chart is deprecated
-W0911 22:48:05.645050   <span style="color:#ae81ff">16010</span> warnings.go:70<span style="color:#f92672">]</span> rbac.authorization.k8s.io/v1beta1 ClusterRole is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRole
-W0911 22:48:05.656705   <span style="color:#ae81ff">16010</span> warnings.go:70<span style="color:#f92672">]</span> rbac.authorization.k8s.io/v1beta1 ClusterRole is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRole
-W0911 22:48:05.667391   <span style="color:#ae81ff">16010</span> warnings.go:70<span style="color:#f92672">]</span> rbac.authorization.k8s.io/v1beta1 ClusterRole is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRole
-W0911 22:48:05.679784   <span style="color:#ae81ff">16010</span> warnings.go:70<span style="color:#f92672">]</span> rbac.authorization.k8s.io/v1beta1 ClusterRole is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRole
-W0911 22:48:05.691168   <span style="color:#ae81ff">16010</span> warnings.go:70<span style="color:#f92672">]</span> rbac.authorization.k8s.io/v1beta1 ClusterRoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRoleBinding
-W0911 22:48:05.703088   <span style="color:#ae81ff">16010</span> warnings.go:70<span style="color:#f92672">]</span> rbac.authorization.k8s.io/v1beta1 ClusterRoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRoleBinding
-W0911 22:48:05.716013   <span style="color:#ae81ff">16010</span> warnings.go:70<span style="color:#f92672">]</span> rbac.authorization.k8s.io/v1beta1 ClusterRoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRoleBinding
-W0911 22:48:05.733060   <span style="color:#ae81ff">16010</span> warnings.go:70<span style="color:#f92672">]</span> rbac.authorization.k8s.io/v1beta1 ClusterRoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRoleBinding
-W0911 22:48:05.962690   <span style="color:#ae81ff">16010</span> warnings.go:70<span style="color:#f92672">]</span> rbac.authorization.k8s.io/v1beta1 ClusterRole is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRole
-W0911 22:48:05.965226   <span style="color:#ae81ff">16010</span> warnings.go:70<span style="color:#f92672">]</span> rbac.authorization.k8s.io/v1beta1 ClusterRole is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRole
-W0911 22:48:05.968345   <span style="color:#ae81ff">16010</span> warnings.go:70<span style="color:#f92672">]</span> rbac.authorization.k8s.io/v1beta1 ClusterRole is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRole
-W0911 22:48:05.968824   <span style="color:#ae81ff">16010</span> warnings.go:70<span style="color:#f92672">]</span> rbac.authorization.k8s.io/v1beta1 ClusterRole is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRole
-W0911 22:48:05.978633   <span style="color:#ae81ff">16010</span> warnings.go:70<span style="color:#f92672">]</span> rbac.authorization.k8s.io/v1beta1 ClusterRoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRoleBinding
-W0911 22:48:05.979460   <span style="color:#ae81ff">16010</span> warnings.go:70<span style="color:#f92672">]</span> rbac.authorization.k8s.io/v1beta1 ClusterRoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRoleBinding
-W0911 22:48:05.979460   <span style="color:#ae81ff">16010</span> warnings.go:70<span style="color:#f92672">]</span> rbac.authorization.k8s.io/v1beta1 ClusterRoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRoleBinding
-W0911 22:48:05.980533   <span style="color:#ae81ff">16010</span> warnings.go:70<span style="color:#f92672">]</span> rbac.authorization.k8s.io/v1beta1 ClusterRoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRoleBinding
-NAME: prometheus
-LAST DEPLOYED: Sat Sep <span style="color:#ae81ff">11</span> 22:48:05 <span style="color:#ae81ff">2021</span>
-NAMESPACE: prometheus
-STATUS: deployed
-REVISION: <span style="color:#ae81ff">1</span>
-TEST SUITE: None
-NOTES:
-DEPRECATED and moved to &lt;https://github.com/prometheus-community/helm-charts&gt;The Prometheus server can be accessed via port <span style="color:#ae81ff">80</span> on the following DNS name from within your cluster:
-prometheus-server.prometheus.svc.cluster.local
-
-
-Get the Prometheus server URL by running these commands in the same shell:
-export POD_NAME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get pods --namespace prometheus -l <span style="color:#e6db74">&#34;app=prometheus,component=server&#34;</span> -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{.items[0].metadata.name}&#34;</span><span style="color:#66d9ef">)</span>
-kubectl --namespace prometheus port-forward $POD_NAME <span style="color:#ae81ff">9090</span>
-
-
-The Prometheus alertmanager can be accessed via port <span style="color:#ae81ff">80</span> on the following DNS name from within your cluster:
-prometheus-alertmanager.prometheus.svc.cluster.local
-
-
-Get the Alertmanager URL by running these commands in the same shell:
-export POD_NAME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get pods --namespace prometheus -l <span style="color:#e6db74">&#34;app=prometheus,component=alertmanager&#34;</span> -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{.items[0].metadata.name}&#34;</span><span style="color:#66d9ef">)</span>
-kubectl --namespace prometheus port-forward $POD_NAME <span style="color:#ae81ff">9093</span>
-<span style="color:#75715e">#################################################################################</span>
-<span style="color:#75715e">######   WARNING: Pod Security Policy has been moved to a global property.  #####</span>
-<span style="color:#75715e">######            use .Values.podSecurityPolicy.enabled with pod-based      #####</span>
-<span style="color:#75715e">######            annotations                                               #####</span>
-<span style="color:#75715e">######            (e.g. .Values.nodeExporter.podSecurityPolicy.annotations) #####</span>
-<span style="color:#75715e">#################################################################################</span>
-
-
-The Prometheus PushGateway can be accessed via port <span style="color:#ae81ff">9091</span> on the following DNS name from within your cluster:
-prometheus-pushgateway.prometheus.svc.cluster.local
-
-
-Get the PushGateway URL by running these commands in the same shell:
-export POD_NAME<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get pods --namespace prometheus -l <span style="color:#e6db74">&#34;app=prometheus,component=pushgateway&#34;</span> -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{.items[0].metadata.name}&#34;</span><span style="color:#66d9ef">)</span>
-kubectl --namespace prometheus port-forward $POD_NAME <span style="color:#ae81ff">9091</span>
-
-For more information on running Prometheus, visit:
-https://prometheus.io/
-</code></pre></div>
-    </div>
-</div>
-</p>
-<h2 id="deploying-fluentbit-for-our-logs">Deploying Fluentbit for our logs</h2>
-<p>&ldquo;FireLens gives you a simplified interface to filter logs at source, add useful metadata and send logs to almost any destination. You can now stream logs directly to Amazon CloudWatch, Amazon Kinesis Data Firehose destinations such as Amazon Elasticsearch, Amazon S3, Amazon Kinesis Data Streams and partner tools. Using Amazon ECS task definition parameters, you can select destinations and optionally define filters for additional control and FireLens will ingest logs to target destinations.&rdquo;</p>
-<p><code>make deploy-fluent-bit</code></p>
-
-<div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-    	
-    	Expand me...
-    	
-    	</span>
-    </div>
-    <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ 
-aws iam create-policy --policy-name EKS-CloudWatchLogs-<span style="color:#e6db74">&#34;devsecops&#34;</span> --policy-document file://./fluent-bit/aws/iam_role_policy.json
-<span style="color:#f92672">{</span>
-<span style="color:#e6db74">&#34;Policy&#34;</span>: <span style="color:#f92672">{</span>
-<span style="color:#e6db74">&#34;PolicyName&#34;</span>: <span style="color:#e6db74">&#34;EKS-CloudWatchLogs-devsecops&#34;</span>,
-<span style="color:#e6db74">&#34;PermissionsBoundaryUsageCount&#34;</span>: 0,
-<span style="color:#e6db74">&#34;CreateDate&#34;</span>: <span style="color:#e6db74">&#34;2021-09-11T22:48:53Z&#34;</span>,
-<span style="color:#e6db74">&#34;AttachmentCount&#34;</span>: 0,
-<span style="color:#e6db74">&#34;IsAttachable&#34;</span>: true,
-<span style="color:#e6db74">&#34;PolicyId&#34;</span>: <span style="color:#e6db74">&#34;ANPAUKKITVMH4UNGDATVQ&#34;</span>,
-<span style="color:#e6db74">&#34;DefaultVersionId&#34;</span>: <span style="color:#e6db74">&#34;v1&#34;</span>,
-<span style="color:#e6db74">&#34;Path&#34;</span>: <span style="color:#e6db74">&#34;/&#34;</span>,
-<span style="color:#e6db74">&#34;Arn&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:iam::297041898255:policy/EKS-CloudWatchLogs-devsecops&#34;</span>,
-<span style="color:#e6db74">&#34;UpdateDate&#34;</span>: <span style="color:#e6db74">&#34;2021-09-11T22:48:53Z&#34;</span>
-<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-aws iam attach-role-policy --role-name ng-1 --policy-arn <span style="color:#e6db74">`</span>aws iam list-policies | jq -r <span style="color:#e6db74">&#39;.[][] | select(.PolicyName == &#34;EKS-CloudWatchLogs-devsecops&#34;) | .Arn&#39;</span><span style="color:#e6db74">`</span>
-</code></pre></div>
-    </div>
-</div>
-
-<p>We now have deployed the Fluentbit plugin, we should see logs in our CloudWatch log Groups for our application.</p>
-<p><img src="/images/run/cloudwatch/png" alt=""></p>
-<h2 id="deploy-falco">Deploy Falco</h2>
-<p><code>make deploy-falco</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm repo add falcosecurity https://falcosecurity.github.io/charts; <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>helm repo update; <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>helm install falco --set falco.jsonOutput<span style="color:#f92672">=</span>true --set image.tag<span style="color:#f92672">=</span>0.24.0 falcosecurity/falco
-<span style="color:#e6db74">&#34;falcosecurity&#34;</span> has been added to your repositories
-Hang tight <span style="color:#66d9ef">while</span> we grab the latest from your chart repositories...
-...Successfully got an update from the <span style="color:#e6db74">&#34;falcosecurity&#34;</span> chart repository
-...Successfully got an update from the <span style="color:#e6db74">&#34;stable&#34;</span> chart repository
-Update Complete. ⎈Happy Helming!⎈
-NAME: falco
-LAST DEPLOYED: Tue Sep <span style="color:#ae81ff">21</span> 19:02:22 <span style="color:#ae81ff">2021</span>
-NAMESPACE: default
-STATUS: deployed
-REVISION: <span style="color:#ae81ff">1</span>
-TEST SUITE: None
-NOTES:
-Falco agents are spinning up on each node in your cluster. After a few
-seconds, they are going to start monitoring your containers looking <span style="color:#66d9ef">for</span>
-security issues.
-
-
-No further action should be required.
-
-
-Tip: 
-You can easily forward Falco events to Slack, Kafka, AWS Lambda and more with falcosidekick. 
-Full list of outputs: https://github.com/falcosecurity/charts/falcosidekick.
-You can enable its deployment with <span style="color:#e6db74">`</span>--set falcosidekick.enabled<span style="color:#f92672">=</span>true<span style="color:#e6db74">`</span> or in your values.yaml. 
-See: https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.yaml <span style="color:#66d9ef">for</span> configuration values.
-</code></pre></div><p>You can see in Cloud Watch Falco Logs</p>
-<p><a href="https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/falco/log-events/alerts">https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/falco/log-events/alerts</a></p>
-<p><img src="/images/run/falco-logs.png" alt=""></p>
-<p>Now we can deploy the demo app to raise alerts in Cloud watch</p>
-<p><code>kubectl apply falco-demo/nodejs-bad-rest-api/falco-demo.yml</code></p>
-<p>Navigate to CloudWatch Logs</p>
-<p><img src="/images/run/falco-demo-alert.png" alt=""></p>
+<p>For a chance to win a copy of &ldquo;Networking and Kubernetes: A Layered Approach&rdquo; and to help improve this workshop please fill out this survey</p>
+<p><img src="/images/codemash-cg-survey.png" alt=""></p>
 
 
 <footer class="footline">
@@ -1386,6 +1213,38 @@ See: https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.ya
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -1412,9 +1271,6 @@ See: https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.ya
             
         
                     
-            
-        
-                    
                         
             
             
@@ -1422,35 +1278,6 @@ See: https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.ya
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1475,10 +1302,10 @@ See: https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.ya
 	 
 	 
 		
-			<a class="nav nav-prev" href="/run/" title="Running Containers"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/conclusion/" title="Conclusion"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/conclusion/" title="Conclusion" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/conclusion/clean/" title="Cleanup" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

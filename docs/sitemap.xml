@@ -59,9 +59,9 @@
   </url><url>
     <loc>//localhost:1313/conclusion/</loc>
   </url><url>
-    <loc>//localhost:1313/conclusion/clean/</loc>
+    <loc>//localhost:1313/conclusion/survey/</loc>
   </url><url>
-    <loc>//localhost:1313/survey/</loc>
+    <loc>//localhost:1313/conclusion/clean/</loc>
   </url><url>
     <loc>//localhost:1313/categories/</loc>
   </url><url>

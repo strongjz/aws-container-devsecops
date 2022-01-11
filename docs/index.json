@@ -4,7 +4,7 @@
 	"title": "AWS DevSecOps Container Pipeline",
 	"tags": [],
 	"description": "",
-	"content": "AWS DevSecOps Container Pipeline Welcome to AWS DevSecOps Container Pipeline workshop. In this workshop Engineers will learn how to secure their container pipeline using AWS and other Cloud Native tools. This will be part Lecture and part hands on.\nWe will be working through the following topics.\n Introduction   Workshop Setup   Development Environment   Container Builds   Container Pipeline   Running Containers   Conclusion   Survey   "
+	"content": "AWS DevSecOps Container Pipeline Welcome to AWS DevSecOps Container Pipeline workshop. In this workshop Engineers will learn how to secure their container pipeline using AWS and other Cloud Native tools. This will be part Lecture and part hands on.\nWe will be working through the following topics.\n Introduction   Workshop Setup   Development Environment   Container Builds   Container Pipeline   Running Containers   Conclusion   "
 },
 {
 	"uri": "//localhost:1313/intro/",
@@ -172,7 +172,14 @@
 	"title": "Conclusion",
 	"tags": [],
 	"description": "",
-	"content": "CI/CD\n Maintain a code repository - AWS CodeCommit Automate the build - AWS CodePipeline Keep the build fast Make the build self-testing - AWS CodeBuild Commit early, commit often Every commit to the mainline gets built Everyone can see the results of the build Automate the deployment - AWS CodeBuild  Security\n Immutable artifacts - AWS ECR Static Code Analysis - GoSec or other related tools CVE Scanning - AWS ECR Least Privileged - Docker and Pod Security settings Network Isolation - Network Policies Run Time protection - Falco Signed Commits - Git and GPG Signed Images - Docker Notary and SigStore cosign  Additional AWS Resources\nPracticing CI/CD on AWS Whitepaper\nAWS Macie - ML Security\nAWS Security Hub\nAdditional Container Workshops\nhttps://containersonaws.com/\nhttps://www.eksworkshop.com/010_introduction/\nhttps://containersfromthecouch.com/\n"
+	"content": "CI/CD  Maintain a code repository - AWS CodeCommit Automate the build - AWS CodePipeline Keep the build fast Make the build self-testing - AWS CodeBuild Commit early, commit often Every commit to the mainline gets built Everyone can see the results of the build Automate the deployment - AWS CodeBuild  Security  Immutable artifacts - AWS ECR Static Code Analysis - GoSec or other related tools CVE Scanning - AWS ECR Least Privileged - Docker and Pod Security settings Network Isolation - Network Policies Run Time protection - Falco Signed Commits - Git and GPG Signed Images - Docker Notary and SigStore cosign  Additional AWS Resources Practicing CI/CD on AWS Whitepaper\nAWS Macie - ML Security\nAWS Security Hub\nAdditional Container Workshops\nhttps://containersonaws.com/\nhttps://www.eksworkshop.com/010_introduction/\nhttps://containersfromthecouch.com/\n"
+},
+{
+	"uri": "//localhost:1313/conclusion/survey/",
+	"title": "Survey",
+	"tags": [],
+	"description": "",
+	"content": "For a chance to win a copy of \u0026ldquo;Networking and Kubernetes: A Layered Approach\u0026rdquo; and to help improve this workshop please fill out this survey\n"
 },
 {
 	"uri": "//localhost:1313/conclusion/clean/",
@@ -180,13 +187,6 @@
 	"tags": [],
 	"description": "",
 	"content": "AWS Code resources Delete the Codebuild, Code commit and pipeline\nmake tf_delete Cluster Delete the EKS Cluster\nmake clean_cluster Make sure to delete any other resources created\nLoad Balancers Verify there are no Load balancers running, ALB or otherwise\naws elbv2 describe-load-balancers --query \u0026#34;LoadBalancers[].LoadBalancerArn\u0026#34; aws elb describe-load-balancers --query \u0026#34;LoadBalancerDescriptions[].DNSName\u0026#34; PVC and EBS volumes Verify there are no left over EBS volumes from the PVC\u0026rsquo;s for test application\naws ec2 describe-volumes --filters Name=tag:kubernetes.io/created-for/pv/name,Values=* --query \u0026#34;Volumes[].{ID:VolumeId}\u0026#34; "
-},
-{
-	"uri": "//localhost:1313/survey/",
-	"title": "Survey",
-	"tags": [],
-	"description": "",
-	"content": "For a chance to win a copy of \u0026ldquo;Networking and Kubernetes: A Layered Approach\u0026rdquo; and to help improve this workshop please fill out this survey\n"
 },
 {
 	"uri": "//localhost:1313/categories/",

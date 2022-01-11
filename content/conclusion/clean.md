@@ -1,6 +1,6 @@
 ---
 title: Cleanup
-weight: 61
+weight: 65
 ---
 
 ## AWS Code resources 

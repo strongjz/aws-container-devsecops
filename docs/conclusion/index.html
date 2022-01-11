@@ -12,22 +12,22 @@
     <title>Conclusion :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641864116" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641864116" rel="stylesheet">
-    <link href="/css/hybrid.css?1641864116" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641864116" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641864116" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641864116" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641864116" rel="stylesheet">
-    <link href="/css/theme.css?1641864116" rel="stylesheet">
-    <link href="/css/tabs.css?1641864116" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641864116" rel="stylesheet">
+    <link href="/css/nucleus.css?1641868077" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641868077" rel="stylesheet">
+    <link href="/css/hybrid.css?1641868077" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641868077" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641868077" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641868077" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641868077" rel="stylesheet">
+    <link href="/css/theme.css?1641868077" rel="stylesheet">
+    <link href="/css/tabs.css?1641868077" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641868077" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641864116" rel="stylesheet">
+    <link href="/css/theme-green.css?1641868077" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641864116"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641868077"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641864116"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641864116"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641868077"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641868077"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641864116"></script>
+<script type="text/javascript" src="/js/search.js?1641868077"></script>
 
     
   </div>
@@ -679,6 +679,27 @@
  
   
     
+      <li data-nav-id="/conclusion/survey/" title="Survey" class="dd-item ">
+        <a href="/conclusion/survey/">
+        Survey
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/conclusion/clean/" title="Cleanup" class="dd-item ">
         <a href="/conclusion/clean/">
         Cleanup
@@ -693,30 +714,6 @@
           
         
         </ul>
-      
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/survey/" title="Survey" class="dd-item
-        
-        
-        
-        ">
-      <a href="/survey/">
-          Survey
-          
-      </a>
-      
       
     </li>
   
@@ -808,7 +805,13 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#cicd">CI/CD</a></li>
+    <li><a href="#security">Security</a></li>
+    <li><a href="#additional-aws-resources">Additional AWS Resources</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -833,7 +836,7 @@
 
 
 
-	<p>CI/CD</p>
+	<h2 id="cicd">CI/CD</h2>
 <ul>
 <li>Maintain a code repository - AWS CodeCommit</li>
 <li>Automate the build - AWS CodePipeline</li>
@@ -844,7 +847,7 @@
 <li>Everyone can see the results of the build</li>
 <li>Automate the deployment - AWS CodeBuild</li>
 </ul>
-<p>Security</p>
+<h2 id="security">Security</h2>
 <ul>
 <li>Immutable artifacts - AWS ECR</li>
 <li>Static Code Analysis - GoSec or other related tools</li>
@@ -855,7 +858,7 @@
 <li>Signed Commits - Git and GPG</li>
 <li>Signed Images - Docker Notary and SigStore cosign</li>
 </ul>
-<p>Additional AWS Resources</p>
+<h2 id="additional-aws-resources">Additional AWS Resources</h2>
 <p><a href="https://d0.awsstatic.com/whitepapers/DevOps/practicing-continuous-integration-continuous-delivery-on-AWS.pdf">Practicing CI/CD on AWS Whitepaper</a></p>
 <p><a href="https://aws.amazon.com/macie/">AWS Macie - ML Security</a></p>
 <p><a href="https://aws.amazon.com/security-hub/">AWS Security Hub</a></p>
@@ -1302,9 +1305,6 @@
             
         
                     
-            
-        
-                    
                         
             
             
@@ -1323,6 +1323,9 @@
                     
             
         
+                    
+            
+        
 
         
 
@@ -1333,7 +1336,7 @@
 			<a class="nav nav-prev" href="/run/exercise/" title="Running Containers Exercise"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/conclusion/clean/" title="Cleanup" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/conclusion/survey/" title="Survey" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1343,19 +1346,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641864116"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641864116"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641864116"></script>
-    <script src="/js/jquery.sticky.js?1641864116"></script>
-    <script src="/js/featherlight.min.js?1641864116"></script>
-    <script src="/js/highlight.pack.js?1641864116"></script>
+    <script src="/js/clipboard.min.js?1641868077"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641868077"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641868077"></script>
+    <script src="/js/jquery.sticky.js?1641868077"></script>
+    <script src="/js/featherlight.min.js?1641868077"></script>
+    <script src="/js/highlight.pack.js?1641868077"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641864116"></script>
-    <script src="/js/learn.js?1641864116"></script>
-    <script src="/js/hugo-learn.js?1641864116"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641868077"></script>
+    <script src="/js/learn.js?1641868077"></script>
+    <script src="/js/hugo-learn.js?1641868077"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641864116"></script>
+            <script src="/mermaid/mermaid.js?1641868077"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

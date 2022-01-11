@@ -3,7 +3,7 @@ title: Conclusion
 weight: 60
 ---
 
-CI/CD
+## CI/CD
 
 - Maintain a code repository - AWS CodeCommit
 - Automate the build - AWS CodePipeline
@@ -14,7 +14,7 @@ CI/CD
 - Everyone can see the results of the build
 - Automate the deployment - AWS CodeBuild
 
-Security
+## Security
 
 - Immutable artifacts - AWS ECR 
 - Static Code Analysis - GoSec or other related tools 
@@ -26,7 +26,7 @@ Security
 - Signed Images - Docker Notary and SigStore cosign
 
 
-Additional AWS Resources 
+## Additional AWS Resources 
 
 [Practicing CI/CD on AWS Whitepaper](https://d0.awsstatic.com/whitepapers/DevOps/practicing-continuous-integration-continuous-delivery-on-AWS.pdf)
 
