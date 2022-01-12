@@ -12,22 +12,22 @@
     <title>Running Containers Exercise :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641958827" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641958827" rel="stylesheet">
-    <link href="/css/hybrid.css?1641958827" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641958827" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641958827" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641958827" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641958827" rel="stylesheet">
-    <link href="/css/theme.css?1641958827" rel="stylesheet">
-    <link href="/css/tabs.css?1641958827" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641958827" rel="stylesheet">
+    <link href="/css/nucleus.css?1641960856" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641960856" rel="stylesheet">
+    <link href="/css/hybrid.css?1641960856" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641960856" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641960856" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641960856" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641960856" rel="stylesheet">
+    <link href="/css/theme.css?1641960856" rel="stylesheet">
+    <link href="/css/tabs.css?1641960856" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641960856" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641958827" rel="stylesheet">
+    <link href="/css/theme-green.css?1641960856" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641958827"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641960856"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641958827"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641958827"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641960856"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641960856"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:62542\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641958827"></script>
+<script type="text/javascript" src="/js/search.js?1641960856"></script>
 
     
   </div>
@@ -815,7 +815,12 @@
   <ul>
     <li><a href="#installing-prometheus-to-our-cluster">Installing Prometheus to our cluster</a></li>
     <li><a href="#deploying-fluentbit-for-our-logs">Deploying Fluentbit for our logs</a></li>
-    <li><a href="#deploy-falco">Deploy Falco</a></li>
+    <li><a href="#deploy-falco">Deploy Falco</a>
+      <ul>
+        <li><a href="#access-urls-under-apiexeccmd-to-run-arbitrary-commands">Access urls under <code>/api/exec/&lt;cmd&gt;</code> to run arbitrary commands.</a></li>
+        <li><a href="#try-to-run-bash-via-apiexecbash-falco-sends-alert">Try to run bash via <code>/api/exec/bash</code>, falco sends alert.</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -977,7 +982,19 @@ aws iam attach-role-policy --role-name ng-1 --policy-arn <span style="color:#e6d
 <p><img src="/images/run/cloudwatch/png" alt=""></p>
 <h2 id="deploy-falco">Deploy Falco</h2>
 <p><code>make deploy-falco</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm repo add falcosecurity https://falcosecurity.github.io/charts; <span style="color:#ae81ff">\
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Expand me...
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm repo add falcosecurity https://falcosecurity.github.io/charts; <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>helm repo update; <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>helm install falco --set falco.jsonOutput<span style="color:#f92672">=</span>true --set image.tag<span style="color:#f92672">=</span>0.24.0 falcosecurity/falco
 <span style="color:#e6db74">&#34;falcosecurity&#34;</span> has been added to your repositories
@@ -1005,12 +1022,34 @@ You can easily forward Falco events to Slack, Kafka, AWS Lambda and more with fa
 Full list of outputs: https://github.com/falcosecurity/charts/falcosidekick.
 You can enable its deployment with <span style="color:#e6db74">`</span>--set falcosidekick.enabled<span style="color:#f92672">=</span>true<span style="color:#e6db74">`</span> or in your values.yaml. 
 See: https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.yaml <span style="color:#66d9ef">for</span> configuration values.
-</code></pre></div><p>You can see in Cloud Watch Falco Logs</p>
+</code></pre></div>
+    </div>
+</div>
+
+<p>You can see in Cloud Watch Falco Logs</p>
 <p><a href="https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/falco/log-events/alerts">https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/falco/log-events/alerts</a></p>
 <p><img src="/images/run/falco-logs.png" alt=""></p>
 <p>Now we can deploy the demo app to raise alerts in Cloud watch</p>
 <p><code>kubectl apply -f falco-demo/nodejs-bad-rest-api/falco-demo.yml</code></p>
-<p>Navigate to CloudWatch Logs</p>
+<p>Get the Loadbalancer EXTERNAL-IP for the falco-demo</p>
+<p><code>kubectl get svc falco-demo</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NAME         TYPE           CLUSTER-IP       EXTERNAL-IP                                                              PORT<span style="color:#f92672">(</span>S<span style="color:#f92672">)</span>        AGE
+falco-demo   LoadBalancer   10.100.249.117   adb9d277014bd4bdd9eef8e94f000f1b-1234566.us-west-2.elb.amazonaws.com   80:32527/TCP   4h9m
+</code></pre></div><h3 id="access-urls-under-apiexeccmd-to-run-arbitrary-commands">Access urls under <code>/api/exec/&lt;cmd&gt;</code> to run arbitrary commands.</h3>
+<p>Run the following commands to execute arbitrary commands like &lsquo;ls&rsquo;, &lsquo;pwd&rsquo;, etc:</p>
+<pre tabindex="0"><code>$ curl http://$LOAD_BALANCER_API/api/exec/ls
+
+demo.yml
+node_modules
+package.json
+README.md
+server.js
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl http://$LOAD_BALANCER_API:8181/api/exec/pwd
+</code></pre></div><h3 id="try-to-run-bash-via-apiexecbash-falco-sends-alert">Try to run bash via <code>/api/exec/bash</code>, falco sends alert.</h3>
+<p>If you try to run bash via <code>/api/exec/bash</code>, falco will generate an alert:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl http://$LOAD_BALANCER_API:8181/api/exec/bash
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">falco          | 22:26:53.536628076: Warning Shell spawned in a container other than entrypoint <span style="color:#f92672">(</span>user<span style="color:#f92672">=</span>root container_id<span style="color:#f92672">=</span>6f339b8aeb0a container_name<span style="color:#f92672">=</span>express_server shell<span style="color:#f92672">=</span>bash parent<span style="color:#f92672">=</span>sh cmdline<span style="color:#f92672">=</span>bash <span style="color:#f92672">)</span>
+</code></pre></div><p>Navigate to CloudWatch Logs</p>
 <p><img src="/images/run/falco-demo-alert.png" alt=""></p>
 
 
@@ -1490,19 +1529,19 @@ See: https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.ya
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641958827"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641958827"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641958827"></script>
-    <script src="/js/jquery.sticky.js?1641958827"></script>
-    <script src="/js/featherlight.min.js?1641958827"></script>
-    <script src="/js/highlight.pack.js?1641958827"></script>
+    <script src="/js/clipboard.min.js?1641960857"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641960857"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641960857"></script>
+    <script src="/js/jquery.sticky.js?1641960857"></script>
+    <script src="/js/featherlight.min.js?1641960857"></script>
+    <script src="/js/highlight.pack.js?1641960857"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641958827"></script>
-    <script src="/js/learn.js?1641958827"></script>
-    <script src="/js/hugo-learn.js?1641958827"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641960857"></script>
+    <script src="/js/learn.js?1641960857"></script>
+    <script src="/js/hugo-learn.js?1641960857"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641958827"></script>
+            <script src="/mermaid/mermaid.js?1641960857"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -131,6 +131,7 @@ We now have deployed the Fluentbit plugin, we should see logs in our CloudWatch 
 
 `make deploy-falco`
 
+{{% expand%}}
 ```bash
 helm repo add falcosecurity https://falcosecurity.github.io/charts; \
 helm repo update; \
@@ -161,6 +162,7 @@ Full list of outputs: https://github.com/falcosecurity/charts/falcosidekick.
 You can enable its deployment with `--set falcosidekick.enabled=true` or in your values.yaml. 
 See: https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.yaml for configuration values.
 ```
+{{% /expand%}}
 
 You can see in Cloud Watch Falco Logs 
 
@@ -171,6 +173,45 @@ https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2
 Now we can deploy the demo app to raise alerts in Cloud watch 
 
 `kubectl apply -f falco-demo/nodejs-bad-rest-api/falco-demo.yml`
+
+Get the Loadbalancer EXTERNAL-IP for the falco-demo 
+
+`kubectl get svc falco-demo`
+
+```bash
+NAME         TYPE           CLUSTER-IP       EXTERNAL-IP                                                              PORT(S)        AGE
+falco-demo   LoadBalancer   10.100.249.117   adb9d277014bd4bdd9eef8e94f000f1b-1234566.us-west-2.elb.amazonaws.com   80:32527/TCP   4h9m
+```
+
+### Access urls under `/api/exec/<cmd>` to run arbitrary commands.
+
+Run the following commands to execute arbitrary commands like 'ls', 'pwd', etc:
+
+```
+$ curl http://$LOAD_BALANCER_API/api/exec/ls
+
+demo.yml
+node_modules
+package.json
+README.md
+server.js
+```
+
+```bash
+$ curl http://$LOAD_BALANCER_API:8181/api/exec/pwd
+```
+
+### Try to run bash via `/api/exec/bash`, falco sends alert.
+
+If you try to run bash via `/api/exec/bash`, falco will generate an alert:
+
+```bash
+$ curl http://$LOAD_BALANCER_API:8181/api/exec/bash
+```
+
+```bash
+falco          | 22:26:53.536628076: Warning Shell spawned in a container other than entrypoint (user=root container_id=6f339b8aeb0a container_name=express_server shell=bash parent=sh cmdline=bash )
+```
 
 Navigate to CloudWatch Logs 
 
