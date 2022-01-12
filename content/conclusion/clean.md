@@ -8,7 +8,7 @@ weight: 65
 Delete the Codebuild, Code commit and pipeline 
 
 ```bash
-make tf_delete
+make tf_destroy
 ```
 
 ## Cluster 

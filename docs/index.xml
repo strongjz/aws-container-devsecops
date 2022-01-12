@@ -44,7 +44,7 @@
       <guid>//localhost:62542/setup/cloud9/</guid>
       <description>A list of supported browsers for AWS Cloud9 is found here.
   Log into your AWS Account  Everything defaults to us-west-2 in this Workshop
-  Launch Cloud9 in your closest region
+  Launch Cloud9 in us-west-2
 Create a Cloud9 Environment: https://us-west-2.console.aws.amazon.com/cloud9/home?region=us-west-2
 You&amp;rsquo;ll be prompted to log into your AWS Account in order to provision a Cloud9 Workspace
   Configure the Cloud9 instance  Review the setup before submitting for creation  Make sure to choose Amazon Linux 2, the tools install and other commands have been set up for Amazon Linux Only.</description>
@@ -220,7 +220,7 @@ helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp; \ helm rep
       
       <guid>//localhost:62542/conclusion/clean/</guid>
       <description>AWS Code resources Delete the Codebuild, Code commit and pipeline
-make tf_delete Cluster Delete the EKS Cluster
+make tf_destroy Cluster Delete the EKS Cluster
 make clean_cluster Make sure to delete any other resources created
 Load Balancers Verify there are no Load balancers running, ALB or otherwise
 aws elbv2 describe-load-balancers --query &amp;#34;LoadBalancers[].LoadBalancerArn&amp;#34; aws elb describe-load-balancers --query &amp;#34;LoadBalancerDescriptions[].DNSName&amp;#34; PVC and EBS volumes Verify there are no left over EBS volumes from the PVC&amp;rsquo;s for test application

@@ -14,7 +14,7 @@
       <guid>//localhost:62542/setup/cloud9/</guid>
       <description>A list of supported browsers for AWS Cloud9 is found here.
   Log into your AWS Account  Everything defaults to us-west-2 in this Workshop
-  Launch Cloud9 in your closest region
+  Launch Cloud9 in us-west-2
 Create a Cloud9 Environment: https://us-west-2.console.aws.amazon.com/cloud9/home?region=us-west-2
 You&amp;rsquo;ll be prompted to log into your AWS Account in order to provision a Cloud9 Workspace
   Configure the Cloud9 instance  Review the setup before submitting for creation  Make sure to choose Amazon Linux 2, the tools install and other commands have been set up for Amazon Linux Only.</description>
