@@ -237,7 +237,7 @@ eksctl create iamidentitymapping --cluster devsecops --arn arn:aws:iam::12345678
 
 We clone the repo from GitHub but now let's push it to AWS CodeCommit
 
-If you don't remember the name we can use the aws cli to find it for use `aws codecommit list-repositories`
+If you don't remember the name we can use the aws cli to find it for use `aws codecommit list-repositories --region us-west-2`
 
 ```bash
 {
@@ -249,13 +249,21 @@ If you don't remember the name we can use the aws cli to find it for use `aws co
 }
 ```
 
-Update the `~/environment/devsecopspipeline/VERSION.txt` to the number you think is appropriate
+Use the repositoryName to construct the http endpoint for the AWS remote 
 
-Now we can push the repo to AWS Code commit by adding a new remote
+For example:
 
 ```bash
 git remote add aws https://git-codecommit.us-west-2.amazonaws.com/v1/repos/codemash-devsecops-repo
-git push aws 
+```
+
+Update the `~/environment/devsecopspipeline/VERSION.txt` to the number you think is appropriate
+
+Now we can push the repo to AWS Code commit
+```bash
+git add -A
+git commit -m "add to AWS"
+git push aws
 ```
 
 [Navigate to the CodePipeline console to build in progress](https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines)

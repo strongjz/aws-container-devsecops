@@ -12,22 +12,22 @@
     <title>Container Pipeline Exercise Part 2 :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641957932" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641957932" rel="stylesheet">
-    <link href="/css/hybrid.css?1641957932" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641957932" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641957932" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641957932" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641957932" rel="stylesheet">
-    <link href="/css/theme.css?1641957932" rel="stylesheet">
-    <link href="/css/tabs.css?1641957932" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641957932" rel="stylesheet">
+    <link href="/css/nucleus.css?1641958411" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641958411" rel="stylesheet">
+    <link href="/css/hybrid.css?1641958411" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641958411" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641958411" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641958411" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641958411" rel="stylesheet">
+    <link href="/css/theme.css?1641958411" rel="stylesheet">
+    <link href="/css/tabs.css?1641958411" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641958411" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641957932" rel="stylesheet">
+    <link href="/css/theme-green.css?1641958411" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641957932"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641958411"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641957932"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641957932"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641958411"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641958411"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:62542\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641957932"></script>
+<script type="text/javascript" src="/js/search.js?1641958411"></script>
 
     
   </div>
@@ -1084,7 +1084,7 @@ and do everything we just did but in the CodePipeline</p>
 2021-09-18 20:33:43 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  using region us-west-2
 2021-09-18 20:33:43 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  adding identity <span style="color:#e6db74">&#34;arn:aws:iam::123456789012:role/devsecops-codemash-codebuild&#34;</span> to auth ConfigMap
 </code></pre></div><p>We clone the repo from GitHub but now let&rsquo;s push it to AWS CodeCommit</p>
-<p>If you don&rsquo;t remember the name we can use the aws cli to find it for use <code>aws codecommit list-repositories</code></p>
+<p>If you don&rsquo;t remember the name we can use the aws cli to find it for use <code>aws codecommit list-repositories --region us-west-2</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">{</span>
     <span style="color:#e6db74">&#34;repositories&#34;</span>: <span style="color:#f92672">[</span>
         <span style="color:#f92672">{</span>
@@ -1092,10 +1092,14 @@ and do everything we just did but in the CodePipeline</p>
             <span style="color:#e6db74">&#34;repositoryId&#34;</span>: <span style="color:#e6db74">&#34;568b8724-36c5-44fe-9848-42e2db43a861&#34;</span>
         <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
-</code></pre></div><p>Update the <code>~/environment/devsecopspipeline/VERSION.txt</code> to the number you think is appropriate</p>
-<p>Now we can push the repo to AWS Code commit by adding a new remote</p>
+</code></pre></div><p>Use the repositoryName to construct the http endpoint for the AWS remote</p>
+<p>For example:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add aws https://git-codecommit.us-west-2.amazonaws.com/v1/repos/codemash-devsecops-repo
-git push aws 
+</code></pre></div><p>Update the <code>~/environment/devsecopspipeline/VERSION.txt</code> to the number you think is appropriate</p>
+<p>Now we can push the repo to AWS Code commit</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add -A
+git commit -m <span style="color:#e6db74">&#34;add to AWS&#34;</span>
+git push aws
 </code></pre></div><p><a href="https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines">Navigate to the CodePipeline console to build in progress</a></p>
 <p><img src="/images/pipeline/code-pipeline-progress.png" alt=""></p>
 <p>Once our deployment finishes we can test the cluster in AWS <code>kubectl get svc clusterip-service</code></p>
@@ -1591,19 +1595,19 @@ curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/host
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641957932"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641957932"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641957932"></script>
-    <script src="/js/jquery.sticky.js?1641957932"></script>
-    <script src="/js/featherlight.min.js?1641957932"></script>
-    <script src="/js/highlight.pack.js?1641957932"></script>
+    <script src="/js/clipboard.min.js?1641958411"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641958411"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641958411"></script>
+    <script src="/js/jquery.sticky.js?1641958411"></script>
+    <script src="/js/featherlight.min.js?1641958411"></script>
+    <script src="/js/highlight.pack.js?1641958411"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641957932"></script>
-    <script src="/js/learn.js?1641957932"></script>
-    <script src="/js/hugo-learn.js?1641957932"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641958411"></script>
+    <script src="/js/learn.js?1641958411"></script>
+    <script src="/js/hugo-learn.js?1641958411"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641957932"></script>
+            <script src="/mermaid/mermaid.js?1641958411"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
