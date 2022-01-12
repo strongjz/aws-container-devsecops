@@ -26,7 +26,7 @@ Ensure that the name of the role is devsecop-workshop-admin
 ![cloud9create](/images/setup/cloud9_console_change_instance.png)
 2. Select the instance, then choose Actions / Security / Modify IAM Role
 ![cloud9create](/images/setup/cloud9_instance_settings_iam.png)
-3. Choose devsecop-workshop-admin from the IAM Role dropdown, and select Save
+3. Choose devsecops-workshop-admin from the IAM Role dropdown, and select Save
 ![cloud9create](/images/setup/cloud9_modify_iam_console.png)
 
 ## Update Cloud9 IAM Settings
