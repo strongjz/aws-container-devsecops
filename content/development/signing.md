@@ -13,7 +13,7 @@ Needed:
 2. Select what key you want to use
 3. Fill out your name and your email address. Make sure this matches the one in your GitHub account.
 4. Add a comment if you want to remind you what the key is for.
-5. You may be prompted for a passphrase to add to the key for extra security, for this example hit enter 3 times
+5. You may be prompted for a passphrase to add to the key for extra security, for this example hit enter 3 times to not add a passphrase. 
 
 
 Here is what the prompts will look like.
