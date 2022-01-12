@@ -12,22 +12,22 @@
     <title>Running Containers Exercise :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641933981" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641933981" rel="stylesheet">
-    <link href="/css/hybrid.css?1641933981" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641933981" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641933981" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641933981" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641933981" rel="stylesheet">
-    <link href="/css/theme.css?1641933981" rel="stylesheet">
-    <link href="/css/tabs.css?1641933981" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641933981" rel="stylesheet">
+    <link href="/css/nucleus.css?1641945688" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641945688" rel="stylesheet">
+    <link href="/css/hybrid.css?1641945688" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641945688" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641945688" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641945688" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641945688" rel="stylesheet">
+    <link href="/css/theme.css?1641945688" rel="stylesheet">
+    <link href="/css/tabs.css?1641945688" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641945688" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641933981" rel="stylesheet">
+    <link href="/css/theme-green.css?1641945688" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641933981"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641945688"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641933981"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641933981"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641945688"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641945688"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641933981"></script>
+<script type="text/javascript" src="/js/search.js?1641945688"></script>
 
     
   </div>
@@ -937,7 +937,9 @@ https://prometheus.io/
 </p>
 <h2 id="deploying-fluentbit-for-our-logs">Deploying Fluentbit for our logs</h2>
 <p>&ldquo;FireLens gives you a simplified interface to filter logs at source, add useful metadata and send logs to almost any destination. You can now stream logs directly to Amazon CloudWatch, Amazon Kinesis Data Firehose destinations such as Amazon Elasticsearch, Amazon S3, Amazon Kinesis Data Streams and partner tools. Using Amazon ECS task definition parameters, you can select destinations and optionally define filters for additional control and FireLens will ingest logs to target destinations.&rdquo;</p>
-<p><code>make deploy-fluent-bit</code></p>
+<p>Update the EKS node group with permissions to push to the log group</p>
+<p><code>make deploy-fluent-iam</code></p>
+<p>Then Deploy fluent bit <code>make deploy-fluent-bit</code></p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -1007,7 +1009,7 @@ See: https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.ya
 <p><a href="https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/falco/log-events/alerts">https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:log-groups/log-group/falco/log-events/alerts</a></p>
 <p><img src="/images/run/falco-logs.png" alt=""></p>
 <p>Now we can deploy the demo app to raise alerts in Cloud watch</p>
-<p><code>kubectl apply falco-demo/nodejs-bad-rest-api/falco-demo.yml</code></p>
+<p><code>kubectl apply -f falco-demo/nodejs-bad-rest-api/falco-demo.yml</code></p>
 <p>Navigate to CloudWatch Logs</p>
 <p><img src="/images/run/falco-demo-alert.png" alt=""></p>
 
@@ -1488,19 +1490,19 @@ See: https://github.com/falcosecurity/charts/blob/master/falcosidekick/values.ya
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641933981"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641933981"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641933981"></script>
-    <script src="/js/jquery.sticky.js?1641933981"></script>
-    <script src="/js/featherlight.min.js?1641933981"></script>
-    <script src="/js/highlight.pack.js?1641933981"></script>
+    <script src="/js/clipboard.min.js?1641945688"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641945688"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641945688"></script>
+    <script src="/js/jquery.sticky.js?1641945688"></script>
+    <script src="/js/featherlight.min.js?1641945688"></script>
+    <script src="/js/highlight.pack.js?1641945688"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641933981"></script>
-    <script src="/js/learn.js?1641933981"></script>
-    <script src="/js/hugo-learn.js?1641933981"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641945688"></script>
+    <script src="/js/learn.js?1641945688"></script>
+    <script src="/js/hugo-learn.js?1641945688"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641933981"></script>
+            <script src="/mermaid/mermaid.js?1641945688"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

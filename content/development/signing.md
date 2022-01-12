@@ -9,7 +9,7 @@ Needed:
 * GitHub Account
 
 # Generating a GPG Key
-1. Generate a key with gpg ```gpg --passphase '' '--gen-key```
+1. Generate a key with gpg ```gpg --passphrase '' '--gen-key```
 2. Select what key you want to use
 3. Fill out your name and your email address. Make sure this matches the one in your GitHub account.
 4. Add a comment if you want to remind you what the key is for.

@@ -95,7 +95,11 @@ https://prometheus.io/
 
 "FireLens gives you a simplified interface to filter logs at source, add useful metadata and send logs to almost any destination. You can now stream logs directly to Amazon CloudWatch, Amazon Kinesis Data Firehose destinations such as Amazon Elasticsearch, Amazon S3, Amazon Kinesis Data Streams and partner tools. Using Amazon ECS task definition parameters, you can select destinations and optionally define filters for additional control and FireLens will ingest logs to target destinations."
 
-`make deploy-fluent-bit`
+Update the EKS node group with permissions to push to the log group 
+
+`make deploy-fluent-iam`
+
+Then Deploy fluent bit `make deploy-fluent-bit`
 
 {{% expand%}}
 ```bash
@@ -166,7 +170,7 @@ https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2
 
 Now we can deploy the demo app to raise alerts in Cloud watch 
 
-`kubectl apply falco-demo/nodejs-bad-rest-api/falco-demo.yml`
+`kubectl apply -f falco-demo/nodejs-bad-rest-api/falco-demo.yml`
 
 Navigate to CloudWatch Logs 
 
