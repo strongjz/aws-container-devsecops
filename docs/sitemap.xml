@@ -2,71 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:62542/</loc>
+    <loc>//localhost:1313/</loc>
     <lastmod>2021-08-17T15:08:20-04:00</lastmod>
   </url><url>
-    <loc>//localhost:62542/intro/</loc>
+    <loc>//localhost:1313/intro/</loc>
   </url><url>
-    <loc>//localhost:62542/intro/presenter/</loc>
+    <loc>//localhost:1313/intro/presenter/</loc>
   </url><url>
-    <loc>//localhost:62542/intro/sponsor/</loc>
+    <loc>//localhost:1313/intro/sponsor/</loc>
   </url><url>
-    <loc>//localhost:62542/intro/intro/</loc>
+    <loc>//localhost:1313/intro/intro/</loc>
   </url><url>
-    <loc>//localhost:62542/setup/</loc>
+    <loc>//localhost:1313/setup/</loc>
   </url><url>
-    <loc>//localhost:62542/setup/cloud9/</loc>
+    <loc>//localhost:1313/setup/cloud9/</loc>
   </url><url>
-    <loc>//localhost:62542/setup/iam/</loc>
+    <loc>//localhost:1313/setup/iam/</loc>
   </url><url>
-    <loc>//localhost:62542/setup/tools/</loc>
+    <loc>//localhost:1313/setup/tools/</loc>
   </url><url>
-    <loc>//localhost:62542/development/</loc>
+    <loc>//localhost:1313/development/</loc>
     <lastmod>2021-08-17T15:08:20-04:00</lastmod>
   </url><url>
-    <loc>//localhost:62542/development/signing/</loc>
+    <loc>//localhost:1313/development/signing/</loc>
     <lastmod>2021-08-17T15:07:49-04:00</lastmod>
   </url><url>
-    <loc>//localhost:62542/development/linting/</loc>
+    <loc>//localhost:1313/development/linting/</loc>
     <lastmod>2021-08-17T15:07:57-04:00</lastmod>
   </url><url>
-    <loc>//localhost:62542/development/owasp/</loc>
+    <loc>//localhost:1313/development/owasp/</loc>
     <lastmod>2021-08-17T15:07:57-04:00</lastmod>
   </url><url>
-    <loc>//localhost:62542/development/pre-commit/</loc>
+    <loc>//localhost:1313/development/pre-commit/</loc>
     <lastmod>2021-08-17T15:08:20-04:00</lastmod>
   </url><url>
-    <loc>//localhost:62542/development/3-musketeers/</loc>
+    <loc>//localhost:1313/development/3-musketeers/</loc>
     <lastmod>2021-08-17T15:08:14-04:00</lastmod>
   </url><url>
-    <loc>//localhost:62542/build/</loc>
+    <loc>//localhost:1313/build/</loc>
   </url><url>
-    <loc>//localhost:62542/build/container/</loc>
+    <loc>//localhost:1313/build/container/</loc>
   </url><url>
-    <loc>//localhost:62542/build/exercise/</loc>
+    <loc>//localhost:1313/build/exercise/</loc>
   </url><url>
-    <loc>//localhost:62542/pipeline/</loc>
+    <loc>//localhost:1313/pipeline/</loc>
   </url><url>
-    <loc>//localhost:62542/pipeline/intro_exercise/</loc>
+    <loc>//localhost:1313/pipeline/intro_exercise/</loc>
   </url><url>
-    <loc>//localhost:62542/pipeline/exercise/</loc>
+    <loc>//localhost:1313/pipeline/exercise/</loc>
   </url><url>
-    <loc>//localhost:62542/pipeline/exercise_2/</loc>
+    <loc>//localhost:1313/pipeline/exercise_2/</loc>
   </url><url>
-    <loc>//localhost:62542/run/</loc>
+    <loc>//localhost:1313/run/</loc>
   </url><url>
-    <loc>//localhost:62542/run/exercise/</loc>
+    <loc>//localhost:1313/run/exercise/</loc>
   </url><url>
-    <loc>//localhost:62542/conclusion/</loc>
+    <loc>//localhost:1313/conclusion/</loc>
   </url><url>
-    <loc>//localhost:62542/conclusion/survey/</loc>
+    <loc>//localhost:1313/conclusion/survey/</loc>
   </url><url>
-    <loc>//localhost:62542/conclusion/clean/</loc>
+    <loc>//localhost:1313/conclusion/clean/</loc>
   </url><url>
-    <loc>//localhost:62542/categories/</loc>
+    <loc>//localhost:1313/categories/</loc>
   </url><url>
-    <loc>//localhost:62542/authors/</loc>
+    <loc>//localhost:1313/authors/</loc>
   </url><url>
-    <loc>//localhost:62542/tags/</loc>
+    <loc>//localhost:1313/tags/</loc>
   </url>
 </urlset>

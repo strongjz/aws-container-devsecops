@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Conclusion on AWS Container DevSecOps</title>
-    <link>//localhost:62542/conclusion/</link>
+    <link>//localhost:1313/conclusion/</link>
     <description>Recent content in Conclusion on AWS Container DevSecOps</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="//localhost:62542/conclusion/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="//localhost:1313/conclusion/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Survey</title>
-      <link>//localhost:62542/conclusion/survey/</link>
+      <link>//localhost:1313/conclusion/survey/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/conclusion/survey/</guid>
+      <guid>//localhost:1313/conclusion/survey/</guid>
       <description>For a chance to win a copy of &amp;ldquo;Networking and Kubernetes: A Layered Approach&amp;rdquo; and to help improve this workshop please fill out this survey</description>
     </item>
     
     <item>
       <title>Cleanup</title>
-      <link>//localhost:62542/conclusion/clean/</link>
+      <link>//localhost:1313/conclusion/clean/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/conclusion/clean/</guid>
+      <guid>//localhost:1313/conclusion/clean/</guid>
       <description>AWS Code resources Delete the Codebuild, Code commit and pipeline
 make tf_destroy Cluster Delete the EKS Cluster
 make clean_cluster Make sure to delete any other resources created

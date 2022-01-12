@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Container Builds on AWS Container DevSecOps</title>
-    <link>//localhost:62542/build/</link>
+    <link>//localhost:1313/build/</link>
     <description>Recent content in Container Builds on AWS Container DevSecOps</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="//localhost:62542/build/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="//localhost:1313/build/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Secure Containers</title>
-      <link>//localhost:62542/build/container/</link>
+      <link>//localhost:1313/build/container/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/build/container/</guid>
+      <guid>//localhost:1313/build/container/</guid>
       <description>Baseline  DISABLE ROOT  Mount the container&amp;rsquo;s root filesystem as read-only set k8s Security context set Linux Capabilities Disable privilege escalation    securityContext: allowPrivilegeEscalation: false  Least Privilege by defining user  apiVersion: v1 kind: Pod metadata: name: pod-security spec: securityContext: runAsUser: 10000 runAsGroup: 30000 fsGroup: 20000  Network policies Container Capabilities  capabilities: add: [&amp;#34;NET_ADMIN&amp;#34;, &amp;#34;SYS_TIME&amp;#34;]  DISABLE ROOT  Helpers Versioning
  Invest in Strategy Containers follow build Versions of Software  Semantic Versioning   Metadata  LABEL &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt; &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt; &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt; .</description>
     </item>
     
     <item>
       <title>Secure Containers Exercise</title>
-      <link>//localhost:62542/build/exercise/</link>
+      <link>//localhost:1313/build/exercise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/build/exercise/</guid>
+      <guid>//localhost:1313/build/exercise/</guid>
       <description>In this Exercise we are going to
  Run Application locally Run in Docker compose Go Reporter for static Analysis Go Sec for code cve scanning Secure Dockerfile  You may need to start docker
  sudo service docker start
