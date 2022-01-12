@@ -133,16 +133,26 @@ $ git config --global commit.gpgsign true
 
 ## 4. Test a Commit.
 
+Create a testing repo in GitHub.com, then add it locally 
+
 ```bash
 cd ~/environment/
 mkdir signing-test
 git init
   Initialized empty Git repository in /home/ec2-user/environment/signing-test/.git/
 echo "signing-test" >> README.md
+```
+
+Then use those remotes to add to empty repo.
+
+```bash
+git remote add origin git@github.com:strongjz/git-signging-test.git
+git branch -M main
+git push -u origin main
 git add -A
 git commit -m "signing"
   [main b2a6fb5] signing
-git push origin master 
+git push origin main 
 ```
 
 ## 5. Verify in GitHub

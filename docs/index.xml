@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AWS DevSecOps Container Pipeline on AWS Container DevSecOps</title>
-    <link>//localhost:62542/</link>
+    <link>//localhost:1313/</link>
     <description>Recent content in AWS DevSecOps Container Pipeline on AWS Container DevSecOps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Aug 2021 15:08:20 -0400</lastBuildDate><atom:link href="//localhost:62542/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Aug 2021 15:08:20 -0400</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Presenter</title>
-      <link>//localhost:62542/intro/presenter/</link>
+      <link>//localhost:1313/intro/presenter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/intro/presenter/</guid>
+      <guid>//localhost:1313/intro/presenter/</guid>
       <description> Lead Solutions Architect @ Chainguard.dev AWS Ambassador O&amp;rsquo;Reilly Author - Networking and Kubernetes: A Layer Approach A Cloud Guru Instructor- Advanced Networking with Kubernetes on AWS Kubernetes Ingress NGINX Maintainer Kube Philly Organizer  </description>
     </item>
     
     <item>
       <title>Chainguard.dev</title>
-      <link>//localhost:62542/intro/sponsor/</link>
+      <link>//localhost:1313/intro/sponsor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/intro/sponsor/</guid>
+      <guid>//localhost:1313/intro/sponsor/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CI/CD and Security</title>
-      <link>//localhost:62542/intro/intro/</link>
+      <link>//localhost:1313/intro/intro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/intro/intro/</guid>
+      <guid>//localhost:1313/intro/intro/</guid>
       <description>CI/CD
  Maintain a code repository Automate the build Keep the build fast Make the build self-testing Commit early, commit often Every commit to the mainline gets built Everyone can see the results of the build Automate the deployment  Security
  Immutable artifacts CVE Scanning Least Privileged Network Isolation Run Time protection Signed Commits Signed Images  </description>
@@ -38,10 +38,10 @@
     
     <item>
       <title>AWS Cloud9</title>
-      <link>//localhost:62542/setup/cloud9/</link>
+      <link>//localhost:1313/setup/cloud9/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/setup/cloud9/</guid>
+      <guid>//localhost:1313/setup/cloud9/</guid>
       <description>A list of supported browsers for AWS Cloud9 is found here.
   Log into your AWS Account  Everything defaults to us-west-2 in this Workshop
   Launch Cloud9 in your closest region
@@ -52,19 +52,19 @@ You&amp;rsquo;ll be prompted to log into your AWS Account in order to provision 
     
     <item>
       <title>Cloud 9 Settings Configuration</title>
-      <link>//localhost:62542/setup/iam/</link>
+      <link>//localhost:1313/setup/iam/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/setup/iam/</guid>
+      <guid>//localhost:1313/setup/iam/</guid>
       <description>Create IAM Role  Log into your AWS Account you are using for this workshop. Follow this link to create an IAM role with Administrator access. Confirm that AWS service and EC2 are selected, then click Next: Permissions to view permissions.  Confirm that AdministratorAccess is checked, then click Next: Tags to assign tags.  Take the defaults, and click Next: Review to review.  Enter devsecop-workshop-admin for the Name, and click Create role.</description>
     </item>
     
     <item>
       <title>Workshop tools</title>
-      <link>//localhost:62542/setup/tools/</link>
+      <link>//localhost:1313/setup/tools/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/setup/tools/</guid>
+      <guid>//localhost:1313/setup/tools/</guid>
       <description>In order for us to continue with the exercises, there are several tools that our needed to be installed on our Cloud9 instance.
 Download these two repos with git
 git clone https://github.com/strongjz/devsecopspipeline
@@ -76,20 +76,20 @@ The script will install
     
     <item>
       <title>Git Commit Signing</title>
-      <link>//localhost:62542/development/signing/</link>
+      <link>//localhost:1313/development/signing/</link>
       <pubDate>Tue, 17 Aug 2021 15:07:49 -0400</pubDate>
       
-      <guid>//localhost:62542/development/signing/</guid>
+      <guid>//localhost:1313/development/signing/</guid>
       <description>Needed:
  GPG Key GitHub Account  Generating a GPG Key  Generate a key with gpg gpg --passphrase &#39;&#39; --gen-key Select what key you want to use Fill out your name and your email address. Make sure this matches the one in your GitHub account. Add a comment if you want to remind you what the key is for. You may be prompted for a passphrase to add to the key for extra security, for this example hit enter 3 times  Here is what the prompts will look like.</description>
     </item>
     
     <item>
       <title>Linting</title>
-      <link>//localhost:62542/development/linting/</link>
+      <link>//localhost:1313/development/linting/</link>
       <pubDate>Tue, 17 Aug 2021 15:07:57 -0400</pubDate>
       
-      <guid>//localhost:62542/development/linting/</guid>
+      <guid>//localhost:1313/development/linting/</guid>
       <description>Linting is the process of analyzing code for syntax issues; it can aid in finding bugs and performance issues, offers simplifications, and enforces style rules.
 Other notable uses for Linting:
  formatting discrepancy, go fmt. non-adherence to coding standards and conventions, shellchecker for example diagnosing possible logical errors in your applications. go vet Interpreted languages like Python, Ruby, and JavaScript benefit from linting, as these languages don’t have a compiling phase to display errors before execution.</description>
@@ -97,20 +97,20 @@ Other notable uses for Linting:
     
     <item>
       <title>Open Web Application Security Project</title>
-      <link>//localhost:62542/development/owasp/</link>
+      <link>//localhost:1313/development/owasp/</link>
       <pubDate>Tue, 17 Aug 2021 15:07:57 -0400</pubDate>
       
-      <guid>//localhost:62542/development/owasp/</guid>
+      <guid>//localhost:1313/development/owasp/</guid>
       <description>The OWASP Top 10 is a standard awareness document for developers and web application security. It represents a broad consensus about the most critical security risks to web applications.
 OWASP Top 10   A1:2017-Injection   Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker’s hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization.</description>
     </item>
     
     <item>
       <title>Pre Commit</title>
-      <link>//localhost:62542/development/pre-commit/</link>
+      <link>//localhost:1313/development/pre-commit/</link>
       <pubDate>Tue, 17 Aug 2021 15:08:20 -0400</pubDate>
       
-      <guid>//localhost:62542/development/pre-commit/</guid>
+      <guid>//localhost:1313/development/pre-commit/</guid>
       <description>Introduction The pre-commit hook is run first, before you even type in a commit message. It’s used to inspect the snapshot that’s about to be committed,
 It can be used to detect
  missing semicolons trailing whitespace debug statements aws credentials private keys  Pre-commit is a framework for managing and maintaining multi-language pre-commit hooks.
@@ -120,10 +120,10 @@ https://github.com/pre-commit/pre-commit
     
     <item>
       <title>3 Musketeers</title>
-      <link>//localhost:62542/development/3-musketeers/</link>
+      <link>//localhost:1313/development/3-musketeers/</link>
       <pubDate>Tue, 17 Aug 2021 15:08:14 -0400</pubDate>
       
-      <guid>//localhost:62542/development/3-musketeers/</guid>
+      <guid>//localhost:1313/development/3-musketeers/</guid>
       <description>Tools used in the 3 Musketeers pattern:
  Make Docker Docker Compose  From https://3musketeers.io/
 Consistency - Run the same commands no matter where you are: Linux, macOS, Windows, CI/CD tools that supports Docker like GitHub Actions, Travis CI, CircleCI, and GitLab CI.
@@ -133,20 +133,20 @@ Confidence - Test your code and pipelines locally before your CI/CD tool runs it
     
     <item>
       <title>Secure Containers</title>
-      <link>//localhost:62542/build/container/</link>
+      <link>//localhost:1313/build/container/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/build/container/</guid>
+      <guid>//localhost:1313/build/container/</guid>
       <description>Baseline  DISABLE ROOT  Mount the container&amp;rsquo;s root filesystem as read-only set k8s Security context set Linux Capabilities Disable privilege escalation    securityContext: allowPrivilegeEscalation: false  Least Privilege by defining user  apiVersion: v1 kind: Pod metadata: name: pod-security spec: securityContext: runAsUser: 10000 runAsGroup: 30000 fsGroup: 20000  Network policies Container Capabilities  capabilities: add: [&amp;#34;NET_ADMIN&amp;#34;, &amp;#34;SYS_TIME&amp;#34;]  DISABLE ROOT  Helpers Versioning
  Invest in Strategy Containers follow build Versions of Software  Semantic Versioning   Metadata  LABEL &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt; &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt; &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt; .</description>
     </item>
     
     <item>
       <title>Secure Containers Exercise</title>
-      <link>//localhost:62542/build/exercise/</link>
+      <link>//localhost:1313/build/exercise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/build/exercise/</guid>
+      <guid>//localhost:1313/build/exercise/</guid>
       <description>In this Exercise we are going to
  Run Application locally Run in Docker compose Go Reporter for static Analysis Go Sec for code cve scanning Secure Dockerfile  You may need to start docker
  sudo service docker start
@@ -159,10 +159,10 @@ export DB_PASSWORD=temppassword
     
     <item>
       <title>Container Pipeline Exercise Overview</title>
-      <link>//localhost:62542/pipeline/intro_exercise/</link>
+      <link>//localhost:1313/pipeline/intro_exercise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/pipeline/intro_exercise/</guid>
+      <guid>//localhost:1313/pipeline/intro_exercise/</guid>
       <description>AWS CI/CD We are going to deploy a pipeline with AWS Services
 Static - Build our golang example applications, in a docker container and stores it in the AWS ECR
 Build - Runs the Go Report Static Code analysis
@@ -171,10 +171,10 @@ Deploy - deploys the application via Code build, aws eks cli and kubectl</descri
     
     <item>
       <title>Container Pipeline Exercise</title>
-      <link>//localhost:62542/pipeline/exercise/</link>
+      <link>//localhost:1313/pipeline/exercise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/pipeline/exercise/</guid>
+      <guid>//localhost:1313/pipeline/exercise/</guid>
       <description>The AWS Resources for pipeline, etc are build using Terraform.
  Create the Terraform state bucket Initialize Terraform Plan Terraform Apply terraform  First Create the state file s3 bucket aws s3 mb s3://devsecops-codemash-2022 --region us-west-2
 make_bucket: devsecops-codemash-2022  Ensure the s3 bucket is updates and is unique.
@@ -184,10 +184,10 @@ Update the ~/environments/devsecopspipeline/terraform/config.tf with the bucket 
     
     <item>
       <title>Container Pipeline Exercise Part 2</title>
-      <link>//localhost:62542/pipeline/exercise_2/</link>
+      <link>//localhost:1313/pipeline/exercise_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/pipeline/exercise_2/</guid>
+      <guid>//localhost:1313/pipeline/exercise_2/</guid>
       <description>Inside the devsecops repo cd ~/environments/devsecopspipeline/ we are going to manually push our application image to AWS ECR
 AWS ECR Let&amp;rsquo;s push our docker image to ECR that was created from Terraform
 make docker_push
@@ -196,29 +196,29 @@ make docker_push
     
     <item>
       <title>Running Containers Exercise</title>
-      <link>//localhost:62542/run/exercise/</link>
+      <link>//localhost:1313/run/exercise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/run/exercise/</guid>
+      <guid>//localhost:1313/run/exercise/</guid>
       <description>Installing Prometheus to our cluster make helm_update
 helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp; \ helm repo update &amp;#34;stable&amp;#34; has been added to your repositories Hang tight while we grab the latest from your chart repositories... ...Successfully got an update from the &amp;#34;stable&amp;#34; chart repository Update Complete. ⎈Happy Helming!⎈ make prom   Expand me...   helm repo add stable https://charts.helm.sh/stable &amp;amp;&amp;amp; \ helm repo update &amp;#34;stable&amp;#34; already exists with the same configuration, skipping Hang tight while we grab the latest from your chart repositories.</description>
     </item>
     
     <item>
       <title>Survey</title>
-      <link>//localhost:62542/conclusion/survey/</link>
+      <link>//localhost:1313/conclusion/survey/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/conclusion/survey/</guid>
+      <guid>//localhost:1313/conclusion/survey/</guid>
       <description>For a chance to win a copy of &amp;ldquo;Networking and Kubernetes: A Layered Approach&amp;rdquo; and to help improve this workshop please fill out this survey</description>
     </item>
     
     <item>
       <title>Cleanup</title>
-      <link>//localhost:62542/conclusion/clean/</link>
+      <link>//localhost:1313/conclusion/clean/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/conclusion/clean/</guid>
+      <guid>//localhost:1313/conclusion/clean/</guid>
       <description>AWS Code resources Delete the Codebuild, Code commit and pipeline
 make tf_delete Cluster Delete the EKS Cluster
 make clean_cluster Make sure to delete any other resources created
@@ -229,10 +229,10 @@ aws ec2 describe-volumes --filters Name=tag:kubernetes.</description>
     
     <item>
       <title>Credits</title>
-      <link>//localhost:62542/authors/</link>
+      <link>//localhost:1313/authors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:62542/authors/</guid>
+      <guid>//localhost:1313/authors/</guid>
       <description>&amp;lt;div&amp;gt; &amp;lt;img src=&amp;quot;https://avatars.githubusercontent.com/u/2372917?v=4&amp;quot; class=&amp;quot;inline&amp;quot; width=&amp;quot;32&amp;quot; height=&amp;quot;32&amp;quot; style=&amp;quot;height: 32px;height: 32px;margin-bottom:.25em; vertical-align:middle; &amp;quot;&amp;gt; &amp;lt;label&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/strongjz&amp;quot;&amp;gt;@strongjz&amp;lt;/a&amp;gt;&amp;lt;/label&amp;gt; &amp;lt;span class=&amp;quot;contributions&amp;quot;&amp;gt;64 commits&amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt;  </description>
     </item>
     

@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Development Environment on AWS Container DevSecOps</title>
-    <link>//localhost:62542/development/</link>
+    <link>//localhost:1313/development/</link>
     <description>Recent content in Development Environment on AWS Container DevSecOps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Aug 2021 15:08:20 -0400</lastBuildDate><atom:link href="//localhost:62542/development/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Aug 2021 15:08:20 -0400</lastBuildDate><atom:link href="//localhost:1313/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git Commit Signing</title>
-      <link>//localhost:62542/development/signing/</link>
+      <link>//localhost:1313/development/signing/</link>
       <pubDate>Tue, 17 Aug 2021 15:07:49 -0400</pubDate>
       
-      <guid>//localhost:62542/development/signing/</guid>
+      <guid>//localhost:1313/development/signing/</guid>
       <description>Needed:
  GPG Key GitHub Account  Generating a GPG Key  Generate a key with gpg gpg --passphrase &#39;&#39; --gen-key Select what key you want to use Fill out your name and your email address. Make sure this matches the one in your GitHub account. Add a comment if you want to remind you what the key is for. You may be prompted for a passphrase to add to the key for extra security, for this example hit enter 3 times  Here is what the prompts will look like.</description>
     </item>
     
     <item>
       <title>Linting</title>
-      <link>//localhost:62542/development/linting/</link>
+      <link>//localhost:1313/development/linting/</link>
       <pubDate>Tue, 17 Aug 2021 15:07:57 -0400</pubDate>
       
-      <guid>//localhost:62542/development/linting/</guid>
+      <guid>//localhost:1313/development/linting/</guid>
       <description>Linting is the process of analyzing code for syntax issues; it can aid in finding bugs and performance issues, offers simplifications, and enforces style rules.
 Other notable uses for Linting:
  formatting discrepancy, go fmt. non-adherence to coding standards and conventions, shellchecker for example diagnosing possible logical errors in your applications. go vet Interpreted languages like Python, Ruby, and JavaScript benefit from linting, as these languages don’t have a compiling phase to display errors before execution.</description>
@@ -30,20 +30,20 @@ Other notable uses for Linting:
     
     <item>
       <title>Open Web Application Security Project</title>
-      <link>//localhost:62542/development/owasp/</link>
+      <link>//localhost:1313/development/owasp/</link>
       <pubDate>Tue, 17 Aug 2021 15:07:57 -0400</pubDate>
       
-      <guid>//localhost:62542/development/owasp/</guid>
+      <guid>//localhost:1313/development/owasp/</guid>
       <description>The OWASP Top 10 is a standard awareness document for developers and web application security. It represents a broad consensus about the most critical security risks to web applications.
 OWASP Top 10   A1:2017-Injection   Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker’s hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization.</description>
     </item>
     
     <item>
       <title>Pre Commit</title>
-      <link>//localhost:62542/development/pre-commit/</link>
+      <link>//localhost:1313/development/pre-commit/</link>
       <pubDate>Tue, 17 Aug 2021 15:08:20 -0400</pubDate>
       
-      <guid>//localhost:62542/development/pre-commit/</guid>
+      <guid>//localhost:1313/development/pre-commit/</guid>
       <description>Introduction The pre-commit hook is run first, before you even type in a commit message. It’s used to inspect the snapshot that’s about to be committed,
 It can be used to detect
  missing semicolons trailing whitespace debug statements aws credentials private keys  Pre-commit is a framework for managing and maintaining multi-language pre-commit hooks.
@@ -53,10 +53,10 @@ https://github.com/pre-commit/pre-commit
     
     <item>
       <title>3 Musketeers</title>
-      <link>//localhost:62542/development/3-musketeers/</link>
+      <link>//localhost:1313/development/3-musketeers/</link>
       <pubDate>Tue, 17 Aug 2021 15:08:14 -0400</pubDate>
       
-      <guid>//localhost:62542/development/3-musketeers/</guid>
+      <guid>//localhost:1313/development/3-musketeers/</guid>
       <description>Tools used in the 3 Musketeers pattern:
  Make Docker Docker Compose  From https://3musketeers.io/
 Consistency - Run the same commands no matter where you are: Linux, macOS, Windows, CI/CD tools that supports Docker like GitHub Actions, Travis CI, CircleCI, and GitLab CI.
