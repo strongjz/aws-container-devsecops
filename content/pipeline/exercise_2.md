@@ -271,6 +271,8 @@ If you don't remember the name we can use the aws cli to find it for use `aws co
 }
 ```
 
+Update the `~/environment/devsecopspipeline/VERSION.txt` to the number you think is appropriate
+
 Now we can push the repo to AWS Code commit by adding a new remote
 
 ```bash
