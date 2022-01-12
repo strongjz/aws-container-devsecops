@@ -9,7 +9,7 @@ Needed:
 * GitHub Account
 
 # Generating a GPG Key
-1. Generate a key with gpg ```gpg --passphrase '' '--gen-key```
+1. Generate a key with gpg ```gpg --passphrase '' --gen-key```
 2. Select what key you want to use
 3. Fill out your name and your email address. Make sure this matches the one in your GitHub account.
 4. Add a comment if you want to remind you what the key is for.
@@ -81,9 +81,9 @@ sub   cv25519 2021-08-17 [E]
 
 ## 1. Export public key
 
-Get the Key ID with `gpg --list-keys $EMAIL`
+Get the Key ID with `gpg --list-secret-keys --keyid-format LONG $YOUR_EMAIL`
 
-Export the public key with `gpg --armor --export 3E0424931246D33A86890BC78246A1EC900B5E30`
+Export the public key with `gpg --armor --export $YOUR_LONG_KEY_ID`
 
 ```bash
 -----BEGIN PGP PUBLIC KEY BLOCK-----

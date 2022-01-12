@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Container Pipeline on AWS Container DevSecOps</title>
-    <link>//localhost:1313/pipeline/</link>
+    <link>//localhost:62542/pipeline/</link>
     <description>Recent content in Container Pipeline on AWS Container DevSecOps</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="//localhost:1313/pipeline/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="//localhost:62542/pipeline/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Container Pipeline Exercise Overview</title>
-      <link>//localhost:1313/pipeline/intro_exercise/</link>
+      <link>//localhost:62542/pipeline/intro_exercise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/pipeline/intro_exercise/</guid>
+      <guid>//localhost:62542/pipeline/intro_exercise/</guid>
       <description>AWS CI/CD We are going to deploy a pipeline with AWS Services
 Static - Build our golang example applications, in a docker container and stores it in the AWS ECR
 Build - Runs the Go Report Static Code analysis
@@ -20,10 +20,10 @@ Deploy - deploys the application via Code build, aws eks cli and kubectl</descri
     
     <item>
       <title>Container Pipeline Exercise</title>
-      <link>//localhost:1313/pipeline/exercise/</link>
+      <link>//localhost:62542/pipeline/exercise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/pipeline/exercise/</guid>
+      <guid>//localhost:62542/pipeline/exercise/</guid>
       <description>The AWS Resources for pipeline, etc are build using Terraform.
  Create the Terraform state bucket Initialize Terraform Plan Terraform Apply terraform  First Create the state file s3 bucket aws s3 mb s3://devsecops-codemash-2022 --region us-west-2
 make_bucket: devsecops-codemash-2022  Ensure the s3 bucket is updates and is unique.
@@ -33,10 +33,10 @@ Update the ~/environments/devsecopspipeline/terraform/config.tf with the bucket 
     
     <item>
       <title>Container Pipeline Exercise Part 2</title>
-      <link>//localhost:1313/pipeline/exercise_2/</link>
+      <link>//localhost:62542/pipeline/exercise_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/pipeline/exercise_2/</guid>
+      <guid>//localhost:62542/pipeline/exercise_2/</guid>
       <description>Inside the devsecops repo cd ~/environments/devsecopspipeline/ we are going to manually push our application image to AWS ECR
 AWS ECR Let&amp;rsquo;s push our docker image to ECR that was created from Terraform
 make docker_push
