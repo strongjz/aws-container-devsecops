@@ -12,10 +12,10 @@ weight: 12
 ![cloud9create](/images/setup/cloud9_role_2_permissions.png)
 5. Take the defaults, and click Next: Review to review.
 ![cloud9create](/images/setup/cloud9_role_3_tag.png)
-6. Enter devsecop-workshop-admin for the Name, and click Create role.
+6. Enter devsecops-workshop-admin for the Name, and click Create role.
  
 {{% notice warning %}}
-Ensure that the name of the role is devsecop-workshop-admin 
+Ensure that the name of the role is devsecops-workshop-admin 
 {{% /notice %}}
 
 ![cloud9create](/images/setup/cloud9_role_4_review.png)

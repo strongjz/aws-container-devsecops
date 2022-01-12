@@ -26,7 +26,7 @@ You&amp;rsquo;ll be prompted to log into your AWS Account in order to provision 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/setup/iam/</guid>
-      <description>Create IAM Role  Log into your AWS Account you are using for this workshop. Follow this link to create an IAM role with Administrator access. Confirm that AWS service and EC2 are selected, then click Next: Permissions to view permissions.  Confirm that AdministratorAccess is checked, then click Next: Tags to assign tags.  Take the defaults, and click Next: Review to review.  Enter devsecop-workshop-admin for the Name, and click Create role.</description>
+      <description>Create IAM Role  Log into your AWS Account you are using for this workshop. Follow this link to create an IAM role with Administrator access. Confirm that AWS service and EC2 are selected, then click Next: Permissions to view permissions.  Confirm that AdministratorAccess is checked, then click Next: Tags to assign tags.  Take the defaults, and click Next: Review to review.  Enter devsecops-workshop-admin for the Name, and click Create role.</description>
     </item>
     
     <item>
