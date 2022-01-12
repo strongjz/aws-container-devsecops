@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=62542&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.91.2" />
@@ -12,22 +12,22 @@
     <title>Container Pipeline Exercise :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1641948496" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641948496" rel="stylesheet">
-    <link href="/css/hybrid.css?1641948496" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641948496" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641948496" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641948496" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641948496" rel="stylesheet">
-    <link href="/css/theme.css?1641948496" rel="stylesheet">
-    <link href="/css/tabs.css?1641948496" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641948496" rel="stylesheet">
+    <link href="/css/nucleus.css?1641949179" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641949179" rel="stylesheet">
+    <link href="/css/hybrid.css?1641949179" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641949179" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641949179" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641949179" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641949179" rel="stylesheet">
+    <link href="/css/theme.css?1641949179" rel="stylesheet">
+    <link href="/css/tabs.css?1641949179" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641949179" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641948496" rel="stylesheet">
+    <link href="/css/theme-green.css?1641949179" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1641948496"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641949179"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641948496"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641948496"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641949179"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641949179"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/localhost:1313\/";
+        var baseurl = "\/\/localhost:62542\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641948496"></script>
+<script type="text/javascript" src="/js/search.js?1641949179"></script>
 
     
   </div>
@@ -850,8 +850,8 @@
 <li>Apply terraform</li>
 </ol>
 <h2 id="first-create-the-state-file-s3-bucket">First Create the state file s3 bucket</h2>
-<p><code>aws s3 mb s3://devsecops-codemash-2022 --region us-west-2</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make_bucket: devsecops-codemash-2022
+<p><code>aws s3 mb s3://$NAME_S3_BUCKET --region us-west-2</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make_bucket: $NAME_S3_BUCKET
 </code></pre></div>
 <div class="notices warning" ><p>Ensure the s3 bucket is updates and is unique.</p>
 </div>
@@ -860,8 +860,8 @@
 <p>Update the <code>~/environments/devsecopspipeline/terraform/config.tf</code> with the bucket name to store terraform state</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-hcl" data-lang="hcl"><span style="color:#66d9ef">terraform</span> {
     <span style="color:#66d9ef">backend</span> <span style="color:#e6db74">&#34;s3&#34;</span> {
-        bucket <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;devsecops-codemash-2022&#34;</span>
-        key    <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;devsecops-codemash-2022/terraform_state&#34;</span>
+        bucket <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;$NAME_S3_BUCKET&#34;</span>
+        key    <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;$NAME_S3_BUCKET/terraform_state&#34;</span>
         region <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;us-west-2&#34;</span>
     }
 }
@@ -2383,19 +2383,19 @@ Apply complete! Resources: <span style="color:#ae81ff">19</span> added, <span st
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641948496"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641948496"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641948496"></script>
-    <script src="/js/jquery.sticky.js?1641948496"></script>
-    <script src="/js/featherlight.min.js?1641948496"></script>
-    <script src="/js/highlight.pack.js?1641948496"></script>
+    <script src="/js/clipboard.min.js?1641949179"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641949179"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641949179"></script>
+    <script src="/js/jquery.sticky.js?1641949179"></script>
+    <script src="/js/featherlight.min.js?1641949179"></script>
+    <script src="/js/highlight.pack.js?1641949179"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641948496"></script>
-    <script src="/js/learn.js?1641948496"></script>
-    <script src="/js/hugo-learn.js?1641948496"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641949179"></script>
+    <script src="/js/learn.js?1641949179"></script>
+    <script src="/js/hugo-learn.js?1641949179"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641948496"></script>
+            <script src="/mermaid/mermaid.js?1641949179"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -12,10 +12,10 @@ The AWS Resources for pipeline, etc are build using Terraform.
 
 ## First Create the state file s3 bucket 
 
-`aws s3 mb s3://devsecops-codemash-2022 --region us-west-2`
+`aws s3 mb s3://$NAME_S3_BUCKET --region us-west-2`
 
 ```bash
-make_bucket: devsecops-codemash-2022
+make_bucket: $NAME_S3_BUCKET
 ```
 
 {{% notice warning %}}
@@ -29,8 +29,8 @@ Update the `~/environments/devsecopspipeline/terraform/config.tf` with the bucke
 ```hcl 
 terraform {
     backend "s3" {
-        bucket = "devsecops-codemash-2022"
-        key    = "devsecops-codemash-2022/terraform_state"
+        bucket = "$NAME_S3_BUCKET"
+        key    = "$NAME_S3_BUCKET/terraform_state"
         region = "us-west-2"
     }
 }
