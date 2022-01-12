@@ -220,28 +220,6 @@ https://us-west-2.console.aws.amazon.com/ecr/repositories
 
 ![](/images/pipeline/ecr-scan.png)
 
-
-Now scratch container only has the go binary in it, and ECR doesnt not support scanning Scratch. 
-
-`make ecr_scan_findings`
-
-```bash
-aws ecr describe-image-scan-findings --repository-name golang_example-codemash --image-id imageTag=0.1.21
-{
-    "imageScanStatus": {
-        "status": "FAILED", 
-        "description": "UnsupportedImageError: The operating system and/or package manager are not supported."
-    }, 
-    "repositoryName": "golang_example-codemash", 
-    "registryId": "123456789012", 
-    "imageId": {
-        "imageTag": "0.1.21", 
-        "imageDigest": "sha256:97169aa383bf476466e9af45079aed95e8bfdb09cbf94ca05a11ede20631c323"
-    }, 
-    "imageScanFindings": null
-}
-```
-
 ## AWS CodePipeline
 
 Now that we have a CodePipeline setup thanks to terraform let's push our code there and watch the pipeline run, 
