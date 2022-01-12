@@ -29,6 +29,11 @@ Set a temp password for the local database
 
 ## 1. Run locally
 
+Run the Golang tests locally 
+
+`make test`
+
+Now we can run the application locally
 `make run`
 
 {{% expand%}}

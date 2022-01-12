@@ -153,8 +153,8 @@ Confidence - Test your code and pipelines locally before your CI/CD tool runs it
 Redirecting to /bin/systemctl start docker.service Navigate to DevSecops repo cd ~/environment/devsecopspipeline
 Set a temp password for the local database
 export DB_PASSWORD=temppassword
-1. Run locally make run
-  Expand me...   env GIT_TERMINAL_PROMPT=1 go get -d -v .</description>
+1. Run locally Run the Golang tests locally
+make test</description>
     </item>
     
     <item>
