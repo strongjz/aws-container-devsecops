@@ -138,6 +138,7 @@ Create a testing repo in GitHub.com, then add it locally
 ```bash
 cd ~/environment/
 mkdir signing-test
+cd signing-test
 git init
   Initialized empty Git repository in /home/ec2-user/environment/signing-test/.git/
 echo "signing-test" >> README.md
