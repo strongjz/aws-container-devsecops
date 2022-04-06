@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.96.0" />
     <meta name="description" content="AWS Container DevSecOps Workshop">
 <meta name="author" content="James Strong">
 
@@ -12,22 +12,22 @@
     <title>Cleanup :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1642004698" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1642004698" rel="stylesheet">
-    <link href="/css/hybrid.css?1642004698" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1642004698" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1642004698" rel="stylesheet">
-    <link href="/css/auto-complete.css?1642004698" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1642004698" rel="stylesheet">
-    <link href="/css/theme.css?1642004698" rel="stylesheet">
-    <link href="/css/tabs.css?1642004698" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1642004698" rel="stylesheet">
+    <link href="/css/nucleus.css?1649270214" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1649270214" rel="stylesheet">
+    <link href="/css/hybrid.css?1649270214" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1649270214" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1649270214" rel="stylesheet">
+    <link href="/css/auto-complete.css?1649270214" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1649270214" rel="stylesheet">
+    <link href="/css/theme.css?1649270214" rel="stylesheet">
+    <link href="/css/tabs.css?1649270214" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1649270214" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1642004698" rel="stylesheet">
+    <link href="/css/theme-green.css?1649270214" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1642004698"></script>
+    <script src="/js/jquery-3.3.1.min.js?1649270214"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1642004698"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1642004698"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1649270214"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1649270214"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1642004698"></script>
+<script type="text/javascript" src="/js/search.js?1649270214"></script>
 
     
   </div>
@@ -813,10 +813,20 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#aws-code-resources">AWS Code resources</a></li>
-    <li><a href="#cluster">Cluster</a></li>
-    <li><a href="#load-balancers">Load Balancers</a></li>
-    <li><a href="#pvc-and-ebs-volumes">PVC and EBS volumes</a></li>
+    <li>
+      <ul>
+        <li><a href="#1-delete-falco-demo">1. Delete Falco demo</a></li>
+        <li><a href="#2-delete-falco-log-group">2. Delete Falco log group</a></li>
+        <li><a href="#3-delete-fluent-bit-deploy">3. Delete Fluent bit deploy</a></li>
+        <li><a href="#4-remove-fluent-bit-iam">4. Remove Fluent bit iam</a></li>
+        <li><a href="#5-remove-application">5. Remove Application</a></li>
+        <li><a href="#6-terraform-destroy">6. Terraform destroy</a></li>
+        <li><a href="#7-checkremove-for-external-aws-components">7. Check/Remove for external AWS components</a></li>
+        <li><a href="#8-delete-cluster-w-eksctl">8. Delete Cluster w/ eksctl</a></li>
+        <li><a href="#9-delete-terraform-s3-bucket">9. Delete terraform s3 bucket</a></li>
+        <li><a href="#10-delete-cloud9-instance">10. Delete cloud9 instance</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -842,21 +852,68 @@
         
 
 
-<h2 id="aws-code-resources">AWS Code resources</h2>
+<h1 id="high-level-removal-steps">High Level Removal Steps</h1>
+<ol>
+<li>Delete Falco demo</li>
+<li>Delete Falco log group</li>
+<li>Delete Fluent bit deploy</li>
+<li>Remove Fluent bit iam</li>
+<li>Remove Application</li>
+<li>Terraform destroy</li>
+<li>Check/Remove for external AWS components</li>
+<li>Delete Cluster w/ eksctl</li>
+<li>Delete terraform s3 bucket</li>
+<li>Delete cloud9 instance</li>
+</ol>
+<h3 id="1-delete-falco-demo">1. Delete Falco demo</h3>
+<p><code>kubectl delete -f falco-demo/nodejs-bad-rest-api/falco-demo.yml</code></p>
+<h3 id="2-delete-falco-log-group">2. Delete Falco log group</h3>
+<p><code>aws logs delete-log-group --log-group-name falco</code></p>
+<h3 id="3-delete-fluent-bit-deploy">3. Delete Fluent bit deploy</h3>
+<p><code>kubectl delete -f fluent-bit/kubernetes/</code></p>
+<h3 id="4-remove-fluent-bit-iam">4. Remove Fluent bit iam</h3>
+<p><code>aws iam  delete-policy --policy-arn arn:aws:iam::$ACCOUNT_ID:policy/EKS-CloudWatchLogs-devsecops</code></p>
+<h3 id="5-remove-application">5. Remove Application</h3>
+<p>Deleting the cluster removes the application</p>
+<h3 id="6-terraform-destroy">6. Terraform destroy</h3>
 <p>Delete the Codebuild, Code commit and pipeline</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make tf_destroy
-</code></pre></div><h2 id="cluster">Cluster</h2>
-<p>Delete the EKS Cluster</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make clean_cluster
-</code></pre></div><p>Make sure to delete any other resources created</p>
-<h2 id="load-balancers">Load Balancers</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make tf_destroy
+</span></span></code></pre></div><h3 id="7-checkremove-for-external-aws-components">7. Check/Remove for external AWS components</h3>
+<p>Make sure to delete any other resources created</p>
+<h4 id="load-balancers">Load Balancers</h4>
 <p>Verify there are no Load balancers running, ALB or otherwise</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws elbv2 describe-load-balancers --query <span style="color:#e6db74">&#34;LoadBalancers[].LoadBalancerArn&#34;</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws elb describe-load-balancers --query <span style="color:#e6db74">&#34;LoadBalancerDescriptions[].DNSName&#34;</span>
-</code></pre></div><h2 id="pvc-and-ebs-volumes">PVC and EBS volumes</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws elbv2 describe-load-balancers --query <span style="color:#e6db74">&#34;LoadBalancers[].LoadBalancerArn&#34;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws elb describe-load-balancers --query <span style="color:#e6db74">&#34;LoadBalancerDescriptions[].DNSName&#34;</span>
+</span></span></code></pre></div><h4 id="pvc-and-ebs-volumes">PVC and EBS volumes</h4>
 <p>Verify there are no left over EBS volumes from the PVC&rsquo;s for test application</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> aws ec2 describe-volumes --filters Name<span style="color:#f92672">=</span>tag:kubernetes.io/created-for/pv/name,Values<span style="color:#f92672">=</span>*     --query <span style="color:#e6db74">&#34;Volumes[].{ID:VolumeId}&#34;</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> aws ec2 describe-volumes --filters Name<span style="color:#f92672">=</span>tag:kubernetes.io/created-for/pv/name,Values<span style="color:#f92672">=</span>*     --query <span style="color:#e6db74">&#34;Volumes[].{ID:VolumeId}&#34;</span>
+</span></span></code></pre></div><h3 id="8-delete-cluster-w-eksctl">8. Delete Cluster w/ eksctl</h3>
+<p>Delete the EKS Cluster</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make clean_cluster
+</span></span></code></pre></div><h3 id="9-delete-terraform-s3-bucket">9. Delete terraform s3 bucket</h3>
+<p><code>aws s3 rm s3://$NAME_S3_BUCKET --region us-west-2 --recursive</code></p>
+<h3 id="10-delete-cloud9-instance">10. Delete cloud9 instance</h3>
+<ol>
+<li>
+<p>To open the dashboard, on the menu bar in the IDE, choose AWS Cloud9, Go To Your Dashboard.</p>
+</li>
+<li>
+<p>Do one of the following:</p>
+<ol>
+<li>
+<p>Choose the title inside the card for your Cloud9 instance, and then choose Delete.</p>
+</li>
+<li>
+<p>Select the Cloud9 instance card, and then choose Delete.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>In the Delete dialog box, enter Delete, and then choose Delete.</p>
+</li>
+</ol>
+<p>The delete operation takes a few minutes.</p>
+
 
 <footer class="footline">
 	
@@ -1334,19 +1391,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1642004698"></script>
-    <script src="/js/perfect-scrollbar.min.js?1642004698"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1642004698"></script>
-    <script src="/js/jquery.sticky.js?1642004698"></script>
-    <script src="/js/featherlight.min.js?1642004698"></script>
-    <script src="/js/highlight.pack.js?1642004698"></script>
+    <script src="/js/clipboard.min.js?1649270214"></script>
+    <script src="/js/perfect-scrollbar.min.js?1649270214"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1649270214"></script>
+    <script src="/js/jquery.sticky.js?1649270214"></script>
+    <script src="/js/featherlight.min.js?1649270214"></script>
+    <script src="/js/highlight.pack.js?1649270214"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1642004698"></script>
-    <script src="/js/learn.js?1642004698"></script>
-    <script src="/js/hugo-learn.js?1642004698"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1649270214"></script>
+    <script src="/js/learn.js?1649270214"></script>
+    <script src="/js/hugo-learn.js?1649270214"></script>
     
         
-            <script src="/mermaid/mermaid.js?1642004698"></script>
+            <script src="/mermaid/mermaid.js?1649270214"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

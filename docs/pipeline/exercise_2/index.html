@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.96.0" />
     <meta name="description" content="AWS Container DevSecOps Workshop">
 <meta name="author" content="James Strong">
 
@@ -12,22 +12,22 @@
     <title>Container Pipeline Exercise Part 2 :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1642004698" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1642004698" rel="stylesheet">
-    <link href="/css/hybrid.css?1642004698" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1642004698" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1642004698" rel="stylesheet">
-    <link href="/css/auto-complete.css?1642004698" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1642004698" rel="stylesheet">
-    <link href="/css/theme.css?1642004698" rel="stylesheet">
-    <link href="/css/tabs.css?1642004698" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1642004698" rel="stylesheet">
+    <link href="/css/nucleus.css?1649273506" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1649273506" rel="stylesheet">
+    <link href="/css/hybrid.css?1649273506" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1649273506" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1649273506" rel="stylesheet">
+    <link href="/css/auto-complete.css?1649273506" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1649273506" rel="stylesheet">
+    <link href="/css/theme.css?1649273506" rel="stylesheet">
+    <link href="/css/tabs.css?1649273506" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1649273506" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1642004698" rel="stylesheet">
+    <link href="/css/theme-green.css?1649273506" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1642004698"></script>
+    <script src="/js/jquery-3.3.1.min.js?1649273506"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1642004698"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1642004698"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1649273506"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1649273506"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1642004698"></script>
+<script type="text/javascript" src="/js/search.js?1649273506"></script>
 
     
   </div>
@@ -312,9 +312,9 @@
  
   
     
-      <li data-nav-id="/development/signing/" title="Git Commit Signing" class="dd-item ">
-        <a href="/development/signing/">
-        Git Commit Signing
+      <li data-nav-id="/development/git/" title="Git Security" class="dd-item ">
+        <a href="/development/git/">
+        Git Security
         
         </a>
     </li>
@@ -624,6 +624,27 @@
  
   
     
+      <li data-nav-id="/run/kubernetes/" title="Running Kubernetes" class="dd-item ">
+        <a href="/run/kubernetes/">
+        Running Kubernetes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/run/exercise/" title="Running Containers Exercise" class="dd-item ">
         <a href="/run/exercise/">
         Running Containers Exercise
@@ -861,80 +882,80 @@ image to AWS ECR</p>
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker login -u AWS -p redacted https://123456789012.dkr.ecr.us-west-2.amazonaws.com
-WARNING! Using --password via the CLI is insecure. Use --password-stdin.
-WARNING! Your password will be stored unencrypted in /home/ec2-user/.docker/config.json.
-Configure a credential helper to remove this warning. See
-https://docs.docker.com/engine/reference/commandline/login/#credentials-store
-
-Login Succeeded
-docker build -t 123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-codemash:0.1.20 .
-Sending build context to Docker daemon  198.3MB
-Step 1/10 : FROM golang:1.13-alpine AS builder
- ---&gt; 5863598a981a
-Step 2/10 : RUN apk update <span style="color:#f92672">&amp;&amp;</span> apk add --no-cache git
- ---&gt; Using cache
- ---&gt; 38f3e2c68459
-Step 3/10 : WORKDIR /go/src/app
- ---&gt; Using cache
- ---&gt; 7cfc77561295
-Step 4/10 : COPY . .
- ---&gt; a6c705d6dc6a
-Step 5/10 : RUN GIT_TERMINAL_PROMPT<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> go get -d -v
- ---&gt; Running in 96f459e87b9c
-github.com/strongjz/go_example_app <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-github.com/gin-gonic/gin <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-github.com/gin-contrib/sse <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-github.com/go-playground/validator <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-github.com/go-playground/universal-translator <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-github.com/go-playground/locales <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-github.com/leodido/go-urn <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-get <span style="color:#e6db74">&#34;golang.org/x/crypto/sha3&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;golang.org/x/crypto&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/crypto&#34;</span><span style="color:#f92672">}</span> at //golang.org/x/crypto/sha3?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-get <span style="color:#e6db74">&#34;golang.org/x/crypto/sha3&#34;</span>: verifying non-authoritative meta tag
-golang.org/x/crypto <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-get <span style="color:#e6db74">&#34;golang.org/x/text/language&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;golang.org/x/text&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/text&#34;</span><span style="color:#f92672">}</span> at //golang.org/x/text/language?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-get <span style="color:#e6db74">&#34;golang.org/x/text/language&#34;</span>: verifying non-authoritative meta tag
-golang.org/x/text <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-github.com/ugorji/go <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-get <span style="color:#e6db74">&#34;google.golang.org/protobuf/proto&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;google.golang.org/protobuf&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/protobuf&#34;</span><span style="color:#f92672">}</span> at //google.golang.org/protobuf/proto?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-get <span style="color:#e6db74">&#34;google.golang.org/protobuf/proto&#34;</span>: verifying non-authoritative meta tag
-google.golang.org/protobuf <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-get <span style="color:#e6db74">&#34;gopkg.in/yaml.v2&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;gopkg.in/yaml.v2&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://gopkg.in/yaml.v2&#34;</span><span style="color:#f92672">}</span> at //gopkg.in/yaml.v2?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-gopkg.in/yaml.v2 <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-github.com/mattn/go-isatty <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-get <span style="color:#e6db74">&#34;golang.org/x/sys/unix&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;golang.org/x/sys&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/sys&#34;</span><span style="color:#f92672">}</span> at //golang.org/x/sys/unix?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-get <span style="color:#e6db74">&#34;golang.org/x/sys/unix&#34;</span>: verifying non-authoritative meta tag
-golang.org/x/sys <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-github.com/lib/pq <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-Removing intermediate container 96f459e87b9c
- ---&gt; 953ff65afc5d
-Step 6/10 : RUN CGO_ENABLED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> go build -o /go/bin/app
- ---&gt; Running in 49da19462426
-Removing intermediate container 49da19462426
- ---&gt; 7e9d11bad96b
-Step 7/10 : FROM golang:1.13-alpine
- ---&gt; 5863598a981a
-Step 8/10 : COPY --from<span style="color:#f92672">=</span>builder /go/bin/app /go/bin/app
- ---&gt; Using cache
- ---&gt; abf4839e8c6b
-Step 9/10 : EXPOSE <span style="color:#ae81ff">8080</span>
- ---&gt; Using cache
- ---&gt; 62583b2da3ce
-Step 10/10 : CMD <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;/go/bin/app&#34;</span><span style="color:#f92672">]</span>
- ---&gt; Using cache
- ---&gt; 20b885db4549
-Successfully built 20b885db4549
-Successfully tagged 123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-codemash:0.1.20
-docker push 123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-codemash:0.1.20
-The push refers to repository <span style="color:#f92672">[</span>123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-codemash<span style="color:#f92672">]</span>
-6223903865fc: Pushed 
-39c40114257b: Pushed 
-08161ff6b353: Pushed 
-1ba1431fe2ba: Pushed 
-0f7493e3a35b: Pushed 
-50644c29ef5a: Pushed 
-0.1.20: digest: sha256:256531371d0ca8da6d1aa13ad63579f887a1c5e8e2de25136bface4e3e13ccd4 size: <span style="color:#ae81ff">1576</span>
-</code></pre></div>
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker login -u AWS -p redacted https://123456789012.dkr.ecr.us-west-2.amazonaws.com
+</span></span><span style="display:flex;"><span>WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+</span></span><span style="display:flex;"><span>WARNING! Your password will be stored unencrypted in /home/ec2-user/.docker/config.json.
+</span></span><span style="display:flex;"><span>Configure a credential helper to remove this warning. See
+</span></span><span style="display:flex;"><span>https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Login Succeeded
+</span></span><span style="display:flex;"><span>docker build -t 123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-codemash:0.1.20 .
+</span></span><span style="display:flex;"><span>Sending build context to Docker daemon  198.3MB
+</span></span><span style="display:flex;"><span>Step 1/10 : FROM golang:1.13-alpine AS builder
+</span></span><span style="display:flex;"><span> ---&gt; 5863598a981a
+</span></span><span style="display:flex;"><span>Step 2/10 : RUN apk update <span style="color:#f92672">&amp;&amp;</span> apk add --no-cache git
+</span></span><span style="display:flex;"><span> ---&gt; Using cache
+</span></span><span style="display:flex;"><span> ---&gt; 38f3e2c68459
+</span></span><span style="display:flex;"><span>Step 3/10 : WORKDIR /go/src/app
+</span></span><span style="display:flex;"><span> ---&gt; Using cache
+</span></span><span style="display:flex;"><span> ---&gt; 7cfc77561295
+</span></span><span style="display:flex;"><span>Step 4/10 : COPY . .
+</span></span><span style="display:flex;"><span> ---&gt; a6c705d6dc6a
+</span></span><span style="display:flex;"><span>Step 5/10 : RUN GIT_TERMINAL_PROMPT<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> go get -d -v
+</span></span><span style="display:flex;"><span> ---&gt; Running in 96f459e87b9c
+</span></span><span style="display:flex;"><span>github.com/strongjz/go_example_app <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>github.com/gin-gonic/gin <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>github.com/gin-contrib/sse <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>github.com/go-playground/validator <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>github.com/go-playground/universal-translator <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>github.com/go-playground/locales <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>github.com/leodido/go-urn <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#34;golang.org/x/crypto/sha3&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;golang.org/x/crypto&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/crypto&#34;</span><span style="color:#f92672">}</span> at //golang.org/x/crypto/sha3?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#34;golang.org/x/crypto/sha3&#34;</span>: verifying non-authoritative meta tag
+</span></span><span style="display:flex;"><span>golang.org/x/crypto <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#34;golang.org/x/text/language&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;golang.org/x/text&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/text&#34;</span><span style="color:#f92672">}</span> at //golang.org/x/text/language?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#34;golang.org/x/text/language&#34;</span>: verifying non-authoritative meta tag
+</span></span><span style="display:flex;"><span>golang.org/x/text <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>github.com/ugorji/go <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#34;google.golang.org/protobuf/proto&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;google.golang.org/protobuf&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/protobuf&#34;</span><span style="color:#f92672">}</span> at //google.golang.org/protobuf/proto?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#34;google.golang.org/protobuf/proto&#34;</span>: verifying non-authoritative meta tag
+</span></span><span style="display:flex;"><span>google.golang.org/protobuf <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#34;gopkg.in/yaml.v2&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;gopkg.in/yaml.v2&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://gopkg.in/yaml.v2&#34;</span><span style="color:#f92672">}</span> at //gopkg.in/yaml.v2?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>gopkg.in/yaml.v2 <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>github.com/mattn/go-isatty <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#34;golang.org/x/sys/unix&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;golang.org/x/sys&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/sys&#34;</span><span style="color:#f92672">}</span> at //golang.org/x/sys/unix?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#34;golang.org/x/sys/unix&#34;</span>: verifying non-authoritative meta tag
+</span></span><span style="display:flex;"><span>golang.org/x/sys <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>github.com/lib/pq <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Removing intermediate container 96f459e87b9c
+</span></span><span style="display:flex;"><span> ---&gt; 953ff65afc5d
+</span></span><span style="display:flex;"><span>Step 6/10 : RUN CGO_ENABLED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> go build -o /go/bin/app
+</span></span><span style="display:flex;"><span> ---&gt; Running in 49da19462426
+</span></span><span style="display:flex;"><span>Removing intermediate container 49da19462426
+</span></span><span style="display:flex;"><span> ---&gt; 7e9d11bad96b
+</span></span><span style="display:flex;"><span>Step 7/10 : FROM golang:1.13-alpine
+</span></span><span style="display:flex;"><span> ---&gt; 5863598a981a
+</span></span><span style="display:flex;"><span>Step 8/10 : COPY --from<span style="color:#f92672">=</span>builder /go/bin/app /go/bin/app
+</span></span><span style="display:flex;"><span> ---&gt; Using cache
+</span></span><span style="display:flex;"><span> ---&gt; abf4839e8c6b
+</span></span><span style="display:flex;"><span>Step 9/10 : EXPOSE <span style="color:#ae81ff">8080</span>
+</span></span><span style="display:flex;"><span> ---&gt; Using cache
+</span></span><span style="display:flex;"><span> ---&gt; 62583b2da3ce
+</span></span><span style="display:flex;"><span>Step 10/10 : CMD <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;/go/bin/app&#34;</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span> ---&gt; Using cache
+</span></span><span style="display:flex;"><span> ---&gt; 20b885db4549
+</span></span><span style="display:flex;"><span>Successfully built 20b885db4549
+</span></span><span style="display:flex;"><span>Successfully tagged 123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-codemash:0.1.20
+</span></span><span style="display:flex;"><span>docker push 123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-codemash:0.1.20
+</span></span><span style="display:flex;"><span>The push refers to repository <span style="color:#f92672">[</span>123456789012.dkr.ecr.us-west-2.amazonaws.com/golang_example-codemash<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>6223903865fc: Pushed 
+</span></span><span style="display:flex;"><span>39c40114257b: Pushed 
+</span></span><span style="display:flex;"><span>08161ff6b353: Pushed 
+</span></span><span style="display:flex;"><span>1ba1431fe2ba: Pushed 
+</span></span><span style="display:flex;"><span>0f7493e3a35b: Pushed 
+</span></span><span style="display:flex;"><span>50644c29ef5a: Pushed 
+</span></span><span style="display:flex;"><span>0.1.20: digest: sha256:256531371d0ca8da6d1aa13ad63579f887a1c5e8e2de25136bface4e3e13ccd4 size: <span style="color:#ae81ff">1576</span>
+</span></span></code></pre></div>
     </div>
 </div>
 
@@ -952,122 +973,122 @@ The push refers to repository <span style="color:#f92672">[</span>123456789012.d
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws ecr describe-image-scan-findings --repository-name golang_example-codemash --image-id imageTag<span style="color:#f92672">=</span>0.1.20
-<span style="color:#f92672">{</span>
-    <span style="color:#e6db74">&#34;imageScanStatus&#34;</span>: <span style="color:#f92672">{</span>
-        <span style="color:#e6db74">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;COMPLETE&#34;</span>, 
-        <span style="color:#e6db74">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;The scan was completed successfully.&#34;</span>
-    <span style="color:#f92672">}</span>, 
-    <span style="color:#e6db74">&#34;repositoryName&#34;</span>: <span style="color:#e6db74">&#34;golang_example-codemash&#34;</span>, 
-    <span style="color:#e6db74">&#34;registryId&#34;</span>: <span style="color:#e6db74">&#34;123456789012&#34;</span>, 
-    <span style="color:#e6db74">&#34;imageId&#34;</span>: <span style="color:#f92672">{</span>
-        <span style="color:#e6db74">&#34;imageTag&#34;</span>: <span style="color:#e6db74">&#34;0.1.20&#34;</span>, 
-        <span style="color:#e6db74">&#34;imageDigest&#34;</span>: <span style="color:#e6db74">&#34;sha256:256531371d0ca8da6d1aa13ad63579f887a1c5e8e2de25136bface4e3e13ccd4&#34;</span>
-    <span style="color:#f92672">}</span>, 
-    <span style="color:#e6db74">&#34;imageScanFindings&#34;</span>: <span style="color:#f92672">{</span>
-        <span style="color:#e6db74">&#34;imageScanCompletedAt&#34;</span>: 1631403103.0, 
-        <span style="color:#e6db74">&#34;vulnerabilitySourceUpdatedAt&#34;</span>: 1631377466.0, 
-        <span style="color:#e6db74">&#34;findings&#34;</span>: <span style="color:#f92672">[</span>
-            <span style="color:#f92672">{</span>
-                <span style="color:#e6db74">&#34;severity&#34;</span>: <span style="color:#e6db74">&#34;MEDIUM&#34;</span>, 
-                <span style="color:#e6db74">&#34;attributes&#34;</span>: <span style="color:#f92672">[</span>
-                    <span style="color:#f92672">{</span>
-                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;2.10.5-r1&#34;</span>, 
-                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;package_version&#34;</span>
-                    <span style="color:#f92672">}</span>, 
-                    <span style="color:#f92672">{</span>
-                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;apk-tools&#34;</span>, 
-                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;package_name&#34;</span>
-                    <span style="color:#f92672">}</span>, 
-                    <span style="color:#f92672">{</span>
-                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;AV:N/AC:L/Au:N/C:N/I:N/A:P&#34;</span>, 
-                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;CVSS2_VECTOR&#34;</span>
-                    <span style="color:#f92672">}</span>, 
-                    <span style="color:#f92672">{</span>
-                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;5&#34;</span>, 
-                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;CVSS2_SCORE&#34;</span>
-                    <span style="color:#f92672">}</span>
-                <span style="color:#f92672">]</span>, 
-                <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;CVE-2021-30139&#34;</span>, 
-                <span style="color:#e6db74">&#34;uri&#34;</span>: <span style="color:#e6db74">&#34;https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-30139&#34;</span>
-            <span style="color:#f92672">}</span>, 
-            <span style="color:#f92672">{</span>
-                <span style="color:#e6db74">&#34;severity&#34;</span>: <span style="color:#e6db74">&#34;MEDIUM&#34;</span>, 
-                <span style="color:#e6db74">&#34;attributes&#34;</span>: <span style="color:#f92672">[</span>
-                    <span style="color:#f92672">{</span>
-                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;2.10.5-r1&#34;</span>, 
-                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;package_version&#34;</span>
-                    <span style="color:#f92672">}</span>, 
-                    <span style="color:#f92672">{</span>
-                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;apk-tools&#34;</span>, 
-                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;package_name&#34;</span>
-                    <span style="color:#f92672">}</span>, 
-                    <span style="color:#f92672">{</span>
-                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;AV:N/AC:L/Au:N/C:P/I:N/A:P&#34;</span>, 
-                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;CVSS2_VECTOR&#34;</span>
-                    <span style="color:#f92672">}</span>, 
-                    <span style="color:#f92672">{</span>
-                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;6.4&#34;</span>, 
-                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;CVSS2_SCORE&#34;</span>
-                    <span style="color:#f92672">}</span>
-                <span style="color:#f92672">]</span>, 
-                <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;CVE-2021-36159&#34;</span>, 
-                <span style="color:#e6db74">&#34;uri&#34;</span>: <span style="color:#e6db74">&#34;https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36159&#34;</span>
-            <span style="color:#f92672">}</span>, 
-            <span style="color:#f92672">{</span>
-                <span style="color:#e6db74">&#34;severity&#34;</span>: <span style="color:#e6db74">&#34;MEDIUM&#34;</span>, 
-                <span style="color:#e6db74">&#34;attributes&#34;</span>: <span style="color:#f92672">[</span>
-                    <span style="color:#f92672">{</span>
-                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;1.31.1-r16&#34;</span>, 
-                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;package_version&#34;</span>
-                    <span style="color:#f92672">}</span>, 
-                    <span style="color:#f92672">{</span>
-                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;busybox&#34;</span>, 
-                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;package_name&#34;</span>
-                    <span style="color:#f92672">}</span>, 
-                    <span style="color:#f92672">{</span>
-                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;AV:N/AC:L/Au:N/C:N/I:N/A:P&#34;</span>, 
-                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;CVSS2_VECTOR&#34;</span>
-                    <span style="color:#f92672">}</span>, 
-                    <span style="color:#f92672">{</span>
-                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;5&#34;</span>, 
-                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;CVSS2_SCORE&#34;</span>
-                    <span style="color:#f92672">}</span>
-                <span style="color:#f92672">]</span>, 
-                <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;CVE-2021-28831&#34;</span>, 
-                <span style="color:#e6db74">&#34;uri&#34;</span>: <span style="color:#e6db74">&#34;https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28831&#34;</span>
-            <span style="color:#f92672">}</span>, 
-            <span style="color:#f92672">{</span>
-                <span style="color:#e6db74">&#34;severity&#34;</span>: <span style="color:#e6db74">&#34;LOW&#34;</span>, 
-                <span style="color:#e6db74">&#34;attributes&#34;</span>: <span style="color:#f92672">[</span>
-                    <span style="color:#f92672">{</span>
-                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;1.1.24-r9&#34;</span>, 
-                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;package_version&#34;</span>
-                    <span style="color:#f92672">}</span>, 
-                    <span style="color:#f92672">{</span>
-                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;musl&#34;</span>, 
-                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;package_name&#34;</span>
-                    <span style="color:#f92672">}</span>, 
-                    <span style="color:#f92672">{</span>
-                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;AV:L/AC:L/Au:N/C:N/I:N/A:P&#34;</span>, 
-                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;CVSS2_VECTOR&#34;</span>
-                    <span style="color:#f92672">}</span>, 
-                    <span style="color:#f92672">{</span>
-                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;2.1&#34;</span>, 
-                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;CVSS2_SCORE&#34;</span>
-                    <span style="color:#f92672">}</span>
-                <span style="color:#f92672">]</span>, 
-                <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;CVE-2020-28928&#34;</span>, 
-                <span style="color:#e6db74">&#34;uri&#34;</span>: <span style="color:#e6db74">&#34;https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28928&#34;</span>
-            <span style="color:#f92672">}</span>
-        <span style="color:#f92672">]</span>, 
-        <span style="color:#e6db74">&#34;findingSeverityCounts&#34;</span>: <span style="color:#f92672">{</span>
-            <span style="color:#e6db74">&#34;MEDIUM&#34;</span>: 3, 
-            <span style="color:#e6db74">&#34;LOW&#34;</span>: <span style="color:#ae81ff">1</span>
-        <span style="color:#f92672">}</span>
-    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div>
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws ecr describe-image-scan-findings --repository-name golang_example-codemash --image-id imageTag<span style="color:#f92672">=</span>0.1.20
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;imageScanStatus&#34;</span>: <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;COMPLETE&#34;</span>, 
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;The scan was completed successfully.&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>, 
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;repositoryName&#34;</span>: <span style="color:#e6db74">&#34;golang_example-codemash&#34;</span>, 
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;registryId&#34;</span>: <span style="color:#e6db74">&#34;123456789012&#34;</span>, 
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;imageId&#34;</span>: <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;imageTag&#34;</span>: <span style="color:#e6db74">&#34;0.1.20&#34;</span>, 
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;imageDigest&#34;</span>: <span style="color:#e6db74">&#34;sha256:256531371d0ca8da6d1aa13ad63579f887a1c5e8e2de25136bface4e3e13ccd4&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>, 
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;imageScanFindings&#34;</span>: <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;imageScanCompletedAt&#34;</span>: 1631403103.0, 
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;vulnerabilitySourceUpdatedAt&#34;</span>: 1631377466.0, 
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;findings&#34;</span>: <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;severity&#34;</span>: <span style="color:#e6db74">&#34;MEDIUM&#34;</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;attributes&#34;</span>: <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;2.10.5-r1&#34;</span>, 
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;package_version&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>, 
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;apk-tools&#34;</span>, 
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;package_name&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>, 
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;AV:N/AC:L/Au:N/C:N/I:N/A:P&#34;</span>, 
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;CVSS2_VECTOR&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>, 
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;5&#34;</span>, 
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;CVSS2_SCORE&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">]</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;CVE-2021-30139&#34;</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;uri&#34;</span>: <span style="color:#e6db74">&#34;https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-30139&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>, 
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;severity&#34;</span>: <span style="color:#e6db74">&#34;MEDIUM&#34;</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;attributes&#34;</span>: <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;2.10.5-r1&#34;</span>, 
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;package_version&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>, 
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;apk-tools&#34;</span>, 
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;package_name&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>, 
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;AV:N/AC:L/Au:N/C:P/I:N/A:P&#34;</span>, 
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;CVSS2_VECTOR&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>, 
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;6.4&#34;</span>, 
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;CVSS2_SCORE&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">]</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;CVE-2021-36159&#34;</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;uri&#34;</span>: <span style="color:#e6db74">&#34;https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36159&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>, 
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;severity&#34;</span>: <span style="color:#e6db74">&#34;MEDIUM&#34;</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;attributes&#34;</span>: <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;1.31.1-r16&#34;</span>, 
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;package_version&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>, 
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;busybox&#34;</span>, 
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;package_name&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>, 
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;AV:N/AC:L/Au:N/C:N/I:N/A:P&#34;</span>, 
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;CVSS2_VECTOR&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>, 
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;5&#34;</span>, 
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;CVSS2_SCORE&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">]</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;CVE-2021-28831&#34;</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;uri&#34;</span>: <span style="color:#e6db74">&#34;https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28831&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>, 
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;severity&#34;</span>: <span style="color:#e6db74">&#34;LOW&#34;</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;attributes&#34;</span>: <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;1.1.24-r9&#34;</span>, 
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;package_version&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>, 
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;musl&#34;</span>, 
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;package_name&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>, 
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;AV:L/AC:L/Au:N/C:N/I:N/A:P&#34;</span>, 
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;CVSS2_VECTOR&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>, 
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;2.1&#34;</span>, 
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;CVSS2_SCORE&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">]</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;CVE-2020-28928&#34;</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;uri&#34;</span>: <span style="color:#e6db74">&#34;https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28928&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">]</span>, 
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;findingSeverityCounts&#34;</span>: <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;MEDIUM&#34;</span>: 3, 
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;LOW&#34;</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div>
     </div>
 </div>
 
@@ -1078,43 +1099,43 @@ The push refers to repository <span style="color:#f92672">[</span>123456789012.d
 <p>Now that we have a CodePipeline setup thanks to terraform let&rsquo;s push our code there and watch the pipeline run,
 and do everything we just did but in the CodePipeline</p>
 <p>First We need to give our Codepipeline Role access to the cluster <code>make cluster_iam</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eksctl create iamidentitymapping --cluster devsecops --arn arn:aws:iam::123456789012:role/devsecops-codemash-codebuild   --username admin <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>--group system:masters
-2021-09-18 20:33:43 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  eksctl version 0.67.0
-2021-09-18 20:33:43 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  using region us-west-2
-2021-09-18 20:33:43 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  adding identity <span style="color:#e6db74">&#34;arn:aws:iam::123456789012:role/devsecops-codemash-codebuild&#34;</span> to auth ConfigMap
-</code></pre></div><p>We clone the repo from GitHub but now let&rsquo;s push it to AWS CodeCommit</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>eksctl create iamidentitymapping --cluster devsecops --arn arn:aws:iam::123456789012:role/devsecops-codemash-codebuild   --username admin <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>--group system:masters
+</span></span><span style="display:flex;"><span>2021-09-18 20:33:43 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  eksctl version 0.67.0
+</span></span><span style="display:flex;"><span>2021-09-18 20:33:43 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  using region us-west-2
+</span></span><span style="display:flex;"><span>2021-09-18 20:33:43 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  adding identity <span style="color:#e6db74">&#34;arn:aws:iam::123456789012:role/devsecops-codemash-codebuild&#34;</span> to auth ConfigMap
+</span></span></code></pre></div><p>We clone the repo from GitHub but now let&rsquo;s push it to AWS CodeCommit</p>
 <p>If you don&rsquo;t remember the name we can use the aws cli to find it for use <code>aws codecommit list-repositories --region us-west-2</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">{</span>
-    <span style="color:#e6db74">&#34;repositories&#34;</span>: <span style="color:#f92672">[</span>
-        <span style="color:#f92672">{</span>
-            <span style="color:#e6db74">&#34;repositoryName&#34;</span>: <span style="color:#e6db74">&#34;codemash-devsecops-repo&#34;</span>, 
-            <span style="color:#e6db74">&#34;repositoryId&#34;</span>: <span style="color:#e6db74">&#34;568b8724-36c5-44fe-9848-42e2db43a861&#34;</span>
-        <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Use the repositoryName to construct the http endpoint for the AWS remote</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;repositories&#34;</span>: <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;repositoryName&#34;</span>: <span style="color:#e6db74">&#34;codemash-devsecops-repo&#34;</span>, 
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;repositoryId&#34;</span>: <span style="color:#e6db74">&#34;568b8724-36c5-44fe-9848-42e2db43a861&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Use the repositoryName to construct the http endpoint for the AWS remote</p>
 <p>For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote add aws https://git-codecommit.us-west-2.amazonaws.com/v1/repos/codemash-devsecops-repo
-</code></pre></div><p>Update the <code>~/environment/devsecopspipeline/VERSION.txt</code> to the number you think is appropriate</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote add aws https://git-codecommit.us-west-2.amazonaws.com/v1/repos/codemash-devsecops-repo
+</span></span></code></pre></div><p>Update the <code>~/environment/devsecopspipeline/VERSION.txt</code> to the number you think is appropriate</p>
 <p>Now we can push the repo to AWS Code commit</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add -A
-git commit -m <span style="color:#e6db74">&#34;add to AWS&#34;</span>
-git push aws
-</code></pre></div><p><a href="https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines">Navigate to the CodePipeline console to build in progress</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add -A
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;add to AWS&#34;</span>
+</span></span><span style="display:flex;"><span>git push aws
+</span></span></code></pre></div><p><a href="https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines">Navigate to the CodePipeline console to build in progress</a></p>
 <p><img src="/images/pipeline/code-pipeline-progress.png" alt=""></p>
 <p>Once our deployment finishes we can test the cluster in AWS <code>kubectl get svc clusterip-service</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NAME                TYPE           CLUSTER-IP       EXTERNAL-IP                                                              PORT<span style="color:#f92672">(</span>S<span style="color:#f92672">)</span>        AGE
-clusterip-service   LoadBalancer   10.100.254.156   a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com   80:30430/TCP   87m
-</code></pre></div><p>Take that EXTERNAL-IP and test the application</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/
-<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Default Page&#34;</span><span style="color:#f92672">}</span>
-
-curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/data
-<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Database Connected&#34;</span><span style="color:#f92672">}</span>
-
-curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/host
-<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;NODE: ip-192-168-62-23.us-west-2.compute.internal, POD IP:192.168.51.0&#34;</span><span style="color:#f92672">}</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>NAME                TYPE           CLUSTER-IP       EXTERNAL-IP                                                              PORT<span style="color:#f92672">(</span>S<span style="color:#f92672">)</span>        AGE
+</span></span><span style="display:flex;"><span>clusterip-service   LoadBalancer   10.100.254.156   a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com   80:30430/TCP   87m
+</span></span></code></pre></div><p>Take that EXTERNAL-IP and test the application</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Default Page&#34;</span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/data
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Database Connected&#34;</span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/host
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;NODE: ip-192-168-62-23.us-west-2.compute.internal, POD IP:192.168.51.0&#34;</span><span style="color:#f92672">}</span>
+</span></span></code></pre></div>
 
 <footer class="footline">
 	
@@ -1522,6 +1543,22 @@ curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/host
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1595,19 +1632,19 @@ curl a9d40a7cc91b447e7a7830a6aa4a1b97-970438419.us-west-2.elb.amazonaws.com/host
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1642004698"></script>
-    <script src="/js/perfect-scrollbar.min.js?1642004698"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1642004698"></script>
-    <script src="/js/jquery.sticky.js?1642004698"></script>
-    <script src="/js/featherlight.min.js?1642004698"></script>
-    <script src="/js/highlight.pack.js?1642004698"></script>
+    <script src="/js/clipboard.min.js?1649273506"></script>
+    <script src="/js/perfect-scrollbar.min.js?1649273506"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1649273506"></script>
+    <script src="/js/jquery.sticky.js?1649273506"></script>
+    <script src="/js/featherlight.min.js?1649273506"></script>
+    <script src="/js/highlight.pack.js?1649273506"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1642004698"></script>
-    <script src="/js/learn.js?1642004698"></script>
-    <script src="/js/hugo-learn.js?1642004698"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1649273506"></script>
+    <script src="/js/learn.js?1649273506"></script>
+    <script src="/js/hugo-learn.js?1649273506"></script>
     
         
-            <script src="/mermaid/mermaid.js?1642004698"></script>
+            <script src="/mermaid/mermaid.js?1649273506"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

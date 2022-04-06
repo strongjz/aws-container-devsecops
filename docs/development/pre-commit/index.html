@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.96.0" />
     <meta name="description" content="AWS Container DevSecOps Workshop">
 <meta name="author" content="James Strong">
 
@@ -12,22 +12,22 @@
     <title>Pre Commit :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1642004698" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1642004698" rel="stylesheet">
-    <link href="/css/hybrid.css?1642004698" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1642004698" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1642004698" rel="stylesheet">
-    <link href="/css/auto-complete.css?1642004698" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1642004698" rel="stylesheet">
-    <link href="/css/theme.css?1642004698" rel="stylesheet">
-    <link href="/css/tabs.css?1642004698" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1642004698" rel="stylesheet">
+    <link href="/css/nucleus.css?1649273506" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1649273506" rel="stylesheet">
+    <link href="/css/hybrid.css?1649273506" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1649273506" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1649273506" rel="stylesheet">
+    <link href="/css/auto-complete.css?1649273506" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1649273506" rel="stylesheet">
+    <link href="/css/theme.css?1649273506" rel="stylesheet">
+    <link href="/css/tabs.css?1649273506" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1649273506" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1642004698" rel="stylesheet">
+    <link href="/css/theme-green.css?1649273506" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1642004698"></script>
+    <script src="/js/jquery-3.3.1.min.js?1649273506"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1642004698"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1642004698"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1649273506"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1649273506"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1642004698"></script>
+<script type="text/javascript" src="/js/search.js?1649273506"></script>
 
     
   </div>
@@ -312,9 +312,9 @@
  
   
     
-      <li data-nav-id="/development/signing/" title="Git Commit Signing" class="dd-item ">
-        <a href="/development/signing/">
-        Git Commit Signing
+      <li data-nav-id="/development/git/" title="Git Security" class="dd-item ">
+        <a href="/development/git/">
+        Git Security
         
         </a>
     </li>
@@ -624,6 +624,27 @@
  
   
     
+      <li data-nav-id="/run/kubernetes/" title="Running Kubernetes" class="dd-item ">
+        <a href="/run/kubernetes/">
+        Running Kubernetes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/run/exercise/" title="Running Containers Exercise" class="dd-item ">
         <a href="/run/exercise/">
         Running Containers Exercise
@@ -870,26 +891,26 @@
 <h1 id="exercise">Exercise</h1>
 <h2 id="install">Install</h2>
 <p><code>pip install pre-commit</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pre-commit installed at .git/hooks/pre-commit
-pre-commit --version
-pre-commit 1.21.0
-</code></pre></div><h2 id="configure">Configure</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pre-commit installed at .git/hooks/pre-commit
+</span></span><span style="display:flex;"><span>pre-commit --version
+</span></span><span style="display:flex;"><span>pre-commit 1.21.0
+</span></span></code></pre></div><h2 id="configure">Configure</h2>
 <p>We have already created the .pre-commit-config.yaml in the Files directory</p>
 <p><code>cat ~/environment/aws-container-devsecops/content/development/development.files/.pre-commit-config.yaml</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">repos</span>:
--   <span style="color:#f92672">repo</span>: <span style="color:#ae81ff">https://github.com/pre-commit/pre-commit-hooks</span>
-    <span style="color:#f92672">rev</span>: <span style="color:#ae81ff">v2.3.0</span>
-    <span style="color:#f92672">hooks</span>:
-    -   <span style="color:#f92672">id</span>: <span style="color:#ae81ff">detect-private-key</span>
-</code></pre></div><h2 id="test">Test</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">repos</span>:
+</span></span><span style="display:flex;"><span>-   <span style="color:#f92672">repo</span>: <span style="color:#ae81ff">https://github.com/pre-commit/pre-commit-hooks</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">rev</span>: <span style="color:#ae81ff">v2.3.0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">hooks</span>:
+</span></span><span style="display:flex;"><span>    -   <span style="color:#f92672">id</span>: <span style="color:#ae81ff">detect-private-key</span>
+</span></span></code></pre></div><h2 id="test">Test</h2>
 <p>`cd ~/environment/aws-container-devsecops/content/development/development.files''</p>
 <p>Using the pre-commit hook cli we can run the checks and see that the commit would fail. <code>pre-commit run --all-files</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Detect Private Key.......................................................Failed
-- hook id: detect-private-key
-- exit code: <span style="color:#ae81ff">1</span>
-
-Private key found: content/development/development.files/secret.yaml
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Detect Private Key.......................................................Failed
+</span></span><span style="display:flex;"><span>- hook id: detect-private-key
+</span></span><span style="display:flex;"><span>- exit code: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Private key found: content/development/development.files/secret.yaml
+</span></span></code></pre></div>
 
 <footer class="footline">
 	
@@ -1297,6 +1318,22 @@ Private key found: content/development/development.files/secret.yaml
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1370,19 +1407,19 @@ Private key found: content/development/development.files/secret.yaml
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1642004698"></script>
-    <script src="/js/perfect-scrollbar.min.js?1642004698"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1642004698"></script>
-    <script src="/js/jquery.sticky.js?1642004698"></script>
-    <script src="/js/featherlight.min.js?1642004698"></script>
-    <script src="/js/highlight.pack.js?1642004698"></script>
+    <script src="/js/clipboard.min.js?1649273506"></script>
+    <script src="/js/perfect-scrollbar.min.js?1649273506"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1649273506"></script>
+    <script src="/js/jquery.sticky.js?1649273506"></script>
+    <script src="/js/featherlight.min.js?1649273506"></script>
+    <script src="/js/highlight.pack.js?1649273506"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1642004698"></script>
-    <script src="/js/learn.js?1642004698"></script>
-    <script src="/js/hugo-learn.js?1642004698"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1649273506"></script>
+    <script src="/js/learn.js?1649273506"></script>
+    <script src="/js/hugo-learn.js?1649273506"></script>
     
         
-            <script src="/mermaid/mermaid.js?1642004698"></script>
+            <script src="/mermaid/mermaid.js?1649273506"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

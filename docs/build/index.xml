@@ -12,8 +12,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/build/container/</guid>
-      <description>Baseline  DISABLE ROOT  Mount the container&amp;rsquo;s root filesystem as read-only set k8s Security context set Linux Capabilities Disable privilege escalation    securityContext: allowPrivilegeEscalation: false  Least Privilege by defining user  apiVersion: v1 kind: Pod metadata: name: pod-security spec: securityContext: runAsUser: 10000 runAsGroup: 30000 fsGroup: 20000  Network policies Container Capabilities  capabilities: add: [&amp;#34;NET_ADMIN&amp;#34;, &amp;#34;SYS_TIME&amp;#34;]  DISABLE ROOT  Helpers Versioning
- Invest in Strategy Containers follow build Versions of Software  Semantic Versioning   Metadata  LABEL &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt; &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt; &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt; .</description>
+      <description>Baseline  DISABLE ROOT Mount the container&amp;rsquo;s root filesystem as read-only set k8s Security context set Linux Capabilities Disable privilege escalation   securityContext:  allowPrivilegeEscalation: false  Least Privilege by defining user  apiVersion: v1 kind: Pod metadata:  name: pod-security spec:  securityContext:  runAsUser: 10000  runAsGroup: 30000  fsGroup: 20000   Network policies
+  Workload configuration should be audited regularly, Kubesec
+  Container Capabilities</description>
     </item>
     
     <item>

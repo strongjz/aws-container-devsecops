@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.96.0" />
     <meta name="description" content="AWS Container DevSecOps Workshop">
 <meta name="author" content="James Strong">
 
@@ -12,22 +12,22 @@
     <title>Linting :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1642004698" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1642004698" rel="stylesheet">
-    <link href="/css/hybrid.css?1642004698" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1642004698" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1642004698" rel="stylesheet">
-    <link href="/css/auto-complete.css?1642004698" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1642004698" rel="stylesheet">
-    <link href="/css/theme.css?1642004698" rel="stylesheet">
-    <link href="/css/tabs.css?1642004698" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1642004698" rel="stylesheet">
+    <link href="/css/nucleus.css?1649273506" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1649273506" rel="stylesheet">
+    <link href="/css/hybrid.css?1649273506" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1649273506" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1649273506" rel="stylesheet">
+    <link href="/css/auto-complete.css?1649273506" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1649273506" rel="stylesheet">
+    <link href="/css/theme.css?1649273506" rel="stylesheet">
+    <link href="/css/tabs.css?1649273506" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1649273506" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1642004698" rel="stylesheet">
+    <link href="/css/theme-green.css?1649273506" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1642004698"></script>
+    <script src="/js/jquery-3.3.1.min.js?1649273506"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1642004698"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1642004698"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1649273506"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1649273506"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1642004698"></script>
+<script type="text/javascript" src="/js/search.js?1649273506"></script>
 
     
   </div>
@@ -312,9 +312,9 @@
  
   
     
-      <li data-nav-id="/development/signing/" title="Git Commit Signing" class="dd-item ">
-        <a href="/development/signing/">
-        Git Commit Signing
+      <li data-nav-id="/development/git/" title="Git Security" class="dd-item ">
+        <a href="/development/git/">
+        Git Security
         
         </a>
     </li>
@@ -624,6 +624,27 @@
  
   
     
+      <li data-nav-id="/run/kubernetes/" title="Running Kubernetes" class="dd-item ">
+        <a href="/run/kubernetes/">
+        Running Kubernetes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/run/exercise/" title="Running Containers Exercise" class="dd-item ">
         <a href="/run/exercise/">
         Running Containers Exercise
@@ -851,46 +872,46 @@ compiling phase to display errors before execution.</li>
 <p><a href="https://github.com/koalaman/shellcheck">https://github.com/koalaman/shellcheck</a></p>
 <p><img src="/images/development/shellcheck.png" alt=""></p>
 <p>Some languages like go have them builtin</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> 2021-08-24 09:47:02 ⌚  strongjz-macbook in ~/Documents/code/go/src/github.com/strongjz/go_example_app
-± |master ✓| → go vet
-go: downloading github.com/gin-gonic/gin v1.6.2
-go: downloading github.com/gin-contrib/sse v0.1.0
-go: downloading github.com/ugorji/go v1.1.7
-go: downloading github.com/golang/protobuf v1.3.3
-go: downloading golang.org/x/sys v0.0.0-20200116001909-b77594299b42
-go: downloading github.com/go-playground/validator/v10 v10.2.0
-go: downloading github.com/ugorji/go/codec v1.1.7
-go: downloading github.com/leodido/go-urn v1.2.0
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go doc cmd/vet
-Vet examines Go source code and reports suspicious constructs, such as
-Printf calls whose arguments <span style="color:#66d9ef">do</span> not align with the format string. Vet uses
-heuristics that <span style="color:#66d9ef">do</span> not guarantee all reports are genuine problems, but it
-can find errors not caught by the compilers.
-
-It can be invoked three ways:
-
-By package, from the go tool:
-
-    go vet package/path/name
-
-vets the package whose path is provided.
-
-By files:
-
-    go tool vet source/directory/*.go
-  :
-</code></pre></div><h1 id="exercise">Exercise</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ /go/src/github.com/strongjz/go_example_app
+</span></span><span style="display:flex;"><span>± |master ✓| → go vet
+</span></span><span style="display:flex;"><span>go: downloading github.com/gin-gonic/gin v1.6.2
+</span></span><span style="display:flex;"><span>go: downloading github.com/gin-contrib/sse v0.1.0
+</span></span><span style="display:flex;"><span>go: downloading github.com/ugorji/go v1.1.7
+</span></span><span style="display:flex;"><span>go: downloading github.com/golang/protobuf v1.3.3
+</span></span><span style="display:flex;"><span>go: downloading golang.org/x/sys v0.0.0-20200116001909-b77594299b42
+</span></span><span style="display:flex;"><span>go: downloading github.com/go-playground/validator/v10 v10.2.0
+</span></span><span style="display:flex;"><span>go: downloading github.com/ugorji/go/codec v1.1.7
+</span></span><span style="display:flex;"><span>go: downloading github.com/leodido/go-urn v1.2.0
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ go doc cmd/vet
+</span></span><span style="display:flex;"><span>Vet examines Go source code and reports suspicious constructs, such as
+</span></span><span style="display:flex;"><span>Printf calls whose arguments <span style="color:#66d9ef">do</span> not align with the format string. Vet uses
+</span></span><span style="display:flex;"><span>heuristics that <span style="color:#66d9ef">do</span> not guarantee all reports are genuine problems, but it
+</span></span><span style="display:flex;"><span>can find errors not caught by the compilers.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>It can be invoked three ways:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>By package, from the go tool:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    go vet package/path/name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>vets the package whose path is provided.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>By files:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    go tool vet source/directory/*.go
+</span></span><span style="display:flex;"><span>  :
+</span></span></code></pre></div><h1 id="exercise">Exercise</h1>
 <p>For DockerFiles we can use tools like <a href="https://github.com/hadolint/hadolint">hadolint</a></p>
 <p><code>docker run --rm -i hadolint/hadolint:v2.7.0 &lt;  ~/environment/aws-container-devsecops/content/development/development.files/Dockerfile</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">-:1 DL3006 warning: Always tag the version of an image explicitly
--:2 DL3015 info: Avoid additional packages by specifying <span style="color:#e6db74">`</span>--no-install-recommends<span style="color:#e6db74">`</span>
--:2 DL3009 info: Delete the apt-get lists after installing something
--:2 SC2154 warning: node_verion is referenced but not assigned <span style="color:#f92672">(</span>did you mean <span style="color:#e6db74">&#39;node_version&#39;</span>?<span style="color:#f92672">)</span>.
--:4 DL3045 warning: <span style="color:#e6db74">`</span>COPY<span style="color:#e6db74">`</span> to a relative destination without <span style="color:#e6db74">`</span>WORKDIR<span style="color:#e6db74">`</span> set.
--:5 DL3003 warning: Use WORKDIR to switch to a directory
--:5 DL3016 warning: Pin versions in npm. Instead of <span style="color:#e6db74">`</span>npm install &lt;package&gt;<span style="color:#e6db74">`</span> use <span style="color:#e6db74">`</span>npm install &lt;package&gt;@&lt;version&gt;<span style="color:#e6db74">`</span>
--:8 DL3011 error: Valid UNIX ports range from <span style="color:#ae81ff">0</span> to <span style="color:#ae81ff">65535</span>
-</code></pre></div><p>Try to fix the issues with the Dockerfile on your own</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>-:1 DL3006 warning: Always tag the version of an image explicitly
+</span></span><span style="display:flex;"><span>-:2 DL3015 info: Avoid additional packages by specifying <span style="color:#e6db74">`</span>--no-install-recommends<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>-:2 DL3009 info: Delete the apt-get lists after installing something
+</span></span><span style="display:flex;"><span>-:2 SC2154 warning: node_verion is referenced but not assigned <span style="color:#f92672">(</span>did you mean <span style="color:#e6db74">&#39;node_version&#39;</span>?<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>-:4 DL3045 warning: <span style="color:#e6db74">`</span>COPY<span style="color:#e6db74">`</span> to a relative destination without <span style="color:#e6db74">`</span>WORKDIR<span style="color:#e6db74">`</span> set.
+</span></span><span style="display:flex;"><span>-:5 DL3003 warning: Use WORKDIR to switch to a directory
+</span></span><span style="display:flex;"><span>-:5 DL3016 warning: Pin versions in npm. Instead of <span style="color:#e6db74">`</span>npm install &lt;package&gt;<span style="color:#e6db74">`</span> use <span style="color:#e6db74">`</span>npm install &lt;package&gt;@&lt;version&gt;<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>-:8 DL3011 error: Valid UNIX ports range from <span style="color:#ae81ff">0</span> to <span style="color:#ae81ff">65535</span>
+</span></span></code></pre></div><p>Try to fix the issues with the Dockerfile on your own</p>
 <p>If you get stuck look at the</p>
 <p><code>docker run --rm -i hadolint/hadolint:v2.7.0 &lt;  ~/environment/aws-container-devsecops/content/development/development.files/Dockerfilefixed</code></p>
 
@@ -1301,6 +1322,22 @@ By files:
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1361,7 +1398,7 @@ By files:
 	 
 	 
 		
-			<a class="nav nav-prev" href="/development/signing/" title="Git Commit Signing"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/development/git/" title="Git Security"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/development/owasp/" title="Open Web Application Security Project" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -1374,19 +1411,19 @@ By files:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1642004698"></script>
-    <script src="/js/perfect-scrollbar.min.js?1642004698"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1642004698"></script>
-    <script src="/js/jquery.sticky.js?1642004698"></script>
-    <script src="/js/featherlight.min.js?1642004698"></script>
-    <script src="/js/highlight.pack.js?1642004698"></script>
+    <script src="/js/clipboard.min.js?1649273506"></script>
+    <script src="/js/perfect-scrollbar.min.js?1649273506"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1649273506"></script>
+    <script src="/js/jquery.sticky.js?1649273506"></script>
+    <script src="/js/featherlight.min.js?1649273506"></script>
+    <script src="/js/highlight.pack.js?1649273506"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1642004698"></script>
-    <script src="/js/learn.js?1642004698"></script>
-    <script src="/js/hugo-learn.js?1642004698"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1649273506"></script>
+    <script src="/js/learn.js?1649273506"></script>
+    <script src="/js/hugo-learn.js?1649273506"></script>
     
         
-            <script src="/mermaid/mermaid.js?1642004698"></script>
+            <script src="/mermaid/mermaid.js?1649273506"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

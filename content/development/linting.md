@@ -30,7 +30,7 @@ https://github.com/koalaman/shellcheck
 Some languages like go have them builtin
 
 ```bash
- 2021-08-24 09:47:02 ⌚  strongjz-macbook in ~/Documents/code/go/src/github.com/strongjz/go_example_app
+$ /go/src/github.com/strongjz/go_example_app
 ± |master ✓| → go vet
 go: downloading github.com/gin-gonic/gin v1.6.2
 go: downloading github.com/gin-contrib/sse v0.1.0

@@ -8,13 +8,13 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Aug 2021 15:08:20 -0400</lastBuildDate><atom:link href="//localhost:1313/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Git Commit Signing</title>
-      <link>//localhost:1313/development/signing/</link>
+      <title>Git Security</title>
+      <link>//localhost:1313/development/git/</link>
       <pubDate>Tue, 17 Aug 2021 15:07:49 -0400</pubDate>
       
-      <guid>//localhost:1313/development/signing/</guid>
-      <description>Needed:
- GPG Key GitHub Account  Generating a GPG Key  Generate a key with gpg gpg --passphrase &#39;&#39; --gen-key Select what key you want to use Fill out your name and your email address. Make sure this matches the one in your GitHub account. Add a comment if you want to remind you what the key is for. You may be prompted for a passphrase to add to the key for extra security, for this example hit enter 3 times to not add a passphrase.</description>
+      <guid>//localhost:1313/development/git/</guid>
+      <description>Code Reviews, Two-person reviewed Git Commit Signing MFA on accounts, GitHub, Gitlab etc.  Reading Material  Secret Leaks in Git PHP Git Hack  Git Commit Signing Exercise Needed:
+ GPG Key GitHub Account  Generating a GPG Key  Generate a key with gpg gpg --passphrase &#39;&#39; --gen-key Select what key you want to use Fill out your name and your email address. Make sure this matches the one in your GitHub account.</description>
     </item>
     
     <item>

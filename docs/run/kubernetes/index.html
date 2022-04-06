@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/container-green.png" type="image/x-icon" />
 
-    <title>Development Environment :: AWS Container DevSecOps</title>
+    <title>Running Kubernetes :: AWS Container DevSecOps</title>
 
     
     <link href="/css/nucleus.css?1649273506" rel="stylesheet">
@@ -38,7 +38,7 @@
     
 
   </head>
-  <body class="" data-url="/development/">
+  <body class="" data-url="/run/kubernetes/">
     <nav id="sidebar" class="">
 
 
@@ -286,8 +286,8 @@
   
     
     <li data-nav-id="/development/" title="Development Environment" class="dd-item
-        parent
-        active
+        
+        
         
         ">
       <a href="/development/">
@@ -598,7 +598,7 @@
   
     
     <li data-nav-id="/run/" title="Running Containers" class="dd-item
-        
+        parent
         
         
         ">
@@ -624,7 +624,7 @@
  
   
     
-      <li data-nav-id="/run/kubernetes/" title="Running Kubernetes" class="dd-item ">
+      <li data-nav-id="/run/kubernetes/" title="Running Kubernetes" class="dd-item active">
         <a href="/run/kubernetes/">
         Running Kubernetes
         
@@ -788,7 +788,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/strongjz/aws-container-devsecopsdevelopment/_index.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/strongjz/aws-container-devsecopsrun/kubernetes.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -815,7 +815,13 @@
             
           
           
-            <a href='/'>AWS DevSecOps Container Pipeline</a> > Development Environment
+            
+            
+          
+          
+            <a href='/'>AWS DevSecOps Container Pipeline</a> > <a href='/run/'>Running Containers</a> > Running Kubernetes
+          
+        
           
         
           
@@ -826,7 +832,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -843,110 +857,44 @@
           
             <h1>
               
-              Development Environment
+              Running Kubernetes
             </h1>
           
 
         
 
 
-
-	
-
-
-
-
-
-
-<ul class="children children-li">
-	
-
-	
-		
-	
-
-	
-
-	
-		
-	
-		
-			
-				
-<li>
-<a href="/development/git/" >Git Security</a>
+<h4 id="cluster">Cluster</h4>
+<ul>
+<li>Use IDP for Authorization</li>
+<li>Service Accounts for Workloads</li>
+<li>RBAC configured for users and workloads</li>
+</ul>
+<h4 id="nodes">Nodes</h4>
+<ul>
+<li>CIS/NIST benchmarks for Node Security</li>
+<li>Kubebench for Cluster</li>
+</ul>
+<h4 id="network">Network</h4>
+<ul>
+<li>All namespaces should have NetworkPolicy</li>
+<li>DO NOT EXPOSE your cluster to the Internet</li>
+<li>Differentiate between public and private workloads</li>
+</ul>
+<h4 id="secrets">Secrets</h4>
+<ul>
+<li>Secrets should be stored in third-party storage
+<ul>
+<li>HashiCorp Vault</li>
+<li>Conjur</li>
+<li>etcd in encrypted form.</li>
+</ul>
 </li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/development/linting/" >Linting</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/development/owasp/" >Open Web Application Security Project</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/development/pre-commit/" >Pre Commit</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/development/3-musketeers/" >3 Musketeers</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-
-	
+<li>Secrets should be added to the container using the volumeMount mechanism or the secretKeyRef mechanism.</li>
 </ul>
 
 
-
-
-
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -1112,106 +1060,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -1251,22 +1099,6 @@
                     
             
         
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -1352,6 +1184,123 @@
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1424,10 +1373,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/setup/tools/" title="Workshop tools"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/run/" title="Running Containers"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/development/git/" title="Git Security" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/run/exercise/" title="Running Containers Exercise" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

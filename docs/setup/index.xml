@@ -41,7 +41,7 @@ git clone https://github.com/strongjz/devsecopspipeline
 git clone https://github.com/strongjz/aws-container-devsecops
 Next will be installing the tools needed for the labs
 The script will install
- docker kind terraform eksctl kubectl helm  Install Navigate to where you downloaded the installation script from the git repo.</description>
+ docker kind terraform eksctl kubectl helm golang cosign  Install Navigate to where you downloaded the installation script from the git repo.</description>
     </item>
     
   </channel>

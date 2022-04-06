@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="//localhost:1313/run/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Running Kubernetes</title>
+      <link>//localhost:1313/run/kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/run/kubernetes/</guid>
+      <description>Cluster  Use IDP for Authorization Service Accounts for Workloads RBAC configured for users and workloads  Nodes  CIS/NIST benchmarks for Node Security Kubebench for Cluster  Network  All namespaces should have NetworkPolicy DO NOT EXPOSE your cluster to the Internet Differentiate between public and private workloads  Secrets  Secrets should be stored in third-party storage  HashiCorp Vault Conjur etcd in encrypted form.   Secrets should be added to the container using the volumeMount mechanism or the secretKeyRef mechanism.</description>
+    </item>
+    
+    <item>
       <title>Running Containers Exercise</title>
       <link>//localhost:1313/run/exercise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

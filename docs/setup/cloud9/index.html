@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.96.0" />
     <meta name="description" content="AWS Container DevSecOps Workshop">
 <meta name="author" content="James Strong">
 
@@ -12,22 +12,22 @@
     <title>AWS Cloud9 :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1642004698" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1642004698" rel="stylesheet">
-    <link href="/css/hybrid.css?1642004698" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1642004698" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1642004698" rel="stylesheet">
-    <link href="/css/auto-complete.css?1642004698" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1642004698" rel="stylesheet">
-    <link href="/css/theme.css?1642004698" rel="stylesheet">
-    <link href="/css/tabs.css?1642004698" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1642004698" rel="stylesheet">
+    <link href="/css/nucleus.css?1649273506" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1649273506" rel="stylesheet">
+    <link href="/css/hybrid.css?1649273506" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1649273506" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1649273506" rel="stylesheet">
+    <link href="/css/auto-complete.css?1649273506" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1649273506" rel="stylesheet">
+    <link href="/css/theme.css?1649273506" rel="stylesheet">
+    <link href="/css/tabs.css?1649273506" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1649273506" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1642004698" rel="stylesheet">
+    <link href="/css/theme-green.css?1649273506" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1642004698"></script>
+    <script src="/js/jquery-3.3.1.min.js?1649273506"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1642004698"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1642004698"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1649273506"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1649273506"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1642004698"></script>
+<script type="text/javascript" src="/js/search.js?1649273506"></script>
 
     
   </div>
@@ -312,9 +312,9 @@
  
   
     
-      <li data-nav-id="/development/signing/" title="Git Commit Signing" class="dd-item ">
-        <a href="/development/signing/">
-        Git Commit Signing
+      <li data-nav-id="/development/git/" title="Git Security" class="dd-item ">
+        <a href="/development/git/">
+        Git Security
         
         </a>
     </li>
@@ -624,6 +624,27 @@
  
   
     
+      <li data-nav-id="/run/kubernetes/" title="Running Kubernetes" class="dd-item ">
+        <a href="/run/kubernetes/">
+        Running Kubernetes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/run/exercise/" title="Running Containers Exercise" class="dd-item ">
         <a href="/run/exercise/">
         Running Containers Exercise
@@ -875,22 +896,22 @@
 </ol>
 <p>Increase the disk size of your instances, this will cause your instance to reboot</p>
 <p>With the docker images and all the other information it would be helpful to have a larger working space.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install -y jq
-export AWS_DEFAULT_REGION<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl --silent http://169.254.169.254/latest/dynamic/instance-identity/document | jq -r .region<span style="color:#66d9ef">)</span>
-export instance_id<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -s http://169.254.169.254/latest/meta-data/instance-id<span style="color:#66d9ef">)</span>
-export vol_id<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ec2 describe-instances --instance-id $instance_id --query <span style="color:#e6db74">&#39;Reservations[0].Instances[0].BlockDeviceMappings[0].Ebs.VolumeId&#39;</span> --output text<span style="color:#66d9ef">)</span>
-aws ec2 modify-volume --size <span style="color:#ae81ff">100</span> --volume-id $vol_id
-</code></pre></div><p>Now reboot your Cloud9 instance <code>sudo reboot</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install -y jq
+</span></span><span style="display:flex;"><span>export AWS_DEFAULT_REGION<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl --silent http://169.254.169.254/latest/dynamic/instance-identity/document | jq -r .region<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>export instance_id<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>curl -s http://169.254.169.254/latest/meta-data/instance-id<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>export vol_id<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws ec2 describe-instances --instance-id $instance_id --query <span style="color:#e6db74">&#39;Reservations[0].Instances[0].BlockDeviceMappings[0].Ebs.VolumeId&#39;</span> --output text<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>aws ec2 modify-volume --size <span style="color:#ae81ff">100</span> --volume-id $vol_id
+</span></span></code></pre></div><p>Now reboot your Cloud9 instance <code>sudo reboot</code></p>
 <p><img src="/images/setup/cloud9_reboot.png" alt="cloud9_reboot"></p>
 <p>Double check it was successful <code>df -h</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Filesystem      Size  Used Avail Use% Mounted on
-devtmpfs        3.8G     <span style="color:#ae81ff">0</span>  3.8G   0% /dev
-tmpfs           3.8G     <span style="color:#ae81ff">0</span>  3.8G   0% /dev/shm
-tmpfs           3.8G  424K  3.8G   1% /run
-tmpfs           3.8G     <span style="color:#ae81ff">0</span>  3.8G   0% /sys/fs/cgroup
-/dev/nvme0n1p1  100G  8.2G   92G   9% /
-tmpfs           768M     <span style="color:#ae81ff">0</span>  768M   0% /run/user/1000
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Filesystem      Size  Used Avail Use% Mounted on
+</span></span><span style="display:flex;"><span>devtmpfs        3.8G     <span style="color:#ae81ff">0</span>  3.8G   0% /dev
+</span></span><span style="display:flex;"><span>tmpfs           3.8G     <span style="color:#ae81ff">0</span>  3.8G   0% /dev/shm
+</span></span><span style="display:flex;"><span>tmpfs           3.8G  424K  3.8G   1% /run
+</span></span><span style="display:flex;"><span>tmpfs           3.8G     <span style="color:#ae81ff">0</span>  3.8G   0% /sys/fs/cgroup
+</span></span><span style="display:flex;"><span>/dev/nvme0n1p1  100G  8.2G   92G   9% /
+</span></span><span style="display:flex;"><span>tmpfs           768M     <span style="color:#ae81ff">0</span>  768M   0% /run/user/1000
+</span></span></code></pre></div>
 
 <footer class="footline">
 	
@@ -1295,6 +1316,22 @@ tmpfs           768M     <span style="color:#ae81ff">0</span>  768M   0% /run/us
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1368,19 +1405,19 @@ tmpfs           768M     <span style="color:#ae81ff">0</span>  768M   0% /run/us
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1642004698"></script>
-    <script src="/js/perfect-scrollbar.min.js?1642004698"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1642004698"></script>
-    <script src="/js/jquery.sticky.js?1642004698"></script>
-    <script src="/js/featherlight.min.js?1642004698"></script>
-    <script src="/js/highlight.pack.js?1642004698"></script>
+    <script src="/js/clipboard.min.js?1649273506"></script>
+    <script src="/js/perfect-scrollbar.min.js?1649273506"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1649273506"></script>
+    <script src="/js/jquery.sticky.js?1649273506"></script>
+    <script src="/js/featherlight.min.js?1649273506"></script>
+    <script src="/js/highlight.pack.js?1649273506"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1642004698"></script>
-    <script src="/js/learn.js?1642004698"></script>
-    <script src="/js/hugo-learn.js?1642004698"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1649273506"></script>
+    <script src="/js/learn.js?1649273506"></script>
+    <script src="/js/hugo-learn.js?1649273506"></script>
     
         
-            <script src="/mermaid/mermaid.js?1642004698"></script>
+            <script src="/mermaid/mermaid.js?1649273506"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

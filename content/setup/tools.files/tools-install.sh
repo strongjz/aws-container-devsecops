@@ -19,7 +19,7 @@ function verify_command() {
 install_docker() {
     amazon-linux-extras install docker -y
     yum install -y docker
-
+    systemctl enable docker
     service docker start
     usermod -a -G docker ec2-user
     docker run hello-world
@@ -67,7 +67,19 @@ install_docker_compose(){
   chmod +x /usr/local/bin/docker-compose
 }
 
-installs=(docker docker_compose kind terraform eksctl kubectl helm)
+install_golang(){
+  curl -o go1.17.5.linux-amd64.tar.gz https://go.dev/dl/go1.17.5.linux-amd64.tar.gz -vvv -L
+  shasum -a 256 -c <<< 'bd78114b0d441b029c8fe0341f4910370925a4d270a6a590668840675b0c653e  go1.17.5.linux-amd64.tar.gz'
+  rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.5.linux-amd64.tar.gz
+  export PATH=/usr/local/go/bin:$PATH
+  go version
+}
+install_cosign(){
+
+    go install github.com/sigstore/cosign/cmd/cosign@v1.7.1
+}
+
+installs=(golang docker docker_compose kind terraform eksctl kubectl helm cosign)
 
 for i in "${installs[@]}"; do
     echo "INSTALLING $i"

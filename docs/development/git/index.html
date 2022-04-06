@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/container-green.png" type="image/x-icon" />
 
-    <title>Development Environment :: AWS Container DevSecOps</title>
+    <title>Git Security :: AWS Container DevSecOps</title>
 
     
     <link href="/css/nucleus.css?1649273506" rel="stylesheet">
@@ -38,7 +38,7 @@
     
 
   </head>
-  <body class="" data-url="/development/">
+  <body class="" data-url="/development/git/">
     <nav id="sidebar" class="">
 
 
@@ -287,7 +287,7 @@
     
     <li data-nav-id="/development/" title="Development Environment" class="dd-item
         parent
-        active
+        
         
         ">
       <a href="/development/">
@@ -312,7 +312,7 @@
  
   
     
-      <li data-nav-id="/development/git/" title="Git Security" class="dd-item ">
+      <li data-nav-id="/development/git/" title="Git Security" class="dd-item active">
         <a href="/development/git/">
         Git Security
         
@@ -788,7 +788,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/strongjz/aws-container-devsecopsdevelopment/_index.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/strongjz/aws-container-devsecopsdevelopment/git.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -815,7 +815,13 @@
             
           
           
-            <a href='/'>AWS DevSecOps Container Pipeline</a> > Development Environment
+            
+            
+          
+          
+            <a href='/'>AWS DevSecOps Container Pipeline</a> > <a href='/development/'>Development Environment</a> > Git Security
+          
+        
           
         
           
@@ -826,7 +832,17 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#reading-material">Reading Material</a></li>
+    <li><a href="#git-commit-signing-exercise">Git Commit Signing Exercise</a>
+      <ul>
+        <li><a href="#generating-a-gpg-key">Generating a GPG Key</a></li>
+        <li><a href="#add-key-to-github-account">Add Key to GitHub Account</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -843,110 +859,182 @@
           
             <h1>
               
-              Development Environment
+              Git Security
             </h1>
           
 
         
 
 
-
-	
-
-
-
-
-
-
-<ul class="children children-li">
-	
-
-	
-		
-	
-
-	
-
-	
-		
-	
-		
-			
-				
-<li>
-<a href="/development/git/" >Git Security</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/development/linting/" >Linting</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/development/owasp/" >Open Web Application Security Project</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/development/pre-commit/" >Pre Commit</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/development/3-musketeers/" >3 Musketeers</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-
-	
+<ul>
+<li>Code Reviews, Two-person reviewed</li>
+<li>Git Commit Signing</li>
+<li>MFA on accounts, GitHub, Gitlab etc.</li>
 </ul>
+<h2 id="reading-material">Reading Material</h2>
+<ul>
+<li><a href="https://www.ndss-symposium.org/wp-content/uploads/2019/02/ndss2019_04B-3_Meli_paper.pdf">Secret Leaks in Git</a></li>
+<li><a href="https://www.bleepingcomputer.com/news/security/phps-git-server-hacked-to-add-backdoors-to-php-source-code/">PHP Git Hack</a></li>
+</ul>
+<h2 id="git-commit-signing-exercise">Git Commit Signing Exercise</h2>
+<p>Needed:</p>
+<ul>
+<li>GPG Key</li>
+<li>GitHub Account</li>
+</ul>
+<h3 id="generating-a-gpg-key">Generating a GPG Key</h3>
+<ol>
+<li>Generate a key with gpg <code>gpg --passphrase '' --gen-key</code></li>
+<li>Select what key you want to use</li>
+<li>Fill out your name and your email address. Make sure this matches the one in your GitHub account.</li>
+<li>Add a comment if you want to remind you what the key is for.</li>
+<li>You may be prompted for a passphrase to add to the key for extra security, for this example hit enter 3 times to not add a passphrase.</li>
+</ol>
+<p>Here is what the prompts will look like.
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Expand here is what it looks like in its entirety
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>± |main U:26 ?:9 ✗| → gpg --gen-key
+</span></span><span style="display:flex;"><span>gpg <span style="color:#f92672">(</span>GnuPG<span style="color:#f92672">)</span> 2.3.1; Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> <span style="color:#ae81ff">2021</span> Free Software Foundation, Inc.
+</span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
+</span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Please <span style="color:#66d9ef">select</span> what kind of key you want:
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> RSA and RSA
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span> DSA and Elgamal
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>3<span style="color:#f92672">)</span> DSA <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>4<span style="color:#f92672">)</span> RSA <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>9<span style="color:#f92672">)</span> ECC <span style="color:#f92672">(</span>sign and encrypt<span style="color:#f92672">)</span> *default*
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>10<span style="color:#f92672">)</span> ECC <span style="color:#f92672">(</span>sign only<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>14<span style="color:#f92672">)</span> Existing key from card
+</span></span><span style="display:flex;"><span>Your selection? <span style="color:#ae81ff">9</span>
+</span></span><span style="display:flex;"><span>Please <span style="color:#66d9ef">select</span> which elliptic curve you want:
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span> Curve <span style="color:#ae81ff">25519</span> *default*
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>4<span style="color:#f92672">)</span> NIST P-384
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>6<span style="color:#f92672">)</span> Brainpool P-256
+</span></span><span style="display:flex;"><span>Your selection? <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>Please specify how long the key should be valid.
+</span></span><span style="display:flex;"><span>         0 <span style="color:#f92672">=</span> key does not expire
+</span></span><span style="display:flex;"><span>      &lt;n&gt;  <span style="color:#f92672">=</span> key expires in n days
+</span></span><span style="display:flex;"><span>      &lt;n&gt;w <span style="color:#f92672">=</span> key expires in n weeks
+</span></span><span style="display:flex;"><span>      &lt;n&gt;m <span style="color:#f92672">=</span> key expires in n months
+</span></span><span style="display:flex;"><span>      &lt;n&gt;y <span style="color:#f92672">=</span> key expires in n years
+</span></span><span style="display:flex;"><span>Key is valid <span style="color:#66d9ef">for</span>? <span style="color:#f92672">(</span>0<span style="color:#f92672">)</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>Key does not expire at all
+</span></span><span style="display:flex;"><span>Is this correct? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>GnuPG needs to construct a user ID to identify your key.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Real name: James Strong
+</span></span><span style="display:flex;"><span>Email address: strong.james.e@gmail.com
+</span></span><span style="display:flex;"><span>Comment: testing <span style="color:#66d9ef">for</span> workshop
+</span></span><span style="display:flex;"><span>You selected this USER-ID:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;James Strong (testing for workshop) &lt;strong.james.e@gmail.com&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Change <span style="color:#f92672">(</span>N<span style="color:#f92672">)</span>ame, <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span>omment, <span style="color:#f92672">(</span>E<span style="color:#f92672">)</span>mail or <span style="color:#f92672">(</span>O<span style="color:#f92672">)</span>kay/<span style="color:#f92672">(</span>Q<span style="color:#f92672">)</span>uit? O
+</span></span><span style="display:flex;"><span>We need to generate a lot of random bytes. It is a good idea to perform
+</span></span><span style="display:flex;"><span>some other action <span style="color:#f92672">(</span>type on the keyboard, move the mouse, utilize the
+</span></span><span style="display:flex;"><span>disks<span style="color:#f92672">)</span> during the prime generation; this gives the random number
+</span></span><span style="display:flex;"><span>generator a better chance to gain enough entropy.
+</span></span><span style="display:flex;"><span>We need to generate a lot of random bytes. It is a good idea to perform
+</span></span><span style="display:flex;"><span>some other action <span style="color:#f92672">(</span>type on the keyboard, move the mouse, utilize the
+</span></span><span style="display:flex;"><span>disks<span style="color:#f92672">)</span> during the prime generation; this gives the random number
+</span></span><span style="display:flex;"><span>generator a better chance to gain enough entropy.
+</span></span><span style="display:flex;"><span>gpg: key 8246A1EC900B5E30 marked as ultimately trusted
+</span></span><span style="display:flex;"><span>gpg: directory <span style="color:#e6db74">&#39;/Users/strongjz/.gnupg/openpgp-revocs.d&#39;</span> created
+</span></span><span style="display:flex;"><span>gpg: revocation certificate stored as <span style="color:#e6db74">&#39;/Users/strongjz/.gnupg/openpgp-revocs.d/3E0424931246D33A86890BC78246A1EC900B5E30.rev&#39;</span>
+</span></span><span style="display:flex;"><span>public and secret key created and signed.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pub   ed25519 2021-08-17 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>      3E0424931246D33A86890BC78246A1EC900B5E30
+</span></span><span style="display:flex;"><span>uid                      James Strong <span style="color:#f92672">(</span>testing <span style="color:#66d9ef">for</span> workshop<span style="color:#f92672">)</span> &lt;strong.james.e@gmail.com&gt;
+</span></span><span style="display:flex;"><span>sub   cv25519 2021-08-17 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span>
+</span></span></code></pre></div>
+    </div>
+</div>
+</p>
+<h3 id="add-key-to-github-account">Add Key to GitHub Account</h3>
+<h4 id="1-export-public-key">1. Export public key</h4>
+<p>Get the Key ID with <code>gpg --list-secret-keys --keyid-format LONG $YOUR_EMAIL</code></p>
+<p>Export the public key with <code>gpg --armor --export $YOUR_LONG_KEY_ID</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>-----BEGIN PGP PUBLIC KEY BLOCK-----
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mDMEYRwLhBYJKwYBBAHaRw8BAQdAsQbWuqV2P5y1HXlkoFTM9qyrypc+zB9YO/fI
+</span></span><span style="display:flex;"><span>DYAjZ6C0PkphbWVzIFN0cm9uZyAodGVzdGluZyBmb3Igd29ya3Nob3ApIDxzdHJv
+</span></span><span style="display:flex;"><span>bmcuamFtZXMuZUBnbWFpbC5jb20+iJQEExYKADwWIQQ+BCSTEkbTOoaJC8eCRqHs
+</span></span><span style="display:flex;"><span>kAteMAUCYRwLhAIbAwULCQgHAgMiAgEGFQoJCAsCBBYCAwECHgcCF4AACgkQgkah
+</span></span><span style="display:flex;"><span>7JALXjDeKgEA1JtsGyIEg8ZUANvkbJfdNEs2e1Ns/M3PcRYMUxc1yugA/3tHEDJb
+</span></span><span style="display:flex;"><span>Fw+QghwzcHXWsqlkAmj5TZglHyfYsbwlgzoLuDgEYRwLhBIKKwYBBAGXVQEFAQEH
+</span></span><span style="display:flex;"><span>QGg2S81eJftEiG4AeiKC3D6H94y1ifSuTZ6BBofcilsTAwEIB4h4BBgWCgAgFiEE
+</span></span><span style="display:flex;"><span>PgQkkxJG0zqGiQvHgkah7JALXjAFAmEcC4QCGwwACgkQgkah7JALXjCVgwD+Ob4+
+</span></span><span style="display:flex;"><span>fG5zzmP/Hg13SFsxLZc+5EKrxHJ1z+bNQQ5ARxYBANbOuPnxLtPL4eY4TqIY0k1X
+</span></span><span style="display:flex;"><span>8HmXv9JXEwMHLYiN4fwF
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=</span>03gp
+</span></span><span style="display:flex;"><span>-----END PGP PUBLIC KEY BLOCK-----
+</span></span></code></pre></div><h4 id="2-add-to-github">2. Add to GitHub</h4>
+<p>Open <a href="https://github.com/settings/keys">https://github.com/settings/keys</a></p>
+<p><img src="/images/development/sign_account_add.png" alt="sign_add_key"></p>
+<p>Copy and Paste the Public Key into your GitHub account</p>
+<p><img src="/images/development/sign_add_new_key.png" alt="sign_add_key"></p>
+<h4 id="3-add-to-git-config">3. Add to git config</h4>
+<p>Get the key id for the one we just created.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ gpg --list-secret-keys --keyid-format LONG $EMAIL
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sec   ed25519/8246A1EC900B5E30 2021-08-17 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>      3E0424931246D33A86890BC78246A1EC900B5E30
+</span></span><span style="display:flex;"><span>uid                 <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> James Strong <span style="color:#f92672">(</span>testing <span style="color:#66d9ef">for</span> workshop<span style="color:#f92672">)</span> &lt;strong.james.e@gmail.com&gt;
+</span></span><span style="display:flex;"><span>ssb   cv25519/0BAFF11345FB8338 2021-08-17 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>Update git config to use the key.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git config --global user.signingkey 3E0424931246D33A86890BC78246A1EC900B5E30
+</span></span><span style="display:flex;"><span>$ git config --global commit.gpgsign true
+</span></span></code></pre></div><h4 id="4-test-a-commit">4. Test a Commit.</h4>
+<p>Create a testing repo in GitHub.com, then add it locally</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~/environment/
+</span></span><span style="display:flex;"><span>mkdir signing-test
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>  Initialized empty Git repository in /home/ec2-user/environment/signing-test/.git/
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;signing-test&#34;</span> &gt;&gt; README.md
+</span></span></code></pre></div><p>Then use those remotes to add to empty repo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote add origin git@github.com:strongjz/git-signging-test.git
+</span></span><span style="display:flex;"><span>git branch -M main
+</span></span><span style="display:flex;"><span>git push -u origin main
+</span></span><span style="display:flex;"><span>git add -A
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;signing&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[</span>main b2a6fb5<span style="color:#f92672">]</span> signing
+</span></span><span style="display:flex;"><span>git push origin main 
+</span></span></code></pre></div><h4 id="5-verify-in-github">5. Verify in GitHub</h4>
+<p>In the commit history you can see a &ldquo;Verified&rdquo; tag on your commits now</p>
+<p><img src="/images/development/sign_verify.png" alt="sign_add_key"></p>
+
+<div class="notices warning" ><p>Make sure to store this GPG private key in a secure location</p>
+</div>
+
+<h4 id="6-store-gpg-key-optional">6. Store GPG key (optional)</h4>
+<p>To export the key use this.</p>
+<p>Identify your private key: <code>gpg --list-secret-keys $EMAIL</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sec   ed25519 2021-08-17 <span style="color:#f92672">[</span>SC<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>      3E0424931246D33A86890BC78246A1EC900B5E30
+</span></span><span style="display:flex;"><span>uid           <span style="color:#f92672">[</span>ultimate<span style="color:#f92672">]</span> James Strong <span style="color:#f92672">(</span>testing <span style="color:#66d9ef">for</span> workshop<span style="color:#f92672">)</span> &lt;strong.james.e@gmail.com&gt;
+</span></span><span style="display:flex;"><span>ssb   cv25519 2021-08-17 <span style="color:#f92672">[</span>E<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>Run this command to export your key: <code>gpg --export-secret-keys 3E0424931246D33A86890BC78246A1EC900B5E30 &gt; private.key</code></p>
+<p>If you have a passphrase on the key you&rsquo;ll have to enter it to export it.</p>
+<p>Copy the key file to another secure location.</p>
+<p>To import on a new machine, run <code>gpg --import private.key</code></p>
+<p>Sources:</p>
+<p>Using Keybase: <a href="https://github.com/pstadler/keybase-gpg-github">https://github.com/pstadler/keybase-gpg-github</a></p>
+<p>Plain GPG: <a href="https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/generating-a-new-gpg-key">https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification/generating-a-new-gpg-key</a></p>
 
 
-
-
-
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -1126,8 +1214,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -1144,6 +1230,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1424,10 +1513,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/setup/tools/" title="Workshop tools"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/development/" title="Development Environment"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/development/git/" title="Git Security" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/development/linting/" title="Linting" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

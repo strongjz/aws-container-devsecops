@@ -71,17 +71,17 @@ git clone https://github.com/strongjz/devsecopspipeline
 git clone https://github.com/strongjz/aws-container-devsecops
 Next will be installing the tools needed for the labs
 The script will install
- docker kind terraform eksctl kubectl helm  Install Navigate to where you downloaded the installation script from the git repo.</description>
+ docker kind terraform eksctl kubectl helm golang cosign  Install Navigate to where you downloaded the installation script from the git repo.</description>
     </item>
     
     <item>
-      <title>Git Commit Signing</title>
-      <link>//localhost:1313/development/signing/</link>
+      <title>Git Security</title>
+      <link>//localhost:1313/development/git/</link>
       <pubDate>Tue, 17 Aug 2021 15:07:49 -0400</pubDate>
       
-      <guid>//localhost:1313/development/signing/</guid>
-      <description>Needed:
- GPG Key GitHub Account  Generating a GPG Key  Generate a key with gpg gpg --passphrase &#39;&#39; --gen-key Select what key you want to use Fill out your name and your email address. Make sure this matches the one in your GitHub account. Add a comment if you want to remind you what the key is for. You may be prompted for a passphrase to add to the key for extra security, for this example hit enter 3 times to not add a passphrase.</description>
+      <guid>//localhost:1313/development/git/</guid>
+      <description>Code Reviews, Two-person reviewed Git Commit Signing MFA on accounts, GitHub, Gitlab etc.  Reading Material  Secret Leaks in Git PHP Git Hack  Git Commit Signing Exercise Needed:
+ GPG Key GitHub Account  Generating a GPG Key  Generate a key with gpg gpg --passphrase &#39;&#39; --gen-key Select what key you want to use Fill out your name and your email address. Make sure this matches the one in your GitHub account.</description>
     </item>
     
     <item>
@@ -137,8 +137,9 @@ Confidence - Test your code and pipelines locally before your CI/CD tool runs it
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/build/container/</guid>
-      <description>Baseline  DISABLE ROOT  Mount the container&amp;rsquo;s root filesystem as read-only set k8s Security context set Linux Capabilities Disable privilege escalation    securityContext: allowPrivilegeEscalation: false  Least Privilege by defining user  apiVersion: v1 kind: Pod metadata: name: pod-security spec: securityContext: runAsUser: 10000 runAsGroup: 30000 fsGroup: 20000  Network policies Container Capabilities  capabilities: add: [&amp;#34;NET_ADMIN&amp;#34;, &amp;#34;SYS_TIME&amp;#34;]  DISABLE ROOT  Helpers Versioning
- Invest in Strategy Containers follow build Versions of Software  Semantic Versioning   Metadata  LABEL &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt; &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt; &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt; .</description>
+      <description>Baseline  DISABLE ROOT Mount the container&amp;rsquo;s root filesystem as read-only set k8s Security context set Linux Capabilities Disable privilege escalation   securityContext:  allowPrivilegeEscalation: false  Least Privilege by defining user  apiVersion: v1 kind: Pod metadata:  name: pod-security spec:  securityContext:  runAsUser: 10000  runAsGroup: 30000  fsGroup: 20000   Network policies
+  Workload configuration should be audited regularly, Kubesec
+  Container Capabilities</description>
     </item>
     
     <item>
@@ -195,6 +196,15 @@ make docker_push
     </item>
     
     <item>
+      <title>Running Kubernetes</title>
+      <link>//localhost:1313/run/kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/run/kubernetes/</guid>
+      <description>Cluster  Use IDP for Authorization Service Accounts for Workloads RBAC configured for users and workloads  Nodes  CIS/NIST benchmarks for Node Security Kubebench for Cluster  Network  All namespaces should have NetworkPolicy DO NOT EXPOSE your cluster to the Internet Differentiate between public and private workloads  Secrets  Secrets should be stored in third-party storage  HashiCorp Vault Conjur etcd in encrypted form.   Secrets should be added to the container using the volumeMount mechanism or the secretKeyRef mechanism.</description>
+    </item>
+    
+    <item>
       <title>Running Containers Exercise</title>
       <link>//localhost:1313/run/exercise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -221,12 +231,10 @@ https://docs.google.com/forms/d/e/1FAIpQLSeXNwl5M3enXJBAG988mNVFqyslzYqDgbKDgoDz
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/conclusion/clean/</guid>
-      <description>AWS Code resources Delete the Codebuild, Code commit and pipeline
-make tf_destroy Cluster Delete the EKS Cluster
-make clean_cluster Make sure to delete any other resources created
-Load Balancers Verify there are no Load balancers running, ALB or otherwise
-aws elbv2 describe-load-balancers --query &amp;#34;LoadBalancers[].LoadBalancerArn&amp;#34; aws elb describe-load-balancers --query &amp;#34;LoadBalancerDescriptions[].DNSName&amp;#34; PVC and EBS volumes Verify there are no left over EBS volumes from the PVC&amp;rsquo;s for test application
-aws ec2 describe-volumes --filters Name=tag:kubernetes.</description>
+      <description>High Level Removal Steps  Delete Falco demo Delete Falco log group Delete Fluent bit deploy Remove Fluent bit iam Remove Application Terraform destroy Check/Remove for external AWS components Delete Cluster w/ eksctl Delete terraform s3 bucket Delete cloud9 instance  1. Delete Falco demo kubectl delete -f falco-demo/nodejs-bad-rest-api/falco-demo.yml
+2. Delete Falco log group aws logs delete-log-group --log-group-name falco
+3. Delete Fluent bit deploy kubectl delete -f fluent-bit/kubernetes/
+4. Remove Fluent bit iam aws iam delete-policy --policy-arn arn:aws:iam::$ACCOUNT_ID:policy/EKS-CloudWatchLogs-devsecops</description>
     </item>
     
     <item>
@@ -235,7 +243,7 @@ aws ec2 describe-volumes --filters Name=tag:kubernetes.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/authors/</guid>
-      <description>&amp;lt;div&amp;gt; &amp;lt;img src=&amp;quot;https://avatars.githubusercontent.com/u/2372917?v=4&amp;quot; class=&amp;quot;inline&amp;quot; width=&amp;quot;32&amp;quot; height=&amp;quot;32&amp;quot; style=&amp;quot;height: 32px;height: 32px;margin-bottom:.25em; vertical-align:middle; &amp;quot;&amp;gt; &amp;lt;label&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/strongjz&amp;quot;&amp;gt;@strongjz&amp;lt;/a&amp;gt;&amp;lt;/label&amp;gt; &amp;lt;span class=&amp;quot;contributions&amp;quot;&amp;gt;64 commits&amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt;  </description>
+      <description>&amp;lt;div&amp;gt; &amp;lt;img src=&amp;quot;https://avatars.githubusercontent.com/u/2372917?v=4&amp;quot; class=&amp;quot;inline&amp;quot; width=&amp;quot;32&amp;quot; height=&amp;quot;32&amp;quot; style=&amp;quot;height: 32px;height: 32px;margin-bottom:.25em; vertical-align:middle; &amp;quot;&amp;gt; &amp;lt;label&amp;gt;&amp;lt;a href=&amp;quot;https://github.com/strongjz&amp;quot;&amp;gt;@strongjz&amp;lt;/a&amp;gt;&amp;lt;/label&amp;gt; &amp;lt;span class=&amp;quot;contributions&amp;quot;&amp;gt;91 commits&amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt;  </description>
     </item>
     
   </channel>

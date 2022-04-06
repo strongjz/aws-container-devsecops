@@ -1,14 +1,26 @@
 ---
-title: "Git Commit Signing"
+title: "Git Security"
 date: 2021-08-17T15:07:49-04:00
 weight: 21
 ---
+
+- Code Reviews, Two-person reviewed
+- Git Commit Signing
+- MFA on accounts, GitHub, Gitlab etc. 
+
+## Reading Material 
+
+- [Secret Leaks in Git](https://www.ndss-symposium.org/wp-content/uploads/2019/02/ndss2019_04B-3_Meli_paper.pdf)
+- [PHP Git Hack](https://www.bleepingcomputer.com/news/security/phps-git-server-hacked-to-add-backdoors-to-php-source-code/)
+
+## Git Commit Signing Exercise
 
 Needed:
 * GPG Key
 * GitHub Account
 
-# Generating a GPG Key
+### Generating a GPG Key
+
 1. Generate a key with gpg ```gpg --passphrase '' --gen-key```
 2. Select what key you want to use
 3. Fill out your name and your email address. Make sure this matches the one in your GitHub account.
@@ -77,9 +89,9 @@ sub   cv25519 2021-08-17 [E]
 ```
 {{% /expand%}}
 
-# Added it to GitHub Account
+### Add Key to GitHub Account
 
-## 1. Export public key
+#### 1. Export public key
 
 Get the Key ID with `gpg --list-secret-keys --keyid-format LONG $YOUR_EMAIL`
 
@@ -102,7 +114,7 @@ fG5zzmP/Hg13SFsxLZc+5EKrxHJ1z+bNQQ5ARxYBANbOuPnxLtPL4eY4TqIY0k1X
 -----END PGP PUBLIC KEY BLOCK-----
 ```
 
-## 2. Add to GitHub
+#### 2. Add to GitHub
 
 Open https://github.com/settings/keys
 
@@ -112,7 +124,7 @@ Copy and Paste the Public Key into your GitHub account
 
 ![sign_add_key](/images/development/sign_add_new_key.png)
 
-## 3. Add to git config
+#### 3. Add to git config
 
 Get the key id for the one we just created.
 
@@ -131,7 +143,7 @@ $ git config --global user.signingkey 3E0424931246D33A86890BC78246A1EC900B5E30
 $ git config --global commit.gpgsign true
 ```
 
-## 4. Test a Commit.
+#### 4. Test a Commit.
 
 Create a testing repo in GitHub.com, then add it locally 
 
@@ -155,7 +167,7 @@ git commit -m "signing"
 git push origin main 
 ```
 
-## 5. Verify in GitHub
+#### 5. Verify in GitHub
 
 In the commit history you can see a "Verified" tag on your commits now
 
@@ -165,7 +177,7 @@ In the commit history you can see a "Verified" tag on your commits now
 Make sure to store this GPG private key in a secure location
 {{% /notice  %}}
 
-## 6. Store GPG key (optional)
+#### 6. Store GPG key (optional)
 
 To export the key use this.
 

@@ -6,10 +6,10 @@ weight: 31
 ## Baseline
 
 - DISABLE ROOT
-  - Mount the container's root filesystem as read-only
-  - set [k8s Security context](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.22/#securitycontext-v1-core) 
-  - set [Linux Capabilities](https://man7.org/linux/man-pages/man7/capabilities.7.html)
-  - Disable privilege escalation
+- Mount the container's root filesystem as read-only
+- set [k8s Security context](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.22/#securitycontext-v1-core) 
+- set [Linux Capabilities](https://man7.org/linux/man-pages/man7/capabilities.7.html)
+- Disable privilege escalation
 
 ```yaml
     securityContext:
@@ -28,11 +28,18 @@ spec:
     fsGroup: 20000
 ```
 - Network policies
+
+- Workload configuration should be audited regularly, [Kubesec](https://github.com/controlplaneio/kubesec)
+
 - Container Capabilities
 ```yaml
      capabilities:
         add: ["NET_ADMIN", "SYS_TIME"]
 ```
+
+- Do not install wget, curl, netcat in production application image
+- An image signature should be generated, tools like [Cosign](https://github.com/sigstore/cosign)
+
 - DISABLE ROOT
 
 ## Helpers 

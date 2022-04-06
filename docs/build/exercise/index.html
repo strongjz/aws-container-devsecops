@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.96.0" />
     <meta name="description" content="AWS Container DevSecOps Workshop">
 <meta name="author" content="James Strong">
 
@@ -12,22 +12,22 @@
     <title>Secure Containers Exercise :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1642004698" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1642004698" rel="stylesheet">
-    <link href="/css/hybrid.css?1642004698" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1642004698" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1642004698" rel="stylesheet">
-    <link href="/css/auto-complete.css?1642004698" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1642004698" rel="stylesheet">
-    <link href="/css/theme.css?1642004698" rel="stylesheet">
-    <link href="/css/tabs.css?1642004698" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1642004698" rel="stylesheet">
+    <link href="/css/nucleus.css?1649273506" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1649273506" rel="stylesheet">
+    <link href="/css/hybrid.css?1649273506" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1649273506" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1649273506" rel="stylesheet">
+    <link href="/css/auto-complete.css?1649273506" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1649273506" rel="stylesheet">
+    <link href="/css/theme.css?1649273506" rel="stylesheet">
+    <link href="/css/tabs.css?1649273506" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1649273506" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1642004698" rel="stylesheet">
+    <link href="/css/theme-green.css?1649273506" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1642004698"></script>
+    <script src="/js/jquery-3.3.1.min.js?1649273506"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1642004698"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1642004698"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1649273506"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1649273506"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1642004698"></script>
+<script type="text/javascript" src="/js/search.js?1649273506"></script>
 
     
   </div>
@@ -312,9 +312,9 @@
  
   
     
-      <li data-nav-id="/development/signing/" title="Git Commit Signing" class="dd-item ">
-        <a href="/development/signing/">
-        Git Commit Signing
+      <li data-nav-id="/development/git/" title="Git Security" class="dd-item ">
+        <a href="/development/git/">
+        Git Security
         
         </a>
     </li>
@@ -624,6 +624,27 @@
  
   
     
+      <li data-nav-id="/run/kubernetes/" title="Running Kubernetes" class="dd-item ">
+        <a href="/run/kubernetes/">
+        Running Kubernetes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/run/exercise/" title="Running Containers Exercise" class="dd-item ">
         <a href="/run/exercise/">
         Running Containers Exercise
@@ -856,8 +877,8 @@
 </div>
 
 <p><code>sudo service docker start</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Redirecting to /bin/systemctl start docker.service
-</code></pre></div><p>Navigate to DevSecops repo <code>cd ~/environment/devsecopspipeline</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Redirecting to /bin/systemctl start docker.service
+</span></span></code></pre></div><p>Navigate to DevSecops repo <code>cd ~/environment/devsecopspipeline</code></p>
 <p>Set a temp password for the local database</p>
 <p><code>export DB_PASSWORD=temppassword</code></p>
 <h2 id="1-run-locally">1. Run locally</h2>
@@ -877,66 +898,66 @@
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">env GIT_TERMINAL_PROMPT<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> go get -d -v .
-github.com/strongjz/go_example_app <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-created GOPATH<span style="color:#f92672">=</span>/home/ec2-user/go; see <span style="color:#e6db74">&#39;go help gopath&#39;</span>
-github.com/gin-gonic/gin <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-github.com/gin-contrib/sse <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-github.com/go-playground/validator <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-github.com/go-playground/universal-translator <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-github.com/go-playground/locales <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-github.com/leodido/go-urn <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-get <span style="color:#e6db74">&#34;golang.org/x/crypto/sha3&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;golang.org/x/crypto&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/crypto&#34;</span><span style="color:#f92672">}</span> at //golang.org/x/crypto/sha3?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-get <span style="color:#e6db74">&#34;golang.org/x/crypto/sha3&#34;</span>: verifying non-authoritative meta tag
-golang.org/x/crypto <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-get <span style="color:#e6db74">&#34;golang.org/x/text/language&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;golang.org/x/text&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/text&#34;</span><span style="color:#f92672">}</span> at //golang.org/x/text/language?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-get <span style="color:#e6db74">&#34;golang.org/x/text/language&#34;</span>: verifying non-authoritative meta tag
-golang.org/x/text <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-github.com/ugorji/go <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-get <span style="color:#e6db74">&#34;google.golang.org/protobuf/proto&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;google.golang.org/protobuf&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/protobuf&#34;</span><span style="color:#f92672">}</span> at //google.golang.org/protobuf/proto?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-get <span style="color:#e6db74">&#34;google.golang.org/protobuf/proto&#34;</span>: verifying non-authoritative meta tag
-google.golang.org/protobuf <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-get <span style="color:#e6db74">&#34;gopkg.in/yaml.v2&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;gopkg.in/yaml.v2&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://gopkg.in/yaml.v2&#34;</span><span style="color:#f92672">}</span> at //gopkg.in/yaml.v2?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-gopkg.in/yaml.v2 <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-github.com/mattn/go-isatty <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-get <span style="color:#e6db74">&#34;golang.org/x/sys/unix&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;golang.org/x/sys&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/sys&#34;</span><span style="color:#f92672">}</span> at //golang.org/x/sys/unix?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-get <span style="color:#e6db74">&#34;golang.org/x/sys/unix&#34;</span>: verifying non-authoritative meta tag
-golang.org/x/sys <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-github.com/lib/pq <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
-go run main.go
-Starting App
-Starting App Engine
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Running in <span style="color:#e6db74">&#34;debug&#34;</span> mode. Switch to <span style="color:#e6db74">&#34;release&#34;</span> mode in production.
-- using env:   export GIN_MODE<span style="color:#f92672">=</span>release
-- using code:  gin.SetMode<span style="color:#f92672">(</span>gin.ReleaseMode<span style="color:#f92672">)</span>
-
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /                         --&gt; github.com/strongjz/go_example_app/app.rootHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /ping                     --&gt; github.com/strongjz/go_example_app/app.pingHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /data                     --&gt; github.com/strongjz/go_example_app/app.dataHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /secret                   --&gt; github.com/strongjz/go_example_app/app.secretHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /host                     --&gt; github.com/strongjz/go_example_app/app.hostHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /external                 --&gt; github.com/strongjz/go_example_app/app.externalHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Environment variable PORT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8080&#34;</span>
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Listening and serving HTTP on :8080
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> listen tcp :8080: bind: address already in use
-~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ make run
-env GIT_TERMINAL_PROMPT<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> go get -d -v .
-go run main.go
-Starting App
-Starting App Engine
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Running in <span style="color:#e6db74">&#34;debug&#34;</span> mode. Switch to <span style="color:#e6db74">&#34;release&#34;</span> mode in production.
-- using env:   export GIN_MODE<span style="color:#f92672">=</span>release
-- using code:  gin.SetMode<span style="color:#f92672">(</span>gin.ReleaseMode<span style="color:#f92672">)</span>
-
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /                         --&gt; github.com/strongjz/go_example_app/app.rootHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /ping                     --&gt; github.com/strongjz/go_example_app/app.pingHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /data                     --&gt; github.com/strongjz/go_example_app/app.dataHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /secret                   --&gt; github.com/strongjz/go_example_app/app.secretHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /host                     --&gt; github.com/strongjz/go_example_app/app.hostHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /external                 --&gt; github.com/strongjz/go_example_app/app.externalHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Environment variable PORT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8080&#34;</span>
-<span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Listening and serving HTTP on :8080
-</code></pre></div>
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>env GIT_TERMINAL_PROMPT<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> go get -d -v .
+</span></span><span style="display:flex;"><span>github.com/strongjz/go_example_app <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>created GOPATH<span style="color:#f92672">=</span>/home/ec2-user/go; see <span style="color:#e6db74">&#39;go help gopath&#39;</span>
+</span></span><span style="display:flex;"><span>github.com/gin-gonic/gin <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>github.com/gin-contrib/sse <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>github.com/go-playground/validator <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>github.com/go-playground/universal-translator <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>github.com/go-playground/locales <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>github.com/leodido/go-urn <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#34;golang.org/x/crypto/sha3&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;golang.org/x/crypto&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/crypto&#34;</span><span style="color:#f92672">}</span> at //golang.org/x/crypto/sha3?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#34;golang.org/x/crypto/sha3&#34;</span>: verifying non-authoritative meta tag
+</span></span><span style="display:flex;"><span>golang.org/x/crypto <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#34;golang.org/x/text/language&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;golang.org/x/text&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/text&#34;</span><span style="color:#f92672">}</span> at //golang.org/x/text/language?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#34;golang.org/x/text/language&#34;</span>: verifying non-authoritative meta tag
+</span></span><span style="display:flex;"><span>golang.org/x/text <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>github.com/ugorji/go <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#34;google.golang.org/protobuf/proto&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;google.golang.org/protobuf&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/protobuf&#34;</span><span style="color:#f92672">}</span> at //google.golang.org/protobuf/proto?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#34;google.golang.org/protobuf/proto&#34;</span>: verifying non-authoritative meta tag
+</span></span><span style="display:flex;"><span>google.golang.org/protobuf <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#34;gopkg.in/yaml.v2&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;gopkg.in/yaml.v2&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://gopkg.in/yaml.v2&#34;</span><span style="color:#f92672">}</span> at //gopkg.in/yaml.v2?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>gopkg.in/yaml.v2 <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>github.com/mattn/go-isatty <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#34;golang.org/x/sys/unix&#34;</span>: found meta tag get.metaImport<span style="color:#f92672">{</span>Prefix:<span style="color:#e6db74">&#34;golang.org/x/sys&#34;</span>, VCS:<span style="color:#e6db74">&#34;git&#34;</span>, RepoRoot:<span style="color:#e6db74">&#34;https://go.googlesource.com/sys&#34;</span><span style="color:#f92672">}</span> at //golang.org/x/sys/unix?go-get<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>get <span style="color:#e6db74">&#34;golang.org/x/sys/unix&#34;</span>: verifying non-authoritative meta tag
+</span></span><span style="display:flex;"><span>golang.org/x/sys <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>github.com/lib/pq <span style="color:#f92672">(</span>download<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>go run main.go
+</span></span><span style="display:flex;"><span>Starting App
+</span></span><span style="display:flex;"><span>Starting App Engine
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Running in <span style="color:#e6db74">&#34;debug&#34;</span> mode. Switch to <span style="color:#e6db74">&#34;release&#34;</span> mode in production.
+</span></span><span style="display:flex;"><span>- using env:   export GIN_MODE<span style="color:#f92672">=</span>release
+</span></span><span style="display:flex;"><span>- using code:  gin.SetMode<span style="color:#f92672">(</span>gin.ReleaseMode<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /                         --&gt; github.com/strongjz/go_example_app/app.rootHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /ping                     --&gt; github.com/strongjz/go_example_app/app.pingHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /data                     --&gt; github.com/strongjz/go_example_app/app.dataHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /secret                   --&gt; github.com/strongjz/go_example_app/app.secretHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /host                     --&gt; github.com/strongjz/go_example_app/app.hostHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /external                 --&gt; github.com/strongjz/go_example_app/app.externalHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Environment variable PORT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8080&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Listening and serving HTTP on :8080
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> listen tcp :8080: bind: address already in use
+</span></span><span style="display:flex;"><span>~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ make run
+</span></span><span style="display:flex;"><span>env GIT_TERMINAL_PROMPT<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> go get -d -v .
+</span></span><span style="display:flex;"><span>go run main.go
+</span></span><span style="display:flex;"><span>Starting App
+</span></span><span style="display:flex;"><span>Starting App Engine
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Running in <span style="color:#e6db74">&#34;debug&#34;</span> mode. Switch to <span style="color:#e6db74">&#34;release&#34;</span> mode in production.
+</span></span><span style="display:flex;"><span>- using env:   export GIN_MODE<span style="color:#f92672">=</span>release
+</span></span><span style="display:flex;"><span>- using code:  gin.SetMode<span style="color:#f92672">(</span>gin.ReleaseMode<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /                         --&gt; github.com/strongjz/go_example_app/app.rootHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /ping                     --&gt; github.com/strongjz/go_example_app/app.pingHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /data                     --&gt; github.com/strongjz/go_example_app/app.dataHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /secret                   --&gt; github.com/strongjz/go_example_app/app.secretHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /host                     --&gt; github.com/strongjz/go_example_app/app.hostHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /external                 --&gt; github.com/strongjz/go_example_app/app.externalHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Environment variable PORT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8080&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Listening and serving HTTP on :8080
+</span></span></code></pre></div>
     </div>
 </div>
 
@@ -944,11 +965,11 @@ Starting App Engine
 <p>In a new terminal test the application <code>cd ~/environment/devsecopspipeline</code>.</p>
 <p>The <code>make run</code> just runs the golang app and not the database</p>
 <p><code>make test_local</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/
-<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Default Page&#34;</span><span style="color:#f92672">}</span>
-~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/data
-<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;DB is not connected&#34;</span><span style="color:#f92672">}</span>
-</code></pre></div><h2 id="2-running-in-docker-compose">2. Running in Docker Compose</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Default Page&#34;</span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/data
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;DB is not connected&#34;</span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="2-running-in-docker-compose">2. Running in Docker Compose</h2>
 
 <div class="notices info" ><p>Update Makefile NAME with your name or some unique identifier.</p>
 </div>
@@ -967,98 +988,98 @@ Starting App Engine
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up
-Recreating devsecopspipeline_db_1 ... <span style="color:#66d9ef">done</span>
-Recreating devsecopspipeline_go-example_1 ... <span style="color:#66d9ef">done</span>
-Attaching to devsecopspipeline_db_1, devsecopspipeline_go-example_1
-db_1          | The files belonging to this database system will be owned by user <span style="color:#e6db74">&#34;postgres&#34;</span>.
-db_1          | This user must also own the server process.
-db_1          | 
-db_1          | The database cluster will be initialized with locale <span style="color:#e6db74">&#34;en_US.utf8&#34;</span>.
-db_1          | The default database encoding has accordingly been set to <span style="color:#e6db74">&#34;UTF8&#34;</span>.
-db_1          | The default text search configuration will be set to <span style="color:#e6db74">&#34;english&#34;</span>.
-db_1          | 
-db_1          | Data page checksums are disabled.
-db_1          | 
-db_1          | fixing permissions on existing directory /var/lib/postgresql/data ... ok
-db_1          | creating subdirectories ... ok
-db_1          | selecting dynamic shared memory implementation ... posix
-db_1          | selecting default max_connections ... <span style="color:#ae81ff">100</span>
-db_1          | selecting default shared_buffers ... 128MB
-db_1          | selecting default time zone ... Etc/UTC
-db_1          | creating configuration files ... ok
-db_1          | running bootstrap script ... ok
-db_1          | performing post-bootstrap initialization ... ok
-db_1          | syncing data to disk ... ok
-db_1          | 
-db_1          | initdb: warning: enabling <span style="color:#e6db74">&#34;trust&#34;</span> authentication <span style="color:#66d9ef">for</span> local connections
-db_1          | You can change this by editing pg_hba.conf or using the option -A, or
-db_1          | --auth-local and --auth-host, the next time you run initdb.
-db_1          | 
-db_1          | Success. You can now start the database server using:
-db_1          | 
-db_1          |     pg_ctl -D /var/lib/postgresql/data -l logfile start
-db_1          | 
-db_1          | waiting <span style="color:#66d9ef">for</span> server to start....2021-09-11 22:16:05.430 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  starting PostgreSQL 12.2 <span style="color:#f92672">(</span>Debian 12.2-2.pgdg100+1<span style="color:#f92672">)</span> on x86_64-pc-linux-gnu, compiled by gcc <span style="color:#f92672">(</span>Debian 8.3.0-6<span style="color:#f92672">)</span> 8.3.0, 64-bit
-db_1          | 2021-09-11 22:16:05.432 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  listening on Unix socket <span style="color:#e6db74">&#34;/var/run/postgresql/.s.PGSQL.5432&#34;</span>
-db_1          | 2021-09-11 22:16:05.455 UTC <span style="color:#f92672">[</span>48<span style="color:#f92672">]</span> LOG:  database system was shut down at 2021-09-11 22:16:05 UTC
-db_1          | 2021-09-11 22:16:05.460 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  database system is ready to accept connections
-go-example_1  | Starting App
-go-example_1  | Starting App Engine
-go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Running in <span style="color:#e6db74">&#34;debug&#34;</span> mode. Switch to <span style="color:#e6db74">&#34;release&#34;</span> mode in production.
-go-example_1  |  - using env:   export GIN_MODE<span style="color:#f92672">=</span>release
-go-example_1  |  - using code:  gin.SetMode<span style="color:#f92672">(</span>gin.ReleaseMode<span style="color:#f92672">)</span>
-go-example_1  | 
-go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /                         --&gt; github.com/strongjz/go_example_app/app.rootHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /ping                     --&gt; github.com/strongjz/go_example_app/app.pingHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /data                     --&gt; github.com/strongjz/go_example_app/app.dataHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /secret                   --&gt; github.com/strongjz/go_example_app/app.secretHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /host                     --&gt; github.com/strongjz/go_example_app/app.hostHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /external                 --&gt; github.com/strongjz/go_example_app/app.externalHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Environment variable PORT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8080&#34;</span>
-go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Listening and serving HTTP on :8080
-go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Creating an Engine instance with the Logger and Recovery middleware already attached.
-go-example_1  | 
-go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Running in <span style="color:#e6db74">&#34;debug&#34;</span> mode. Switch to <span style="color:#e6db74">&#34;release&#34;</span> mode in production.
-go-example_1  |  - using env:   export GIN_MODE<span style="color:#f92672">=</span>release
-go-example_1  |  - using code:  gin.SetMode<span style="color:#f92672">(</span>gin.ReleaseMode<span style="color:#f92672">)</span>
-go-example_1  | 
-go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /admin                    --&gt; main.main.func1.1 <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
-go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Listening and serving HTTP on :8090
-db_1          |  <span style="color:#66d9ef">done</span>
-db_1          | server started
-db_1          | 
-db_1          | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
-db_1          | 
-db_1          | 2021-09-11 22:16:05.517 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  received fast shutdown request
-db_1          | waiting <span style="color:#66d9ef">for</span> server to shut down....2021-09-11 22:16:05.519 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  aborting any active transactions
-db_1          | 2021-09-11 22:16:05.520 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  background worker <span style="color:#e6db74">&#34;logical replication launcher&#34;</span> <span style="color:#f92672">(</span>PID 54<span style="color:#f92672">)</span> exited with exit code <span style="color:#ae81ff">1</span>
-db_1          | 2021-09-11 22:16:05.523 UTC <span style="color:#f92672">[</span>49<span style="color:#f92672">]</span> LOG:  shutting down
-db_1          | 2021-09-11 22:16:05.536 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  database system is shut down
-db_1          |  <span style="color:#66d9ef">done</span>
-db_1          | server stopped
-db_1          | 
-db_1          | PostgreSQL init process complete; ready <span style="color:#66d9ef">for</span> start up.
-db_1          | 
-db_1          | 2021-09-11 22:16:05.630 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  starting PostgreSQL 12.2 <span style="color:#f92672">(</span>Debian 12.2-2.pgdg100+1<span style="color:#f92672">)</span> on x86_64-pc-linux-gnu, compiled by gcc <span style="color:#f92672">(</span>Debian 8.3.0-6<span style="color:#f92672">)</span> 8.3.0, 64-bit
-db_1          | 2021-09-11 22:16:05.630 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  listening on IPv4 address <span style="color:#e6db74">&#34;0.0.0.0&#34;</span>, port <span style="color:#ae81ff">5432</span>
-db_1          | 2021-09-11 22:16:05.630 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  listening on IPv6 address <span style="color:#e6db74">&#34;::&#34;</span>, port <span style="color:#ae81ff">5432</span>
-db_1          | 2021-09-11 22:16:05.634 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  listening on Unix socket <span style="color:#e6db74">&#34;/var/run/postgresql/.s.PGSQL.5432&#34;</span>
-db_1          | 2021-09-11 22:16:05.649 UTC <span style="color:#f92672">[</span>56<span style="color:#f92672">]</span> LOG:  database system was shut down at 2021-09-11 22:16:05 UTC
-db_1          | 2021-09-11 22:16:05.653 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  database system is ready to accept connections
-</code></pre></div>
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up
+</span></span><span style="display:flex;"><span>Recreating devsecopspipeline_db_1 ... <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>Recreating devsecopspipeline_go-example_1 ... <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>Attaching to devsecopspipeline_db_1, devsecopspipeline_go-example_1
+</span></span><span style="display:flex;"><span>db_1          | The files belonging to this database system will be owned by user <span style="color:#e6db74">&#34;postgres&#34;</span>.
+</span></span><span style="display:flex;"><span>db_1          | This user must also own the server process.
+</span></span><span style="display:flex;"><span>db_1          | 
+</span></span><span style="display:flex;"><span>db_1          | The database cluster will be initialized with locale <span style="color:#e6db74">&#34;en_US.utf8&#34;</span>.
+</span></span><span style="display:flex;"><span>db_1          | The default database encoding has accordingly been set to <span style="color:#e6db74">&#34;UTF8&#34;</span>.
+</span></span><span style="display:flex;"><span>db_1          | The default text search configuration will be set to <span style="color:#e6db74">&#34;english&#34;</span>.
+</span></span><span style="display:flex;"><span>db_1          | 
+</span></span><span style="display:flex;"><span>db_1          | Data page checksums are disabled.
+</span></span><span style="display:flex;"><span>db_1          | 
+</span></span><span style="display:flex;"><span>db_1          | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+</span></span><span style="display:flex;"><span>db_1          | creating subdirectories ... ok
+</span></span><span style="display:flex;"><span>db_1          | selecting dynamic shared memory implementation ... posix
+</span></span><span style="display:flex;"><span>db_1          | selecting default max_connections ... <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>db_1          | selecting default shared_buffers ... 128MB
+</span></span><span style="display:flex;"><span>db_1          | selecting default time zone ... Etc/UTC
+</span></span><span style="display:flex;"><span>db_1          | creating configuration files ... ok
+</span></span><span style="display:flex;"><span>db_1          | running bootstrap script ... ok
+</span></span><span style="display:flex;"><span>db_1          | performing post-bootstrap initialization ... ok
+</span></span><span style="display:flex;"><span>db_1          | syncing data to disk ... ok
+</span></span><span style="display:flex;"><span>db_1          | 
+</span></span><span style="display:flex;"><span>db_1          | initdb: warning: enabling <span style="color:#e6db74">&#34;trust&#34;</span> authentication <span style="color:#66d9ef">for</span> local connections
+</span></span><span style="display:flex;"><span>db_1          | You can change this by editing pg_hba.conf or using the option -A, or
+</span></span><span style="display:flex;"><span>db_1          | --auth-local and --auth-host, the next time you run initdb.
+</span></span><span style="display:flex;"><span>db_1          | 
+</span></span><span style="display:flex;"><span>db_1          | Success. You can now start the database server using:
+</span></span><span style="display:flex;"><span>db_1          | 
+</span></span><span style="display:flex;"><span>db_1          |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+</span></span><span style="display:flex;"><span>db_1          | 
+</span></span><span style="display:flex;"><span>db_1          | waiting <span style="color:#66d9ef">for</span> server to start....2021-09-11 22:16:05.430 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  starting PostgreSQL 12.2 <span style="color:#f92672">(</span>Debian 12.2-2.pgdg100+1<span style="color:#f92672">)</span> on x86_64-pc-linux-gnu, compiled by gcc <span style="color:#f92672">(</span>Debian 8.3.0-6<span style="color:#f92672">)</span> 8.3.0, 64-bit
+</span></span><span style="display:flex;"><span>db_1          | 2021-09-11 22:16:05.432 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  listening on Unix socket <span style="color:#e6db74">&#34;/var/run/postgresql/.s.PGSQL.5432&#34;</span>
+</span></span><span style="display:flex;"><span>db_1          | 2021-09-11 22:16:05.455 UTC <span style="color:#f92672">[</span>48<span style="color:#f92672">]</span> LOG:  database system was shut down at 2021-09-11 22:16:05 UTC
+</span></span><span style="display:flex;"><span>db_1          | 2021-09-11 22:16:05.460 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  database system is ready to accept connections
+</span></span><span style="display:flex;"><span>go-example_1  | Starting App
+</span></span><span style="display:flex;"><span>go-example_1  | Starting App Engine
+</span></span><span style="display:flex;"><span>go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Running in <span style="color:#e6db74">&#34;debug&#34;</span> mode. Switch to <span style="color:#e6db74">&#34;release&#34;</span> mode in production.
+</span></span><span style="display:flex;"><span>go-example_1  |  - using env:   export GIN_MODE<span style="color:#f92672">=</span>release
+</span></span><span style="display:flex;"><span>go-example_1  |  - using code:  gin.SetMode<span style="color:#f92672">(</span>gin.ReleaseMode<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>go-example_1  | 
+</span></span><span style="display:flex;"><span>go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /                         --&gt; github.com/strongjz/go_example_app/app.rootHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /ping                     --&gt; github.com/strongjz/go_example_app/app.pingHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /data                     --&gt; github.com/strongjz/go_example_app/app.dataHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /secret                   --&gt; github.com/strongjz/go_example_app/app.secretHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /host                     --&gt; github.com/strongjz/go_example_app/app.hostHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /external                 --&gt; github.com/strongjz/go_example_app/app.externalHandler <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Environment variable PORT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8080&#34;</span>
+</span></span><span style="display:flex;"><span>go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Listening and serving HTTP on :8080
+</span></span><span style="display:flex;"><span>go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Creating an Engine instance with the Logger and Recovery middleware already attached.
+</span></span><span style="display:flex;"><span>go-example_1  | 
+</span></span><span style="display:flex;"><span>go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>WARNING<span style="color:#f92672">]</span> Running in <span style="color:#e6db74">&#34;debug&#34;</span> mode. Switch to <span style="color:#e6db74">&#34;release&#34;</span> mode in production.
+</span></span><span style="display:flex;"><span>go-example_1  |  - using env:   export GIN_MODE<span style="color:#f92672">=</span>release
+</span></span><span style="display:flex;"><span>go-example_1  |  - using code:  gin.SetMode<span style="color:#f92672">(</span>gin.ReleaseMode<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>go-example_1  | 
+</span></span><span style="display:flex;"><span>go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> GET    /admin                    --&gt; main.main.func1.1 <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span> handlers<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>go-example_1  | <span style="color:#f92672">[</span>GIN-debug<span style="color:#f92672">]</span> Listening and serving HTTP on :8090
+</span></span><span style="display:flex;"><span>db_1          |  <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>db_1          | server started
+</span></span><span style="display:flex;"><span>db_1          | 
+</span></span><span style="display:flex;"><span>db_1          | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+</span></span><span style="display:flex;"><span>db_1          | 
+</span></span><span style="display:flex;"><span>db_1          | 2021-09-11 22:16:05.517 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  received fast shutdown request
+</span></span><span style="display:flex;"><span>db_1          | waiting <span style="color:#66d9ef">for</span> server to shut down....2021-09-11 22:16:05.519 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  aborting any active transactions
+</span></span><span style="display:flex;"><span>db_1          | 2021-09-11 22:16:05.520 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  background worker <span style="color:#e6db74">&#34;logical replication launcher&#34;</span> <span style="color:#f92672">(</span>PID 54<span style="color:#f92672">)</span> exited with exit code <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>db_1          | 2021-09-11 22:16:05.523 UTC <span style="color:#f92672">[</span>49<span style="color:#f92672">]</span> LOG:  shutting down
+</span></span><span style="display:flex;"><span>db_1          | 2021-09-11 22:16:05.536 UTC <span style="color:#f92672">[</span>47<span style="color:#f92672">]</span> LOG:  database system is shut down
+</span></span><span style="display:flex;"><span>db_1          |  <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>db_1          | server stopped
+</span></span><span style="display:flex;"><span>db_1          | 
+</span></span><span style="display:flex;"><span>db_1          | PostgreSQL init process complete; ready <span style="color:#66d9ef">for</span> start up.
+</span></span><span style="display:flex;"><span>db_1          | 
+</span></span><span style="display:flex;"><span>db_1          | 2021-09-11 22:16:05.630 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  starting PostgreSQL 12.2 <span style="color:#f92672">(</span>Debian 12.2-2.pgdg100+1<span style="color:#f92672">)</span> on x86_64-pc-linux-gnu, compiled by gcc <span style="color:#f92672">(</span>Debian 8.3.0-6<span style="color:#f92672">)</span> 8.3.0, 64-bit
+</span></span><span style="display:flex;"><span>db_1          | 2021-09-11 22:16:05.630 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  listening on IPv4 address <span style="color:#e6db74">&#34;0.0.0.0&#34;</span>, port <span style="color:#ae81ff">5432</span>
+</span></span><span style="display:flex;"><span>db_1          | 2021-09-11 22:16:05.630 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  listening on IPv6 address <span style="color:#e6db74">&#34;::&#34;</span>, port <span style="color:#ae81ff">5432</span>
+</span></span><span style="display:flex;"><span>db_1          | 2021-09-11 22:16:05.634 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  listening on Unix socket <span style="color:#e6db74">&#34;/var/run/postgresql/.s.PGSQL.5432&#34;</span>
+</span></span><span style="display:flex;"><span>db_1          | 2021-09-11 22:16:05.649 UTC <span style="color:#f92672">[</span>56<span style="color:#f92672">]</span> LOG:  database system was shut down at 2021-09-11 22:16:05 UTC
+</span></span><span style="display:flex;"><span>db_1          | 2021-09-11 22:16:05.653 UTC <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> LOG:  database system is ready to accept connections
+</span></span></code></pre></div>
     </div>
 </div>
 
 <p>Once it is up we can test the applications running in compose, same thing, new terminal and test</p>
 <p><code>make test_local</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/
-<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Default Page&#34;</span><span style="color:#f92672">}</span>
-~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/ping
-<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Pong Version `0.1.20`&#34;</span><span style="color:#f92672">}</span>
-~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/data
-<span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Database Connected&#34;</span><span style="color:#f92672">}</span>
-</code></pre></div><h2 id="3-go-reporter">3. Go Reporter</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Default Page&#34;</span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/ping
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Pong Version `0.1.20`&#34;</span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>~/environment/devsecopspipeline <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span> $ curl localhost:8080/data
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Database Connected&#34;</span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="3-go-reporter">3. Go Reporter</h2>
 <p>A Golang tool that does static analysis, unit testing, code review and generate code quality report.</p>
 <p><a href="https://github.com/qax-os/goreporter">https://github.com/qax-os/goreporter</a></p>
 <p><code>make go_report</code></p>
@@ -1074,94 +1095,94 @@ db_1          | 2021-09-11 22:16:05.653 UTC <span style="color:#f92672">[</span>
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rm -rf goreporter/
-git clone https://github.com/qax-os/goreporter.git <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>cd goreporter/ <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>go mod init github.com/360EntSecGroup-Skylar/goreporter <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>go build <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>ls -la
-Cloning into <span style="color:#e6db74">&#39;goreporter&#39;</span>...
-remote: Enumerating objects: 4146, <span style="color:#66d9ef">done</span>.
-remote: Total <span style="color:#ae81ff">4146</span> <span style="color:#f92672">(</span>delta 0<span style="color:#f92672">)</span>, reused <span style="color:#ae81ff">0</span> <span style="color:#f92672">(</span>delta 0<span style="color:#f92672">)</span>, pack-reused <span style="color:#ae81ff">4146</span>
-Receiving objects: 100% <span style="color:#f92672">(</span>4146/4146<span style="color:#f92672">)</span>, 29.61 MiB | 9.99 MiB/s, <span style="color:#66d9ef">done</span>.
-Resolving deltas: 100% <span style="color:#f92672">(</span>1510/1510<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
-go: creating new go.mod: module github.com/360EntSecGroup-Skylar/goreporter
-total <span style="color:#ae81ff">16848</span>
-drwxrwxr-x <span style="color:#ae81ff">10</span> ec2-user ec2-user      <span style="color:#ae81ff">334</span> Jan <span style="color:#ae81ff">11</span> 20:40 .
-drwxrwxr-x <span style="color:#ae81ff">10</span> ec2-user ec2-user     <span style="color:#ae81ff">4096</span> Jan <span style="color:#ae81ff">11</span> 20:40 ..
--rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user     <span style="color:#ae81ff">3215</span> Jan <span style="color:#ae81ff">11</span> 20:40 CODE_OF_CONDUCT.md
--rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user    <span style="color:#ae81ff">17083</span> Jan <span style="color:#ae81ff">11</span> 20:40 CONTRIBUTING.md
--rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user   <span style="color:#ae81ff">895165</span> Jan <span style="color:#ae81ff">11</span> 20:40 DISPLAY.gif
-drwxrwxr-x  <span style="color:#ae81ff">2</span> ec2-user ec2-user      <span style="color:#ae81ff">237</span> Jan <span style="color:#ae81ff">11</span> 20:40 doc
-drwxrwxr-x  <span style="color:#ae81ff">3</span> ec2-user ec2-user     <span style="color:#ae81ff">4096</span> Jan <span style="color:#ae81ff">11</span> 20:40 engine
-drwxrwxr-x  <span style="color:#ae81ff">8</span> ec2-user ec2-user      <span style="color:#ae81ff">163</span> Jan <span style="color:#ae81ff">11</span> 20:40 .git
--rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user      <span style="color:#ae81ff">272</span> Jan <span style="color:#ae81ff">11</span> 20:40 .gitignore
-drwxrwxr-x  <span style="color:#ae81ff">2</span> ec2-user ec2-user       <span style="color:#ae81ff">20</span> Jan <span style="color:#ae81ff">11</span> 20:40 Godeps
--rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user       <span style="color:#ae81ff">60</span> Jan <span style="color:#ae81ff">11</span> 20:40 go.mod
--rwxrwxr-x  <span style="color:#ae81ff">1</span> ec2-user ec2-user <span style="color:#ae81ff">16148838</span> Jan <span style="color:#ae81ff">11</span> 20:40 goreporter
--rwxrwxr-x  <span style="color:#ae81ff">1</span> ec2-user ec2-user      <span style="color:#ae81ff">265</span> Jan <span style="color:#ae81ff">11</span> 20:40 go.test.sh
--rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user    <span style="color:#ae81ff">11357</span> Jan <span style="color:#ae81ff">11</span> 20:40 LICENSE
-drwxrwxr-x <span style="color:#ae81ff">22</span> ec2-user ec2-user      <span style="color:#ae81ff">323</span> Jan <span style="color:#ae81ff">11</span> 20:40 linters
--rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user   <span style="color:#ae81ff">125706</span> Jan <span style="color:#ae81ff">11</span> 20:40 logo.png
--rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user     <span style="color:#ae81ff">5114</span> Jan <span style="color:#ae81ff">11</span> 20:40 main.go
--rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user     <span style="color:#ae81ff">4760</span> Jan <span style="color:#ae81ff">11</span> 20:40 README.md
-drwxrwxr-x  <span style="color:#ae81ff">2</span> ec2-user ec2-user       <span style="color:#ae81ff">75</span> Jan <span style="color:#ae81ff">11</span> 20:40 templates
--rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user      <span style="color:#ae81ff">205</span> Jan <span style="color:#ae81ff">11</span> 20:40 .travis.yml
-drwxrwxr-x  <span style="color:#ae81ff">2</span> ec2-user ec2-user       <span style="color:#ae81ff">43</span> Jan <span style="color:#ae81ff">11</span> 20:40 utils
-drwxrwxr-x  <span style="color:#ae81ff">5</span> ec2-user ec2-user       <span style="color:#ae81ff">58</span> Jan <span style="color:#ae81ff">11</span> 20:40 vendor
-chmod u+x ./goreporter
-cd ..
-./goreporter/goreporter -p . -f html
-2022/01/11 20:40:14 The template path is not specified,and will use the default template
-2022/01/11 20:40:14 The report path is not specified, and the current path is used by default
-2022/01/11 20:40:14 There are no packages that are excepted, review all items of the package
-2022/01/11 20:40:14 Linter:CountCode over,time consuming 0.061658138s
-2022/01/11 20:40:14 Linter:Cyclo over,time consuming 0.063365171s
-2022/01/11 20:40:14 Linter:Deadcode over,time consuming 0.063735884s
-E0111 20:40:23.226420   <span style="color:#ae81ff">17200</span> depend.go:139<span style="color:#f92672">]</span> exec: <span style="color:#e6db74">&#34;dot&#34;</span>: executable file not found in $PATH
-E0111 20:40:23.227365   <span style="color:#ae81ff">17200</span> depend.go:144<span style="color:#f92672">]</span> open pkgdep.svg: no such file or directory
-E0111 20:40:23.227492   <span style="color:#ae81ff">17200</span> depend.go:149<span style="color:#f92672">]</span> remove pkgdep.svg: no such file or directory
-2022/01/11 20:40:23 Linter:DependGraph over,time consuming 8.787942044s
-2022/01/11 20:40:23 Linter:Depth over,time consuming 8.790083664s
-2022/01/11 20:40:23 Linter:ImportPackages over,time consuming 9.416117587s
-package skip/testdata is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/skip/testdata<span style="color:#f92672">)</span>
-package deps is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/deps<span style="color:#f92672">)</span>
-package grab-import/def is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/grab-import/def<span style="color:#f92672">)</span>
-package grab-import is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/grab-import<span style="color:#f92672">)</span>
-package single is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/single<span style="color:#f92672">)</span>
-package skip/.hidden is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/skip/.hidden<span style="color:#f92672">)</span>
-package skip is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/skip<span style="color:#f92672">)</span>
-package nested/pkg is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/nested/pkg<span style="color:#f92672">)</span>
-package grab-import/def/nested is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/grab-import/def/nested<span style="color:#f92672">)</span>
-2022/01/11 20:40:25 no initial packages were loaded
-2022/01/11 20:40:25 Linter:Interfacer over,time consuming 10.582002842s
-can<span style="color:#e6db74">&#39;t load package &#34;goreporter/linters/interfacer/testdata/src/deps&#34;: package goreporter/linters/interfacer/testdata/src/deps is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/deps)
-</span><span style="color:#e6db74">package goreporter/linters/interfacer/testdata/src/deps is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/deps)
-</span><span style="color:#e6db74">can&#39;</span>t load package <span style="color:#e6db74">&#34;goreporter/linters/interfacer/testdata/src/grab-import/def&#34;</span>: package goreporter/linters/interfacer/testdata/src/grab-import/def is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/grab-import/def<span style="color:#f92672">)</span>
-package goreporter/linters/interfacer/testdata/src/grab-import/def is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/grab-import/def<span style="color:#f92672">)</span>
-can<span style="color:#e6db74">&#39;t load package &#34;goreporter/linters/interfacer/testdata/src/grab-import/def/nested&#34;: package goreporter/linters/interfacer/testdata/src/grab-import/def/nested is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/grab-import/def/nested)
-</span><span style="color:#e6db74">package goreporter/linters/interfacer/testdata/src/grab-import/def/nested is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/grab-import/def/nested)
-</span><span style="color:#e6db74">can&#39;</span>t load package <span style="color:#e6db74">&#34;goreporter/linters/interfacer/testdata/src/grab-import&#34;</span>: package goreporter/linters/interfacer/testdata/src/grab-import is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/grab-import<span style="color:#f92672">)</span>
-package goreporter/linters/interfacer/testdata/src/grab-import is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/grab-import<span style="color:#f92672">)</span>
-can<span style="color:#e6db74">&#39;t load package &#34;goreporter/linters/interfacer/testdata/src/nested/pkg&#34;: package goreporter/linters/interfacer/testdata/src/nested/pkg is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/nested/pkg)
-</span><span style="color:#e6db74">package goreporter/linters/interfacer/testdata/src/nested/pkg is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/nested/pkg)
-</span><span style="color:#e6db74">can&#39;</span>t load package <span style="color:#e6db74">&#34;goreporter/linters/interfacer/testdata/src/single&#34;</span>: package goreporter/linters/interfacer/testdata/src/single is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/single<span style="color:#f92672">)</span>
-package goreporter/linters/interfacer/testdata/src/single is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/single<span style="color:#f92672">)</span>
-can<span style="color:#e6db74">&#39;t load package &#34;goreporter/linters/interfacer/testdata/src/skip/.hidden&#34;: package goreporter/linters/interfacer/testdata/src/skip/.hidden is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/skip/.hidden)
-</span><span style="color:#e6db74">package goreporter/linters/interfacer/testdata/src/skip/.hidden is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/skip/.hidden)
-</span><span style="color:#e6db74">can&#39;</span>t load package <span style="color:#e6db74">&#34;goreporter/linters/interfacer/testdata/src/skip&#34;</span>: package goreporter/linters/interfacer/testdata/src/skip is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/skip<span style="color:#f92672">)</span>
-package goreporter/linters/interfacer/testdata/src/skip is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/skip<span style="color:#f92672">)</span>
-can<span style="color:#960050;background-color:#1e0010">&#39;</span>t load package <span style="color:#e6db74">&#34;goreporter/linters/interfacer/testdata/src/skip/testdata&#34;</span>: package goreporter/linters/interfacer/testdata/src/skip/testdata is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/skip/testdata<span style="color:#f92672">)</span>
-package goreporter/linters/interfacer/testdata/src/skip/testdata is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/skip/testdata<span style="color:#f92672">)</span>
-2022/01/11 20:40:27 Linter:Simple over,time consuming 12.955047065s
-2022/01/11 20:40:27 Linter:SpellCheck over,time consuming 13.463511588s
-2022/01/11 20:41:02 Linter:UnitTest over,time consuming 47.960319904s
-2022/01/11 20:41:02 Linter:GoLint over,time consuming 47.981047773s
-2022/01/11 20:41:02 Linter:GoVet over,time consuming 47.988504482s
-2022/01/11 20:41:04 To display report file:///home/ec2-user/environment/devsecopspipeline/devsecopspipeline-2022-01-11-20-41-04.html in browser
-2022/01/11 20:41:04 exec: <span style="color:#e6db74">&#34;xdg-open&#34;</span>: executable file not found in $PATH
-2022/01/11 20:41:04 GoReporter Finished,time consuming 49.725472744s<span style="color:#e6db74">```</span>
-</code></pre></div>
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rm -rf goreporter/
+</span></span><span style="display:flex;"><span>git clone https://github.com/qax-os/goreporter.git <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>cd goreporter/ <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>go mod init github.com/360EntSecGroup-Skylar/goreporter <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>go build <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>ls -la
+</span></span><span style="display:flex;"><span>Cloning into <span style="color:#e6db74">&#39;goreporter&#39;</span>...
+</span></span><span style="display:flex;"><span>remote: Enumerating objects: 4146, <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>remote: Total <span style="color:#ae81ff">4146</span> <span style="color:#f92672">(</span>delta 0<span style="color:#f92672">)</span>, reused <span style="color:#ae81ff">0</span> <span style="color:#f92672">(</span>delta 0<span style="color:#f92672">)</span>, pack-reused <span style="color:#ae81ff">4146</span>
+</span></span><span style="display:flex;"><span>Receiving objects: 100% <span style="color:#f92672">(</span>4146/4146<span style="color:#f92672">)</span>, 29.61 MiB | 9.99 MiB/s, <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>Resolving deltas: 100% <span style="color:#f92672">(</span>1510/1510<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>go: creating new go.mod: module github.com/360EntSecGroup-Skylar/goreporter
+</span></span><span style="display:flex;"><span>total <span style="color:#ae81ff">16848</span>
+</span></span><span style="display:flex;"><span>drwxrwxr-x <span style="color:#ae81ff">10</span> ec2-user ec2-user      <span style="color:#ae81ff">334</span> Jan <span style="color:#ae81ff">11</span> 20:40 .
+</span></span><span style="display:flex;"><span>drwxrwxr-x <span style="color:#ae81ff">10</span> ec2-user ec2-user     <span style="color:#ae81ff">4096</span> Jan <span style="color:#ae81ff">11</span> 20:40 ..
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user     <span style="color:#ae81ff">3215</span> Jan <span style="color:#ae81ff">11</span> 20:40 CODE_OF_CONDUCT.md
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user    <span style="color:#ae81ff">17083</span> Jan <span style="color:#ae81ff">11</span> 20:40 CONTRIBUTING.md
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user   <span style="color:#ae81ff">895165</span> Jan <span style="color:#ae81ff">11</span> 20:40 DISPLAY.gif
+</span></span><span style="display:flex;"><span>drwxrwxr-x  <span style="color:#ae81ff">2</span> ec2-user ec2-user      <span style="color:#ae81ff">237</span> Jan <span style="color:#ae81ff">11</span> 20:40 doc
+</span></span><span style="display:flex;"><span>drwxrwxr-x  <span style="color:#ae81ff">3</span> ec2-user ec2-user     <span style="color:#ae81ff">4096</span> Jan <span style="color:#ae81ff">11</span> 20:40 engine
+</span></span><span style="display:flex;"><span>drwxrwxr-x  <span style="color:#ae81ff">8</span> ec2-user ec2-user      <span style="color:#ae81ff">163</span> Jan <span style="color:#ae81ff">11</span> 20:40 .git
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user      <span style="color:#ae81ff">272</span> Jan <span style="color:#ae81ff">11</span> 20:40 .gitignore
+</span></span><span style="display:flex;"><span>drwxrwxr-x  <span style="color:#ae81ff">2</span> ec2-user ec2-user       <span style="color:#ae81ff">20</span> Jan <span style="color:#ae81ff">11</span> 20:40 Godeps
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user       <span style="color:#ae81ff">60</span> Jan <span style="color:#ae81ff">11</span> 20:40 go.mod
+</span></span><span style="display:flex;"><span>-rwxrwxr-x  <span style="color:#ae81ff">1</span> ec2-user ec2-user <span style="color:#ae81ff">16148838</span> Jan <span style="color:#ae81ff">11</span> 20:40 goreporter
+</span></span><span style="display:flex;"><span>-rwxrwxr-x  <span style="color:#ae81ff">1</span> ec2-user ec2-user      <span style="color:#ae81ff">265</span> Jan <span style="color:#ae81ff">11</span> 20:40 go.test.sh
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user    <span style="color:#ae81ff">11357</span> Jan <span style="color:#ae81ff">11</span> 20:40 LICENSE
+</span></span><span style="display:flex;"><span>drwxrwxr-x <span style="color:#ae81ff">22</span> ec2-user ec2-user      <span style="color:#ae81ff">323</span> Jan <span style="color:#ae81ff">11</span> 20:40 linters
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user   <span style="color:#ae81ff">125706</span> Jan <span style="color:#ae81ff">11</span> 20:40 logo.png
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user     <span style="color:#ae81ff">5114</span> Jan <span style="color:#ae81ff">11</span> 20:40 main.go
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user     <span style="color:#ae81ff">4760</span> Jan <span style="color:#ae81ff">11</span> 20:40 README.md
+</span></span><span style="display:flex;"><span>drwxrwxr-x  <span style="color:#ae81ff">2</span> ec2-user ec2-user       <span style="color:#ae81ff">75</span> Jan <span style="color:#ae81ff">11</span> 20:40 templates
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#ae81ff">1</span> ec2-user ec2-user      <span style="color:#ae81ff">205</span> Jan <span style="color:#ae81ff">11</span> 20:40 .travis.yml
+</span></span><span style="display:flex;"><span>drwxrwxr-x  <span style="color:#ae81ff">2</span> ec2-user ec2-user       <span style="color:#ae81ff">43</span> Jan <span style="color:#ae81ff">11</span> 20:40 utils
+</span></span><span style="display:flex;"><span>drwxrwxr-x  <span style="color:#ae81ff">5</span> ec2-user ec2-user       <span style="color:#ae81ff">58</span> Jan <span style="color:#ae81ff">11</span> 20:40 vendor
+</span></span><span style="display:flex;"><span>chmod u+x ./goreporter
+</span></span><span style="display:flex;"><span>cd ..
+</span></span><span style="display:flex;"><span>./goreporter/goreporter -p . -f html
+</span></span><span style="display:flex;"><span>2022/01/11 20:40:14 The template path is not specified,and will use the default template
+</span></span><span style="display:flex;"><span>2022/01/11 20:40:14 The report path is not specified, and the current path is used by default
+</span></span><span style="display:flex;"><span>2022/01/11 20:40:14 There are no packages that are excepted, review all items of the package
+</span></span><span style="display:flex;"><span>2022/01/11 20:40:14 Linter:CountCode over,time consuming 0.061658138s
+</span></span><span style="display:flex;"><span>2022/01/11 20:40:14 Linter:Cyclo over,time consuming 0.063365171s
+</span></span><span style="display:flex;"><span>2022/01/11 20:40:14 Linter:Deadcode over,time consuming 0.063735884s
+</span></span><span style="display:flex;"><span>E0111 20:40:23.226420   <span style="color:#ae81ff">17200</span> depend.go:139<span style="color:#f92672">]</span> exec: <span style="color:#e6db74">&#34;dot&#34;</span>: executable file not found in $PATH
+</span></span><span style="display:flex;"><span>E0111 20:40:23.227365   <span style="color:#ae81ff">17200</span> depend.go:144<span style="color:#f92672">]</span> open pkgdep.svg: no such file or directory
+</span></span><span style="display:flex;"><span>E0111 20:40:23.227492   <span style="color:#ae81ff">17200</span> depend.go:149<span style="color:#f92672">]</span> remove pkgdep.svg: no such file or directory
+</span></span><span style="display:flex;"><span>2022/01/11 20:40:23 Linter:DependGraph over,time consuming 8.787942044s
+</span></span><span style="display:flex;"><span>2022/01/11 20:40:23 Linter:Depth over,time consuming 8.790083664s
+</span></span><span style="display:flex;"><span>2022/01/11 20:40:23 Linter:ImportPackages over,time consuming 9.416117587s
+</span></span><span style="display:flex;"><span>package skip/testdata is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/skip/testdata<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>package deps is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/deps<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>package grab-import/def is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/grab-import/def<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>package grab-import is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/grab-import<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>package single is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/single<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>package skip/.hidden is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/skip/.hidden<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>package skip is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/skip<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>package nested/pkg is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/nested/pkg<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>package grab-import/def/nested is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/grab-import/def/nested<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>2022/01/11 20:40:25 no initial packages were loaded
+</span></span><span style="display:flex;"><span>2022/01/11 20:40:25 Linter:Interfacer over,time consuming 10.582002842s
+</span></span><span style="display:flex;"><span>can<span style="color:#e6db74">&#39;t load package &#34;goreporter/linters/interfacer/testdata/src/deps&#34;: package goreporter/linters/interfacer/testdata/src/deps is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/deps)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">package goreporter/linters/interfacer/testdata/src/deps is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/deps)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">can&#39;</span>t load package <span style="color:#e6db74">&#34;goreporter/linters/interfacer/testdata/src/grab-import/def&#34;</span>: package goreporter/linters/interfacer/testdata/src/grab-import/def is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/grab-import/def<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>package goreporter/linters/interfacer/testdata/src/grab-import/def is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/grab-import/def<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>can<span style="color:#e6db74">&#39;t load package &#34;goreporter/linters/interfacer/testdata/src/grab-import/def/nested&#34;: package goreporter/linters/interfacer/testdata/src/grab-import/def/nested is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/grab-import/def/nested)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">package goreporter/linters/interfacer/testdata/src/grab-import/def/nested is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/grab-import/def/nested)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">can&#39;</span>t load package <span style="color:#e6db74">&#34;goreporter/linters/interfacer/testdata/src/grab-import&#34;</span>: package goreporter/linters/interfacer/testdata/src/grab-import is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/grab-import<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>package goreporter/linters/interfacer/testdata/src/grab-import is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/grab-import<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>can<span style="color:#e6db74">&#39;t load package &#34;goreporter/linters/interfacer/testdata/src/nested/pkg&#34;: package goreporter/linters/interfacer/testdata/src/nested/pkg is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/nested/pkg)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">package goreporter/linters/interfacer/testdata/src/nested/pkg is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/nested/pkg)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">can&#39;</span>t load package <span style="color:#e6db74">&#34;goreporter/linters/interfacer/testdata/src/single&#34;</span>: package goreporter/linters/interfacer/testdata/src/single is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/single<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>package goreporter/linters/interfacer/testdata/src/single is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/single<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>can<span style="color:#e6db74">&#39;t load package &#34;goreporter/linters/interfacer/testdata/src/skip/.hidden&#34;: package goreporter/linters/interfacer/testdata/src/skip/.hidden is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/skip/.hidden)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">package goreporter/linters/interfacer/testdata/src/skip/.hidden is not in GOROOT (/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/skip/.hidden)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">can&#39;</span>t load package <span style="color:#e6db74">&#34;goreporter/linters/interfacer/testdata/src/skip&#34;</span>: package goreporter/linters/interfacer/testdata/src/skip is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/skip<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>package goreporter/linters/interfacer/testdata/src/skip is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/skip<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>can<span style="color:#960050;background-color:#1e0010">&#39;</span>t load package <span style="color:#e6db74">&#34;goreporter/linters/interfacer/testdata/src/skip/testdata&#34;</span>: package goreporter/linters/interfacer/testdata/src/skip/testdata is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/skip/testdata<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>package goreporter/linters/interfacer/testdata/src/skip/testdata is not in GOROOT <span style="color:#f92672">(</span>/usr/lib/golang/src/goreporter/linters/interfacer/testdata/src/skip/testdata<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>2022/01/11 20:40:27 Linter:Simple over,time consuming 12.955047065s
+</span></span><span style="display:flex;"><span>2022/01/11 20:40:27 Linter:SpellCheck over,time consuming 13.463511588s
+</span></span><span style="display:flex;"><span>2022/01/11 20:41:02 Linter:UnitTest over,time consuming 47.960319904s
+</span></span><span style="display:flex;"><span>2022/01/11 20:41:02 Linter:GoLint over,time consuming 47.981047773s
+</span></span><span style="display:flex;"><span>2022/01/11 20:41:02 Linter:GoVet over,time consuming 47.988504482s
+</span></span><span style="display:flex;"><span>2022/01/11 20:41:04 To display report file:///home/ec2-user/environment/devsecopspipeline/devsecopspipeline-2022-01-11-20-41-04.html in browser
+</span></span><span style="display:flex;"><span>2022/01/11 20:41:04 exec: <span style="color:#e6db74">&#34;xdg-open&#34;</span>: executable file not found in $PATH
+</span></span><span style="display:flex;"><span>2022/01/11 20:41:04 GoReporter Finished,time consuming 49.725472744s<span style="color:#e6db74">```</span>
+</span></span></code></pre></div>
     </div>
 </div>
 
@@ -1181,92 +1202,92 @@ package goreporter/linters/interfacer/testdata/src/skip/testdata is not in GOROO
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-wget -O - -q https://raw.githubusercontent.com/securego/gosec/master/install.sh | sh -s v2.9.5
-securego/gosec info checking GitHub <span style="color:#66d9ef">for</span> tag <span style="color:#e6db74">&#39;v2.9.5&#39;</span>
-securego/gosec info found version: 2.9.5 <span style="color:#66d9ef">for</span> v2.9.5/linux/amd64
-securego/gosec info installed ./bin/gosec
-./bin/gosec -fmt<span style="color:#f92672">=</span>json -out<span style="color:#f92672">=</span>security.json -stdout .
-<span style="color:#f92672">[</span>gosec<span style="color:#f92672">]</span> 2022/01/11 20:42:59 Including rules: default
-<span style="color:#f92672">[</span>gosec<span style="color:#f92672">]</span> 2022/01/11 20:42:59 Excluding rules: default
-<span style="color:#f92672">[</span>gosec<span style="color:#f92672">]</span> 2022/01/11 20:42:59 Import directory: /home/ec2-user/environment/devsecopspipeline
-<span style="color:#f92672">[</span>gosec<span style="color:#f92672">]</span> 2022/01/11 20:42:59 Checking package: main
-<span style="color:#f92672">[</span>gosec<span style="color:#f92672">]</span> 2022/01/11 20:42:59 Checking file: /home/ec2-user/environment/devsecopspipeline/main.go
-<span style="color:#f92672">{</span>
-        <span style="color:#e6db74">&#34;Golang errors&#34;</span>: <span style="color:#f92672">{}</span>,
-        <span style="color:#e6db74">&#34;Issues&#34;</span>: <span style="color:#f92672">[]</span>,
-        <span style="color:#e6db74">&#34;Stats&#34;</span>: <span style="color:#f92672">{</span>
-                <span style="color:#e6db74">&#34;files&#34;</span>: 1,
-                <span style="color:#e6db74">&#34;lines&#34;</span>: 18,
-                <span style="color:#e6db74">&#34;nosec&#34;</span>: 0,
-                <span style="color:#e6db74">&#34;found&#34;</span>: <span style="color:#ae81ff">0</span>
-        <span style="color:#f92672">}</span>,
-        <span style="color:#e6db74">&#34;GosecVersion&#34;</span>: <span style="color:#e6db74">&#34;2.9.5&#34;</span>
-<span style="color:#f92672">}</span>AWSReservedSSO_Engineering-Admin_a62927498966bb0a:~/environment/devsecopspipeline 
-</code></pre></div>
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wget -O - -q https://raw.githubusercontent.com/securego/gosec/master/install.sh | sh -s v2.9.5
+</span></span><span style="display:flex;"><span>securego/gosec info checking GitHub <span style="color:#66d9ef">for</span> tag <span style="color:#e6db74">&#39;v2.9.5&#39;</span>
+</span></span><span style="display:flex;"><span>securego/gosec info found version: 2.9.5 <span style="color:#66d9ef">for</span> v2.9.5/linux/amd64
+</span></span><span style="display:flex;"><span>securego/gosec info installed ./bin/gosec
+</span></span><span style="display:flex;"><span>./bin/gosec -fmt<span style="color:#f92672">=</span>json -out<span style="color:#f92672">=</span>security.json -stdout .
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>gosec<span style="color:#f92672">]</span> 2022/01/11 20:42:59 Including rules: default
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>gosec<span style="color:#f92672">]</span> 2022/01/11 20:42:59 Excluding rules: default
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>gosec<span style="color:#f92672">]</span> 2022/01/11 20:42:59 Import directory: /home/ec2-user/environment/devsecopspipeline
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>gosec<span style="color:#f92672">]</span> 2022/01/11 20:42:59 Checking package: main
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>gosec<span style="color:#f92672">]</span> 2022/01/11 20:42:59 Checking file: /home/ec2-user/environment/devsecopspipeline/main.go
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Golang errors&#34;</span>: <span style="color:#f92672">{}</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Issues&#34;</span>: <span style="color:#f92672">[]</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Stats&#34;</span>: <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;files&#34;</span>: 1,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;lines&#34;</span>: 18,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;nosec&#34;</span>: 0,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;found&#34;</span>: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;GosecVersion&#34;</span>: <span style="color:#e6db74">&#34;2.9.5&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>AWSReservedSSO_Engineering-Admin_a62927498966bb0a:~/environment/devsecopspipeline 
+</span></span></code></pre></div>
     </div>
 </div>
 
 <h2 id="5-secure-dockerfile">5. Secure Dockerfile</h2>
 <p>Let&rsquo;s create a user for the application and rebuild our image</p>
 <p>Add these lines to the dockerfile to create a new user</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Create appuser.</span>
-ENV USER<span style="color:#f92672">=</span>appuser
-ENV UID<span style="color:#f92672">=</span><span style="color:#ae81ff">10001</span>
-<span style="color:#75715e"># See https://stackoverflow.com/a/55757473/12429735RUN</span>
-RUN adduser <span style="color:#ae81ff">\ </span>   
---disabled-password <span style="color:#ae81ff">\ </span>   
---gecos <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\ </span>   
---home <span style="color:#e6db74">&#34;/nonexistent&#34;</span> <span style="color:#ae81ff">\ </span>   
---shell <span style="color:#e6db74">&#34;/sbin/nologin&#34;</span> <span style="color:#ae81ff">\ </span>   
---no-create-home <span style="color:#ae81ff">\ </span>   
---uid <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>UID<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\ </span>   
-<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>USER<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</code></pre></div><p>Inside the app container add these lines.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Import the user and group files from the builder.</span>
-COPY --from<span style="color:#f92672">=</span>builder /etc/passwd /etc/passwd
-COPY --from<span style="color:#f92672">=</span>builder /etc/group /etc/group
-
-<span style="color:#75715e"># Use an unprivileged user.</span>
-USER appuser:appuser
-</code></pre></div><p>The Dockerfile should look like this now</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:1.13-alpine AS builder</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apk update <span style="color:#f92672">&amp;&amp;</span> apk add --no-cache git<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Create appuser.</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> USER<span style="color:#f92672">=</span>appuser
-<span style="color:#66d9ef">ENV</span> UID<span style="color:#f92672">=</span><span style="color:#ae81ff">10001</span>
-<span style="color:#75715e"># See https://stackoverflow.com/a/55757473/12429735RUN</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> adduser <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --disabled-password <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --gecos <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --home <span style="color:#e6db74">&#34;/nonexistent&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --shell <span style="color:#e6db74">&#34;/sbin/nologin&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --no-create-home <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --uid <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>UID<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>USER<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /go/src/app</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> GIT_TERMINAL_PROMPT<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> go get -d -v<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> CGO_ENABLED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> go build -o /go/bin/app<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:1.13-alpine</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>builder /go/bin/app /go/bin/app<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Import the user and group files from the builder.</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>builder /etc/passwd /etc/passwd<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>builder /etc/group /etc/group<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Use an unprivileged user.</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">USER</span><span style="color:#e6db74"> appuser:appuser</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 8080</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 8090</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;/go/bin/app&#34;</span>]<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>This was all done locally now let&rsquo;s get a pipeline running all this!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Create appuser.</span>
+</span></span><span style="display:flex;"><span>ENV USER<span style="color:#f92672">=</span>appuser
+</span></span><span style="display:flex;"><span>ENV UID<span style="color:#f92672">=</span><span style="color:#ae81ff">10001</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># See https://stackoverflow.com/a/55757473/12429735RUN</span>
+</span></span><span style="display:flex;"><span>RUN adduser <span style="color:#ae81ff">\ </span>   
+</span></span><span style="display:flex;"><span>--disabled-password <span style="color:#ae81ff">\ </span>   
+</span></span><span style="display:flex;"><span>--gecos <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\ </span>   
+</span></span><span style="display:flex;"><span>--home <span style="color:#e6db74">&#34;/nonexistent&#34;</span> <span style="color:#ae81ff">\ </span>   
+</span></span><span style="display:flex;"><span>--shell <span style="color:#e6db74">&#34;/sbin/nologin&#34;</span> <span style="color:#ae81ff">\ </span>   
+</span></span><span style="display:flex;"><span>--no-create-home <span style="color:#ae81ff">\ </span>   
+</span></span><span style="display:flex;"><span>--uid <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>UID<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\ </span>   
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>USER<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>Inside the app container add these lines.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Import the user and group files from the builder.</span>
+</span></span><span style="display:flex;"><span>COPY --from<span style="color:#f92672">=</span>builder /etc/passwd /etc/passwd
+</span></span><span style="display:flex;"><span>COPY --from<span style="color:#f92672">=</span>builder /etc/group /etc/group
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use an unprivileged user.</span>
+</span></span><span style="display:flex;"><span>USER appuser:appuser
+</span></span></code></pre></div><p>The Dockerfile should look like this now</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:1.13-alpine AS builder</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apk update <span style="color:#f92672">&amp;&amp;</span> apk add --no-cache git<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Create appuser.</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENV</span> USER<span style="color:#f92672">=</span>appuser
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ENV</span> UID<span style="color:#f92672">=</span><span style="color:#ae81ff">10001</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># See https://stackoverflow.com/a/55757473/12429735RUN</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> adduser <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --disabled-password <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --gecos <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --home <span style="color:#e6db74">&#34;/nonexistent&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --shell <span style="color:#e6db74">&#34;/sbin/nologin&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --no-create-home <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --uid <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>UID<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>USER<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /go/src/app</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> GIT_TERMINAL_PROMPT<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> go get -d -v<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> CGO_ENABLED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> go build -o /go/bin/app<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:1.13-alpine</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>builder /go/bin/app /go/bin/app<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Import the user and group files from the builder.</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>builder /etc/passwd /etc/passwd<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>builder /etc/group /etc/group<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Use an unprivileged user.</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">USER</span><span style="color:#e6db74"> appuser:appuser</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 8080</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 8090</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;/go/bin/app&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>This was all done locally now let&rsquo;s get a pipeline running all this!</p>
 
 
 <footer class="footline">
@@ -1675,6 +1696,22 @@ USER appuser:appuser
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1748,19 +1785,19 @@ USER appuser:appuser
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1642004698"></script>
-    <script src="/js/perfect-scrollbar.min.js?1642004698"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1642004698"></script>
-    <script src="/js/jquery.sticky.js?1642004698"></script>
-    <script src="/js/featherlight.min.js?1642004698"></script>
-    <script src="/js/highlight.pack.js?1642004698"></script>
+    <script src="/js/clipboard.min.js?1649273506"></script>
+    <script src="/js/perfect-scrollbar.min.js?1649273506"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1649273506"></script>
+    <script src="/js/jquery.sticky.js?1649273506"></script>
+    <script src="/js/featherlight.min.js?1649273506"></script>
+    <script src="/js/highlight.pack.js?1649273506"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1642004698"></script>
-    <script src="/js/learn.js?1642004698"></script>
-    <script src="/js/hugo-learn.js?1642004698"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1649273506"></script>
+    <script src="/js/learn.js?1649273506"></script>
+    <script src="/js/hugo-learn.js?1649273506"></script>
     
         
-            <script src="/mermaid/mermaid.js?1642004698"></script>
+            <script src="/mermaid/mermaid.js?1649273506"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

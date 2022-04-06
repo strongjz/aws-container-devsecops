@@ -3,7 +3,7 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.96.0" />
     <meta name="description" content="AWS Container DevSecOps Workshop">
 <meta name="author" content="James Strong">
 
@@ -12,22 +12,22 @@
     <title>Workshop tools :: AWS Container DevSecOps</title>
 
     
-    <link href="/css/nucleus.css?1642004698" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1642004698" rel="stylesheet">
-    <link href="/css/hybrid.css?1642004698" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1642004698" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1642004698" rel="stylesheet">
-    <link href="/css/auto-complete.css?1642004698" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1642004698" rel="stylesheet">
-    <link href="/css/theme.css?1642004698" rel="stylesheet">
-    <link href="/css/tabs.css?1642004698" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1642004698" rel="stylesheet">
+    <link href="/css/nucleus.css?1649273506" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1649273506" rel="stylesheet">
+    <link href="/css/hybrid.css?1649273506" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1649273506" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1649273506" rel="stylesheet">
+    <link href="/css/auto-complete.css?1649273506" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1649273506" rel="stylesheet">
+    <link href="/css/theme.css?1649273506" rel="stylesheet">
+    <link href="/css/tabs.css?1649273506" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1649273506" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1642004698" rel="stylesheet">
+    <link href="/css/theme-green.css?1649273506" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1642004698"></script>
+    <script src="/js/jquery-3.3.1.min.js?1649273506"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1642004698"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1642004698"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1649273506"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1649273506"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1642004698"></script>
+<script type="text/javascript" src="/js/search.js?1649273506"></script>
 
     
   </div>
@@ -312,9 +312,9 @@
  
   
     
-      <li data-nav-id="/development/signing/" title="Git Commit Signing" class="dd-item ">
-        <a href="/development/signing/">
-        Git Commit Signing
+      <li data-nav-id="/development/git/" title="Git Security" class="dd-item ">
+        <a href="/development/git/">
+        Git Security
         
         </a>
     </li>
@@ -624,6 +624,27 @@
  
   
     
+      <li data-nav-id="/run/kubernetes/" title="Running Kubernetes" class="dd-item ">
+        <a href="/run/kubernetes/">
+        Running Kubernetes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/run/exercise/" title="Running Containers Exercise" class="dd-item ">
         <a href="/run/exercise/">
         Running Containers Exercise
@@ -857,6 +878,8 @@
 <li>eksctl</li>
 <li>kubectl</li>
 <li>helm</li>
+<li>golang</li>
+<li>cosign</li>
 </ul>
 <h3 id="install">Install</h3>
 <p>Navigate to where you downloaded the installation script from the git repo.</p>
@@ -874,267 +897,267 @@
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">:~/environment $ git clone https://github.com/strongjz/aws-container-devsecops
-Cloning into <span style="color:#e6db74">&#39;aws-container-devsecops&#39;</span>...
-remote: Enumerating objects: 595, <span style="color:#66d9ef">done</span>.
-remote: Counting objects: 100% <span style="color:#f92672">(</span>595/595<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
-remote: Compressing objects: 100% <span style="color:#f92672">(</span>399/399<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
-remote: Total <span style="color:#ae81ff">595</span> <span style="color:#f92672">(</span>delta 170<span style="color:#f92672">)</span>, reused <span style="color:#ae81ff">560</span> <span style="color:#f92672">(</span>delta 141<span style="color:#f92672">)</span>, pack-reused <span style="color:#ae81ff">0</span>
-Receiving objects: 100% <span style="color:#f92672">(</span>595/595<span style="color:#f92672">)</span>, 8.95 MiB | 23.25 MiB/s, <span style="color:#66d9ef">done</span>.
-Resolving deltas: 100% <span style="color:#f92672">(</span>170/170<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
-~/environment $ cd aws-container-devsecops/content/setup/^C
-~/environment $ rm -rf aws-container-devsecops/
-~/environment $ git clone https://github.com/strongjz/aws-container-devsecops
-Cloning into <span style="color:#e6db74">&#39;aws-container-devsecops&#39;</span>...
-remote: Enumerating objects: 624, <span style="color:#66d9ef">done</span>.
-remote: Counting objects: 100% <span style="color:#f92672">(</span>624/624<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
-remote: Compressing objects: 100% <span style="color:#f92672">(</span>410/410<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
-remote: Total <span style="color:#ae81ff">624</span> <span style="color:#f92672">(</span>delta 187<span style="color:#f92672">)</span>, reused <span style="color:#ae81ff">587</span> <span style="color:#f92672">(</span>delta 156<span style="color:#f92672">)</span>, pack-reused <span style="color:#ae81ff">0</span>
-Receiving objects: 100% <span style="color:#f92672">(</span>624/624<span style="color:#f92672">)</span>, 8.95 MiB | 18.59 MiB/s, <span style="color:#66d9ef">done</span>.
-Resolving deltas: 100% <span style="color:#f92672">(</span>187/187<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
-~/environment $ cd aws-container-devsecops/content/setup/clone.files/
-~/environment/aws-container-devsecops/content/setup/clone.files <span style="color:#f92672">(</span>main<span style="color:#f92672">)</span> $ sudo
-Display all <span style="color:#ae81ff">2327</span> possibilities? <span style="color:#f92672">(</span>y or n<span style="color:#f92672">)</span>
-~/environment/aws-container-devsecops/content/setup/clone.files <span style="color:#f92672">(</span>main<span style="color:#f92672">)</span> $ sudo ls
-tools-install.sh
-~/environment/aws-container-devsecops/content/setup/clone.files <span style="color:#f92672">(</span>main<span style="color:#f92672">)</span> $ ^C
-~/environment/aws-container-devsecops/content/setup/clone.files <span style="color:#f92672">(</span>main<span style="color:#f92672">)</span> $ sudo bash tools-install.sh
-INSTALLING docker
-Installing docker
-Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
-Cleaning repos: amzn2-core amzn2extra-docker amzn2extra-epel amzn2extra-lamp-mariadb10.2-php7.2 epel hashicorp
-<span style="color:#ae81ff">35</span> metadata files removed
-<span style="color:#ae81ff">16</span> sqlite files removed
-<span style="color:#ae81ff">0</span> metadata files removed
-Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
-amzn2-core                                                                                                         | 3.7 kB  00:00:00
-amzn2extra-docker                                                                                                  | 3.0 kB  00:00:00
-amzn2extra-epel                                                                                                    | 3.0 kB  00:00:00
-amzn2extra-lamp-mariadb10.2-php7.2                                                                                 | 3.0 kB  00:00:00
-epel/x86_64/metalink                                                                                               |  <span style="color:#ae81ff">15</span> kB  00:00:00
-epel                                                                                                               | 4.7 kB  00:00:00
-hashicorp                                                                                                          | 1.4 kB  00:00:00
-<span style="color:#f92672">(</span>1/13<span style="color:#f92672">)</span>: amzn2-core/2/x86_64/group_gz                                                                               | 2.5 kB  00:00:00
-<span style="color:#f92672">(</span>2/13<span style="color:#f92672">)</span>: amzn2-core/2/x86_64/updateinfo                                                                             | <span style="color:#ae81ff">405</span> kB  00:00:00
-<span style="color:#f92672">(</span>3/13<span style="color:#f92672">)</span>: amzn2extra-epel/2/x86_64/primary_db                                                                        | 1.8 kB  00:00:00
-<span style="color:#f92672">(</span>4/13<span style="color:#f92672">)</span>: amzn2extra-lamp-mariadb10.2-php7.2/2/x86_64/updateinfo                                                     |   <span style="color:#ae81ff">76</span> B  00:00:00
-<span style="color:#f92672">(</span>5/13<span style="color:#f92672">)</span>: amzn2extra-lamp-mariadb10.2-php7.2/2/x86_64/primary_db                                                     | <span style="color:#ae81ff">506</span> kB  00:00:00
-<span style="color:#f92672">(</span>6/13<span style="color:#f92672">)</span>: amzn2extra-epel/2/x86_64/updateinfo                                                                        |   <span style="color:#ae81ff">76</span> B  00:00:00
-<span style="color:#f92672">(</span>7/13<span style="color:#f92672">)</span>: amzn2extra-docker/2/x86_64/primary_db                                                                      |  <span style="color:#ae81ff">79</span> kB  00:00:00
-<span style="color:#f92672">(</span>8/13<span style="color:#f92672">)</span>: amzn2extra-docker/2/x86_64/updateinfo                                                                      |   <span style="color:#ae81ff">76</span> B  00:00:00
-<span style="color:#f92672">(</span>9/13<span style="color:#f92672">)</span>: epel/x86_64/group_gz                                                                                       |  <span style="color:#ae81ff">96</span> kB  00:00:00
-<span style="color:#f92672">(</span>10/13<span style="color:#f92672">)</span>: epel/x86_64/updateinfo                                                                                    | 1.0 MB  00:00:00
-<span style="color:#f92672">(</span>11/13<span style="color:#f92672">)</span>: epel/x86_64/primary_db                                                                                    | 6.9 MB  00:00:00
-<span style="color:#f92672">(</span>12/13<span style="color:#f92672">)</span>: hashicorp/2/x86_64/primary                                                                                |  <span style="color:#ae81ff">55</span> kB  00:00:00
-<span style="color:#f92672">(</span>13/13<span style="color:#f92672">)</span>: amzn2-core/2/x86_64/primary_db                                                                            |  <span style="color:#ae81ff">56</span> MB  00:00:00
-hashicorp                                                                                                                         384/384
-<span style="color:#ae81ff">242</span> packages excluded due to repository priority protections
-Resolving Dependencies
---&gt; Running transaction check
----&gt; Package docker.x86_64 0:20.10.4-1.amzn2 will be installed
---&gt; Finished Dependency Resolution
-
-Dependencies Resolved
-
-<span style="color:#f92672">==========================================================================================================================================</span>
-Package                    Arch                       Version                                Repository                             Size
-<span style="color:#f92672">==========================================================================================================================================</span>
-Installing:
-docker                     x86_64                     20.10.4-1.amzn2                        amzn2extra-docker                      <span style="color:#ae81ff">32</span> M
-
-Transaction Summary
-<span style="color:#f92672">==========================================================================================================================================</span>
-Install  <span style="color:#ae81ff">1</span> Package
-
-Total download size: <span style="color:#ae81ff">32</span> M
-Installed size: <span style="color:#ae81ff">136</span> M
-Downloading packages:
-docker-20.10.4-1.amzn2.x86_64.rpm                                                                                  |  <span style="color:#ae81ff">32</span> MB  00:00:00
-Running transaction check
-Running transaction test
-Transaction test succeeded
-Running transaction
-Installing : docker-20.10.4-1.amzn2.x86_64                                                                                          1/1
-Verifying  : docker-20.10.4-1.amzn2.x86_64                                                                                          1/1
-
-Installed:
-docker.x86_64 0:20.10.4-1.amzn2
-
-Complete!
-<span style="color:#ae81ff">0</span>  ansible2                        available    <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>2.4.2  <span style="color:#f92672">=</span>2.4.6  <span style="color:#f92672">=</span>2.8  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">2</span>  httpd_modules                   available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>1.0  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">3</span>  memcached1.5                    available    <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>1.5.1  <span style="color:#f92672">=</span>1.5.16  <span style="color:#f92672">=</span>1.5.17 <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">5</span>  postgresql9.6                   available    <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>9.6.6  <span style="color:#f92672">=</span>9.6.8  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">6</span>  postgresql10                    available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>10  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">9</span>  R3.4                            available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>3.4.3  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">10</span>  rust1                           available    <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>1.22.1  <span style="color:#f92672">=</span>1.26.0  <span style="color:#f92672">=</span>1.26.1  <span style="color:#f92672">=</span>1.27.2  <span style="color:#f92672">=</span>1.31.0  <span style="color:#f92672">=</span>1.38.0
-<span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">11</span>  vim                             available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>8.0  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">15</span>  php7.2                          available    <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>7.2.0  <span style="color:#f92672">=</span>7.2.4  <span style="color:#f92672">=</span>7.2.5  <span style="color:#f92672">=</span>7.2.8  <span style="color:#f92672">=</span>7.2.11  <span style="color:#f92672">=</span>7.2.13  <span style="color:#f92672">=</span>7.2.14
-<span style="color:#f92672">=</span>7.2.16  <span style="color:#f92672">=</span>7.2.17  <span style="color:#f92672">=</span>7.2.19  <span style="color:#f92672">=</span>7.2.21  <span style="color:#f92672">=</span>7.2.22  <span style="color:#f92672">=</span>7.2.23
-<span style="color:#f92672">=</span>7.2.24  <span style="color:#f92672">=</span>7.2.26  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">17</span>  lamp-mariadb10.2-php7.2<span style="color:#f92672">=</span>latest  enabled      <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>10.2.10_7.2.0  <span style="color:#f92672">=</span>10.2.10_7.2.4  <span style="color:#f92672">=</span>10.2.10_7.2.5
-<span style="color:#f92672">=</span>10.2.10_7.2.8  <span style="color:#f92672">=</span>10.2.10_7.2.11  <span style="color:#f92672">=</span>10.2.10_7.2.13
-<span style="color:#f92672">=</span>10.2.10_7.2.14  <span style="color:#f92672">=</span>10.2.10_7.2.16  <span style="color:#f92672">=</span>10.2.10_7.2.17
-<span style="color:#f92672">=</span>10.2.10_7.2.19  <span style="color:#f92672">=</span>10.2.10_7.2.22  <span style="color:#f92672">=</span>10.2.10_7.2.23
-<span style="color:#f92672">=</span>10.2.10_7.2.24  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">18</span>  libreoffice                     available    <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>5.0.6.2_15  <span style="color:#f92672">=</span>5.3.6.1  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">19</span>  gimp                            available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>2.8.22 <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">20</span>  docker<span style="color:#f92672">=</span>latest                   enabled      <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>17.12.1  <span style="color:#f92672">=</span>18.03.1  <span style="color:#f92672">=</span>18.06.1  <span style="color:#f92672">=</span>18.09.9  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">21</span>  mate-desktop1.x                 available    <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>1.19.0  <span style="color:#f92672">=</span>1.20.0  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">22</span>  GraphicsMagick1.3               available    <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>1.3.29  <span style="color:#f92672">=</span>1.3.32  <span style="color:#f92672">=</span>1.3.34  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">23</span>  tomcat8.5                       available    <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>8.5.31  <span style="color:#f92672">=</span>8.5.32  <span style="color:#f92672">=</span>8.5.38  <span style="color:#f92672">=</span>8.5.40  <span style="color:#f92672">=</span>8.5.42  <span style="color:#f92672">=</span>8.5.50
-<span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">24</span>  epel<span style="color:#f92672">=</span>latest                     enabled      <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>7.11  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">25</span>  testing                         available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>1.0  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">26</span>  ecs                             available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">27</span>  corretto8                       available    <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>1.8.0_192  <span style="color:#f92672">=</span>1.8.0_202  <span style="color:#f92672">=</span>1.8.0_212  <span style="color:#f92672">=</span>1.8.0_222  <span style="color:#f92672">=</span>1.8.0_232
-<span style="color:#f92672">=</span>1.8.0_242  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">28</span>  firecracker                     available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>0.11  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">29</span>  golang1.11                      available    <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>1.11.3  <span style="color:#f92672">=</span>1.11.11  <span style="color:#f92672">=</span>1.11.13  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">30</span>  squid4                          available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>4  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-_  php7.3                          available    <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>7.3.2  <span style="color:#f92672">=</span>7.3.3  <span style="color:#f92672">=</span>7.3.4  <span style="color:#f92672">=</span>7.3.6  <span style="color:#f92672">=</span>7.3.8  <span style="color:#f92672">=</span>7.3.9  <span style="color:#f92672">=</span>7.3.10
-<span style="color:#f92672">=</span>7.3.11  <span style="color:#f92672">=</span>7.3.13  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">32</span>  lustre2.10                      available    <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>2.10.5  <span style="color:#f92672">=</span>2.10.8  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">33</span>  java-openjdk11                  available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>11  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">34</span>  lynis                           available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">35</span>  kernel-ng                       available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">36</span>  BCC                             available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>0.x  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">37</span>  mono                            available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>5.x  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">38</span>  nginx1                          available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">39</span>  ruby2.6                         available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>2.6  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">40</span>  mock                            available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">41</span>  postgresql11                    available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>11  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-_  php7.4                          available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">43</span>  livepatch                       available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">44</span>  python3.8                       available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">45</span>  haproxy2                        available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">46</span>  collectd                        available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">47</span>  aws-nitro-enclaves-cli          available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">48</span>  R4                              available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">49</span>  kernel-5.4                      available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">50</span>  selinux-ng                      available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-_  php8.0                          available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">52</span>  tomcat9                         available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">53</span>  unbound1.13                     available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-_  mariadb10.5                     available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">55</span>  kernel-5.10                     available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">56</span>  redis6                          available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">57</span>  ruby3.0                         available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">58</span>  postgresql12                    available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">59</span>  postgresql13                    available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-<span style="color:#ae81ff">60</span>  mock2                           available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
-Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
-<span style="color:#ae81ff">242</span> packages excluded due to repository priority protections
-Package docker-20.10.4-1.amzn2.x86_64 already installed and latest version
-Nothing to <span style="color:#66d9ef">do</span>
-Redirecting to /bin/systemctl start docker.service
-
-Hello from Docker!
-This message shows that your installation appears to be working correctly.
-
-To generate this message, Docker took the following steps:
-1. The Docker client contacted the Docker daemon.
-2. The Docker daemon pulled the <span style="color:#e6db74">&#34;hello-world&#34;</span> image from the Docker Hub.
-   <span style="color:#f92672">(</span>amd64<span style="color:#f92672">)</span>
-3. The Docker daemon created a new container from that image which runs the
-   executable that produces the output you are currently reading.
-4. The Docker daemon streamed that output to the Docker client, which sent it
-   to your terminal.
-
-To try something more ambitious, you can run an Ubuntu container with:
-$ docker run -it ubuntu bash
-
-Share images, automate workflows, and more with a free Docker ID:
-https://hub.docker.com/
-
-For more examples and ideas, visit:
-https://docs.docker.com/get-started/
-
-INSTALLING kind
-% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-Dload  Upload   Total   Spent    Left  Speed
-<span style="color:#ae81ff">100</span>    <span style="color:#ae81ff">98</span>  <span style="color:#ae81ff">100</span>    <span style="color:#ae81ff">98</span>    <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>    <span style="color:#ae81ff">267</span>      <span style="color:#ae81ff">0</span> --:--:-- --:--:-- --:--:--   <span style="color:#ae81ff">267</span>
-<span style="color:#ae81ff">100</span>   <span style="color:#ae81ff">624</span>  <span style="color:#ae81ff">100</span>   <span style="color:#ae81ff">624</span>    <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>   <span style="color:#ae81ff">1116</span>      <span style="color:#ae81ff">0</span> --:--:-- --:--:-- --:--:--  <span style="color:#ae81ff">1116</span>
-<span style="color:#ae81ff">100</span> 6660k  <span style="color:#ae81ff">100</span> 6660k    <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>  5931k      <span style="color:#ae81ff">0</span>  0:00:01  0:00:01 --:--:-- 15.7M
-INSTALLING terraform
-Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
-Existing lock /var/run/yum.pid: another copy is running as pid 25715.
-Another app is currently holding the yum lock; waiting <span style="color:#66d9ef">for</span> it to exit...
-The other application is: yum
-Memory : <span style="color:#ae81ff">194</span> M RSS <span style="color:#f92672">(</span><span style="color:#ae81ff">410</span> MB VSZ<span style="color:#f92672">)</span>
-Started: Mon Aug <span style="color:#ae81ff">16</span> 19:23:47 <span style="color:#ae81ff">2021</span> - 00:07 ago
-State  : Running, pid: <span style="color:#ae81ff">25715</span>
-Another app is currently holding the yum lock; waiting <span style="color:#66d9ef">for</span> it to exit...
-The other application is: yum
-Memory : <span style="color:#ae81ff">298</span> M RSS <span style="color:#f92672">(</span><span style="color:#ae81ff">514</span> MB VSZ<span style="color:#f92672">)</span>
-Started: Mon Aug <span style="color:#ae81ff">16</span> 19:23:47 <span style="color:#ae81ff">2021</span> - 00:09 ago
-State  : Running, pid: <span style="color:#ae81ff">25715</span>
-Another app is currently holding the yum lock; waiting <span style="color:#66d9ef">for</span> it to exit...
-The other application is: yum
-Memory : <span style="color:#ae81ff">316</span> M RSS <span style="color:#f92672">(</span><span style="color:#ae81ff">532</span> MB VSZ<span style="color:#f92672">)</span>
-Started: Mon Aug <span style="color:#ae81ff">16</span> 19:23:47 <span style="color:#ae81ff">2021</span> - 00:11 ago
-State  : Running, pid: <span style="color:#ae81ff">25715</span>
-Another app is currently holding the yum lock; waiting <span style="color:#66d9ef">for</span> it to exit...
-The other application is: yum
-Memory : <span style="color:#ae81ff">316</span> M RSS <span style="color:#f92672">(</span><span style="color:#ae81ff">532</span> MB VSZ<span style="color:#f92672">)</span>
-Started: Mon Aug <span style="color:#ae81ff">16</span> 19:23:47 <span style="color:#ae81ff">2021</span> - 00:13 ago
-State  : Running, pid: <span style="color:#ae81ff">25715</span>
-<span style="color:#ae81ff">242</span> packages excluded due to repository priority protections
-Resolving Dependencies
---&gt; Running transaction check
----&gt; Package terraform.x86_64 0:1.0.4-1 will be installed
---&gt; Finished Dependency Resolution
-
-Dependencies Resolved
-
-<span style="color:#f92672">==========================================================================================================================================</span>
-Package                           Arch                           Version                         Repository                         Size
-<span style="color:#f92672">==========================================================================================================================================</span>
-Installing:
-terraform                         x86_64                         1.0.4-1                         hashicorp                          <span style="color:#ae81ff">25</span> M
-
-Transaction Summary
-<span style="color:#f92672">==========================================================================================================================================</span>
-Install  <span style="color:#ae81ff">1</span> Package
-
-Total download size: <span style="color:#ae81ff">25</span> M
-Installed size: <span style="color:#ae81ff">75</span> M
-Downloading packages:
-terraform-1.0.4-1.x86_64.rpm                                                                                       |  <span style="color:#ae81ff">25</span> MB  00:00:00
-Running transaction check
-Running transaction test
-Transaction test succeeded
-Running transaction
-Installing : terraform-1.0.4-1.x86_64                                                                                               1/1
-Verifying  : terraform-1.0.4-1.x86_64                                                                                               1/1
-
-Installed:
-terraform.x86_64 0:1.0.4-1
-
-Complete!
-INSTALLING eksctl
-INSTALLING kubectl
-% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-Dload  Upload   Total   Spent    Left  Speed
-<span style="color:#ae81ff">100</span> 44.2M  <span style="color:#ae81ff">100</span> 44.2M    <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>  90.4M      <span style="color:#ae81ff">0</span> --:--:-- --:--:-- --:--:-- 90.3M
-INSTALLING helm
-</code></pre></div>
+        <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>:~/environment $ git clone https://github.com/strongjz/aws-container-devsecops
+</span></span><span style="display:flex;"><span>Cloning into <span style="color:#e6db74">&#39;aws-container-devsecops&#39;</span>...
+</span></span><span style="display:flex;"><span>remote: Enumerating objects: 595, <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>remote: Counting objects: 100% <span style="color:#f92672">(</span>595/595<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>remote: Compressing objects: 100% <span style="color:#f92672">(</span>399/399<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>remote: Total <span style="color:#ae81ff">595</span> <span style="color:#f92672">(</span>delta 170<span style="color:#f92672">)</span>, reused <span style="color:#ae81ff">560</span> <span style="color:#f92672">(</span>delta 141<span style="color:#f92672">)</span>, pack-reused <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>Receiving objects: 100% <span style="color:#f92672">(</span>595/595<span style="color:#f92672">)</span>, 8.95 MiB | 23.25 MiB/s, <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>Resolving deltas: 100% <span style="color:#f92672">(</span>170/170<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>~/environment $ cd aws-container-devsecops/content/setup/^C
+</span></span><span style="display:flex;"><span>~/environment $ rm -rf aws-container-devsecops/
+</span></span><span style="display:flex;"><span>~/environment $ git clone https://github.com/strongjz/aws-container-devsecops
+</span></span><span style="display:flex;"><span>Cloning into <span style="color:#e6db74">&#39;aws-container-devsecops&#39;</span>...
+</span></span><span style="display:flex;"><span>remote: Enumerating objects: 624, <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>remote: Counting objects: 100% <span style="color:#f92672">(</span>624/624<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>remote: Compressing objects: 100% <span style="color:#f92672">(</span>410/410<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>remote: Total <span style="color:#ae81ff">624</span> <span style="color:#f92672">(</span>delta 187<span style="color:#f92672">)</span>, reused <span style="color:#ae81ff">587</span> <span style="color:#f92672">(</span>delta 156<span style="color:#f92672">)</span>, pack-reused <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>Receiving objects: 100% <span style="color:#f92672">(</span>624/624<span style="color:#f92672">)</span>, 8.95 MiB | 18.59 MiB/s, <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>Resolving deltas: 100% <span style="color:#f92672">(</span>187/187<span style="color:#f92672">)</span>, <span style="color:#66d9ef">done</span>.
+</span></span><span style="display:flex;"><span>~/environment $ cd aws-container-devsecops/content/setup/clone.files/
+</span></span><span style="display:flex;"><span>~/environment/aws-container-devsecops/content/setup/clone.files <span style="color:#f92672">(</span>main<span style="color:#f92672">)</span> $ sudo
+</span></span><span style="display:flex;"><span>Display all <span style="color:#ae81ff">2327</span> possibilities? <span style="color:#f92672">(</span>y or n<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>~/environment/aws-container-devsecops/content/setup/clone.files <span style="color:#f92672">(</span>main<span style="color:#f92672">)</span> $ sudo ls
+</span></span><span style="display:flex;"><span>tools-install.sh
+</span></span><span style="display:flex;"><span>~/environment/aws-container-devsecops/content/setup/clone.files <span style="color:#f92672">(</span>main<span style="color:#f92672">)</span> $ ^C
+</span></span><span style="display:flex;"><span>~/environment/aws-container-devsecops/content/setup/clone.files <span style="color:#f92672">(</span>main<span style="color:#f92672">)</span> $ sudo bash tools-install.sh
+</span></span><span style="display:flex;"><span>INSTALLING docker
+</span></span><span style="display:flex;"><span>Installing docker
+</span></span><span style="display:flex;"><span>Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+</span></span><span style="display:flex;"><span>Cleaning repos: amzn2-core amzn2extra-docker amzn2extra-epel amzn2extra-lamp-mariadb10.2-php7.2 epel hashicorp
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">35</span> metadata files removed
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">16</span> sqlite files removed
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> metadata files removed
+</span></span><span style="display:flex;"><span>Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+</span></span><span style="display:flex;"><span>amzn2-core                                                                                                         | 3.7 kB  00:00:00
+</span></span><span style="display:flex;"><span>amzn2extra-docker                                                                                                  | 3.0 kB  00:00:00
+</span></span><span style="display:flex;"><span>amzn2extra-epel                                                                                                    | 3.0 kB  00:00:00
+</span></span><span style="display:flex;"><span>amzn2extra-lamp-mariadb10.2-php7.2                                                                                 | 3.0 kB  00:00:00
+</span></span><span style="display:flex;"><span>epel/x86_64/metalink                                                                                               |  <span style="color:#ae81ff">15</span> kB  00:00:00
+</span></span><span style="display:flex;"><span>epel                                                                                                               | 4.7 kB  00:00:00
+</span></span><span style="display:flex;"><span>hashicorp                                                                                                          | 1.4 kB  00:00:00
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>1/13<span style="color:#f92672">)</span>: amzn2-core/2/x86_64/group_gz                                                                               | 2.5 kB  00:00:00
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>2/13<span style="color:#f92672">)</span>: amzn2-core/2/x86_64/updateinfo                                                                             | <span style="color:#ae81ff">405</span> kB  00:00:00
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>3/13<span style="color:#f92672">)</span>: amzn2extra-epel/2/x86_64/primary_db                                                                        | 1.8 kB  00:00:00
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>4/13<span style="color:#f92672">)</span>: amzn2extra-lamp-mariadb10.2-php7.2/2/x86_64/updateinfo                                                     |   <span style="color:#ae81ff">76</span> B  00:00:00
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>5/13<span style="color:#f92672">)</span>: amzn2extra-lamp-mariadb10.2-php7.2/2/x86_64/primary_db                                                     | <span style="color:#ae81ff">506</span> kB  00:00:00
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>6/13<span style="color:#f92672">)</span>: amzn2extra-epel/2/x86_64/updateinfo                                                                        |   <span style="color:#ae81ff">76</span> B  00:00:00
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>7/13<span style="color:#f92672">)</span>: amzn2extra-docker/2/x86_64/primary_db                                                                      |  <span style="color:#ae81ff">79</span> kB  00:00:00
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>8/13<span style="color:#f92672">)</span>: amzn2extra-docker/2/x86_64/updateinfo                                                                      |   <span style="color:#ae81ff">76</span> B  00:00:00
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>9/13<span style="color:#f92672">)</span>: epel/x86_64/group_gz                                                                                       |  <span style="color:#ae81ff">96</span> kB  00:00:00
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>10/13<span style="color:#f92672">)</span>: epel/x86_64/updateinfo                                                                                    | 1.0 MB  00:00:00
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>11/13<span style="color:#f92672">)</span>: epel/x86_64/primary_db                                                                                    | 6.9 MB  00:00:00
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>12/13<span style="color:#f92672">)</span>: hashicorp/2/x86_64/primary                                                                                |  <span style="color:#ae81ff">55</span> kB  00:00:00
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>13/13<span style="color:#f92672">)</span>: amzn2-core/2/x86_64/primary_db                                                                            |  <span style="color:#ae81ff">56</span> MB  00:00:00
+</span></span><span style="display:flex;"><span>hashicorp                                                                                                                         384/384
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">242</span> packages excluded due to repository priority protections
+</span></span><span style="display:flex;"><span>Resolving Dependencies
+</span></span><span style="display:flex;"><span>--&gt; Running transaction check
+</span></span><span style="display:flex;"><span>---&gt; Package docker.x86_64 0:20.10.4-1.amzn2 will be installed
+</span></span><span style="display:flex;"><span>--&gt; Finished Dependency Resolution
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Dependencies Resolved
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">==========================================================================================================================================</span>
+</span></span><span style="display:flex;"><span>Package                    Arch                       Version                                Repository                             Size
+</span></span><span style="display:flex;"><span><span style="color:#f92672">==========================================================================================================================================</span>
+</span></span><span style="display:flex;"><span>Installing:
+</span></span><span style="display:flex;"><span>docker                     x86_64                     20.10.4-1.amzn2                        amzn2extra-docker                      <span style="color:#ae81ff">32</span> M
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Transaction Summary
+</span></span><span style="display:flex;"><span><span style="color:#f92672">==========================================================================================================================================</span>
+</span></span><span style="display:flex;"><span>Install  <span style="color:#ae81ff">1</span> Package
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Total download size: <span style="color:#ae81ff">32</span> M
+</span></span><span style="display:flex;"><span>Installed size: <span style="color:#ae81ff">136</span> M
+</span></span><span style="display:flex;"><span>Downloading packages:
+</span></span><span style="display:flex;"><span>docker-20.10.4-1.amzn2.x86_64.rpm                                                                                  |  <span style="color:#ae81ff">32</span> MB  00:00:00
+</span></span><span style="display:flex;"><span>Running transaction check
+</span></span><span style="display:flex;"><span>Running transaction test
+</span></span><span style="display:flex;"><span>Transaction test succeeded
+</span></span><span style="display:flex;"><span>Running transaction
+</span></span><span style="display:flex;"><span>Installing : docker-20.10.4-1.amzn2.x86_64                                                                                          1/1
+</span></span><span style="display:flex;"><span>Verifying  : docker-20.10.4-1.amzn2.x86_64                                                                                          1/1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Installed:
+</span></span><span style="display:flex;"><span>docker.x86_64 0:20.10.4-1.amzn2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Complete!
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span>  ansible2                        available    <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>2.4.2  <span style="color:#f92672">=</span>2.4.6  <span style="color:#f92672">=</span>2.8  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span>  httpd_modules                   available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>1.0  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span>  memcached1.5                    available    <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>1.5.1  <span style="color:#f92672">=</span>1.5.16  <span style="color:#f92672">=</span>1.5.17 <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span>  postgresql9.6                   available    <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>9.6.6  <span style="color:#f92672">=</span>9.6.8  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6</span>  postgresql10                    available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>10  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">9</span>  R3.4                            available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>3.4.3  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">10</span>  rust1                           available    <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>1.22.1  <span style="color:#f92672">=</span>1.26.0  <span style="color:#f92672">=</span>1.26.1  <span style="color:#f92672">=</span>1.27.2  <span style="color:#f92672">=</span>1.31.0  <span style="color:#f92672">=</span>1.38.0
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">11</span>  vim                             available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>8.0  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">15</span>  php7.2                          available    <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>7.2.0  <span style="color:#f92672">=</span>7.2.4  <span style="color:#f92672">=</span>7.2.5  <span style="color:#f92672">=</span>7.2.8  <span style="color:#f92672">=</span>7.2.11  <span style="color:#f92672">=</span>7.2.13  <span style="color:#f92672">=</span>7.2.14
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=</span>7.2.16  <span style="color:#f92672">=</span>7.2.17  <span style="color:#f92672">=</span>7.2.19  <span style="color:#f92672">=</span>7.2.21  <span style="color:#f92672">=</span>7.2.22  <span style="color:#f92672">=</span>7.2.23
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=</span>7.2.24  <span style="color:#f92672">=</span>7.2.26  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">17</span>  lamp-mariadb10.2-php7.2<span style="color:#f92672">=</span>latest  enabled      <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>10.2.10_7.2.0  <span style="color:#f92672">=</span>10.2.10_7.2.4  <span style="color:#f92672">=</span>10.2.10_7.2.5
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=</span>10.2.10_7.2.8  <span style="color:#f92672">=</span>10.2.10_7.2.11  <span style="color:#f92672">=</span>10.2.10_7.2.13
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=</span>10.2.10_7.2.14  <span style="color:#f92672">=</span>10.2.10_7.2.16  <span style="color:#f92672">=</span>10.2.10_7.2.17
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=</span>10.2.10_7.2.19  <span style="color:#f92672">=</span>10.2.10_7.2.22  <span style="color:#f92672">=</span>10.2.10_7.2.23
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=</span>10.2.10_7.2.24  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">18</span>  libreoffice                     available    <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>5.0.6.2_15  <span style="color:#f92672">=</span>5.3.6.1  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">19</span>  gimp                            available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>2.8.22 <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">20</span>  docker<span style="color:#f92672">=</span>latest                   enabled      <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>17.12.1  <span style="color:#f92672">=</span>18.03.1  <span style="color:#f92672">=</span>18.06.1  <span style="color:#f92672">=</span>18.09.9  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">21</span>  mate-desktop1.x                 available    <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>1.19.0  <span style="color:#f92672">=</span>1.20.0  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">22</span>  GraphicsMagick1.3               available    <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>1.3.29  <span style="color:#f92672">=</span>1.3.32  <span style="color:#f92672">=</span>1.3.34  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">23</span>  tomcat8.5                       available    <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>8.5.31  <span style="color:#f92672">=</span>8.5.32  <span style="color:#f92672">=</span>8.5.38  <span style="color:#f92672">=</span>8.5.40  <span style="color:#f92672">=</span>8.5.42  <span style="color:#f92672">=</span>8.5.50
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">24</span>  epel<span style="color:#f92672">=</span>latest                     enabled      <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>7.11  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">25</span>  testing                         available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>1.0  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">26</span>  ecs                             available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">27</span>  corretto8                       available    <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>1.8.0_192  <span style="color:#f92672">=</span>1.8.0_202  <span style="color:#f92672">=</span>1.8.0_212  <span style="color:#f92672">=</span>1.8.0_222  <span style="color:#f92672">=</span>1.8.0_232
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=</span>1.8.0_242  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">28</span>  firecracker                     available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>0.11  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">29</span>  golang1.11                      available    <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>1.11.3  <span style="color:#f92672">=</span>1.11.11  <span style="color:#f92672">=</span>1.11.13  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">30</span>  squid4                          available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>4  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>_  php7.3                          available    <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>7.3.2  <span style="color:#f92672">=</span>7.3.3  <span style="color:#f92672">=</span>7.3.4  <span style="color:#f92672">=</span>7.3.6  <span style="color:#f92672">=</span>7.3.8  <span style="color:#f92672">=</span>7.3.9  <span style="color:#f92672">=</span>7.3.10
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=</span>7.3.11  <span style="color:#f92672">=</span>7.3.13  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">32</span>  lustre2.10                      available    <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#f92672">[</span> <span style="color:#f92672">=</span>2.10.5  <span style="color:#f92672">=</span>2.10.8  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">33</span>  java-openjdk11                  available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>11  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">34</span>  lynis                           available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">35</span>  kernel-ng                       available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">36</span>  BCC                             available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>0.x  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">37</span>  mono                            available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>5.x  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">38</span>  nginx1                          available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">39</span>  ruby2.6                         available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>2.6  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">40</span>  mock                            available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">41</span>  postgresql11                    available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>11  <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>_  php7.4                          available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">43</span>  livepatch                       available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">44</span>  python3.8                       available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">45</span>  haproxy2                        available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">46</span>  collectd                        available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">47</span>  aws-nitro-enclaves-cli          available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">48</span>  R4                              available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">49</span>  kernel-5.4                      available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">50</span>  selinux-ng                      available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>_  php8.0                          available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">52</span>  tomcat9                         available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">53</span>  unbound1.13                     available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>_  mariadb10.5                     available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">55</span>  kernel-5.10                     available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">56</span>  redis6                          available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">57</span>  ruby3.0                         available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">58</span>  postgresql12                    available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">59</span>  postgresql13                    available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">60</span>  mock2                           available    <span style="color:#f92672">[</span> <span style="color:#f92672">=</span>stable <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">242</span> packages excluded due to repository priority protections
+</span></span><span style="display:flex;"><span>Package docker-20.10.4-1.amzn2.x86_64 already installed and latest version
+</span></span><span style="display:flex;"><span>Nothing to <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>Redirecting to /bin/systemctl start docker.service
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Hello from Docker!
+</span></span><span style="display:flex;"><span>This message shows that your installation appears to be working correctly.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>To generate this message, Docker took the following steps:
+</span></span><span style="display:flex;"><span>1. The Docker client contacted the Docker daemon.
+</span></span><span style="display:flex;"><span>2. The Docker daemon pulled the <span style="color:#e6db74">&#34;hello-world&#34;</span> image from the Docker Hub.
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">(</span>amd64<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>3. The Docker daemon created a new container from that image which runs the
+</span></span><span style="display:flex;"><span>   executable that produces the output you are currently reading.
+</span></span><span style="display:flex;"><span>4. The Docker daemon streamed that output to the Docker client, which sent it
+</span></span><span style="display:flex;"><span>   to your terminal.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>To try something more ambitious, you can run an Ubuntu container with:
+</span></span><span style="display:flex;"><span>$ docker run -it ubuntu bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Share images, automate workflows, and more with a free Docker ID:
+</span></span><span style="display:flex;"><span>https://hub.docker.com/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>For more examples and ideas, visit:
+</span></span><span style="display:flex;"><span>https://docs.docker.com/get-started/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>INSTALLING kind
+</span></span><span style="display:flex;"><span>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+</span></span><span style="display:flex;"><span>Dload  Upload   Total   Spent    Left  Speed
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">100</span>    <span style="color:#ae81ff">98</span>  <span style="color:#ae81ff">100</span>    <span style="color:#ae81ff">98</span>    <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>    <span style="color:#ae81ff">267</span>      <span style="color:#ae81ff">0</span> --:--:-- --:--:-- --:--:--   <span style="color:#ae81ff">267</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">100</span>   <span style="color:#ae81ff">624</span>  <span style="color:#ae81ff">100</span>   <span style="color:#ae81ff">624</span>    <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>   <span style="color:#ae81ff">1116</span>      <span style="color:#ae81ff">0</span> --:--:-- --:--:-- --:--:--  <span style="color:#ae81ff">1116</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">100</span> 6660k  <span style="color:#ae81ff">100</span> 6660k    <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>  5931k      <span style="color:#ae81ff">0</span>  0:00:01  0:00:01 --:--:-- 15.7M
+</span></span><span style="display:flex;"><span>INSTALLING terraform
+</span></span><span style="display:flex;"><span>Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+</span></span><span style="display:flex;"><span>Existing lock /var/run/yum.pid: another copy is running as pid 25715.
+</span></span><span style="display:flex;"><span>Another app is currently holding the yum lock; waiting <span style="color:#66d9ef">for</span> it to exit...
+</span></span><span style="display:flex;"><span>The other application is: yum
+</span></span><span style="display:flex;"><span>Memory : <span style="color:#ae81ff">194</span> M RSS <span style="color:#f92672">(</span><span style="color:#ae81ff">410</span> MB VSZ<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Started: Mon Aug <span style="color:#ae81ff">16</span> 19:23:47 <span style="color:#ae81ff">2021</span> - 00:07 ago
+</span></span><span style="display:flex;"><span>State  : Running, pid: <span style="color:#ae81ff">25715</span>
+</span></span><span style="display:flex;"><span>Another app is currently holding the yum lock; waiting <span style="color:#66d9ef">for</span> it to exit...
+</span></span><span style="display:flex;"><span>The other application is: yum
+</span></span><span style="display:flex;"><span>Memory : <span style="color:#ae81ff">298</span> M RSS <span style="color:#f92672">(</span><span style="color:#ae81ff">514</span> MB VSZ<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Started: Mon Aug <span style="color:#ae81ff">16</span> 19:23:47 <span style="color:#ae81ff">2021</span> - 00:09 ago
+</span></span><span style="display:flex;"><span>State  : Running, pid: <span style="color:#ae81ff">25715</span>
+</span></span><span style="display:flex;"><span>Another app is currently holding the yum lock; waiting <span style="color:#66d9ef">for</span> it to exit...
+</span></span><span style="display:flex;"><span>The other application is: yum
+</span></span><span style="display:flex;"><span>Memory : <span style="color:#ae81ff">316</span> M RSS <span style="color:#f92672">(</span><span style="color:#ae81ff">532</span> MB VSZ<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Started: Mon Aug <span style="color:#ae81ff">16</span> 19:23:47 <span style="color:#ae81ff">2021</span> - 00:11 ago
+</span></span><span style="display:flex;"><span>State  : Running, pid: <span style="color:#ae81ff">25715</span>
+</span></span><span style="display:flex;"><span>Another app is currently holding the yum lock; waiting <span style="color:#66d9ef">for</span> it to exit...
+</span></span><span style="display:flex;"><span>The other application is: yum
+</span></span><span style="display:flex;"><span>Memory : <span style="color:#ae81ff">316</span> M RSS <span style="color:#f92672">(</span><span style="color:#ae81ff">532</span> MB VSZ<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Started: Mon Aug <span style="color:#ae81ff">16</span> 19:23:47 <span style="color:#ae81ff">2021</span> - 00:13 ago
+</span></span><span style="display:flex;"><span>State  : Running, pid: <span style="color:#ae81ff">25715</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">242</span> packages excluded due to repository priority protections
+</span></span><span style="display:flex;"><span>Resolving Dependencies
+</span></span><span style="display:flex;"><span>--&gt; Running transaction check
+</span></span><span style="display:flex;"><span>---&gt; Package terraform.x86_64 0:1.0.4-1 will be installed
+</span></span><span style="display:flex;"><span>--&gt; Finished Dependency Resolution
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Dependencies Resolved
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">==========================================================================================================================================</span>
+</span></span><span style="display:flex;"><span>Package                           Arch                           Version                         Repository                         Size
+</span></span><span style="display:flex;"><span><span style="color:#f92672">==========================================================================================================================================</span>
+</span></span><span style="display:flex;"><span>Installing:
+</span></span><span style="display:flex;"><span>terraform                         x86_64                         1.0.4-1                         hashicorp                          <span style="color:#ae81ff">25</span> M
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Transaction Summary
+</span></span><span style="display:flex;"><span><span style="color:#f92672">==========================================================================================================================================</span>
+</span></span><span style="display:flex;"><span>Install  <span style="color:#ae81ff">1</span> Package
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Total download size: <span style="color:#ae81ff">25</span> M
+</span></span><span style="display:flex;"><span>Installed size: <span style="color:#ae81ff">75</span> M
+</span></span><span style="display:flex;"><span>Downloading packages:
+</span></span><span style="display:flex;"><span>terraform-1.0.4-1.x86_64.rpm                                                                                       |  <span style="color:#ae81ff">25</span> MB  00:00:00
+</span></span><span style="display:flex;"><span>Running transaction check
+</span></span><span style="display:flex;"><span>Running transaction test
+</span></span><span style="display:flex;"><span>Transaction test succeeded
+</span></span><span style="display:flex;"><span>Running transaction
+</span></span><span style="display:flex;"><span>Installing : terraform-1.0.4-1.x86_64                                                                                               1/1
+</span></span><span style="display:flex;"><span>Verifying  : terraform-1.0.4-1.x86_64                                                                                               1/1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Installed:
+</span></span><span style="display:flex;"><span>terraform.x86_64 0:1.0.4-1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Complete!
+</span></span><span style="display:flex;"><span>INSTALLING eksctl
+</span></span><span style="display:flex;"><span>INSTALLING kubectl
+</span></span><span style="display:flex;"><span>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+</span></span><span style="display:flex;"><span>Dload  Upload   Total   Spent    Left  Speed
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">100</span> 44.2M  <span style="color:#ae81ff">100</span> 44.2M    <span style="color:#ae81ff">0</span>     <span style="color:#ae81ff">0</span>  90.4M      <span style="color:#ae81ff">0</span> --:--:-- --:--:-- --:--:-- 90.3M
+</span></span><span style="display:flex;"><span>INSTALLING helm
+</span></span></code></pre></div>
     </div>
 </div>
 
@@ -1143,28 +1166,28 @@ INSTALLING helm
 <p><code>cd ~/environment/devsecopspipeline</code></p>
 <p>Start the cluster creation with <code>make cluster</code></p>
 <p>Output should look like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eksctl create cluster -f eks-config.yml
-2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  eksctl version 0.61.0
-2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  using region us-west-2
-2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  setting availability zones to <span style="color:#f92672">[</span>us-west-2d us-west-2c us-west-2a<span style="color:#f92672">]</span>
-2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  subnets <span style="color:#66d9ef">for</span> us-west-2d - public:192.168.0.0/19 private:192.168.96.0/19
-2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  subnets <span style="color:#66d9ef">for</span> us-west-2c - public:192.168.32.0/19 private:192.168.128.0/19
-2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  subnets <span style="color:#66d9ef">for</span> us-west-2a - public:192.168.64.0/19 private:192.168.160.0/19
-2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  nodegroup <span style="color:#e6db74">&#34;node-group-1&#34;</span> will use <span style="color:#e6db74">&#34;ami-0bb07d9c8d6ca41e8&#34;</span> <span style="color:#f92672">[</span>AmazonLinux2/1.21<span style="color:#f92672">]</span>
-2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  using Kubernetes version 1.21
-2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  creating EKS cluster <span style="color:#e6db74">&#34;devsecops&#34;</span> in <span style="color:#e6db74">&#34;us-west-2&#34;</span> region with un-managed nodes
-2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  <span style="color:#ae81ff">1</span> nodegroup <span style="color:#f92672">(</span>node-group-1<span style="color:#f92672">)</span> was included <span style="color:#f92672">(</span>based on the include/exclude rules<span style="color:#f92672">)</span>
-2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  will create a CloudFormation stack <span style="color:#66d9ef">for</span> cluster itself and <span style="color:#ae81ff">1</span> nodegroup stack<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
-2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  will create a CloudFormation stack <span style="color:#66d9ef">for</span> cluster itself and <span style="color:#ae81ff">0</span> managed nodegroup stack<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
-2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  <span style="color:#66d9ef">if</span> you encounter any issues, check CloudFormation console or try <span style="color:#e6db74">&#39;eksctl utils describe-stacks --region=us-west-2 --cluster=devsecops&#39;</span>
-2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  CloudWatch logging will not be enabled <span style="color:#66d9ef">for</span> cluster <span style="color:#e6db74">&#34;devsecops&#34;</span> in <span style="color:#e6db74">&#34;us-west-2&#34;</span>
-2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  you can enable it with <span style="color:#e6db74">&#39;eksctl utils update-cluster-logging --enable-types={SPECIFY-YOUR-LOG-TYPES-HERE (e.g. all)} --region=us-west-2 --cluster=devsecops&#39;</span>
-2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  Kubernetes API endpoint access will use default of <span style="color:#f92672">{</span>publicAccess<span style="color:#f92672">=</span>true, privateAccess<span style="color:#f92672">=</span>false<span style="color:#f92672">}</span> <span style="color:#66d9ef">for</span> cluster <span style="color:#e6db74">&#34;devsecops&#34;</span> in <span style="color:#e6db74">&#34;us-west-2&#34;</span>
-2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  <span style="color:#ae81ff">2</span> sequential tasks: <span style="color:#f92672">{</span> create cluster control plane <span style="color:#e6db74">&#34;devsecops&#34;</span>, <span style="color:#ae81ff">3</span> sequential sub-tasks: <span style="color:#f92672">{</span> wait <span style="color:#66d9ef">for</span> control plane to become ready, <span style="color:#ae81ff">1</span> task: <span style="color:#f92672">{</span> create addons <span style="color:#f92672">}</span>, create nodegroup <span style="color:#e6db74">&#34;node-group-1&#34;</span> <span style="color:#f92672">}</span> <span style="color:#f92672">}</span>
-2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  building cluster stack <span style="color:#e6db74">&#34;eksctl-devsecops-cluster&#34;</span>
-2021-09-11 21:58:06 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  deploying stack <span style="color:#e6db74">&#34;eksctl-devsecops-cluster&#34;</span>
-2021-09-11 21:58:07 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  waiting <span style="color:#66d9ef">for</span> CloudFormation stack <span style="color:#e6db74">&#34;eksctl-devsecops-cluster&#34;</span>
-</code></pre></div><p>Let it run and deploy while we move onto to the next steps</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>eksctl create cluster -f eks-config.yml
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  eksctl version 0.61.0
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  using region us-west-2
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  setting availability zones to <span style="color:#f92672">[</span>us-west-2d us-west-2c us-west-2a<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  subnets <span style="color:#66d9ef">for</span> us-west-2d - public:192.168.0.0/19 private:192.168.96.0/19
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  subnets <span style="color:#66d9ef">for</span> us-west-2c - public:192.168.32.0/19 private:192.168.128.0/19
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  subnets <span style="color:#66d9ef">for</span> us-west-2a - public:192.168.64.0/19 private:192.168.160.0/19
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  nodegroup <span style="color:#e6db74">&#34;node-group-1&#34;</span> will use <span style="color:#e6db74">&#34;ami-0bb07d9c8d6ca41e8&#34;</span> <span style="color:#f92672">[</span>AmazonLinux2/1.21<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  using Kubernetes version 1.21
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  creating EKS cluster <span style="color:#e6db74">&#34;devsecops&#34;</span> in <span style="color:#e6db74">&#34;us-west-2&#34;</span> region with un-managed nodes
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  <span style="color:#ae81ff">1</span> nodegroup <span style="color:#f92672">(</span>node-group-1<span style="color:#f92672">)</span> was included <span style="color:#f92672">(</span>based on the include/exclude rules<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  will create a CloudFormation stack <span style="color:#66d9ef">for</span> cluster itself and <span style="color:#ae81ff">1</span> nodegroup stack<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  will create a CloudFormation stack <span style="color:#66d9ef">for</span> cluster itself and <span style="color:#ae81ff">0</span> managed nodegroup stack<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  <span style="color:#66d9ef">if</span> you encounter any issues, check CloudFormation console or try <span style="color:#e6db74">&#39;eksctl utils describe-stacks --region=us-west-2 --cluster=devsecops&#39;</span>
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  CloudWatch logging will not be enabled <span style="color:#66d9ef">for</span> cluster <span style="color:#e6db74">&#34;devsecops&#34;</span> in <span style="color:#e6db74">&#34;us-west-2&#34;</span>
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  you can enable it with <span style="color:#e6db74">&#39;eksctl utils update-cluster-logging --enable-types={SPECIFY-YOUR-LOG-TYPES-HERE (e.g. all)} --region=us-west-2 --cluster=devsecops&#39;</span>
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  Kubernetes API endpoint access will use default of <span style="color:#f92672">{</span>publicAccess<span style="color:#f92672">=</span>true, privateAccess<span style="color:#f92672">=</span>false<span style="color:#f92672">}</span> <span style="color:#66d9ef">for</span> cluster <span style="color:#e6db74">&#34;devsecops&#34;</span> in <span style="color:#e6db74">&#34;us-west-2&#34;</span>
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  <span style="color:#ae81ff">2</span> sequential tasks: <span style="color:#f92672">{</span> create cluster control plane <span style="color:#e6db74">&#34;devsecops&#34;</span>, <span style="color:#ae81ff">3</span> sequential sub-tasks: <span style="color:#f92672">{</span> wait <span style="color:#66d9ef">for</span> control plane to become ready, <span style="color:#ae81ff">1</span> task: <span style="color:#f92672">{</span> create addons <span style="color:#f92672">}</span>, create nodegroup <span style="color:#e6db74">&#34;node-group-1&#34;</span> <span style="color:#f92672">}</span> <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:05 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  building cluster stack <span style="color:#e6db74">&#34;eksctl-devsecops-cluster&#34;</span>
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:06 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  deploying stack <span style="color:#e6db74">&#34;eksctl-devsecops-cluster&#34;</span>
+</span></span><span style="display:flex;"><span>2021-09-11 21:58:07 <span style="color:#f92672">[</span>ℹ<span style="color:#f92672">]</span>  waiting <span style="color:#66d9ef">for</span> CloudFormation stack <span style="color:#e6db74">&#34;eksctl-devsecops-cluster&#34;</span>
+</span></span></code></pre></div><p>Let it run and deploy while we move onto to the next steps</p>
 
 
 <footer class="footline">
@@ -1573,6 +1596,22 @@ INSTALLING helm
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1646,19 +1685,19 @@ INSTALLING helm
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1642004698"></script>
-    <script src="/js/perfect-scrollbar.min.js?1642004698"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1642004698"></script>
-    <script src="/js/jquery.sticky.js?1642004698"></script>
-    <script src="/js/featherlight.min.js?1642004698"></script>
-    <script src="/js/highlight.pack.js?1642004698"></script>
+    <script src="/js/clipboard.min.js?1649273506"></script>
+    <script src="/js/perfect-scrollbar.min.js?1649273506"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1649273506"></script>
+    <script src="/js/jquery.sticky.js?1649273506"></script>
+    <script src="/js/featherlight.min.js?1649273506"></script>
+    <script src="/js/highlight.pack.js?1649273506"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1642004698"></script>
-    <script src="/js/learn.js?1642004698"></script>
-    <script src="/js/hugo-learn.js?1642004698"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1649273506"></script>
+    <script src="/js/learn.js?1649273506"></script>
+    <script src="/js/hugo-learn.js?1649273506"></script>
     
         
-            <script src="/mermaid/mermaid.js?1642004698"></script>
+            <script src="/mermaid/mermaid.js?1649273506"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

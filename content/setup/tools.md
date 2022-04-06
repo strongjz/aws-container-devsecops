@@ -22,6 +22,8 @@ The script will install
 * eksctl
 * kubectl
 * helm
+* golang 
+* cosign
 
 ### Install 
 

@@ -24,7 +24,7 @@
     <loc>//localhost:1313/development/</loc>
     <lastmod>2021-08-17T15:08:20-04:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/development/signing/</loc>
+    <loc>//localhost:1313/development/git/</loc>
     <lastmod>2021-08-17T15:07:49-04:00</lastmod>
   </url><url>
     <loc>//localhost:1313/development/linting/</loc>
@@ -54,6 +54,8 @@
     <loc>//localhost:1313/pipeline/exercise_2/</loc>
   </url><url>
     <loc>//localhost:1313/run/</loc>
+  </url><url>
+    <loc>//localhost:1313/run/kubernetes/</loc>
   </url><url>
     <loc>//localhost:1313/run/exercise/</loc>
   </url><url>
